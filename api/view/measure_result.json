@@ -1,0 +1,46 @@
+{
+    "unitId": "a64b82a0-73db-11ea-9ca9-e56bb32f5931",
+    "patientId": "a64ce230-73db-11ea-9ca9-e56bb32f5931",
+    "age": 53,
+    "weight": 79.9570723089862,
+    "gender": "Male",
+    "timeTag": "2020-04-01 08:43:01.309680",
+    "vendor": "EarlySense",
+    "audioPath": "path to audio on cloud",
+    "primery_priority": {
+		# proper 60 - 80 / min Pulse / min
+        "pulse": 53.9782048096756,
+        # Forced Expiratory vol.per 1 sec L / sec
+        "fev1": 60.6551240000595,
+        # Forced vital capacity L / 10 sec
+        "fvc": 70.8259074684175,
+        # Total lung capacity L
+        "tlc": 5.299691954218364,
+        # Residual volume L
+        "rv": 1.5,
+        # Expiratory reserved volume 0.7 - 1.2 L
+        "erv": 0.7774951726718935,
+        # Functional residual capacity volume 1.8 - 2.2 L (frc = rv + erv)
+        "frc": 2.2774951726718939,
+        # proper 12 - 20 / min Breaths / min
+        "breath_rate": 10,
+        # By detection algorithm binary(detection Y / N)
+        "wheezing": true,
+        # Cough presence, rate, dry cough(classification) Cough / min
+        "cough_presence_rate": 3
+    },
+    "secondery_priority": {
+        # proper between 36-37.5 , after ovuletion between 36.5-37°C
+        "fever": 35,
+        # Beats/min
+        "bpm": 104.77962601286034,
+        # relative power at maximal flow (RPMF) between inspiratory and expiratory
+        "rpmf": 69,
+        # proper over 95% %SpO2
+        "saturation": 92.5497189686849,
+        # proper between 90-140
+        "blood_pressure_h": 105.53040926622532,
+        # proper between 60-90
+        "blood_pressure_l": 78.56628638318611
+    }
+}
