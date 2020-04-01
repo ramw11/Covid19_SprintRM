@@ -68,6 +68,18 @@ exports.JsonPatientExample = function(req, res){
     });
 }
 
+exports.JsonMRSchema=function(req, res){
+    fs.readFile('./api/view/mr_schema.json', function (err, json) {
+        if (err) {
+            throw err; 
+        }
+
+        res.writeHeader(200, {"Content-Type": "application/json"});  
+        res.write(json);  
+        res.end();
+    });
+}
+
 exports.get_patient_id = function(req, res) {
     
     var pid = uuidv1();

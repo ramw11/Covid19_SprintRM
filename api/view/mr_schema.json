@@ -1,0 +1,323 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Measurment Result Schema",
+    "description": "The root schema comprises the entire Measurment result JSON document.",
+    "required": [
+        "unitId",
+        "patientId",
+        "age",
+        "weight",
+        "gender",
+        "timeTag",
+        "vendor",
+        "audioPath",
+        "primery_priority",
+        "secondery_priority"
+    ],
+    "properties": {
+        "unitId": {
+            "$id": "#/properties/unitId",
+            "type": "string",
+            "title": "The Unitid Schema",
+            "description": "The sensor unit unique Id",
+            "default": "",
+            "examples": [
+                "a64b82a0-73db-11ea-9ca9-e56bb32f5931"
+            ]
+        },
+        "patientId": {
+            "$id": "#/properties/patientId",
+            "type": "string",
+            "title": "The Patientid Schema",
+            "description": "The patient unique Id.",
+            "default": "",
+            "examples": [
+                "a64ce230-73db-11ea-9ca9-e56bb32f5931"
+            ]
+        },
+        "age": {
+            "$id": "#/properties/age",
+            "type": "integer",
+            "title": "The Age Schema",
+            "description": "The patient age.",
+            "default": 0,
+            "examples": [
+                53
+            ]
+        },
+        "weight": {
+            "$id": "#/properties/weight",
+            "type": "number",
+            "title": "The Weight Schema",
+            "description": "The patient weight.",
+            "default": 0,
+            "examples": [
+                79.9570723089862
+            ]
+        },
+        "gender": {
+            "$id": "#/properties/gender",
+            "type": "string",
+            "title": "The Gender Schema",
+            "description": "The patient gender.",
+            "default": "",
+            "examples": [
+                "Male"
+            ]
+        },
+        "timeTag": {
+            "$id": "#/properties/timeTag",
+            "type": "string",
+            "title": "The Timetag Schema",
+            "description": "The time that the measurment was taken.",
+            "default": "",
+            "examples": [
+                "2020-04-01 08:43:01.309680"
+            ]
+        },
+        "vendor": {
+            "$id": "#/properties/vendor",
+            "type": "string",
+            "title": "The Vendor Schema",
+            "description": "The vendor name.",
+            "default": "",
+            "examples": [
+                "EarlySense"
+            ]
+        },
+        "audioPath": {
+            "$id": "#/properties/audioPath",
+            "type": "string",
+            "title": "The Audiopath Schema",
+            "description": "path to audio on cloud.",
+            "default": "",
+            "examples": [
+                "http::/servername/audios/aud1.wav"
+            ]
+        },
+        "primery_priority": {
+            "$id": "#/properties/primery_priority",
+            "type": "object",
+            "title": "The Primery_priority Schema",
+            "description": "The Primery priority medical indices.",
+            "default": {},
+            "examples": [
+                {
+                    "cough_presence_rate": 3.0,
+                    "fev1": 60.6551240000595,
+                    "erv": 0.7774951726718935,
+                    "rv": 1.5,
+                    "pulse": 53.9782048096756,
+                    "wheezing": true,
+                    "tlc": 5.299691954218364,
+                    "frc": 2.2774951726718937,
+                    "breath_rate": 10.0,
+                    "fvc": 70.8259074684175
+                }
+            ],
+            "required": [
+                "pulse",
+                "fev1",
+                "fvc",
+                "tlc",
+                "rv",
+                "erv",
+                "frc",
+                "breath_rate",
+                "wheezing",
+                "cough_presence_rate"
+            ],
+            "properties": {
+                "pulse": {
+                    "$id": "#/properties/primery_priority/properties/pulse",
+                    "type": "number",
+                    "title": "The Pulse Schema",
+                    "description": "proper 60 - 80 / min  - Pulse / min",
+                    "default": 0,
+                    "examples": [
+                        53.9782048096756
+                    ]
+                },
+                "fev1": {
+                    "$id": "#/properties/primery_priority/properties/fev1",
+                    "type": "number",
+                    "title": "The Fev1 Schema",
+                    "description": "Forced Expiratory vol.per 1 sec  - L / sec.",
+                    "default": 0,
+                    "examples": [
+                        60.6551240000595
+                    ]
+                },
+                "fvc": {
+                    "$id": "#/properties/primery_priority/properties/fvc",
+                    "type": "number",
+                    "title": "The Fvc Schema",
+                    "description": "Forced vital capacity L / 10 sec.",
+                    "default": 0,
+                    "examples": [
+                        70.8259074684175
+                    ]
+                },
+                "tlc": {
+                    "$id": "#/properties/primery_priority/properties/tlc",
+                    "type": "number",
+                    "title": "The Tlc Schema",
+                    "description": "Total lung capacity L.",
+                    "default": 0,
+                    "examples": [
+                        5.299691954218364
+                    ]
+                },
+                "rv": {
+                    "$id": "#/properties/primery_priority/properties/rv",
+                    "type": "number",
+                    "title": "The Rv Schema",
+                    "description": "Residual volume L.",
+                    "default": 0,
+                    "examples": [
+                        1.5
+                    ]
+                },
+                "erv": {
+                    "$id": "#/properties/primery_priority/properties/erv",
+                    "type": "number",
+                    "title": "The Erv Schema",
+                    "description": "Expiratory reserved volume 0.7 - 1.2 L.",
+                    "default": 0,
+                    "examples": [
+                        0.7774951726718935
+                    ]
+                },
+                "frc": {
+                    "$id": "#/properties/primery_priority/properties/frc",
+                    "type": "number",
+                    "title": "The Frc Schema",
+                    "description": "Functional residual capacity volume 1.8 - 2.2 L (frc = rv + erv).",
+                    "default": 0,
+                    "examples": [
+                        2.2774951726718937
+                    ]
+                },
+                "breath_rate": {
+                    "$id": "#/properties/primery_priority/properties/breath_rate",
+                    "type": "integer",
+                    "title": "The Breath_rate Schema",
+                    "description": "proper 12 - 20 / ,min  - Breaths / min.",
+                    "default": 0,
+                    "examples": [
+                        10
+                    ]
+                },
+                "wheezing": {
+                    "$id": "#/properties/primery_priority/properties/wheezing",
+                    "type": "boolean",
+                    "title": "The Wheezing Schema",
+                    "description": "By detection algorithm binary(detection Y / N).",
+                    "default": false,
+                    "examples": [
+                        true
+                    ]
+                },
+                "cough_presence_rate": {
+                    "$id": "#/properties/primery_priority/properties/cough_presence_rate",
+                    "type": "integer",
+                    "title": "The Cough_presence_rate Schema",
+                    "description": "Cough presence, rate, dry cough(classification) Cough / min.",
+                    "default": 0,
+                    "examples": [
+                        3
+                    ]
+                }
+            }
+        },
+        "secondery_priority": {
+            "$id": "#/properties/secondery_priority",
+            "type": "object",
+            "title": "The Secondery_priority Schema",
+            "description": "The Secondery priority medical indices.",
+            "default": {},
+            "examples": [
+                {
+                    "blood_pressure_h": 105.53040926622532,
+                    "fever": 35.0,
+                    "saturation": 92.5497189686849,
+                    "blood_pressure_l": 78.56628638318611,
+                    "bpm": 104.77962601286033,
+                    "rpmf": 69.0
+                }
+            ],
+            "required": [
+                "fever",
+                "bpm",
+                "rpmf",
+                "saturation",
+                "blood_pressure_h",
+                "blood_pressure_l"
+            ],
+            "properties": {
+                "fever": {
+                    "$id": "#/properties/secondery_priority/properties/fever",
+                    "type": "integer",
+                    "title": "The Fever Schema",
+                    "description": "proper between 36-37.5 , after ovuletion between 36.5-37°C.",
+                    "default": 0,
+                    "examples": [
+                        35
+                    ]
+                },
+                "bpm": {
+                    "$id": "#/properties/secondery_priority/properties/bpm",
+                    "type": "number",
+                    "title": "The Bpm Schema",
+                    "description": "Beats/min.",
+                    "default": 0,
+                    "examples": [
+                        104.77962601286033
+                    ]
+                },
+                "rpmf": {
+                    "$id": "#/properties/secondery_priority/properties/rpmf",
+                    "type": "integer",
+                    "title": "The Rpmf Schema",
+                    "description": "relative power at maximal flow (RPMF) between inspiratory and expiratory.",
+                    "default": 0,
+                    "examples": [
+                        69
+                    ]
+                },
+                "saturation": {
+                    "$id": "#/properties/secondery_priority/properties/saturation",
+                    "type": "number",
+                    "title": "The Saturation Schema",
+                    "description": "proper over 95% %SpO2.",
+                    "default": 0,
+                    "examples": [
+                        92.5497189686849
+                    ]
+                },
+                "blood_pressure_h": {
+                    "$id": "#/properties/secondery_priority/properties/blood_pressure_h",
+                    "type": "number",
+                    "title": "The Blood_pressure_h Schema",
+                    "description": "proper between 90-140.",
+                    "default": 0,
+                    "examples": [
+                        105.53040926622532
+                    ]
+                },
+                "blood_pressure_l": {
+                    "$id": "#/properties/secondery_priority/properties/blood_pressure_l",
+                    "type": "number",
+                    "title": "The Blood_pressure_l Schema",
+                    "description": "proper between 60-90.",
+                    "default": 0,
+                    "examples": [
+                        78.56628638318611
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ module.exports = function(app) {
   app.route('/').get(todoList.printManual);
   app.route('/pid').get(todoList.get_patient_id);
   app.route('/JsonPatientExample').get(todoList.JsonPatientExample);
+  app.route('/JsonMR_schema').get(todoList.JsonMRSchema);
   app.route('/mr').post(todoList.archive_mr);
   //    app.post('/mr', function (req, res) {
     //         var jres = req.body;
