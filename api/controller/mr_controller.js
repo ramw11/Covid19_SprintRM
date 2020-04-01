@@ -4,8 +4,8 @@ const fs = require('fs');
 const AWS=require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 
-const awscredentials= new AWS.Credentials('AKIAUCDVEBOVVZRVCV54',
-'P2H0NMfLrAvpokajfl4/cQ8Hp3DYutdi9lshAgjf',
+const awscredentials= new AWS.Credentials('kwy1',
+'key2',
 null);
 
 const options = {
@@ -13,6 +13,7 @@ const options = {
     region: 'eu-west-1',
     credentials: awscredentials
 };
+
 const client = aeclient(options);
 
 var indexname = 'measure_results_v2';
@@ -27,7 +28,7 @@ client.ping({
     }
 });
 
-createESIndex(indexname);
+//createESIndex(indexname);
 function createESIndex(idx){
     if(!doesIdxExist(indexname)){
         client.indices.create({ 
