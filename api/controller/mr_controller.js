@@ -82,10 +82,10 @@ exports.JsonMRSchema=function(req, res){
     });
 }
 
-exports.get_patient_id = function(req, res) {
+exports.get_id = function(req, res) {
     
     var pid = uuidv1();
-    res.send({ patientId: pid });
+    res.send({ new_id: pid });
     res.end();
 }
 
