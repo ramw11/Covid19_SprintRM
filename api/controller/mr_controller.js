@@ -4,14 +4,15 @@ const fs = require('fs');
 const AWS=require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 
-const awscredentials= new AWS.Credentials('kwy1',
-'key2',
-null);
+// const awscredentials = new AWS.ECSCredentials({
+//     httpOptions: {timeout: 5000},
+//     maxRetries: 10,
+//   });
 
 const options = {
     host: 'https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com',
     region: 'eu-west-1',
-    credentials: awscredentials
+    //credentials: awscredentials
 };
 
 const client = aeclient(options);
@@ -28,9 +29,9 @@ client.ping({
     }
 });
 
-//createESIndex(indexname);
+createESIndex(indexname);
 function createESIndex(idx){
-    if(!doesIdxExist(indexname)){
+    //if(!doesIdxExist(indexname)){
         client.indices.create({ 
             index: indexname
         }, function(err, resp, status) {
@@ -40,9 +41,9 @@ function createESIndex(idx){
                 console.log("create", resp);
             }
         });
-    } else {
+ //   } else {
         console.warn(`Creating index failed: index ${idx} is already exists`);
-    }
+ //   }
 }
 
 exports.printManual= function(req, res){
