@@ -31,7 +31,7 @@ client.ping({
 
 createESIndex(indexname);
 function createESIndex(idx){
-    //if(!doesIdxExist(indexname)){
+    if(!doesIdxExist(indexname)){
         client.indices.create({ 
             index: indexname
         }, function(err, resp, status) {
@@ -41,9 +41,9 @@ function createESIndex(idx){
                 console.log("create", resp);
             }
         });
- //   } else {
+    } else {
         console.warn(`Creating index failed: index ${idx} is already exists`);
- //   }
+    }
 }
 
 exports.printManual= function(req, res){
