@@ -7,6 +7,8 @@
     "required": [
         "unitId",
         "patientId",
+        "first_name",
+        "last4Digit",
         "age",
         "weight",
         "gender",
@@ -35,6 +37,26 @@
             "default": "",
             "examples": [
                 "a64ce230-73db-11ea-9ca9-e56bb32f5931"
+            ]
+        },
+        "first_name": {
+            "$id": "#/properties/first_name",
+            "type": "string",
+            "title": "The Patient first name Schema",
+            "description": "The patient first name.",
+            "default": "",
+            "examples": [
+                "Israel"
+            ]
+        },
+        "last4Digit": {
+            "$id": "#/properties/last4Digit",
+            "type": "string",
+            "title": "The last4Digit Schema",
+            "description": "The patient last 4 digit of the formal ID number (I.E XXXXX0733 - ID of 9 numbers)",
+            "default": 0,
+            "examples": [
+                "0733"
             ]
         },
         "age": {

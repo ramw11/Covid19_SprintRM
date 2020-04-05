@@ -7,11 +7,5 @@ module.exports = function(app) {
   app.route('/JsonPatientExample').get(todoList.JsonPatientExample);
   app.route('/JsonMR_schema').get(todoList.JsonMRSchema);
   app.route('/mr').post(todoList.archive_mr);
-  //    app.post('/mr', function (req, res) {
-    //         var jres = req.body;
-//         res.send({ status: 'SUCCESS' });
-//         res.end();
-
-//         console.log(jres);  
-//     });
+  app.route('/mr_tst').post(todoList.archive_mr_tst);
 };
