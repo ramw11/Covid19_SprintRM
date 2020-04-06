@@ -254,7 +254,7 @@ function createESIndex(indexname){
         });
     } else {
         log(`Creating index failed: index ${indexname} is already exists`);
-        console.warn(`Creating index failed: index ${indexname} is already exists`);
+        //console.warn(`Creating index failed: index ${indexname} is already exists`);
     }
 }
 
