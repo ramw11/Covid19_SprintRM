@@ -5,7 +5,7 @@ const AWS = require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
 const logger = elkCfgFile.logPath;
-
+/*
 // const awscredentials = new AWS.ECSCredentials({
 //     httpOptions: {timeout: 5000},
 //     maxRetries: 10,
@@ -52,7 +52,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
-
+*/
 exports.printManual = function (req, res) {
     fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {
@@ -96,11 +96,13 @@ exports.get_id = function (req, res) {
     res.end();
 }
 
+
 exports.archive_mr = function (req, res) {
+    
     console.log('post: /mr');
     var jres = req.body;
 
-    let nid = exports.get_id();
+    let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
     client_prd.index({
