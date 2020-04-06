@@ -1,10 +1,10 @@
 'use strict';
 const uuidv1 = require('uuid/v1');
 const fs = require('fs');
-const AWS=require('aws-sdk');
+const AWS = require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
-const logger=elkCfgFile.logPath;
+const logger = elkCfgFile.logPath;
 
 // const awscredentials = new AWS.ECSCredentials({
 //     httpOptions: {timeout: 5000},
@@ -53,138 +53,139 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
 
-exports.printManual= function(req, res){
+exports.printManual = function (req, res) {
     fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {
-            throw err; 
+            throw err;
         }
 
-        res.writeHeader(200, {"Content-Type": "text/html"});  
-        res.write(html);  
+        res.writeHeader(200, { "Content-Type": "text/html" });
+        res.write(html);
         res.end();
     });
 }
 
-exports.JsonPatientExample = function(req, res){
+exports.JsonPatientExample = function (req, res) {
     fs.readFile('./api/view/measure_result.json', function (err, json) {
         if (err) {
-            throw err; 
+            throw err;
         }
 
-        res.writeHeader(200, {"Content-Type": "application/json"});  
-        res.write(json);  
+        res.writeHeader(200, { "Content-Type": "application/json" });
+        res.write(json);
         res.end();
     });
 }
 
-exports.JsonMRSchema=function(req, res){
+exports.JsonMRSchema = function (req, res) {
     fs.readFile('./api/view/mr_schema.json', function (err, json) {
         if (err) {
-            throw err; 
+            throw err;
         }
 
-        res.writeHeader(200, {"Content-Type": "application/json"});  
-        res.write(json);  
+        res.writeHeader(200, { "Content-Type": "application/json" });
+        res.write(json);
         res.end();
     });
 }
 
-exports.get_id = function(req, res) {
-    
+exports.get_id = function (req, res) {
+
     var pid = uuidv1();
     res.send({ new_id: pid });
     res.end();
 }
 
-exports.archive_mr =function(req, res) {
+exports.archive_mr = function (req, res) {
+    console.log('post: /mr');
     var jres = req.body;
+
+    let nid = exports.get_id();
+    let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
+    log(strB);
+    client_prd.index({
+        index: elkCfgFile.ELK_PRD['indexname'],
+        id: nid,
+        type: 'measureresult',
+        body: jres
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+            log(status);
+            log(str);
+        }
+    });
+
     res.send({ status: 'SUCCESS' });
     res.end();
-
-   console.log(jres);
-   let nid = exports.get_id();  
-   let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
-   log(strB);
-   client_prd.index({
-            index: elkCfgFile.ELK_PRD['indexname'],
-            id: nid,
-            type: 'measureresult',
-            body: jres
-        }, function(err, resp, status) {
-            if(err) log(err);
-            else{
-                let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-                log(status);
-                log(str);
-            }
-        });    
 };
 
-exports.new_sensor =function(req, res) {
+exports.new_sensor = function (req, res) {
     let nid = exports.get_id();
     var jres = req.body;
-    res.send({ status: 'SUCCESS',sensorId: nid });
+    res.send({ status: 'SUCCESS', sensorId: nid });
     res.end();
 
-   console.log(jres);  
-   client_prd.index({
-            index: elkCfgFile.ELK_PRD['indexname'],
-            id: nid,
-            type: 'patient',
-            body: jres
-        }, function(err, resp, status) {
-            if(err) log(err);
-            else{
-                let str = "add new patient:" + nid;
-                log(status);
-                log(str);
-            }
-        });    
+    console.log(jres);
+    client_prd.index({
+        index: elkCfgFile.ELK_PRD['indexname'],
+        id: nid,
+        type: 'patient',
+        body: jres
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add new patient:" + nid;
+            log(status);
+            log(str);
+        }
+    });
 };
 
-exports.new_patient =function(req, res) {
+exports.new_patient = function (req, res) {
     var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
 
-   console.log(jres);  
-   let nid = exports.get_id();
-   client_prd.index({
-            index: elkCfgFile.ELK_PRD['indexname'],
-            id: nid,
-            type: 'patient',
-            body: jres
-        }, function(err, resp, status) {
-            if(err) log(err);
-            else{
-                let str = "add new patient:" + nid;
-                log(status);
-                log(str);
-            }
-        });    
+    console.log(jres);
+    let nid = exports.get_id();
+    client_prd.index({
+        index: elkCfgFile.ELK_PRD['indexname'],
+        id: nid,
+        type: 'patient',
+        body: jres
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add new patient:" + nid;
+            log(status);
+            log(str);
+        }
+    });
 };
 
-exports.archive_mr_tst = function(req, res) {
+exports.archive_mr_tst = function (req, res) {
     var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
 
-   // console.log(jres);  
-   client_tst.index({
-            index: elkCfgFile.ELK_TEST['indexname'],
-            id: jres.patientId,
-            type: 'measureresult',
-            body: jres
-        }, function(err, resp, status) {
-            console.log(resp);
-            }
-        );    
+    // console.log(jres);  
+    client_tst.index({
+        index: elkCfgFile.ELK_TEST['indexname'],
+        id: jres.patientId,
+        type: 'measureresult',
+        body: jres
+    }, function (err, resp, status) {
+        console.log(resp);
+    }
+    );
 };
 
-function isESClientAlive(client){
+function isESClientAlive(client) {
     client.ping({
         requestTimeout: 30000,
-    }, function(error) {
+    }, function (error) {
         if (error) {
             console.error('elasticsearch cluster is down!');
             log('elasticsearch cluster is down!');
@@ -197,11 +198,11 @@ function isESClientAlive(client){
     });
 }
 
-function createESIndex(indexname){
-    if(!doesIdxExist(indexname)){
-        client_prd.indices.create({ 
+function createESIndex(indexname) {
+    if (!doesIdxExist(indexname)) {
+        client_prd.indices.create({
             index: indexname
-        }, function(err, resp, status) {
+        }, function (err, resp, status) {
             if (err) {
                 console.log(err);
             } else {
@@ -217,25 +218,25 @@ function createESIndex(indexname){
 async function doesIdxExist(idx) {
     return await client_prd.indices.exists({
         index: idx,
-      });
-}
-
-function log(msg){
-    let timeAndDate=getTimeAndDate();
-    fs.appendFile(logger, `\n${timeAndDate} :: ${msg}`, err=>{
-        if(err) console.error(err);
     });
 }
 
-function getTimeAndDate(){
-    let timeStamp= Date.now();
-    let fullDate=new Date(timeStamp);
-    let date=fullDate.getDate();
-    let month= fullDate.getMonth();
-    let year= fullDate.getFullYear();
-    let res=`${date}-${month}-${year}`;
+function log(msg) {
+    let timeAndDate = getTimeAndDate();
+    fs.appendFile(logger, `\n${timeAndDate} :: ${msg}`, err => {
+        if (err) console.error(err);
+    });
+}
 
-    let offset= new Date().getTimezoneOffset();
+function getTimeAndDate() {
+    let timeStamp = Date.now();
+    let fullDate = new Date(timeStamp);
+    let date = fullDate.getDate();
+    let month = fullDate.getMonth();
+    let year = fullDate.getFullYear();
+    let res = `${date}-${month}-${year}`;
+
+    let offset = new Date().getTimezoneOffset();
     //let time= offset>0? "+":"-"+parseInt(offset/60)+":"+offset%60;
 
     return `${date}-${month}-${year} >>`;
@@ -248,7 +249,7 @@ function getTimeAndDate(){
 //             fs.writeFileSync(logger, "new logger created\n");
 //         }
 //     })
-    
+
 //     log(msg);
 //     // ,null, ()=>{
 //     //     logger.log(msg);
