@@ -1,5 +1,5 @@
 {
-    "logPath": "api/logs/_logger.txt",
+    "logPath": "./logs/mr_result_logger.txt",
     "ELK_PRD" : { 
         "Path" : "https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com",
         "Region" : "eu-west-1",

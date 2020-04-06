@@ -36,16 +36,51 @@ const logger=elkCfgFile.logPath;
 //     //credentials: awscredentials
 // };
 
+// const options_PRD = {
+//     host: elkCfgFile.ELK_PRD['Path'],
+//     region: elkCfgFile.ELK_PRD['Region']
+//     //credentials: awscredentials
+// };
+
 const options_PRD = {
-    host: elkCfgFile.ELK_PRD['Path'],
-    region: elkCfgFile.ELK_PRD['Region'],
+    host: "https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com",
+    region: "eu-west-1"
     //credentials: awscredentials
 };
 
 // create production es client
 const client_prd = aeclient(options_PRD);
-let isEsAlive = isESClientAlive(client_prd);
-createESIndex(elkCfgFile.ELK_PRD['indexname']);
+//let isEsAlive = isESClientAlive(client_prd);
+client_prd.ping({
+    requestTimeout: 30000,
+}, function(error) {
+    if (error) {
+        console.error('elasticsearch cluster is down!');
+        log('elasticsearch cluster is down!');
+        //return false;
+    } else {
+        console.log('Everything is ok');
+        log('Everything is ok');
+        //return true;
+    }
+});
+
+if(!doesIdxExist(indexname)){
+    client_prd.indices.create({ 
+        index: elkCfgFile.ELK_PRD['indexname']
+    }, function(err, resp, status) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("create", resp);
+        }
+    });
+} else {
+    log(`Creating index failed: index ${indexname} is already exists`);
+    console.warn(`Creating index failed: index ${indexname} is already exists`);
+}
+
+//createESIndex(elkCfgFile.ELK_PRD['indexname']);
 
 //create test es client
 //const client_tst = aeclient(options_TEST);
@@ -54,6 +89,18 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 
 
 exports.printManual= function(req, res){
+    fs.readFile('./api/view/index.html', function (err, html) {
+        if (err) {
+            throw err; 
+        }
+
+        res.writeHeader(200, {"Content-Type": "text/html"});  
+        res.write(html);  
+        res.end();
+    });
+}
+
+exports.runGUI= function(req,res){
     fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {
             throw err; 
@@ -104,13 +151,57 @@ exports.archive_mr =function(req, res) {
    console.log(jres);  
    client_prd.index({
             index: elkCfgFile.ELK_PRD['indexname'],
-            id: jres.patientId,
+            id: exports.get_id(),
             type: 'measureresult',
             body: jres
         }, function(err, resp, status) {
             if(err) log(err);
             else{
                 let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+                log(status);
+                log(str);
+            }
+        });    
+};
+
+exports.new_sensor =function(req, res) {
+    let nid = exports.get_id();
+    var jres = req.body;
+    res.send({ status: 'SUCCESS',sensorId: nid });
+    res.end();
+
+   console.log(jres);  
+   client_prd.index({
+            index: elkCfgFile.ELK_PRD['indexname'],
+            id: nid,
+            type: 'patient',
+            body: jres
+        }, function(err, resp, status) {
+            if(err) log(err);
+            else{
+                let str = "add new patient:" + nid;
+                log(status);
+                log(str);
+            }
+        });    
+};
+
+exports.new_patient =function(req, res) {
+    var jres = req.body;
+    res.send({ status: 'SUCCESS' });
+    res.end();
+
+   console.log(jres);  
+   let nid = exports.get_id();
+   client_prd.index({
+            index: elkCfgFile.ELK_PRD['indexname'],
+            id: nid,
+            type: 'patient',
+            body: jres
+        }, function(err, resp, status) {
+            if(err) log(err);
+            else{
+                let str = "add new patient:" + nid;
                 log(status);
                 log(str);
             }
@@ -140,9 +231,11 @@ function isESClientAlive(client){
     }, function(error) {
         if (error) {
             console.error('elasticsearch cluster is down!');
+            log('elasticsearch cluster is down!');
             return false;
         } else {
             console.log('Everything is ok');
+            log('Everything is ok');
             return true;
         }
     });
