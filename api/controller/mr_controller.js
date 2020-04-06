@@ -113,10 +113,13 @@ exports.archive_mr =function(req, res) {
     res.send({ status: 'SUCCESS' });
     res.end();
 
-   console.log(jres);  
+   console.log(jres);
+   let nid = exports.get_id();  
+   let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
+   log(strB);
    client_prd.index({
             index: elkCfgFile.ELK_PRD['indexname'],
-            id: exports.get_id(),
+            id: nid,
             type: 'measureresult',
             body: jres
         }, function(err, resp, status) {
