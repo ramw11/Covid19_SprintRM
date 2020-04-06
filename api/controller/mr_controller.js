@@ -65,18 +65,6 @@ exports.printManual= function(req, res){
     });
 }
 
-exports.runGUI= function(req,res){
-    fs.readFile('./api/view/index.html', function (err, html) {
-        if (err) {
-            throw err; 
-        }
-
-        res.writeHeader(200, {"Content-Type": "text/html"});  
-        res.write(html);  
-        res.end();
-    });
-}
-
 exports.JsonPatientExample = function(req, res){
     fs.readFile('./api/view/measure_result.json', function (err, json) {
         if (err) {
