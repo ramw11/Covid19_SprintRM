@@ -5,30 +5,6 @@ const AWS = require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
 const logger = elkCfgFile.logPath;
-/*
-// const awscredentials = new AWS.ECSCredentials({
-//     httpOptions: {timeout: 5000},
-//     maxRetries: 10,
-//   });
-
-//let auth = "elastic:VfuNDVwQqcnJmdLVsNFNoZgI";
-// let port = 9243;
-// let protocol = "https";
-// let hosturl =  [ '1ef7bcb100ab4a95b850383f561c435f.us-east-1.aws.found.io'];
-
-// let hosts = hosturl.map(function(host){
-//     return{
-//         protocol: protocol,
-//         host : host,
-//         port : port,
-//         auth : auth    
-//     };
-// });
-
-// var elasticsearch = require('elasticsearch');
-// var client_tst = new elasticsearch.Client({
-//    hosts: hosts
-// });
 
 // const options_TEST = {
 //     host: { host: elkCfgFile.ELK_TEST['Path'], auth : auth },
@@ -52,7 +28,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
-*/
+
 exports.printManual = function (req, res) {
     fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {
