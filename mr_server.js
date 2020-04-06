@@ -9,7 +9,7 @@ var express = require('express'),
   
   var routes = require('./api/routes/mr_routes'); //importing route
   routes(app); //register the route
-
+  app.use(express.static('./api/view/covid19UI/'));
   app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
   });
