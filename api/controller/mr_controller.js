@@ -36,51 +36,16 @@ const logger=elkCfgFile.logPath;
 //     //credentials: awscredentials
 // };
 
-// const options_PRD = {
-//     host: elkCfgFile.ELK_PRD['Path'],
-//     region: elkCfgFile.ELK_PRD['Region']
-//     //credentials: awscredentials
-// };
-
 const options_PRD = {
-    host: "https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com",
-    region: "eu-west-1"
+    host: elkCfgFile.ELK_PRD['Path'],
+    region: elkCfgFile.ELK_PRD['Region'],
     //credentials: awscredentials
 };
 
 // create production es client
 const client_prd = aeclient(options_PRD);
-//let isEsAlive = isESClientAlive(client_prd);
-client_prd.ping({
-    requestTimeout: 30000,
-}, function(error) {
-    if (error) {
-        console.error('elasticsearch cluster is down!');
-        log('elasticsearch cluster is down!');
-        //return false;
-    } else {
-        console.log('Everything is ok');
-        log('Everything is ok');
-        //return true;
-    }
-});
-
-if(!doesIdxExist(indexname)){
-    client_prd.indices.create({ 
-        index: elkCfgFile.ELK_PRD['indexname']
-    }, function(err, resp, status) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("create", resp);
-        }
-    });
-} else {
-    log(`Creating index failed: index ${indexname} is already exists`);
-    console.warn(`Creating index failed: index ${indexname} is already exists`);
-}
-
-//createESIndex(elkCfgFile.ELK_PRD['indexname']);
+let isEsAlive = isESClientAlive(client_prd);
+createESIndex(elkCfgFile.ELK_PRD['indexname']);
 
 //create test es client
 //const client_tst = aeclient(options_TEST);
