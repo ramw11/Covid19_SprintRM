@@ -40,7 +40,7 @@ export class NewSensorComponent implements OnInit {
 
   /* liad */ postSensor(sensor){
     let req= new XMLHttpRequest();
-    req.open('POST', 'http://localhost:3000/new_sensor', true);
+    req.open('POST', 'http://http://52.16.82.127:3000/new_sensor', true);
     req.onload= function(){
       req.setRequestHeader('Content-Type', 'application/json');
       
