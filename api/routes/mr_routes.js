@@ -2,6 +2,7 @@
 module.exports = function(app) {
   var todoList = require('../controller/mr_controller');
 
+
   app.route('/manual').get(todoList.printManual);
   app.route('/new_id').get(todoList.get_id);
   app.route('/JsonPatientExample').get(todoList.JsonPatientExample);

@@ -11,7 +11,7 @@ const logger = elkCfgFile.logPath;
 //     region: elkCfgFile.ELK_TEST['Region'],
 //     //credentials: awscredentials
 // };
-
+/*
 const options_PRD = {
     host: elkCfgFile.ELK_PRD['Path'],
     region: elkCfgFile.ELK_PRD['Region'],
@@ -27,7 +27,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //const client_tst = aeclient(options_TEST);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
-
+*/
 
 exports.printManual = function (req, res) {
     fs.readFile('./api/view/index.html', function (err, html) {

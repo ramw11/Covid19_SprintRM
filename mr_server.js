@@ -3,7 +3,8 @@ var express = require('express'),
   port = process.env.PORT || 3000;
 
   bodyParser = require('body-parser');
-  
+
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));  
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   

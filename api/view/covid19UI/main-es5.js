@@ -383,7 +383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h2>New Patient</h2>\n\n<form class=\"example-form\" id=\"info_form\">\n    <mat-form-field class=\"example-full-width\">\n      <mat-label>First name: (*)</mat-label>\n      <input matInput type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\">\n    </mat-form-field>\n\n    <!--<mat-form-field class=\"example-full-width\">\n        <mat-label>Last name:</mat-label>\n        <input matInput type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\">\n    </mat-form-field>-->\n\n    <mat-label style=\"color:darkgray; font-size: small;\">Date of Birth: (*)</mat-label>\n    <br/>\n    <mat-form-field style=\"width: 50px;\">\n        <mat-select [(value)]=\"day\">\n            <mat-option *ngFor=\"let d of daysLst\" [value]=\"d\">{{d}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 80px;\">\n        <mat-select [(value)]=\"month\">\n            <mat-option *ngFor=\"let m of monthsLst\" [value]=\"m\">{{m.name}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 80px;\">\n        <mat-select [(value)]=\"year\">\n            <mat-option *ngFor=\"let y of yearsLst\" [value]=\"y\">{{y}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <br/>\n    <mat-checkbox [(ngModel)]=\"inRisk\" name=\"inrisk\">Risk group</mat-checkbox>\n    <br/>\n    <br/>\n    <mat-label style=\"color:darkgray; font-size: small;\">Sensors:</mat-label>\n    <br/>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor1.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor1\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor2.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor2\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor3.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor3\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor4.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor4\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor5.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor5\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n  </form>\n  \n  <form class=\"example-form\" id=\"remarks_form\">\n      <!--<h3>Remarks</h3>-->\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Remarks</mat-label>\n          <textarea matInput type=\"text\" \n            style=\"width: 500px; height: 50px;\" [(ngModel)]=\"remarks\" name=\"remarks\"></textarea>\n        </mat-form-field>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Room:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"department\" name=\"department\" placeholder=\"Department (*)\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Room number (*)\">\n          </mat-form-field>\n          <br/>\n          <mat-label style=\"color:darkgray; font-size: small;\">Bed:</mat-label>\n          <label style=\"visibility: hidden;\">.........</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedNumber\" name=\"bedNumber\" placeholder=\"Bed number (*)\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedLocation\" name=\"bedLocation\" placeholder=\"Bed location\">\n          </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal HR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minHR\" name=\"minHR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxHR\" name=\"maxHR\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal SpO2 range:</mat-label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minSpO2\" name=\"minSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxSpO2\" name=\"maxSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal BR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minBR\" name=\"minBR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxBR\" name=\"maxBR\" disabled=\"true\">\n        </mat-form-field>        \n  </form>\n\n  <!--<a routerLink=\"/patient-data\">-->\n    <button mat-raised-button color='primary' (click)='OnClick()'>Finish</button>\n    <!--</a>-->\n  \n\n";
+    __webpack_exports__["default"] = "<h2>New Patient</h2>\n\n<form class=\"example-form\" id=\"info_form\">\n    <mat-form-field class=\"example-full-width\">\n      <mat-label>First name: (*)</mat-label>\n      <input matInput type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\">\n    </mat-form-field>\n\n    <!--<mat-form-field class=\"example-full-width\">\n        <mat-label>Last name:</mat-label>\n        <input matInput type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\">\n    </mat-form-field>-->\n\n    <mat-label style=\"color:darkgray; font-size: small;\">Date of Birth: (*)</mat-label>\n    <br/>\n    <mat-form-field style=\"width: 50px;\">\n        <mat-select [(value)]=\"day\">\n            <mat-option *ngFor=\"let d of daysLst\" [value]=\"d\">{{d}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 80px;\">\n        <mat-select [(value)]=\"month\">\n            <mat-option *ngFor=\"let m of monthsLst\" [value]=\"m\">{{m.name}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 80px;\">\n        <mat-select [(value)]=\"year\">\n            <mat-option *ngFor=\"let y of yearsLst\" [value]=\"y\">{{y}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <br/>\n    <mat-checkbox [(ngModel)]=\"inRisk\" name=\"inrisk\">Risk group</mat-checkbox>\n    <br/>\n    <br/>\n    <mat-label style=\"color:darkgray; font-size: small;\">Sensors:</mat-label>\n    <br/>\n    <table mat-table \n           #table\n           [dataSource]=\"sensorsDataSource\" \n           class=\"mat-elevation-z8\" \n           style=\"width: 100%;\"\n           >\n        <!-- UnitID Column -->\n        <ng-container matColumnDef=\"UnitID\">\n          <th mat-header-cell *matHeaderCellDef> UnitID </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.UnitID}} </td>\n        </ng-container>\n      \n        <!-- Name Column -->\n        <ng-container matColumnDef=\"Name\">\n          <th mat-header-cell *matHeaderCellDef> Name </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.Name}} </td>\n        </ng-container>\n      \n        <!-- Vendor Column -->\n        <ng-container matColumnDef=\"Vendor\">\n          <th mat-header-cell *matHeaderCellDef> Vendor </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.Vendor}} </td>\n        </ng-container>\n\n        <!--Release Col-->\n        <ng-container matColumnDef=\"remove\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='removeSensorFromPatient(element)'>\n                <mat-icon>highlight_off</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n      \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n      </table>\n      <br/>\n      <br/>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor.Name}}</mat-label>\n        <mat-select [(value)]=\"sensor\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.Name}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <button mat-raised-button color='primary' (click)='AddSensorToPatient()'>Add</button>\n    <!--<label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor2.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor2\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor3.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor3\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor4.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor4\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor5.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor5\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>-->\n  </form>\n  \n  <form class=\"example-form\" id=\"remarks_form\">\n      <!--<h3>Remarks</h3>-->\n      <mat-form-field class=\"example-full-width\">\n        <mat-label>Remarks</mat-label>\n          <textarea matInput type=\"text\" \n            style=\"width: 500px; height: 50px;\" [(ngModel)]=\"remarks\" name=\"remarks\"></textarea>\n        </mat-form-field>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Room:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"department\" name=\"department\" placeholder=\"Department (*)\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Room number (*)\">\n          </mat-form-field>\n          <br/>\n          <mat-label style=\"color:darkgray; font-size: small;\">Bed:</mat-label>\n          <label style=\"visibility: hidden;\">.........</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedNumber\" name=\"bedNumber\" placeholder=\"Bed number (*)\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedLocation\" name=\"bedLocation\" placeholder=\"Bed location\">\n          </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal HR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minHR\" name=\"minHR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxHR\" name=\"maxHR\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal SpO2 range:</mat-label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minSpO2\" name=\"minSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxSpO2\" name=\"maxSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal BR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minBR\" name=\"minBR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxBR\" name=\"maxBR\" disabled=\"true\">\n        </mat-form-field>        \n  </form>\n\n<button mat-raised-button color='primary' (click)='OnClick()'>Finish</button>\n<br/>\n  \n\n";
     /***/
   },
 
@@ -403,7 +403,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>new-sensor works!</p>\n";
+    __webpack_exports__["default"] = "<h1>New Sensor</h1>\n\n<form class=\"example-form\" id=\"info_form\">\n    <mat-form-field class=\"example-full-width\">\n      <mat-label>Sensor name: (*)</mat-label>\n      <input matInput type=\"text\" [(ngModel)]=\"sensorName\" name=\"sensorName\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n        <mat-label>Vendor: (*)</mat-label>\n        <input matInput type=\"text\" [(ngModel)]=\"sensorVendor\" name=\"sensorVendor\">\n    </mat-form-field>\n</form>\n\n\n<button mat-raised-button color='primary' (click)='OnClick()'>Finish</button>";
     /***/
   },
 
@@ -583,7 +583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<form class=\"example-form\">\n    <mat-label style=\"color:darkgray; font-size: small;\">Sensors:</mat-label>\n    <br/>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor1.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor1\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor2.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor2\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor3.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor3\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor4.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor4\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor5.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor5\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n\n    <br/>\n    <mat-label style=\"color:darkgray; font-size: small;\">Room:</mat-label>\n        <!--<label style=\"visibility: hidden;\">......</label>\n        <mat-form-field>\n          <input matInput type=\"text\" style=\"width: 30px;\" [(ngModel)]=\"roomNum\" name=\"room\">\n        </mat-form-field>\n        <br/>-->\n\n        <label style=\"visibility: hidden;\">......</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"department\" name=\"department\" placeholder=\"Department\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Room number\">\n          </mat-form-field>\n          <br/>\n          <mat-label style=\"color:darkgray; font-size: small;\">Bed:</mat-label>\n          <label style=\"visibility: hidden;\">.........</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedNumber\" name=\"bedNumber\" placeholder=\"Bed number\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedLocation\" name=\"bedLocation\" placeholder=\"Bed location\">\n          </mat-form-field>\n\n          <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal HR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minHR\" name=\"minHR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxHR\" name=\"maxHR\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal SpO2 range:</mat-label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minSpO2\" name=\"minSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxSpO2\" name=\"maxSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal BR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minBR\" name=\"minBR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxBR\" name=\"maxBR\" disabled=\"true\">\n        </mat-form-field>\n  </form>\n\n  <button mat-raised-button color='primary' (click)='OnSave()'>Save</button>";
+    __webpack_exports__["default"] = "<form class=\"example-form\">\n    <mat-label style=\"color:darkgray; font-size: small;\">Sensors:</mat-label>\n    <br/>\n    <br/>\n    <table mat-table \n        #table\n        [dataSource]=\"sensorsDataSource\" \n        class=\"mat-elevation-z8\" \n        style=\"width: 80%;\"\n        >\n    <!-- UnitID Column -->\n    <ng-container matColumnDef=\"UnitID\">\n    <th mat-header-cell *matHeaderCellDef> UnitID </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.UnitID}} </td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"Name\">\n    <th mat-header-cell *matHeaderCellDef> Name </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.Name}} </td>\n    </ng-container>\n\n    <!-- Vendor Column -->\n    <ng-container matColumnDef=\"Vendor\">\n    <th mat-header-cell *matHeaderCellDef> Vendor </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.Vendor}} </td>\n    </ng-container>\n\n    <!--Release Col-->\n    <ng-container matColumnDef=\"remove\">\n        <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n        <td mat-cell *matCellDef=\"let element\">\n        <button mat-icon-button (click)='removeSensorFromPatient(element)'>\n            <mat-icon>highlight_off</mat-icon>\n        </button>\n        </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n    </table>\n    <br/>\n    <mat-form-field style=\"width: 65%;\">\n        <mat-label style=\"color: black;\">{{sensor1.Name}}</mat-label>\n        <mat-select [(value)]=\"sensor1\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.Name}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <button mat-raised-button color='primary' (click)='AddSensorToPatient()'>Add</button>\n    <!--<label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor2.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor2\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor3.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor3\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor4.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor4\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <label style=\"visibility: hidden;\">...</label>\n    <mat-form-field style=\"width: 230px;\">\n        <mat-label style=\"color: black;\">{{sensor5.UnitID}}</mat-label>\n        <mat-select [(value)]=\"sensor5\" (selectionChange) = 'setSensors()'>\n            <mat-option *ngFor=\"let s of sensors\" [value]=\"s\">{{s.UnitID}}</mat-option>\n        </mat-select>\n    </mat-form-field>-->\n\n    <br/>\n    <mat-label style=\"color:darkgray; font-size: small;\">Room:</mat-label>\n        <!--<label style=\"visibility: hidden;\">......</label>\n        <mat-form-field>\n          <input matInput type=\"text\" style=\"width: 30px;\" [(ngModel)]=\"roomNum\" name=\"room\">\n        </mat-form-field>\n        <br/>-->\n\n        <label style=\"visibility: hidden;\">......</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"department\" name=\"department\" placeholder=\"Department\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"roomNumber\" name=\"roomNumber\" placeholder=\"Room number\">\n          </mat-form-field>\n          <br/>\n          <mat-label style=\"color:darkgray; font-size: small;\">Bed:</mat-label>\n          <label style=\"visibility: hidden;\">.........</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedNumber\" name=\"bedNumber\" placeholder=\"Bed number\">\n          </mat-form-field>\n          <label style=\"visibility: hidden;\">...</label>\n          <mat-form-field>\n            <input matInput type=\"text\" style=\"width: 100px;\" \n                [(ngModel)]=\"bedLocation\" name=\"bedLocation\" placeholder=\"Bed location\">\n          </mat-form-field>\n\n          <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal HR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minHR\" name=\"minHR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxHR\" name=\"maxHR\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal SpO2 range:</mat-label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minSpO2\" name=\"minSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxSpO2\" name=\"maxSpO2\" disabled=\"true\">\n        </mat-form-field>\n        <br/>\n\n        <mat-label style=\"color:darkgray; font-size: small;\">Normal BR range:</mat-label>\n        <label style=\"visibility: hidden;\">......</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"minBR\" name=\"minBR\" disabled=\"true\">\n        </mat-form-field>\n        <label style=\"visibility: hidden;\">...</label>\n        <label>-</label>\n        <label style=\"visibility: hidden;\">...</label>\n        <mat-form-field style=\"width: 30px;\">\n            <input matInput type=\"text\" [(ngModel)]=\"maxBR\" name=\"maxBR\" disabled=\"true\">\n        </mat-form-field>\n  </form>\n\n  <button mat-raised-button color='primary' (click)='OnSave()'>Save</button>";
     /***/
   },
 
@@ -623,7 +623,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<h1>Patients Info</h1>\n<br/>\n\n<div>\n  <button mat-raised-button color='primary' (click) = 'newPatient()'>New patient</button>\n  <label style=\"visibility: hidden;\">..</label>\n  <button mat-raised-button color='primary' (click) = 'newSensor()'>New sensor</button>\n</div>\n\n<br/>\n\n<div>\n    <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n      <!--Patient Col-->\n        <ng-container matColumnDef=\"PatientID\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <div>\n                <img [src] = 'patient_icon' class = 'icon'>\n                <br/>\n                Patient \n            </div>\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.PatientID}} </td>\n          </ng-container>\n\n          <!--Room Col-->\n          <ng-container matColumnDef=\"room\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'room_icon' class = 'icon'>\n              <br/>\n              Room\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.location.RoomNumber}} </td>\n          </ng-container>\n\n          <!--Age Col-->\n          <ng-container matColumnDef=\"age\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'age_icon' class = 'icon'>\n              <br/>\n              Age\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.personal.Age}} </td>\n          </ng-container>\n\n          <!--HR Col-->\n          <ng-container matColumnDef=\"heartRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'hr_icon' class = 'icon'>\n              <br/>\n              HR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.heartRate}} </td>\n          </ng-container>\n\n          <!--BP Col-->\n          <ng-container matColumnDef=\"bloodPresure\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <img [src] = 'bp_icon' class = 'icon'>\n              <br/>\n              BP\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.bloodPresure}} </td>\n          </ng-container>\n\n          <!--SpO2 Col-->\n          <ng-container matColumnDef=\"spO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'spo2_icon' class = 'icon'>\n              <br/>\n              SpO2\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.spO2}} </td>\n          </ng-container>\n\n          <!--BR Col-->\n          <ng-container matColumnDef=\"breathingRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'br_icon' class = 'icon'>\n              <br/>\n              BR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.breathingRate}} </td>\n          </ng-container>\n\n          <!--Extra O2 Col-->\n          <ng-container matColumnDef=\"extraO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Extra <br/> O2 </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.extraO2}} </td>\n          </ng-container>\n\n          <!--Fever Col-->\n          <ng-container matColumnDef=\"fever\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'fever_icon' class = 'icon'>\n              <br/>\n              Fever\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.fever}} </td>\n          </ng-container>\n\n          <!--Breathing info-->\n          <ng-container matColumnDef=\"breathingInfo\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Breathing <br/> Info </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.breathingInfo}} </td>\n          </ng-container>\n\n          <!--Alerts Col-->\n          <ng-container matColumnDef=\"alerts\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'alerts_icon' class = 'icon'>\n              <br/>\n              Alerts\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.alerts}} </td>\n          </ng-container>\n\n          <!--Progress Col-->\n          <ng-container matColumnDef=\"progress\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'progress_icon' class = 'icon'>\n              <br/>\n              Progress\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.progress}} </td>\n          </ng-container>\n\n          <!--Score Col-->\n          <ng-container matColumnDef=\"score\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Score </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.score}} </td>\n          </ng-container>\n\n          <!--Data Col-->\n          <ng-container matColumnDef=\"data\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='patientData(element)'>\n                <mat-icon>assignment_ind</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <!--Release Col-->\n          <ng-container matColumnDef=\"release\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='releasePatient(element)'>\n                <mat-icon>highlight_off</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n\n    </table>\n</div>\n\n<br/>";
+    __webpack_exports__["default"] = "<h1>Patients Info</h1>\n<br/>\n\n<div>\n  <button mat-raised-button color='primary' (click) = 'newPatient()'>New patient</button>\n  <label style=\"visibility: hidden;\">..</label>\n  <!--<button mat-raised-button color='primary' (click) = 'newSensor()'>New sensor</button>-->\n</div>\n\n<br/>\n\n<div>\n    <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n      <!--Patient Col-->\n        <ng-container matColumnDef=\"PatientID\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <div>\n                <img [src] = 'patient_icon' class = 'icon'>\n                <br/>\n                Patient \n            </div>\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.PatientID}} </td>\n          </ng-container>\n\n          <!--Room Col-->\n          <ng-container matColumnDef=\"room\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'room_icon' class = 'icon'>\n              <br/>\n              Room\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.location.RoomNumber}} </td>\n          </ng-container>\n\n          <!--Age Col-->\n          <ng-container matColumnDef=\"age\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'age_icon' class = 'icon'>\n              <br/>\n              Age\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.personal.Age}} </td>\n          </ng-container>\n\n          <!--HR Col-->\n          <ng-container matColumnDef=\"heartRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'hr_icon' class = 'icon'>\n              <br/>\n              HR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.heartRate}} </td>\n          </ng-container>\n\n          <!--BP Col-->\n          <ng-container matColumnDef=\"bloodPresure\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <img [src] = 'bp_icon' class = 'icon'>\n              <br/>\n              BP\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.bloodPresure}} </td>\n          </ng-container>\n\n          <!--SpO2 Col-->\n          <ng-container matColumnDef=\"spO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'spo2_icon' class = 'icon'>\n              <br/>\n              SpO2\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.spO2}} </td>\n          </ng-container>\n\n          <!--BR Col-->\n          <ng-container matColumnDef=\"breathingRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'br_icon' class = 'icon'>\n              <br/>\n              BR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.breathingRate}} </td>\n          </ng-container>\n\n          <!--Extra O2 Col-->\n          <ng-container matColumnDef=\"extraO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Extra <br/> O2 </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.extraO2}} </td>\n          </ng-container>\n\n          <!--Fever Col-->\n          <ng-container matColumnDef=\"fever\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'fever_icon' class = 'icon'>\n              <br/>\n              Fever\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.fever}} </td>\n          </ng-container>\n\n          <!--Breathing info-->\n          <ng-container matColumnDef=\"breathingInfo\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Breathing <br/> Info </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.breathingInfo}} </td>\n          </ng-container>\n\n          <!--Alerts Col-->\n          <ng-container matColumnDef=\"alerts\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'alerts_icon' class = 'icon'>\n              <br/>\n              Alerts\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.alerts}} </td>\n          </ng-container>\n\n          <!--Progress Col-->\n          <ng-container matColumnDef=\"progress\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'progress_icon' class = 'icon'>\n              <br/>\n              Progress\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.progress}} </td>\n          </ng-container>\n\n          <!--Score Col-->\n          <ng-container matColumnDef=\"score\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Score </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.score}} </td>\n          </ng-container>\n\n          <!--Data Col-->\n          <ng-container matColumnDef=\"data\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='patientData(element)'>\n                <mat-icon>assignment_ind</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <!--Release Col-->\n          <ng-container matColumnDef=\"release\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='releasePatient(element)'>\n                <mat-icon>highlight_off</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n\n    </table>\n</div>\n\n<br/>";
     /***/
   },
 
@@ -663,7 +663,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-toolbar color='primary'>\n    <mat-toolbar-row>\n        <a routerLink=\"\">\n            <div>\n                <span (click)='OnClick()'>APP LOGO</span>\n            </div>\n        </a>\n    </mat-toolbar-row>\n</mat-toolbar>";
+    __webpack_exports__["default"] = "<mat-toolbar color='primary'>\n    <mat-toolbar-row>\n        <a routerLink=\"\">\n            <div>\n                <span (click)='OnClick()'>APP LOGO</span>\n            </div>\n        </a>\n\n        <!--<label style=\"visibility: hidden;\">\n            ................................................................\n        </label>-->\n\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\" style=\"position: absolute; right: 0;\">\n            <mat-icon>settings</mat-icon>\n        </button>\n            <mat-menu #menu=\"matMenu\">\n                <button mat-menu-item (click)='newSensor()'>New sensor</button>\n            </mat-menu>\n\n    </mat-toolbar-row>\n</mat-toolbar>\n\n<!--\n    <mat-toolbar color=\"primary\">\n    <mat-toolbar-row>\n        <button mat-icon-button (click)=\"toggleSideBar()\">\n            <mat-icon>menu</mat-icon>\n        </button>\n\n        <span> APP LOGO </span>\n\n        <div fxFlex fxLayout=\"row\" fxLayoutAlign=\"flex-end\">\n            <ul fxLayout=\"row\" fxLayoutGap=\"20px\">\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>settings</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>help_outline</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-button [matMenuTriggerFor]=\"menu\">\n                        <mat-icon>person_outline</mat-icon>\n                    </button>\n                    <mat-menu #menu=\"matMenu\">\n                        <button mat-menu-item>\n                            <mat-icon>exit_to_app</mat-icon>\n                            Sign out\n                        </button>\n                    </mat-menu>\n\n                </li>\n            </ul>\n        </div>\n    </mat-toolbar-row>\n</mat-toolbar>\n-->";
     /***/
   },
 
@@ -1500,20 +1500,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var ngx_socket_io__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! ngx-socket-io */
-    "./node_modules/ngx-socket-io/fesm2015/ngx-socket-io.js");
-    /* harmony import */
-
-
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js"); // const config: SocketIoConfig = {url: 'http://localhost:4444', options:{} }
 
-    var config = {
-      url: 'http://localhost:4444',
-      options: {}
-    };
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -1521,7 +1511,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__["DefaultModule"], ngx_socket_io__WEBPACK_IMPORTED_MODULE_7__["SocketIoModule"].forRoot(config)],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__["DefaultModule"]],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })], AppModule);
@@ -1731,46 +1721,57 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }];
     var SENSORS = [{
       UnitID: 'None',
+      Name: 'None',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '100',
+      Name: 'Sensor1',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '101',
+      Name: 'Sensor2',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '102',
+      Name: 'Sensor3',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '103',
+      Name: 'Sensor4',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '104',
+      Name: 'Sensor5',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '105',
+      Name: 'Sensor6',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '106',
+      Name: 'Sensor7',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '107',
+      Name: 'Sensor8',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '108',
+      Name: 'Sensor9',
       Vendor: 'EarlySense',
       PatientID: -1
     }, {
       UnitID: '109',
+      Name: 'Sensor10',
       Vendor: 'EarlySense',
       PatientID: -1
     }];
@@ -1793,7 +1794,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\nmat-drawer-container {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbGF5b3V0c1xcZGVmYXVsdFxcZGVmYXVsdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L2RlZmF1bHQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0FDQ0o7O0FERUE7RUFDSSxZQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9sYXlvdXRzL2RlZmF1bHQvZGVmYXVsdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0e1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbm1hdC1kcmF3ZXItY29udGFpbmVye1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59IiwiOmhvc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbm1hdC1kcmF3ZXItY29udGFpbmVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */";
+    __webpack_exports__["default"] = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\nmat-drawer-container {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5VUkvc3JjXFxhcHBcXGxheW91dHNcXGRlZmF1bHRcXGRlZmF1bHQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2xheW91dHMvZGVmYXVsdC9kZWZhdWx0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L2RlZmF1bHQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG5tYXQtZHJhd2VyLWNvbnRhaW5lcntcclxuICAgIGhlaWdodDogMTAwJTtcclxufSIsIjpob3N0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5tYXQtZHJhd2VyLWNvbnRhaW5lciB7XG4gIGhlaWdodDogMTAwJTtcbn0iXX0= */";
     /***/
   },
 
@@ -2039,7 +2040,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n\n#info_form {\n  display: inline-block;\n  margin-top: 10px;\n  margin-right: 100px;\n  width: 500px;\n}\n\n#remarks_form {\n  display: inline-block;\n  margin-top: 10px;\n  width: 500px;\n}\n\n/*label {\n    width: 100%;\n}*/\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXG5ldy1wYXRpZW50XFxuZXctcGF0aWVudC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9uZXctcGF0aWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFFQSxXQUFBO0FDQUo7O0FER0E7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBRUEsV0FBQTtBQ0RKOztBREdBO0VBQ0EsV0FBQTtBQ0FBOztBREdBO0VBQ0kscUJBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtBQ0FKOztBRElBO0VBQ0kscUJBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUNESjs7QURLQTs7RUFBQSIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvbmV3LXBhdGllbnQvbmV3LXBhdGllbnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGl2X2NsYXNzIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbn1cclxuXHJcbi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZm9ybTIge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogMTAwMHB4O1xyXG4gICAgLy93aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG53aWR0aDogMTAwJTtcclxufVxyXG5cclxuI2luZm9fZm9ybSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTAwcHg7IFxyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbn1cclxuXHJcbiNyZW1hcmtzX2Zvcm0ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICB3aWR0aDogNTAwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IGRvdHRlZDtcclxufVxyXG5cclxuLypsYWJlbCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSovIiwiLmRpdl9jbGFzcyB7XG4gIHdpZHRoOiA1MCU7XG59XG5cbi5leGFtcGxlLWZvcm0ge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDUwMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmV4YW1wbGUtZm9ybTIge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDEwMDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xuICB3aWR0aDogMTAwJTtcbn1cblxuI2luZm9fZm9ybSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxMDBweDtcbiAgd2lkdGg6IDUwMHB4O1xufVxuXG4jcmVtYXJrc19mb3JtIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICB3aWR0aDogNTAwcHg7XG59XG5cbi8qbGFiZWwge1xuICAgIHdpZHRoOiAxMDAlO1xufSovIl19 */";
+    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n\n#info_form {\n  display: inline-block;\n  margin-top: 10px;\n  margin-right: 100px;\n  width: 500px;\n}\n\n#remarks_form {\n  display: inline-block;\n  margin-top: 10px;\n  width: 500px;\n}\n\n/*label {\n    width: 100%;\n}*/\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxuZXctcGF0aWVudFxcbmV3LXBhdGllbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvbmV3LXBhdGllbnQvbmV3LXBhdGllbnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxVQUFBO0FDQ0o7O0FERUE7RUFDSSxnQkFBQTtFQUNBLGdCQUFBO0VBRUEsV0FBQTtBQ0FKOztBREdBO0VBQ0ksZ0JBQUE7RUFDQSxpQkFBQTtFQUVBLFdBQUE7QUNESjs7QURHQTtFQUNBLFdBQUE7QUNBQTs7QURHQTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7QUNBSjs7QURJQTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0FDREo7O0FES0E7O0VBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL25ldy1wYXRpZW50L25ldy1wYXRpZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpdl9jbGFzcyB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG59XHJcblxyXG4uZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgLy93aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbi5leGFtcGxlLWZvcm0yIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDEwMDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxud2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiNpbmZvX2Zvcm0ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwMHB4OyBcclxuICAgIHdpZHRoOiA1MDBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG59XHJcblxyXG4jcmVtYXJrc19mb3JtIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbn1cclxuXHJcbi8qbGFiZWwge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn0qLyIsIi5kaXZfY2xhc3Mge1xuICB3aWR0aDogNTAlO1xufVxuXG4uZXhhbXBsZS1mb3JtIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZvcm0yIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiAxMDAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNpbmZvX2Zvcm0ge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIG1hcmdpbi1yaWdodDogMTAwcHg7XG4gIHdpZHRoOiA1MDBweDtcbn1cblxuI3JlbWFya3NfZm9ybSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgd2lkdGg6IDUwMHB4O1xufVxuXG4vKmxhYmVsIHtcbiAgICB3aWR0aDogMTAwJTtcbn0qLyJdfQ== */";
     /***/
   },
 
@@ -2071,31 +2072,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../services/patients-list.service */
-    "./src/app/services/patients-list.service.ts");
-    /* harmony import */
-
-
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ./../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
@@ -2138,53 +2133,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }];
 
     var NewPatientComponent = /*#__PURE__*/function () {
-      function NewPatientComponent(router, patientListService, currPersonService) {
+      function NewPatientComponent(router, // private patientListService: PatientsListService,
+      currPersonService) {
         var _this = this;
 
         _classCallCheck(this, NewPatientComponent);
 
         this.router = router;
-        this.patientListService = patientListService;
         this.currPersonService = currPersonService;
         this.firstName = 'Write fisrt name here...';
         this.lastName = 'Write last name here...';
         this.inRisk = false;
-        this.sensor1 = {
+        this.sensor = {
           UnitID: 'None',
+          Name: 'None',
           Vendor: 'EarlySense',
           PatientID: -1
         };
-        this.sensor2 = {
-          UnitID: 'None',
-          Vendor: 'EarlySense',
-          PatientID: -1
-        };
-        this.sensor3 = {
-          UnitID: 'None',
-          Vendor: 'EarlySense',
-          PatientID: -1
-        };
-        this.sensor4 = {
-          UnitID: 'None',
-          Vendor: 'EarlySense',
-          PatientID: -1
-        };
-        this.sensor5 = {
-          UnitID: 'None',
-          Vendor: 'EarlySense',
-          PatientID: -1
-        };
+        this.displayedColumns = ['UnitID', 'Name', 'Vendor', 'remove'];
+        this.sensorsDataSource = [];
         this.sensors = [];
         this.remarks = 'Write remarks here...';
-        this.hospital = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_HOSPITAL"];
-        this.minHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minHR;
-        this.maxHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxHR;
-        this.minSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minSpO2;
-        this.maxSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxSpO2;
-        this.minBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minBR;
-        this.maxBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxBR;
+        this.hospital = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_HOSPITAL"];
+        this.minHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minHR;
+        this.maxHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxHR;
+        this.minSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minSpO2;
+        this.maxSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxSpO2;
+        this.minBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minBR;
+        this.maxBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxBR;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this.newId = person.PatientID;
+          _this.newId = person.PatientID; //console.log(this.newId)     
+
           _this.daysLst = _this.incRange(1, 31);
           _this.monthsLst = Months;
           _this.yearsLst = _this.decRange(1920, 2020);
@@ -2215,21 +2194,52 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "AddSensorToPatient",
+        value: function AddSensorToPatient() {
+          if (this.sensor.UnitID === 'None') {
+            return;
+          }
+
+          this.sensor.PatientID = this.newId;
+          var newPatientSensor = {
+            UnitID: this.sensor.UnitID,
+            Name: this.sensor.Name,
+            Vendor: this.sensor.Vendor,
+            PatientID: this.newId
+          };
+          this.sensorsDataSource.push(newPatientSensor);
+          this.table.renderRows(); // console.log(this.sensorsDataSource)
+
+          this.sensor = {
+            UnitID: 'None',
+            Name: 'None',
+            Vendor: 'EarlySense',
+            PatientID: -1
+          };
+          this.setSensors();
+        }
+      }, {
+        key: "removeSensorFromPatient",
+        value: function removeSensorFromPatient(element) {
+          var i = this.sensorsDataSource.indexOf(element);
+          this.sensorsDataSource[i].PatientID = -1;
+          this.sensorsDataSource.splice(i, 1);
+          this.table.renderRows();
+          this.setSensors();
+        }
+      }, {
         key: "setSensors",
         value: function setSensors() {
           var _this2 = this;
 
-          // console.log('------')
           this.sensors = [];
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["SENSORS"].forEach(function (s) {
-            // console.log(s.UnitID);
-            // console.log(this.sensor5.id)
-            if (s.UnitID !== 'None' && (s.UnitID === _this2.sensor1.UnitID || s.UnitID === _this2.sensor2.UnitID || s.UnitID === _this2.sensor3.UnitID || s.UnitID === _this2.sensor4.UnitID || s.UnitID === _this2.sensor5.UnitID)) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["SENSORS"].forEach(function (s) {
+            if (s.UnitID !== 'None' && _this2.checkIfSensorInList(s)) {
               s.PatientID = _this2.newId;
             }
 
-            if (s.PatientID === _this2.newId && s.UnitID !== _this2.sensor1.UnitID && s.UnitID !== _this2.sensor2.UnitID && s.UnitID !== _this2.sensor3.UnitID && s.UnitID !== _this2.sensor4.UnitID && s.UnitID !== _this2.sensor5.UnitID) {
+            if (s.PatientID === _this2.newId && !_this2.checkIfSensorInList(s)) {
               s.PatientID = -1;
             }
 
@@ -2239,6 +2249,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "checkIfSensorInList",
+        value: function checkIfSensorInList(currSensor) {
+          for (var i = 0; i < this.sensorsDataSource.length; i++) {
+            if (this.sensorsDataSource[i].UnitID === currSensor.UnitID) {
+              return true;
+            }
+          }
+
+          return false;
+        }
+      }, {
         key: "verifyInput",
         value: function verifyInput() {
           return this.firstName === 'Write fisrt name here...' || this.day === undefined || this.month === undefined || this.year === undefined || this.department === undefined || this.roomNumber === undefined || this.bedNumber === undefined ? false : true;
@@ -2246,8 +2267,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "OnClick",
         value: function OnClick() {
-          var _this3 = this;
-
           if (!this.verifyInput()) {
             alert('Please check that all of the fields are set properly');
             return;
@@ -2257,19 +2276,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.remarks = '';
           }
 
-          var allSensors = [this.sensor1, this.sensor2, this.sensor3, this.sensor4, this.sensor5];
-          var personSensors = [];
-          allSensors.forEach(function (s) {
-            if (s.PatientID === _this3.newId) {
-              personSensors.push({
-                UnitID: s.UnitID,
-                Vendor: s.Vendor,
-                PatientID: _this3.newId
-              });
-            }
-          });
-
-          if (personSensors.length === 0) {
+          if (this.sensorsDataSource.length === 0) {
             alert('Please choose at least one sensor for the patient');
             return;
           }
@@ -2281,7 +2288,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             maxBR: this.maxBR,
             minSpO2: this.minSpO2,
             maxSpO2: this.maxSpO2,
-            sensors: personSensors
+            sensors: this.sensorsDataSource
           };
 
           if (this.bedLocation === undefined) {
@@ -2289,7 +2296,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           var newLocation = {
-            Hospital: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_HOSPITAL"],
+            Hospital: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_HOSPITAL"],
             Department: this.department,
             RoomNumber: this.roomNumber,
             BedNumber: this.bedNumber,
@@ -2325,12 +2332,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             alerts: '',
             progress: '',
             score: 0,
-            history: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_HISTORY"],
+            history: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_HISTORY"],
             settings: newPersonSettings
-          };
-          this.patientListService.newPatient(newPatient);
+          }; // this.patientListService.newPatient(newPatient);
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["HEALTH_DATA"].push(newPatient);
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].push(newPatient);
 
           alert('Patient added');
           this.currPersonService.nextMessage(newPatient);
@@ -2343,15 +2349,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     NewPatientComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
-        type: _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__["PatientsListService"]
-      }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__["CurrPersonService"]
       }];
     };
 
-    NewPatientComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('table', null)], NewPatientComponent.prototype, "table", void 0);
+    NewPatientComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
       selector: 'app-new-patient',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./new-patient.component.html */
@@ -2379,7 +2384,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvbmV3LXNlbnNvci9uZXctc2Vuc29yLmNvbXBvbmVudC5zY3NzIn0= */";
+    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9uZXctc2Vuc29yL0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXG5ldy1zZW5zb3JcXG5ldy1zZW5zb3IuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvbmV3LXNlbnNvci9uZXctc2Vuc29yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBQTtBQ0NKOztBREVBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtFQUVBLFdBQUE7QUNBSjs7QURHQTtFQUNJLGdCQUFBO0VBQ0EsaUJBQUE7RUFFQSxXQUFBO0FDREo7O0FER0E7RUFDSSxXQUFBO0FDQUoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL25ldy1zZW5zb3IvbmV3LXNlbnNvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kaXZfY2xhc3Mge1xyXG4gICAgd2lkdGg6IDUwJTtcclxufVxyXG5cclxuLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4uZXhhbXBsZS1mb3JtMiB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiAxMDAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSIsIi5kaXZfY2xhc3Mge1xuICB3aWR0aDogNTAlO1xufVxuXG4uZXhhbXBsZS1mb3JtIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZvcm0yIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiAxMDAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */";
     /***/
   },
 
@@ -2411,24 +2416,81 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../interfaces/PersonData */
+    "./src/app/interfaces/PersonData.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
     var NewSensorComponent = /*#__PURE__*/function () {
-      function NewSensorComponent() {
+      function NewSensorComponent(router) {
         _classCallCheck(this, NewSensorComponent);
+
+        this.router = router;
+        this.sensorName = '';
+        this.sensorVendor = '';
       }
 
       _createClass(NewSensorComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "OnClick",
+        value: function OnClick() {
+          if (!this.validate()) {
+            alert('Please check that all of the fields are set properly');
+            return;
+          }
+
+          var sensor = {
+            UnitID: this.getNextID(),
+            Name: this.sensorName,
+            Vendor: this.sensorVendor,
+            PatientID: -1
+          };
+
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["SENSORS"].push(sensor);
+
+          alert('Sensor added to list');
+          this.router.navigate(['/']);
+        }
+      }, {
+        key: "validate",
+        value: function validate() {
+          if (this.sensorID === '' || this.sensorVendor === '') {
+            return false;
+          }
+
+          return true;
+        }
+      }, {
+        key: "getNextID",
+        value: function getNextID() {
+          // todo: implement 
+          return '110';
+        }
       }]);
 
       return NewSensorComponent;
     }();
 
-    NewSensorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    NewSensorComponent.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }];
+    };
+
+    NewSensorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
       selector: 'app-new-sensor',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./new-sensor.component.html */
@@ -2456,7 +2518,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#patient_personal_info {\n  display: inline-block;\n  margin-right: 10px;\n  width: 360px;\n  margin-top: 10px;\n}\n\n#monitor {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtZGF0YS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1kYXRhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0NKOztBRElBO0VBQ0kscUJBQUE7RUFDQSxZQUFBO0VBRUEsZ0JBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtZGF0YS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwYXRpZW50X3BlcnNvbmFsX2luZm8ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDsgXHJcbiAgICB3aWR0aDogMzYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIC8vaGVpZ2h0OiA1MDBweDtcclxufVxyXG5cclxuI21vbml0b3Ige1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiA1MDBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9oZWlnaHQ6IDMwMHB4O1xyXG59IiwiI3BhdGllbnRfcGVyc29uYWxfaW5mbyB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzYwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbiNtb25pdG9yIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogNTAwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "#patient_personal_info {\n  display: inline-block;\n  margin-right: 10px;\n  width: 360px;\n  margin-top: 10px;\n}\n\n#monitor {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1kYXRhXFxwYXRpZW50LWRhdGEuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtZGF0YS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURJQTtFQUNJLHFCQUFBO0VBQ0EsWUFBQTtFQUVBLGdCQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LWRhdGEuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcGF0aWVudF9wZXJzb25hbF9pbmZvIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7IFxyXG4gICAgd2lkdGg6IDM2MHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICAvL2hlaWdodDogNTAwcHg7XHJcbn1cclxuXHJcbiNtb25pdG9yIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICB3aWR0aDogNTAwcHg7XHJcbiAgICAvL2JvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vaGVpZ2h0OiAzMDBweDtcclxufSIsIiNwYXRpZW50X3BlcnNvbmFsX2luZm8ge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgd2lkdGg6IDM2MHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xufVxuXG4jbW9uaXRvciB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDUwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -2500,13 +2562,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var PatientDataComponent = /*#__PURE__*/function () {
       function PatientDataComponent(currPersonService) {
-        var _this4 = this;
+        var _this3 = this;
 
         _classCallCheck(this, PatientDataComponent);
 
         this.currPersonService = currPersonService;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          return _this4.name = person.personal.Name;
+          return _this3.name = person.personal.Name;
         });
       }
 
@@ -2552,7 +2614,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#alerts_history {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#scoring_graph {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n.header {\n  display: inline-block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1kYXRhXFxwYXRpZW50LWhpc3RvcnlcXHBhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFFQSxhQUFBO0FDQUo7O0FER0E7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFFQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLHFCQUFBO0FDREoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LWhpc3RvcnkvcGF0aWVudC1oaXN0b3J5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FsZXJ0c19oaXN0b3J5IHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7IFxyXG4gICAgd2lkdGg6IDMyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcblxyXG4jc2NvcmluZ19ncmFwaCB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcblxyXG4uaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufSIsIiNhbGVydHNfaGlzdG9yeSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzIwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59XG5cbiNzY29yaW5nX2dyYXBoIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogNTAwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59XG5cbi5oZWFkZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59Il19 */";
+    __webpack_exports__["default"] = "#alerts_history {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#scoring_graph {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n.header {\n  display: inline-block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnQtZGF0YVxccGF0aWVudC1oaXN0b3J5XFxwYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBRUEsYUFBQTtBQ0FKOztBREdBO0VBQ0kscUJBQUE7RUFDQSxZQUFBO0VBRUEsZ0JBQUE7RUFDQSxhQUFBO0FDREo7O0FESUE7RUFDSSxxQkFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhbGVydHNfaGlzdG9yeSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4OyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICAvL2JvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxufVxyXG5cclxuI3Njb3JpbmdfZ3JhcGgge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiA1MDBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxufVxyXG5cclxuLmhlYWRlciB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn0iLCIjYWxlcnRzX2hpc3Rvcnkge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgd2lkdGg6IDMyMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4jc2NvcmluZ19ncmFwaCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDUwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4uaGVhZGVyIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufSJdfQ== */";
     /***/
   },
 
@@ -2597,7 +2659,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var PatientHistoryComponent = /*#__PURE__*/function () {
       //
       function PatientHistoryComponent(currPersonService) {
-        var _this5 = this;
+        var _this4 = this;
 
         _classCallCheck(this, PatientHistoryComponent);
 
@@ -2613,16 +2675,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.lineChartPlugins = [];
         this.lineChartType = 'line';
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this5.alerts = person.history.alerts;
-          _this5.scoring = person.history.scoring;
-          _this5.lineChartData = [{
-            data: _this5.scoring,
+          _this4.alerts = person.history.alerts;
+          _this4.scoring = person.history.scoring;
+          _this4.lineChartData = [{
+            data: _this4.scoring,
             label: 'Patient Scoring'
           }];
-          _this5.lineChartLabels = [];
+          _this4.lineChartLabels = [];
 
-          for (var i = 0; i < _this5.scoring.length; i++) {
-            _this5.lineChartLabels.push('day ' + (i + 1));
+          for (var i = 0; i < _this4.scoring.length; i++) {
+            _this4.lineChartLabels.push('day ' + (i + 1));
           }
         });
       }
@@ -2669,7 +2731,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: yellow;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: yellow;\n}\n\n.BR {\n  font-size: xx-large;\n  text-align: center;\n  color: yellow;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtbW9uaXRvclxcbW9uaXRvci1icmVhdGhpbmctcmF0ZVxcbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esb0JBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsYUFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAlO1xyXG59XHJcblxyXG4uc3F1YXJle1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICBib3JkZXItYm90dG9tOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1jb2xvcjogeWVsbG93O1xyXG59XHJcblxyXG4uQlJ7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiB5ZWxsb3c7XHJcbiAgICAvLyBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgLy8gZGlzcGxheTogdGFibGUtY2VsbDtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgcGFkZGluZy1ib3R0b206IDAlO1xufVxuXG4uc3F1YXJlIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNTVweDtcbiAgYm9yZGVyLWJvdHRvbTogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XG59XG5cbi5CUiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IHllbGxvdztcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgd2lkdGg6IDgwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: yellow;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: yellow;\n}\n\n.BR {\n  font-size: xx-large;\n  text-align: center;\n  color: yellow;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1kYXRhXFxwYXRpZW50LW1vbml0b3JcXG1vbml0b3ItYnJlYXRoaW5nLXJhdGVcXG1vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWJyZWF0aGluZy1yYXRlL21vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLGFBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWJyZWF0aGluZy1yYXRlL21vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogeWVsbG93O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IHllbGxvdztcclxufVxyXG5cclxuLkJSe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogeWVsbG93O1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufSIsIi50b3Age1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogeWVsbG93O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogeWVsbG93O1xufVxuXG4uQlIge1xuICBmb250LXNpemU6IHh4LWxhcmdlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiB5ZWxsb3c7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -2715,10 +2777,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorBreathingRateComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this5 = this;
 
           this.timer = setInterval(function () {
-            _this6.randomBr();
+            _this5.randomBr();
           }, 1000 * 0.5);
         }
       }, {
@@ -2759,7 +2821,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cadetblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cadetblue;\n}\n\n.HR {\n  font-size: xx-large;\n  text-align: center;\n  color: cadetblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnQtZGF0YVxccGF0aWVudC1tb25pdG9yXFxtb25pdG9yLWhlYXJ0LXJhdGVcXG1vbml0b3ItaGVhcnQtcmF0ZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9tb25pdG9yLWhlYXJ0LXJhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSx1QkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLGdCQUFBO0VBRUEsc0JBQUE7RUFFQSxXQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LW1vbml0b3IvbW9uaXRvci1oZWFydC1yYXRlL21vbml0b3ItaGVhcnQtcmF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAlO1xyXG59XHJcblxyXG4uc3F1YXJle1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICBib3JkZXItYm90dG9tOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xyXG59XHJcblxyXG4uSFJ7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiBjYWRldGJsdWU7XHJcbiAgICAvLyBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgLy8gZGlzcGxheTogdGFibGUtY2VsbDtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgcGFkZGluZy1ib3R0b206IDAlO1xufVxuXG4uc3F1YXJlIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNTVweDtcbiAgYm9yZGVyLWJvdHRvbTogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XG59XG5cbi5IUiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IGNhZGV0Ymx1ZTtcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgd2lkdGg6IDgwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cadetblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cadetblue;\n}\n\n.HR {\n  font-size: xx-large;\n  text-align: center;\n  color: cadetblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtbW9uaXRvclxcbW9uaXRvci1oZWFydC1yYXRlXFxtb25pdG9yLWhlYXJ0LXJhdGUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWhlYXJ0LXJhdGUvbW9uaXRvci1oZWFydC1yYXRlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7QUNDSjs7QURFQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFFQSxnQkFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9tb25pdG9yLWhlYXJ0LXJhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IGNhZGV0Ymx1ZTtcclxufVxyXG5cclxuLkhSe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogY2FkZXRibHVlO1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufSIsIi50b3Age1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xufVxuXG4uSFIge1xuICBmb250LXNpemU6IHh4LWxhcmdlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiBjYWRldGJsdWU7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -2810,13 +2872,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorHeartRateComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this7 = this;
+          var _this6 = this;
 
           this.timer = setInterval(function () {
-            _this7.randomHr();
+            _this6.randomHr();
           }, 1000 * 0.5);
           this.timer2 = setInterval(function () {
-            _this7.heartPic();
+            _this6.heartPic();
           }, 1000 * 1);
         }
       }, {
@@ -2863,7 +2925,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cornflowerblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cornflowerblue;\n}\n\n.SPO2 {\n  font-size: xx-large;\n  text-align: center;\n  color: cornflowerblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnQtZGF0YVxccGF0aWVudC1tb25pdG9yXFxtb25pdG9yLXNwbzJcXG1vbml0b3Itc3BvMi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9tb25pdG9yLXNwbzIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLDRCQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSw0QkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLHFCQUFBO0VBRUEsc0JBQUE7RUFFQSxXQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LW1vbml0b3IvbW9uaXRvci1zcG8yL21vbml0b3Itc3BvMi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMCU7XHJcbn1cclxuXHJcbi5zcXVhcmV7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcclxufVxyXG5cclxuLlNQTzJ7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcclxuICAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICAvLyBkaXNwbGF5OiB0YWJsZS1jZWxsO1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbn0iLCIudG9wIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNXB4O1xuICBib3JkZXItdG9wOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XG59XG5cbi5TUE8yIHtcbiAgZm9udC1zaXplOiB4eC1sYXJnZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogY29ybmZsb3dlcmJsdWU7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cornflowerblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cornflowerblue;\n}\n\n.SPO2 {\n  font-size: xx-large;\n  text-align: center;\n  color: cornflowerblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtbW9uaXRvclxcbW9uaXRvci1zcG8yXFxtb25pdG9yLXNwbzIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXNwbzIvbW9uaXRvci1zcG8yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSw0QkFBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsNEJBQUE7QUNDSjs7QURFQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFFQSxxQkFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9tb25pdG9yLXNwbzIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAlO1xyXG59XHJcblxyXG4uc3F1YXJle1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICBib3JkZXItYm90dG9tOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbn1cclxuXHJcbi5TUE8ye1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbiAgICAvLyBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgLy8gZGlzcGxheTogdGFibGUtY2VsbDtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBwYWRkaW5nLWJvdHRvbTogMCU7XG59XG5cbi5zcXVhcmUge1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1NXB4O1xuICBib3JkZXItYm90dG9tOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xufVxuXG4uU1BPMiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IGNvcm5mbG93ZXJibHVlO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICB3aWR0aDogODBweDtcbn0iXX0= */";
     /***/
   },
 
@@ -2909,10 +2971,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorSpo2Component, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this8 = this;
+          var _this7 = this;
 
           this.timer = setInterval(function () {
-            _this8.randomSpO2();
+            _this7.randomSpO2();
           }, 1000 * 0.5);
         }
       }, {
@@ -2953,7 +3015,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: aqua;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: aqua;\n}\n\n.TMP {\n  font-size: xx-large;\n  text-align: center;\n  color: aqua;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtbW9uaXRvclxcbW9uaXRvci10ZW1wZXJhdHVyZVxcbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsV0FBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBhcXVhO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IGFxdWE7XHJcbn1cclxuXHJcbi5UTVB7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiBhcXVhO1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufSIsIi50b3Age1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogYXF1YTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBwYWRkaW5nLWJvdHRvbTogMCU7XG59XG5cbi5zcXVhcmUge1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1NXB4O1xuICBib3JkZXItYm90dG9tOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6IGFxdWE7XG59XG5cbi5UTVAge1xuICBmb250LXNpemU6IHh4LWxhcmdlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiBhcXVhO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICB3aWR0aDogODBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: aqua;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: aqua;\n}\n\n.TMP {\n  font-size: xx-large;\n  text-align: center;\n  color: aqua;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1kYXRhXFxwYXRpZW50LW1vbml0b3JcXG1vbml0b3ItdGVtcGVyYXR1cmVcXG1vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXRlbXBlcmF0dXJlL21vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLFdBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXRlbXBlcmF0dXJlL21vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogYXF1YTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMCU7XHJcbn1cclxuXHJcbi5zcXVhcmV7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBhcXVhO1xyXG59XHJcblxyXG4uVE1Qe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogYXF1YTtcclxuICAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICAvLyBkaXNwbGF5OiB0YWJsZS1jZWxsO1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbn0iLCIudG9wIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNXB4O1xuICBib3JkZXItdG9wOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBib3JkZXItY29sb3I6IGFxdWE7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgcGFkZGluZy1ib3R0b206IDAlO1xufVxuXG4uc3F1YXJlIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNTVweDtcbiAgYm9yZGVyLWJvdHRvbTogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLWNvbG9yOiBhcXVhO1xufVxuXG4uVE1QIHtcbiAgZm9udC1zaXplOiB4eC1sYXJnZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogYXF1YTtcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgd2lkdGg6IDgwcHg7XG59Il19 */";
     /***/
   },
 
@@ -2999,10 +3061,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorTemperatureComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this8 = this;
 
           this.timer = setInterval(function () {
-            _this9.randomTmp();
+            _this8.randomTmp();
           }, 1000 * 0.5);
         }
       }, {
@@ -3120,7 +3182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".roundImg {\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhL0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1kYXRhXFxwYXRpZW50LXBlcnNvbmFsLWRhdGFcXHBhdGllbnQtcGVyc29uYWwtZGF0YS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm91bmRJbWd7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICB3aWR0aDogMjBweDtcclxuICAgIGhlaWdodDogMjBweDtcclxufSIsIi5yb3VuZEltZyB7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgd2lkdGg6IDIwcHg7XG4gIGhlaWdodDogMjBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".roundImg {\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhL0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnQtZGF0YVxccGF0aWVudC1wZXJzb25hbC1kYXRhXFxwYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJvdW5kSW1ne1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgd2lkdGg6IDIwcHg7XHJcbiAgICBoZWlnaHQ6IDIwcHg7XHJcbn0iLCIucm91bmRJbWcge1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIHdpZHRoOiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG59Il19 */";
     /***/
   },
 
@@ -3164,7 +3226,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var PatientPersonalDataComponent = /*#__PURE__*/function () {
       function PatientPersonalDataComponent(currPersonService) {
-        var _this10 = this;
+        var _this9 = this;
 
         _classCallCheck(this, PatientPersonalDataComponent);
 
@@ -3177,22 +3239,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.criticalScore = [this.redStatusPath, this.yellowStatusPath];
         this.criticalCurrColor = 0;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this10.selectedPerson = person;
-          _this10.patientName = person.personal.Name;
-          _this10.location = person.location;
-          _this10.inRisk = person.personal.HighRiskGroup;
-          _this10.statusPath = _this10.setColor(person.score);
-          person.extraO2 === 'NO' ? _this10.extraO2 = false : _this10.extraO2 = true;
+          _this9.selectedPerson = person;
+          _this9.patientName = person.personal.Name;
+          _this9.location = person.location;
+          _this9.inRisk = person.personal.HighRiskGroup;
+          _this9.statusPath = _this9.setColor(person.score);
+          person.extraO2 === 'NO' ? _this9.extraO2 = false : _this9.extraO2 = true;
         });
       }
 
       _createClass(PatientPersonalDataComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this11 = this;
+          var _this10 = this;
 
           this.timer = setInterval(function () {
-            _this11.randomScore();
+            _this10.randomScore();
           }, 1000 * 0.5);
         }
       }, {
@@ -3257,7 +3319,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnQtZGF0YVxccGF0aWVudC1zZXR0aW5nc1xccGF0aWVudC1zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9wYXRpZW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtFQUVBLFdBQUE7QUNBSjs7QURHQTtFQUNJLFdBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtc2V0dGluZ3MvcGF0aWVudC1zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSIsIi5leGFtcGxlLWZvcm0ge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDUwMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XG4gIHdpZHRoOiAxMDAlO1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LWRhdGFcXHBhdGllbnQtc2V0dGluZ3NcXHBhdGllbnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtc2V0dGluZ3MvcGF0aWVudC1zZXR0aW5ncy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFFQSxXQUFBO0FDQUo7O0FER0E7RUFDSSxXQUFBO0FDQUoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LXNldHRpbmdzL3BhdGllbnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgLy93aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn0iLCIuZXhhbXBsZS1mb3JtIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xuICB3aWR0aDogMTAwJTtcbn0iXX0= */";
     /***/
   },
 
@@ -3289,45 +3351,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../../services/patients-list.service */
-    "./src/app/services/patients-list.service.ts");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./../../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./../../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
     var PatientSettingsComponent = /*#__PURE__*/function () {
-      function PatientSettingsComponent(router, patientsListService, currPersonService) {
-        var _this12 = this;
+      function PatientSettingsComponent(router, // private patientsListService: PatientsListService,
+      currPersonService) {
+        var _this11 = this;
 
         _classCallCheck(this, PatientSettingsComponent);
 
         this.router = router;
-        this.patientsListService = patientsListService;
         this.currPersonService = currPersonService;
         this.sensor1 = {
           UnitID: 'None',
+          Name: 'None',
           Vendor: 'EarlySense',
           PatientID: -1
         };
@@ -3351,48 +3408,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Vendor: 'EarlySense',
           PatientID: -1
         };
+        this.displayedColumns = ['UnitID', 'Name', 'Vendor', 'remove'];
+        this.sensorsDataSource = [];
         this.sensors = [];
-        this.hospital = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_HOSPITAL"];
-        this.minHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minHR;
-        this.maxHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxHR;
-        this.minSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minSpO2;
-        this.maxSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxSpO2;
-        this.minBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].minBR;
-        this.maxBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_PERSON_SETTINGS"].maxBR;
+        this.hospital = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_HOSPITAL"];
+        this.minHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minHR;
+        this.maxHR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxHR;
+        this.minSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minSpO2;
+        this.maxSpO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxSpO2;
+        this.minBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].minBR;
+        this.maxBR = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"].maxBR;
         this.currPersonService.sharedMessage.subscribe(function (person) {
+          //console.log(SENSORS);
           //console.log(person.id);
           //console.log(person.settings.sensors)
-          _this12.selectedPerson = person;
-          _this12.department = person.location.Department;
-          _this12.roomNumber = person.location.RoomNumber;
-          _this12.bedNumber = person.location.BedNumber;
-          _this12.bedLocation = person.location.BedLocation;
+          _this11.selectedPerson = person;
+          _this11.department = person.location.Department;
+          _this11.roomNumber = person.location.RoomNumber;
+          _this11.bedNumber = person.location.BedNumber;
+          _this11.bedLocation = person.location.BedLocation;
+          _this11.sensorsDataSource = person.settings.sensors;
 
-          for (var i = 0; i < person.settings.sensors.length; i++) {
-            var currSensor = person.settings.sensors[i];
-
-            if (i === 0) {
-              _this12.sensor1 = currSensor;
-            }
-
-            if (i === 1) {
-              _this12.sensor2 = currSensor;
-            }
-
-            if (i === 2) {
-              _this12.sensor3 = currSensor;
-            }
-
-            if (i === 3) {
-              _this12.sensor4 = currSensor;
-            }
-
-            if (i === 4) {
-              _this12.sensor5 = currSensor;
-            }
-          }
-
-          _this12.setSensors();
+          _this11.setSensors();
         });
       }
 
@@ -3402,56 +3439,80 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setSensors",
         value: function setSensors() {
-          var _this13 = this;
+          var _this12 = this;
 
           this.sensors = [];
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["SENSORS"].forEach(function (s) {
-            if (s.UnitID !== 'None' && (s.UnitID === _this13.sensor1.UnitID || s.UnitID === _this13.sensor2.UnitID || s.UnitID === _this13.sensor3.UnitID || s.UnitID === _this13.sensor4.UnitID || s.UnitID === _this13.sensor5.UnitID)) {
-              s.PatientID = _this13.selectedPerson.PatientID;
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["SENSORS"].forEach(function (s) {
+            if (s.UnitID !== 'None' && _this12.checkIfSensorInList(s)) {
+              s.PatientID = _this12.selectedPerson.PatientID;
             }
 
-            if (s.PatientID === _this13.selectedPerson.PatientID && s.UnitID !== _this13.sensor1.UnitID && s.UnitID !== _this13.sensor2.UnitID && s.UnitID !== _this13.sensor3.UnitID && s.UnitID !== _this13.sensor4.UnitID && s.UnitID !== _this13.sensor5.UnitID) {
+            if (s.PatientID === _this12.selectedPerson.PatientID && !_this12.checkIfSensorInList(s)) {
               s.PatientID = -1;
             }
 
             if (s.PatientID === -1) {
-              _this13.sensors.push({
-                UnitID: s.UnitID,
-                Vendor: s.Vendor,
-                PatientID: s.PatientID
-              });
+              _this12.sensors.push(s);
             }
           });
         }
       }, {
+        key: "checkIfSensorInList",
+        value: function checkIfSensorInList(currSensor) {
+          for (var i = 0; i < this.sensorsDataSource.length; i++) {
+            if (this.sensorsDataSource[i].UnitID === currSensor.UnitID) {
+              return true;
+            }
+          }
+
+          return false;
+        }
+      }, {
+        key: "AddSensorToPatient",
+        value: function AddSensorToPatient() {
+          if (this.sensor1.UnitID === 'None') {
+            return;
+          }
+
+          this.sensor1.PatientID = this.selectedPerson.PatientID;
+          var newPatientSensor = {
+            UnitID: this.sensor1.UnitID,
+            Name: this.sensor1.Name,
+            Vendor: this.sensor1.Vendor,
+            PatientID: this.selectedPerson.PatientID
+          };
+          this.sensorsDataSource.push(newPatientSensor);
+          this.table.renderRows();
+          this.sensor1 = {
+            UnitID: 'None',
+            Name: 'None',
+            Vendor: 'EarlySense',
+            PatientID: -1
+          };
+          this.setSensors();
+        }
+      }, {
+        key: "removeSensorFromPatient",
+        value: function removeSensorFromPatient(element) {
+          var i = this.sensorsDataSource.indexOf(element);
+          this.sensorsDataSource[i].PatientID = -1;
+          this.sensorsDataSource.splice(i, 1);
+          this.table.renderRows();
+          this.setSensors();
+        }
+      }, {
         key: "OnSave",
         value: function OnSave() {
-          var _this14 = this;
-
           var newLocation = {
-            Hospital: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_HOSPITAL"],
+            Hospital: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_HOSPITAL"],
             Department: this.department,
             RoomNumber: this.roomNumber,
             BedNumber: this.bedNumber,
             BedLocation: this.bedLocation
           };
-          var allSensors = [this.sensor1, this.sensor2, this.sensor3, this.sensor4, this.sensor5]; //console.log(allSensors);
 
-          var personSensors = [];
-          allSensors.forEach(function (s) {
-            if (s.UnitID !== 'None') {
-              console.log('aaa');
-              personSensors.push({
-                UnitID: s.UnitID,
-                Vendor: s.Vendor,
-                PatientID: _this14.selectedPerson.PatientID
-              });
-            }
-          });
-          console.log(personSensors);
-
-          if (personSensors.length === 0) {
+          if (this.sensorsDataSource.length === 0) {
             alert('Please choose at least one sensor for the patient');
             return;
           }
@@ -3463,11 +3524,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             maxBR: this.maxBR,
             minSpO2: this.minSpO2,
             maxSpO2: this.maxSpO2,
-            sensors: personSensors
+            sensors: this.sensorsDataSource
           };
           this.selectedPerson.settings = newSettings;
-          this.selectedPerson.location = newLocation;
-          this.patientsListService.editPatient(this.selectedPerson);
+          this.selectedPerson.location = newLocation; // this.patientsListService.editPatient(this.selectedPerson);
+
           alert('Patient info updated');
           this.router.navigate(['/']);
         }
@@ -3478,15 +3539,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientSettingsComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
       }, {
-        type: _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__["PatientsListService"]
-      }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
       }];
     };
 
-    PatientSettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('table', null)], PatientSettingsComponent.prototype, "table", void 0);
+    PatientSettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
       selector: 'app-patient-settings',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patient-settings.component.html */
@@ -3514,7 +3574,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#patient_summary {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  height: 110px;\n}\n\n#remarks {\n  display: inline-block;\n  width: 320px;\n  height: 110px;\n}\n\n.input_class {\n  height: 66px;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50LXJlbGVhc2VcXHBhdGllbnQtcmVsZWFzZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvcGF0aWVudC1yZWxlYXNlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFFQSxhQUFBO0FDQUo7O0FER0E7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFFQSxhQUFBO0FDREo7O0FESUE7RUFDSSxZQUFBO0VBQ0EsWUFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvcGF0aWVudC1yZWxlYXNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhdGllbnRfc3VtbWFyeSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4OyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAxMTBweDtcclxufVxyXG5cclxuI3JlbWFya3Mge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAxMTBweDtcclxufVxyXG5cclxuLmlucHV0X2NsYXNzIHtcclxuICAgIGhlaWdodDogNjZweDtcclxuICAgIHdpZHRoOiAyNTBweDtcclxufVxyXG4iLCIjcGF0aWVudF9zdW1tYXJ5IHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIHdpZHRoOiAzMjBweDtcbiAgaGVpZ2h0OiAxMTBweDtcbn1cblxuI3JlbWFya3Mge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiAzMjBweDtcbiAgaGVpZ2h0OiAxMTBweDtcbn1cblxuLmlucHV0X2NsYXNzIHtcbiAgaGVpZ2h0OiA2NnB4O1xuICB3aWR0aDogMjUwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "#patient_summary {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  height: 110px;\n}\n\n#remarks {\n  display: inline-block;\n  width: 320px;\n  height: 110px;\n}\n\n.input_class {\n  height: 66px;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvQzpcXFVzZXJzXFw5OTk5MjBcXERlc2t0b3BcXGNvdmlkMTlVSS9zcmNcXGFwcFxcbW9kdWxlc1xccGF0aWVudC1yZWxlYXNlXFxwYXRpZW50LXJlbGVhc2UuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1yZWxlYXNlL3BhdGllbnQtcmVsZWFzZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBRUEsYUFBQTtBQ0FKOztBREdBO0VBQ0kscUJBQUE7RUFDQSxZQUFBO0VBRUEsYUFBQTtBQ0RKOztBRElBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1yZWxlYXNlL3BhdGllbnQtcmVsZWFzZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwYXRpZW50X3N1bW1hcnkge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDsgXHJcbiAgICB3aWR0aDogMzIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIGhlaWdodDogMTEwcHg7XHJcbn1cclxuXHJcbiNyZW1hcmtzIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICB3aWR0aDogMzIwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIGhlaWdodDogMTEwcHg7XHJcbn1cclxuXHJcbi5pbnB1dF9jbGFzcyB7XHJcbiAgICBoZWlnaHQ6IDY2cHg7XHJcbiAgICB3aWR0aDogMjUwcHg7XHJcbn1cclxuIiwiI3BhdGllbnRfc3VtbWFyeSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzIwcHg7XG4gIGhlaWdodDogMTEwcHg7XG59XG5cbiNyZW1hcmtzIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogMzIwcHg7XG4gIGhlaWdodDogMTEwcHg7XG59XG5cbi5pbnB1dF9jbGFzcyB7XG4gIGhlaWdodDogNjZweDtcbiAgd2lkdGg6IDI1MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -3546,47 +3606,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../services/patients-list.service */
-    "./src/app/services/patients-list.service.ts");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
     var PatientReleaseComponent = /*#__PURE__*/function () {
-      function PatientReleaseComponent(router, patientsListService, currPersonService) {
-        var _this15 = this;
+      function PatientReleaseComponent(router, // private patientsListService: PatientsListService,
+      currPersonService) {
+        var _this13 = this;
 
         _classCallCheck(this, PatientReleaseComponent);
 
         this.router = router;
-        this.patientsListService = patientsListService;
         this.currPersonService = currPersonService;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this15.firstName = person.personal.Name;
-          _this15.age = person.personal.Age;
-          _this15.selectedPerson = person;
+          _this13.firstName = person.personal.Name;
+          _this13.age = person.personal.Age;
+          _this13.selectedPerson = person;
         });
       }
 
@@ -3597,10 +3651,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "OnFinishClick",
         value: function OnFinishClick() {
           if (confirm('Are you sure you want to discharge the selected patient?')) {
-            var index = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["HEALTH_DATA"].indexOf(this.selectedPerson);
+            var index = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].indexOf(this.selectedPerson);
 
-            if (index != -1) _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["HEALTH_DATA"].splice(index, 1);
-            this.patientsListService.removePatient(this.selectedPerson);
+            if (index != -1) _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].splice(index, 1); // this.patientsListService.removePatient(this.selectedPerson);
+
             alert('Patient dischareged!');
             this.router.navigate(['/']);
           } else {
@@ -3615,15 +3669,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientReleaseComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
       }, {
-        type: _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__["PatientsListService"]
-      }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
       }];
     };
 
-    PatientReleaseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+    PatientReleaseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
       selector: 'app-patient-release',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patient-release.component.html */
@@ -3651,7 +3703,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.icon {\n  width: 20px;\n  height: 20px;\n  margin-left: unset;\n  margin-right: unset;\n}\n\n.col_class {\n  width: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlQcm9qZWN0XFxjb3ZpZDE5VUkvc3JjXFxhcHBcXG1vZHVsZXNcXHBhdGllbnRzXFxwYXRpZW50cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9wYXRpZW50cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9wYXRpZW50cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxle1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5pY29uIHtcclxuICAgIHdpZHRoOiAyMHB4O1xyXG4gICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IHVuc2V0O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiB1bnNldDtcclxufVxyXG5cclxuLmNvbF9jbGFzcyB7XHJcbiAgICB3aWR0aDogNTBweDtcclxufSIsInRhYmxlIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5pY29uIHtcbiAgd2lkdGg6IDIwcHg7XG4gIGhlaWdodDogMjBweDtcbiAgbWFyZ2luLWxlZnQ6IHVuc2V0O1xuICBtYXJnaW4tcmlnaHQ6IHVuc2V0O1xufVxuXG4uY29sX2NsYXNzIHtcbiAgd2lkdGg6IDUwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.icon {\n  width: 20px;\n  height: 20px;\n  margin-left: unset;\n  margin-right: unset;\n}\n\n.col_class {\n  width: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9DOlxcVXNlcnNcXDk5OTkyMFxcRGVza3RvcFxcY292aWQxOVVJL3NyY1xcYXBwXFxtb2R1bGVzXFxwYXRpZW50c1xccGF0aWVudHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudHMvcGF0aWVudHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudHMvcGF0aWVudHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZXtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uaWNvbiB7XHJcbiAgICB3aWR0aDogMjBweDtcclxuICAgIGhlaWdodDogMjBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiB1bnNldDtcclxuICAgIG1hcmdpbi1yaWdodDogdW5zZXQ7XHJcbn1cclxuXHJcbi5jb2xfY2xhc3Mge1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbn0iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaWNvbiB7XG4gIHdpZHRoOiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIG1hcmdpbi1sZWZ0OiB1bnNldDtcbiAgbWFyZ2luLXJpZ2h0OiB1bnNldDtcbn1cblxuLmNvbF9jbGFzcyB7XG4gIHdpZHRoOiA1MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -3683,40 +3735,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../services/patients-list.service */
-    "./src/app/services/patients-list.service.ts");
-    /* harmony import */
-
-
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ./../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
 
     var PatientsComponent = /*#__PURE__*/function () {
-      function PatientsComponent(router, patientsListService, currPersonService) {
+      // subscription;
+      function PatientsComponent(router, //private patientsListService: PatientsListService,
+      currPersonService) {
         _classCallCheck(this, PatientsComponent);
 
         this.router = router;
-        this.patientsListService = patientsListService;
         this.currPersonService = currPersonService; // icons
 
         this.patient_icon = '../../../assets/icons/Patient.JPG';
@@ -3731,25 +3778,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.progress_icon = '../../../assets/icons/status.JPG';
         this.removeUser_icon = '../../../assets/icons/remove-user.jpg';
         this.displayedColumns = ['PatientID', 'room', 'age', 'heartRate', 'bloodPresure', 'spO2', 'breathingRate', 'extraO2', 'fever', 'breathingInfo', 'alerts', 'progress', 'score', 'data', 'release'];
+        this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["HEALTH_DATA"];
       }
 
       _createClass(PatientsComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          this.subs();
+        value: function ngOnInit() {//this.subs();
         }
       }, {
         key: "subs",
         value: function subs() {
-          var _this16 = this;
-
-          console.log('******');
+          /*console.log('******');
           console.log(this.patientsListService);
-          this.subscription = this.patientsListService.people.subscribe(function (lst) {
-            console.log(lst);
-            console.log(lst.length);
-            _this16.dataSource = lst;
-          });
+          this.subscription = this.patientsListService.people.subscribe(lst => {
+            console.log(lst)
+            console.log(lst.length)
+            this.dataSource = lst;
+          })*/
         }
       }, {
         key: "newSensor",
@@ -3759,7 +3804,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "newPatient",
         value: function newPatient() {
-          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_5__["PersonHealthData"]();
+          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["PersonHealthData"]();
           newPerson.PatientID = this.getNextID();
           this.currPersonService.nextMessage(newPerson);
           this.router.navigate(['/new-patient']);
@@ -3768,9 +3813,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getNextID",
         value: function getNextID() {
           var nextID = -1;
-          this.dataSource.forEach(function (element) {
-            if (element.PatientID > nextID) nextID = element.PatientID + 1;
+
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_4__["HEALTH_DATA"].forEach(function (element) {
+            console.log(element.PatientID);
+            if (element.PatientID >= nextID) nextID = element.PatientID + 1;
           });
+
+          console.log(nextID);
           return nextID;
         }
       }, {
@@ -3787,9 +3836,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "ngOnDestroy",
-        value: function ngOnDestroy() {
-          console.log('---');
-          this.subscription.unsubscribe();
+        value: function ngOnDestroy() {// console.log('---')
+          // this.subscription.unsubscribe();
         }
       }]);
 
@@ -3798,15 +3846,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientsComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
       }, {
-        type: _services_patients_list_service__WEBPACK_IMPORTED_MODULE_1__["PatientsListService"]
-      }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__["CurrPersonService"]
       }];
     };
 
-    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
       selector: 'app-patients',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patients.component.html */
@@ -3887,85 +3933,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/services/patients-list.service.ts":
-  /*!***************************************************!*\
-    !*** ./src/app/services/patients-list.service.ts ***!
-    \***************************************************/
-
-  /*! exports provided: PatientsListService */
-
-  /***/
-  function srcAppServicesPatientsListServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "PatientsListService", function () {
-      return PatientsListService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ngx-socket-io */
-    "./node_modules/ngx-socket-io/fesm2015/ngx-socket-io.js");
-
-    var PatientsListService = /*#__PURE__*/function () {
-      function PatientsListService(socket) {
-        _classCallCheck(this, PatientsListService);
-
-        this.socket = socket; //currentComment = this.socket.fromEvent<PersonHealthData>('person');
-
-        this.people = this.socket.fromEvent('people');
-      }
-
-      _createClass(PatientsListService, [{
-        key: "newPatient",
-        value: function newPatient(patient) {
-          this.socket.emit('addPerson', patient);
-        }
-      }, {
-        key: "editPatient",
-        value: function editPatient(patient) {
-          this.socket.emit('editPerson', patient);
-        }
-      }, {
-        key: "removePatient",
-        value: function removePatient(patient) {
-          this.socket.emit('deletePerson', patient);
-        }
-      }]);
-
-      return PatientsListService;
-    }();
-
-    PatientsListService.ctorParameters = function () {
-      return [{
-        type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__["Socket"]
-      }];
-    };
-
-    PatientsListService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-      providedIn: 'root'
-    })], PatientsListService);
-    /***/
-  },
-
-  /***/
   "./src/app/shared/components/footer/footer.component.scss":
   /*!****************************************************************!*\
     !*** ./src/app/shared/components/footer/footer.component.scss ***!
@@ -3981,7 +3948,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "footer {\n  padding: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvZm9vdGVyL0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5UHJvamVjdFxcY292aWQxOVByb2plY3RcXGNvdmlkMTlVSS9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJmb290ZXIge1xyXG4gICAgcGFkZGluZzogMjBweDtcclxufSIsImZvb3RlciB7XG4gIHBhZGRpbmc6IDIwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "footer {\n  padding: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvZm9vdGVyL0M6XFxVc2Vyc1xcOTk5OTIwXFxEZXNrdG9wXFxjb3ZpZDE5VUkvc3JjXFxhcHBcXHNoYXJlZFxcY29tcG9uZW50c1xcZm9vdGVyXFxmb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZm9vdGVyIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iLCJmb290ZXIge1xuICBwYWRkaW5nOiAyMHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -4115,6 +4082,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function OnClick() {
           this.router.navigate(['']);
         }
+      }, {
+        key: "newSensor",
+        value: function newSensor() {
+          this.router.navigate(['/new-sensor']);
+        }
       }]);
 
       return HeaderComponent;
@@ -4192,7 +4164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/material */
-    "./node_modules/@angular/material/esm2015/material.js"); // import { FlexLayoutModule } from '@angular/flex-layout'; major bug
+    "./node_modules/@angular/material/esm2015/material.js"); //import { FlexLayoutModule } from '@angular/flex-layout';
 
 
     var SharedModule = function SharedModule() {
@@ -4201,7 +4173,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_components_header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__["FooterComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], // FlexLayoutModule,
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDividerModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatMenuModule"], //FlexLayoutModule,
       _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatMenuModule"]],
       exports: [_components_header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_1__["FooterComponent"]]
     })], SharedModule);
@@ -4327,23 +4299,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\999920\Desktop\covid19Project\covid19Project\covid19UI\src\main.ts */
+    /*! C:\Users\999920\Desktop\covid19UI\src\main.ts */
     "./src/main.ts");
-    /***/
-  },
-
-  /***/
-  1:
-  /*!********************!*\
-    !*** ws (ignored) ***!
-    \********************/
-
-  /*! no static exports found */
-
-  /***/
-  function _(module, exports) {
-    /* (ignored) */
-
     /***/
   }
 }, [[0, "runtime", "vendor"]]]);

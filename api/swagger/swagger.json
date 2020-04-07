@@ -1,0 +1,13 @@
+{
+  "swaggerDefinition": {
+    "info":{
+      "title": "Covid-19-Sprint",
+      "description": "Covid-19-Sprint API Documentation",
+      "contact": {
+        "name": "Liad Pasker"
+      },
+      "servers": ["http://localhost:3000"]
+    }
+  },
+  "apis": ["./api/routes/mr_routes.js", "./api/controller/mr_controller.js"]
+}
