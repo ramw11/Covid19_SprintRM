@@ -29,6 +29,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 */
 
+
 exports.printManual = function (req, res) {
     fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {

@@ -4,7 +4,14 @@ var express = require('express'),
 
   bodyParser = require('body-parser');
 
+  // swagger:
+  const swaggerUi = require('swagger-ui-express');
+  const swaggerJsDoc=require('swagger-jsdoc');
+  const swaggerDocument = require('./api/swagger/swagger.json');
+  const swaggerDocs=swaggerJsDoc(swaggerDocument);
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));  
+
+  
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   
