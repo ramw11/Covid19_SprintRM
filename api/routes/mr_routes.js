@@ -111,13 +111,13 @@ module.exports = function(app) {
  *        required: true
  *        type: application/json
  *        schema: 
- *          $ref: 'http://localhost:3000/JsonMR_schema'
+ *          $ref: 'http://52.16.82.127:3000/JsonMR_schema'
  *    responses:
  *        '200':
  *            description: Success
  */
   app.route('/mr').post(todoList.archive_mr);
 
-  
+
   app.route('/mr_tst').post(todoList.archive_mr_tst);
 };
