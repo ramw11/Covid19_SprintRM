@@ -16,7 +16,8 @@
         "vendor",
         "audioPath",
         "primery_priority",
-        "secondery_priority"
+        "secondery_priority",
+        "auxilary_data"
     ],
     "properties": {
         "unitId": {
@@ -276,7 +277,8 @@
                 "rpmf",
                 "saturation",
                 "blood_pressure_h",
-                "blood_pressure_l"
+                "blood_pressure_l",
+                "ecg"
             ],
             "properties": {
                 "fever": {
@@ -338,8 +340,28 @@
                     "examples": [
                         78.56628638318611
                     ]
-                }
+                },
+                "ecg": {
+                    "$id": "#/properties/secondery_priority/properties/ecg",
+                    "type": "string",
+                    "title": "The Ecg Schema",
+                    "description": "ecg data, json free for vendors.",
+                    "default": "",
+                    "examples": [
+                        "{key:val}"
+                    ]
+                }                
             }
+        },
+        "auxilary_data": {
+            "$id": "#/properties/auxilary_data",
+            "type": "string",
+            "title": "Auxilary data for sensors extantion Schema",
+            "description": "Auxilary data for sensors vendors extantion.",
+            "default": "",
+            "examples": [
+                "{ some json string }"
+            ]
         }
     }
 }
