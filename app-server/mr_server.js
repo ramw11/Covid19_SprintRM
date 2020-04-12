@@ -14,7 +14,6 @@ var express = require('express'),
   
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  
   var routes = require('./api/routes/mr_routes'); //importing route
   routes(app); //register the route
   app.use(function(req, res) {

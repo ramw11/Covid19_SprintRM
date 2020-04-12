@@ -5,7 +5,8 @@ const AWS = require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
 const logger = elkCfgFile.logPath;
-
+const path=require('path');
+console.log('hello');
 // const options_TEST = {
 //     host: { host: elkCfgFile.ELK_TEST['Path'], auth : auth },
 //     region: elkCfgFile.ELK_TEST['Region'],
