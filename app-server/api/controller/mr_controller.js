@@ -246,7 +246,7 @@ function getTimeAndDate() {
     return `${date}-${month}-${year} >>`;
 }
 
-getAllPatientsByVendor("Beecardia");
+//getAllPatientsByVendor("Beecardia");
 function getAllPatientsByVendor(vendor){
     client_prd.search({
         index: elkCfgFile.ELK_PRD['indexname'],
