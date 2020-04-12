@@ -249,6 +249,7 @@ function getTimeAndDate() {
 getAllPatientsByVendor("Beecardia");
 function getAllPatientsByVendor(vendor){
     client_prd.search({
+        index: elkCfgFile.ELK_PRD['indexname'],
         body:{
             match:{
                 "vendor": vendor
