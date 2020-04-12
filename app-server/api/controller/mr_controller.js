@@ -31,7 +31,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 
 
 exports.printManual = function (req, res) {
-    fs.readFile('./app-server/api/view/index.html', function (err, html) {
+    fs.readFile('./api/view/index.html', function (err, html) {
         if (err) {
             throw err;
         }
