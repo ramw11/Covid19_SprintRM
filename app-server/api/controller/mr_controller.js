@@ -248,7 +248,7 @@ function getTimeAndDate() {
 
 getAllPatientsByVendor("Beecardia");
 function getAllPatientsByVendor(vendor){
-    aeclient.search({
+    client_prd.search({
         body:{
             match:{
                 "vendor": vendor
