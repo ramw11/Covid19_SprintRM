@@ -5,8 +5,6 @@ const AWS = require('aws-sdk');
 const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
 const logger = elkCfgFile.logPath;
-const path=require('path');
-console.log('hello');
 // const options_TEST = {
 //     host: { host: elkCfgFile.ELK_TEST['Path'], auth : auth },
 //     region: elkCfgFile.ELK_TEST['Region'],
@@ -69,6 +67,7 @@ exports.JsonMRSchema = function (req, res) {
 }
 
 exports.get_id = function (req, res) {
+    console.log('new_id');
 
     var pid = uuidv1();
     res.send({ new_id: pid });
