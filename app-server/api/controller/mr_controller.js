@@ -10,7 +10,7 @@ const logger = elkCfgFile.logPath;
 //     region: elkCfgFile.ELK_TEST['Region'],
 //     //credentials: awscredentials
 // };
-/*
+
 const options_PRD = {
     host: elkCfgFile.ELK_PRD['Path'],
     region: elkCfgFile.ELK_PRD['Region'],
@@ -26,7 +26,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 //const client_tst = aeclient(options_TEST);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
-*/
+
 
 exports.printManual = function (req, res) {
     console.log('printing manual...');
@@ -244,6 +244,22 @@ function getTimeAndDate() {
     //let time= offset>0? "+":"-"+parseInt(offset/60)+":"+offset%60;
 
     return `${date}-${month}-${year} >>`;
+}
+
+getAllPatientsByVendor("Beecardia");
+function getAllPatientsByVendor(vendor){
+    aeclient.search({
+        body:{
+            match:{
+                "vendor": vendor
+            }
+        }
+    }, (err, response, status)=>{
+        if(err) console.log(`Error: ${err}`);
+        else {
+            console.log(response);
+        }
+    });
 }
 
 // function createLogger(msg){
