@@ -6,8 +6,10 @@ var express = require('express'),
 
   // swagger:
   const swaggerUi = require('swagger-ui-express');
+  
   const swaggerJsDoc=require('swagger-jsdoc');
   const swaggerDocument = require('./api/swagger/swagger.json');
+  console.log(swaggerDocument);
   const swaggerDocs=swaggerJsDoc(swaggerDocument);
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));  
   
