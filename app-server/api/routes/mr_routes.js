@@ -99,7 +99,6 @@ module.exports = function(app) {
    *            description: Success
    */
   app.route('/sensor_unit_schema').get(todoList.Json_sensor_unit_schema);
-  sensor_unit_schema
 
 
 // new_sensor
