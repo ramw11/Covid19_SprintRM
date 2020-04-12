@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(app) {
   var todoList = require('../controller/mr_controller');
-  console.log(todoList);
+  
   // manual
   /**
    * @swagger
