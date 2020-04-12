@@ -57,7 +57,7 @@ exports.JsonPatientExample = function (req, res) {
 }
 
 exports.JsonMRSchema = function (req, res) {
-    fs.readFile('./app-server/api/view/mr_schema.json', function (err, json) {
+    fs.readFile('./api/view/mr_schema.json', function (err, json) {
         if (err) {
             throw err;
         }
