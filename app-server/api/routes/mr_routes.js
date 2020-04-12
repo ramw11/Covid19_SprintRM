@@ -86,6 +86,21 @@ module.exports = function(app) {
    */
   app.route('/new_patient_schema').get(todoList.JsonNew_patient_schema);
 
+      // sensor_unit_schema
+  /**
+   * @swagger
+   * /sensor_unit_schema:
+   *  get:
+   *    description: Shows new patient json schema
+   *    produces:
+   *      - application/json
+   *    responses:
+   *        '200':
+   *            description: Success
+   */
+  app.route('/sensor_unit_schema').get(todoList.Json_sensor_unit_schema);
+  sensor_unit_schema
+
 
 // new_sensor
 /**
