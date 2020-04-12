@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "unit_id",
+        "name_tag",
+        "time_tag",
+        "sensor_name",
+        "institute_name",
+        "department_name"
+      ],
+    "properties": {
+        "unit_id": {
+            "$id": "#/properties/unit_id",
+            "type": "string",
+            "title": "The Unit_id Schema",
+            "description": "Unique identifier of this sensor unit.",
+            "default": "",
+            "examples": [
+                "a64ce230-73db-11ea-9ca9-e56bb32f5931"
+            ]
+        },
+        "name_tag": {
+            "$id": "#/properties/name_tag",
+            "type": "string",
+            "title": "The name_tag Schema",
+            "description": "Tag name of this unit (readable identifier attached to it).",
+            "default": "",
+            "examples": [
+                "f5931"
+            ]
+        },
+        "time_tag": {
+            "$id": "#/properties/time_tag",
+            "type": "string",
+			"format": "date-time",
+            "title": "The Time_tag Schema",
+            "description": "Time of registration or update time for this unit record.",
+            "default": "1970-01-01 00:00:00.00",
+            "examples": [
+                "2020-04-01 08:43:01.309680"
+            ]
+        },
+        "sensor_name": {
+            "$id": "#/properties/sensor_name",
+            "type": "string",
+            "title": "The Sensor_name Schema",
+            "description": "Sensor unit type name.",
+            "default": "",
+            "examples": [
+                "SenseGuard"
+            ]
+        },
+        "vendor_name": {
+            "$id": "#/properties/vendor_name",
+            "type": "string",
+            "title": "The Vendor_name Schema",
+            "description": "Sensor unit vendor name.",
+            "default": "",
+            "examples": [
+                "NanoVation"
+            ]
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The Description Schema",
+            "description": "Description of this sensor type and capabilities.",
+            "default": "",
+            "examples": [
+                "An innovative wireless wearable device that enables continuous and non-invasive monitoring of critical respiratory parameters derived from patients' tidal (normal) breathing, cancelling the need for forced expirations."
+            ]
+        },
+        "institute_name": {
+            "$id": "#/properties/institute_name",
+            "type": "string",
+            "title": "The Institute_name Schema",
+            "description": "Hospital name (or other institute) that is using this unit.",
+            "default": "",
+            "examples": [
+                "Assuta Ashdod"
+            ]
+        },
+        "department_name": {
+            "$id": "#/properties/department_name",
+            "type": "string",
+            "title": "The Department_name Schema",
+            "description": "The department in which this unit is located.",
+            "default": "",
+            "examples": [
+                "Korona-1A"
+            ]
+        },
+        "currently_in_use": {
+            "$id": "#/properties/currently_in_use",
+            "type": "string",
+            "title": "The Currently_in_use Schema",
+            "description": "An indicator signaling that this unit is being used at the moment, allowing users to search for unused units during patient registration.",
+            "default": "Unknown",
+            "examples": [
+                "Unknown",
+                "True",
+                "False"
+            ]
+        }
+    }
+}

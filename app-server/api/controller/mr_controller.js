@@ -90,6 +90,18 @@ exports.JsonNew_patient_schema = function (req, res) {
     });
 }
 
+exports.Json_sensor_unit_schema= function(req, res){
+    fs.readFile('./api/view/mr_unit_record_schema.json', function (err, json) {
+        if (err) {
+            throw err;
+        }
+
+        res.writeHeader(200, { "Content-Type": "application/json" });
+        res.write(json);
+        res.end();
+    });
+}
+
 exports.get_id = function (req, res) {
     console.log('new_id');
 

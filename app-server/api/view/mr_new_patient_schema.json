@@ -116,11 +116,12 @@
         "date_of_birth": {
             "$id": "#/properties/date_of_birth",
             "type": "string",
+            "format": "date",
             "title": "The Date_of_birth Schema",
             "description": "Patient date of birth, Unknown indicates invalid data.",
             "default": "Unknown",
             "examples": [
-                "2000-01-01"
+                "2000-01-20"
             ]
         },
         "risk_group": {
