@@ -1,6 +1,6 @@
 {
   "name": "covid_server_master",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "mr_server.js",
   "dependencies": {
