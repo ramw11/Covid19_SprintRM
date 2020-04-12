@@ -1,6 +1,6 @@
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 3002;
+  port = process.env.PORT || 3000;
 
   bodyParser = require('body-parser');
 
@@ -9,7 +9,6 @@ var express = require('express'),
   
   const swaggerJsDoc=require('swagger-jsdoc');
   const swaggerDocument = require('./api/swagger/swagger.json');
-  console.log(swaggerDocument);
   const swaggerDocs=swaggerJsDoc(swaggerDocument);
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));  
   
