@@ -31,7 +31,7 @@ createESIndex(elkCfgFile.ELK_PRD['indexname']);
 
 
 exports.printManual = function (req, res) {
-    fs.readFile('./api/view/index.html', function (err, html) {
+    fs.readFile('./app-server/api/view/index.html', function (err, html) {
         if (err) {
             throw err;
         }
@@ -43,7 +43,7 @@ exports.printManual = function (req, res) {
 }
 
 exports.JsonPatientExample = function (req, res) {
-    fs.readFile('./api/view/measure_result.json', function (err, json) {
+    fs.readFile('./app-server/api/view/measure_result.json', function (err, json) {
         if (err) {
             throw err;
         }
@@ -55,7 +55,7 @@ exports.JsonPatientExample = function (req, res) {
 }
 
 exports.JsonMRSchema = function (req, res) {
-    fs.readFile('./api/view/mr_schema.json', function (err, json) {
+    fs.readFile('./app-server/api/view/mr_schema.json', function (err, json) {
         if (err) {
             throw err;
         }

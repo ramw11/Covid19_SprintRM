@@ -6,8 +6,8 @@
       "contact": {
         "name": "Liad Pasker"
       },
-      "servers": ["http://localhost:3000"]
+      "servers": ["http://localhost:3001"]
     }
   },
-  "apis": ["./api/routes/mr_routes.js", "./api/controller/mr_controller.js"]
+  "apis": ["./app-server/api/routes/mr_routes.js", "./app-server/api/controller/mr_controller.js"]
 }
