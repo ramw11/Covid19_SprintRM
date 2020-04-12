@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(app) {
   var todoList = require('../controller/mr_controller');
-  
+
   // manual
   /**
    * @swagger
@@ -42,7 +42,7 @@ module.exports = function(app) {
    *        '200':
    *            description: Success
    */
-  app.route('/JsonPatientExample').get(todoList.JsonPatientExample);
+  app.route('/JsonMRExample').get(todoList.JsonMRExample);
 
   // JsonMR_schema
   /**
@@ -57,6 +57,35 @@ module.exports = function(app) {
    *            description: Success
    */
   app.route('/JsonMR_schema').get(todoList.JsonMRSchema);
+
+  // new_patientExample
+  /**
+   * @swagger
+   * /new_patientExample:
+   *  get:
+   *    description: Shows new patient json example
+   *    produces:
+   *      - application/json
+   *    responses:
+   *        '200':
+   *            description: Success
+   */
+  app.route('/new_patientExample').get(todoList.JsonNewPatientExample);
+
+    // new_patient_schema
+  /**
+   * @swagger
+   * /new_patient_schema:
+   *  get:
+   *    description: Shows new patient json schema
+   *    produces:
+   *      - application/json
+   *    responses:
+   *        '200':
+   *            description: Success
+   */
+  app.route('/new_patient_schema').get(todoList.JsonNew_patient_schema);
+
 
 // new_sensor
 /**

@@ -42,7 +42,7 @@ exports.printManual = function (req, res) {
     });
 }
 
-exports.JsonPatientExample = function (req, res) {
+exports.JsonMRExample = function (req, res) {
     fs.readFile('./api/view/measure_result.json', function (err, json) {
         if (err) {
             throw err;
@@ -56,6 +56,30 @@ exports.JsonPatientExample = function (req, res) {
 
 exports.JsonMRSchema = function (req, res) {
     fs.readFile('./api/view/mr_schema.json', function (err, json) {
+        if (err) {
+            throw err;
+        }
+
+        res.writeHeader(200, { "Content-Type": "application/json" });
+        res.write(json);
+        res.end();
+    });
+}
+
+exports.JsonNewPatientExample = function (req, res) {
+    fs.readFile('./api/view/mr_new_patient.json', function (err, json) {
+        if (err) {
+            throw err;
+        }
+
+        res.writeHeader(200, { "Content-Type": "application/json" });
+        res.write(json);
+        res.end();
+    });
+}
+
+exports.JsonNew_patient_schema = function (req, res) {
+    fs.readFile('./api/view/mr_new_patient_schema.json', function (err, json) {
         if (err) {
             throw err;
         }
