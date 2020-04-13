@@ -168,9 +168,9 @@ exports.new_patient = function (req, res) {
     var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
-
+    jres.patient_Id=exports.get_id();
     console.log(jres);
-    let nid = exports.get_id();
+    let nid = jres.patient_Id
     client_prd.index({
         index: elkCfgFile.ELK_PRD.patientsIdx,
         id: nid,
@@ -267,22 +267,22 @@ function getTimeAndDate() {
     return `${date}-${month}-${year} >>`;
 }
 
-//getAllPatientsByVendor("Beecardia");
-// function getAllPatientsByVendor(vendor){
-//     client_prd.search({
-//         index: elkCfgFile.ELK_PRD.indexname,
-//         body:{
-//             match:{
-//                 "vendor": vendor
-//             }
-//         }
-//     }, (err, response, status)=>{
-//         if(err) console.log(`Error: ${err}`);
-//         else {
-//             console.log(response);
-//         }
-//     });
-// }
+getAllSensors('institute_name','Wolfson');
+function getAllPatientsByVendor(key, val){
+    client_prd.search({
+        index: elkCfgFile.ELK_PRD.sensorsIdx,
+        body:{
+            match:{
+                key: val
+            }
+        }
+    }, (err, response, status)=>{
+        if(err) console.log(`Error: ${err}`);
+        else {
+            console.log(response);
+        }
+    });
+}
 
 // function createLogger(msg){
 //     logger=__dirname+'/../logs/_logger.txt';
