@@ -268,34 +268,34 @@ function getTimeAndDate() {
 }
 
 //getAllSensors({institute_name:'Wolfson'});
-function getAllSensors(body){
-    // client_prd.search({
-    //     index: elkCfgFile.ELK_PRD.sensorsIdx,
-    //     body:{
-    //         match:{
-    //             key: val
-    //         }
-    //     }
-    // }, (err, response, status)=>{
-    //     if(err) console.log(`Error: ${err}`);
-    //     else {
-    //         console.log(response);
-    //     }
-    // });
+// function getAllSensors(body){
+//     // client_prd.search({
+//     //     index: elkCfgFile.ELK_PRD.sensorsIdx,
+//     //     body:{
+//     //         match:{
+//     //             key: val
+//     //         }
+//     //     }
+//     // }, (err, response, status)=>{
+//     //     if(err) console.log(`Error: ${err}`);
+//     //     else {
+//     //         console.log(response);
+//     //     }
+//     // });
 
-    const { body } = await client_prd.search({
-        index: elkCfgFile.ELK_PRD.sensorsIdx,
-        body: {
-          query: {
-            match: {
-                institute_name: "Wolfson"
-            }
-          }
-        }
-      })
+//     const { body } = await client_prd.search({
+//         index: elkCfgFile.ELK_PRD.sensorsIdx,
+//         body: {
+//           query: {
+//             match: {
+//                 institute_name: "Wolfson"
+//             }
+//           }
+//         }
+//       })
     
-      console.log(body.hits.hits)
-}
+//       console.log(body.hits.hits)
+// }
 
 // function createLogger(msg){
 //     logger=__dirname+'/../logs/_logger.txt';
