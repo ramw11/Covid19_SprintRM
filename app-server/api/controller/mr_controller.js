@@ -269,19 +269,30 @@ function getTimeAndDate() {
 
 getAllSensors('institute_name','Wolfson');
 function getAllSensors(key, val){
+    // client_prd.search({
+    //     index: elkCfgFile.ELK_PRD.sensorsIdx,
+    //     body:{
+    //         match:{
+    //             key: val
+    //         }
+    //     }
+    // }, (err, response, status)=>{
+    //     if(err) console.log(`Error: ${err}`);
+    //     else {
+    //         console.log(response);
+    //     }
+    // });
+
     client_prd.search({
         index: elkCfgFile.ELK_PRD.sensorsIdx,
-        body:{
-            match:{
-                key: val
-            }
-        }
-    }, (err, response, status)=>{
-        if(err) console.log(`Error: ${err}`);
-        else {
-            console.log(response);
-        }
-    });
+        body: { key: val }
+        }, {
+        ignore: [404],
+        maxRetries: 3
+      }, (err, result) => {
+        if (err) console.log(err);
+        else console.log(result);
+      })
 }
 
 // function createLogger(msg){
