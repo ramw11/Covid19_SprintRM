@@ -20,7 +20,10 @@ const options_PRD = {
 // create production es client
 const client_prd = aeclient(options_PRD);
 let isEsAlive = isESClientAlive(client_prd);
-createESIndex(elkCfgFile.ELK_PRD['indexname']);
+createESIndex(elkCfgFile.ELK_PRD.indexname);
+createESIndex(elkCfgFile.ELK_PRD.patientsIdx);
+createESIndex(elkCfgFile.ELK_PRD.sensorsIdx);
+
 
 //create test es client
 //const client_tst = aeclient(options_TEST);
@@ -138,7 +141,7 @@ exports.archive_mr = function (req, res) {
 };
 
 exports.new_sensor = function (req, res) {
-    let nid = exports.get_id();
+    //let nid = exports.get_id();
     var jres = req.body;
     res.send({ status: 'SUCCESS', sensorId: nid });
     res.end();
@@ -146,13 +149,14 @@ exports.new_sensor = function (req, res) {
     console.log(jres);
     client_prd.index({
         index: elkCfgFile.ELK_PRD['indexname'],
-        id: nid,
-        type: 'patient',
+        //id: nid,
+        id: jres.unit_id,
+        type: 'sensor',
         body: jres
     }, function (err, resp, status) {
         if (err) log(err);
         else {
-            let str = "add new patient:" + nid;
+            let str = "add new sensor:" + nid;
             log(status);
             log(str);
         }
@@ -198,8 +202,8 @@ exports.archive_mr_tst = function (req, res) {
     );
 };
 
-function isESClientAlive(client) {
-    client.ping({
+async function isESClientAlive(client) {
+    let isAlive=await client.ping({
         requestTimeout: 30000,
     }, function (error) {
         if (error) {
@@ -261,7 +265,7 @@ function getTimeAndDate() {
 //getAllPatientsByVendor("Beecardia");
 function getAllPatientsByVendor(vendor){
     client_prd.search({
-        index: elkCfgFile.ELK_PRD['indexname'],
+        index: elkCfgFile.ELK_PRD.indexname,
         body:{
             match:{
                 "vendor": vendor

@@ -3,7 +3,9 @@
     "ELK_PRD" : { 
         "Path" : "https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com",
         "Region" : "eu-west-1",
-        "indexname" : "measure_results_v2"
+        "indexname" : "measure_results_v2",
+        "patientsIdx": "Patients_v1",
+        "sensorsIdx": "Sensors_v1"
      },
     "ELK_TEST" : {
         "Path" : "https://1ef7bcb100ab4a95b850383f561c435f.us-east-1.aws.found.io:9243/",
