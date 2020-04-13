@@ -16,8 +16,11 @@ var express = require('express'),
   app.use(bodyParser.json());
   var routes = require('./api/routes/mr_routes'); //importing route
   routes(app); //register the route
-  app.use(function(req, res) {
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.status(404).send({url: req.originalUrl + ' not found'})
+    next();
   });
   
 app.listen(port);
