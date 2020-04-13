@@ -267,7 +267,7 @@ function getTimeAndDate() {
     return `${date}-${month}-${year} >>`;
 }
 
-getAllSensors({institute_name:'Wolfson'});
+//getAllSensors({institute_name:'Wolfson'});
 function getAllSensors(body){
     // client_prd.search({
     //     index: elkCfgFile.ELK_PRD.sensorsIdx,
