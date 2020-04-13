@@ -219,7 +219,7 @@ async function isESClientAlive(client) {
 }
 
 function createESIndex(indexname) {
-    //if (!doesIdxExist(indexname)) {
+    if (!doesIdxExist(indexname)) {
         if(true){
         client_prd.indices.create({
             index: indexname
@@ -239,9 +239,10 @@ function createESIndex(indexname) {
 }
 
 async function doesIdxExist(idx) {
-    return await client_prd.indices.exists({
-        index: idx,
-    });
+    // return await client_prd.indices.exists({
+    //     index: idx,
+    // });
+    return false;
 }
 
 function log(msg) {
