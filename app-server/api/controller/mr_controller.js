@@ -144,6 +144,7 @@ exports.new_sensor = function (req, res) {
     //let nid = exports.get_id();
     var jres = req.body;
     let nid=jres.unit_id;
+    res.header("Access-Control-Allow-Origin", "*");
     res.send({ status: 'SUCCESS', sensorId: nid });
     res.end();
 
