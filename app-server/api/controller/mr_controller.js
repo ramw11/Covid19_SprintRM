@@ -267,8 +267,8 @@ function getTimeAndDate() {
     return `${date}-${month}-${year} >>`;
 }
 
-getAllSensors('institute_name','Wolfson');
-function getAllSensors(key, val){
+getAllSensors({institute_name:'Wolfson'});
+function getAllSensors(body){
     // client_prd.search({
     //     index: elkCfgFile.ELK_PRD.sensorsIdx,
     //     body:{
@@ -285,7 +285,7 @@ function getAllSensors(key, val){
 
     client_prd.search({
         index: elkCfgFile.ELK_PRD.sensorsIdx,
-        body: { key: val }
+        body: body
         }, {
         ignore: [404],
         maxRetries: 3
