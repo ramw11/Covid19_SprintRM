@@ -16,8 +16,6 @@
         "bed_location",
         "date_of_birth",
         "risk_group",
-        "weight",
-        "gender",
         "normal_range_list",
         "sensors_list"
     ],

@@ -114,6 +114,8 @@ module.exports = function(app) {
  *        in: body
  *        required: true
  *        type: application/json
+ *        schema: 
+ *          $ref: 'http://52.16.82.127:4000/sensor_unit_schema'
  *    responses:
  *        '200':
  *            description: Success
@@ -133,6 +135,8 @@ module.exports = function(app) {
  *        in: body
  *        required: true
  *        type: application/json
+ *        schema: 
+ *          $ref: 'http://52.16.82.127:4000/new_patient_schema'
  *    responses:
  *        '200':
  *            description: Success
