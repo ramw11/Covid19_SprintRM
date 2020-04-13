@@ -119,7 +119,7 @@
             "description": "Patient date of birth, Unknown indicates invalid data.",
             "default": "Unknown",
             "examples": [
-                "2000-01-20"
+                "1993-03-14"
             ]
         },
         "risk_group": {

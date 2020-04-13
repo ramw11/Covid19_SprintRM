@@ -96,7 +96,7 @@
             "format": "date-time",            
             "title": "The Timetag Schema",
             "description": "The time that the measurment was taken in iso format(utc time).",
-            "default": "1970-01-01 00:00:00.00",
+            "default": "",
             "examples": [
                 "2020-04-13T07:50:39.268428"
             ]
