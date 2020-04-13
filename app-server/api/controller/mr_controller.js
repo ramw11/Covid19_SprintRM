@@ -267,7 +267,7 @@ function getTimeAndDate() {
     return `${date}-${month}-${year} >>`;
 }
 
-getAllSensors({'institute_name':'Wolfson'});
+getAllSensors({institute_name:'Wolfson'});
 function getAllSensors(body){
     // client_prd.search({
     //     index: elkCfgFile.ELK_PRD.sensorsIdx,
@@ -283,16 +283,18 @@ function getAllSensors(body){
     //     }
     // });
 
-    client_prd.search({
+    const { body } = await client_prd.search({
         index: elkCfgFile.ELK_PRD.sensorsIdx,
-        body: body
-        }, {
-        ignore: [404],
-        maxRetries: 3
-      }, (err, result) => {
-        if (err) console.log(err);
-        else console.log(result);
+        body: {
+          query: {
+            match: {
+                institute_name: "Wolfson"
+            }
+          }
+        }
       })
+    
+      console.log(body.hits.hits)
 }
 
 // function createLogger(msg){
