@@ -227,6 +227,7 @@ function createESIndex(indexname) {
                 console.log(err);
             } else {
                 console.log("create", resp);
+                log(`index: ${indexname} was created succesfully`);
             }
         });
     } else {
