@@ -239,10 +239,9 @@ function createESIndex(indexname) {
 }
 
 async function doesIdxExist(idx) {
-    // return await client_prd.indices.exists({
-    //     index: idx,
-    // });
-    return false;
+    return await client_prd.indices.exists({
+        index: idx,
+    });
 }
 
 function log(msg) {
