@@ -142,6 +142,7 @@ exports.archive_mr = function (req, res) {
 
 exports.new_sensor = function (req, res) {
     //let nid = exports.get_id();
+    let nid=jres.unit_id;
     var jres = req.body;
     res.send({ status: 'SUCCESS', sensorId: nid });
     res.end();
@@ -150,7 +151,7 @@ exports.new_sensor = function (req, res) {
     client_prd.index({
         index: elkCfgFile.ELK_PRD['indexname'],
         //id: nid,
-        id: jres.unit_id,
+        id: nid,
         type: 'sensor',
         body: jres
     }, function (err, resp, status) {
