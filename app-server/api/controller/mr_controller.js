@@ -93,7 +93,7 @@ exports.JsonNew_patient_schema = function (req, res) {
     });
 }
 
-exports.Json_sensor_unit_schema= function(req, res){
+exports.Json_sensor_unit_schema = function (req, res) {
     fs.readFile('./api/view/mr_unit_record_schema.json', function (err, json) {
         if (err) {
             throw err;
@@ -115,7 +115,7 @@ exports.get_id = function (req, res) {
 
 
 exports.archive_mr = function (req, res) {
-    
+
     console.log('post: /mr');
     var jres = req.body;
 
@@ -203,7 +203,7 @@ exports.archive_mr_tst = function (req, res) {
 };
 
 async function isESClientAlive(client) {
-    let isAlive=await client.ping({
+    let isAlive = await client.ping({
         requestTimeout: 30000,
     }, function (error) {
         if (error) {
@@ -220,21 +220,22 @@ async function isESClientAlive(client) {
 
 function createESIndex(indexname) {
     if (!doesIdxExist(indexname)) {
-        if(true){
-        client_prd.indices.create({
-            index: indexname
-        }, function (err, resp, status) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("create", resp);
-                log(`index: ${indexname} was created succesfully`);
-            }
-        });
-    } else {
-        console.log(`Creating index failed: index ${indexname} is already exists`);
-        log(`Creating index failed: index ${indexname} is already exists`);
-        //console.warn(`Creating index failed: index ${indexname} is already exists`);
+        if (true) {
+            client_prd.indices.create({
+                index: indexname
+            }, function (err, resp, status) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("create", resp);
+                    log(`index: ${indexname} was created succesfully`);
+                }
+            });
+        } else {
+            console.log(`Creating index failed: index ${indexname} is already exists`);
+            log(`Creating index failed: index ${indexname} is already exists`);
+            //console.warn(`Creating index failed: index ${indexname} is already exists`);
+        }
     }
 }
 
@@ -266,21 +267,21 @@ function getTimeAndDate() {
 }
 
 //getAllPatientsByVendor("Beecardia");
-function getAllPatientsByVendor(vendor){
-    client_prd.search({
-        index: elkCfgFile.ELK_PRD.indexname,
-        body:{
-            match:{
-                "vendor": vendor
-            }
-        }
-    }, (err, response, status)=>{
-        if(err) console.log(`Error: ${err}`);
-        else {
-            console.log(response);
-        }
-    });
-}
+// function getAllPatientsByVendor(vendor){
+//     client_prd.search({
+//         index: elkCfgFile.ELK_PRD.indexname,
+//         body:{
+//             match:{
+//                 "vendor": vendor
+//             }
+//         }
+//     }, (err, response, status)=>{
+//         if(err) console.log(`Error: ${err}`);
+//         else {
+//             console.log(response);
+//         }
+//     });
+// }
 
 // function createLogger(msg){
 //     logger=__dirname+'/../logs/_logger.txt';
