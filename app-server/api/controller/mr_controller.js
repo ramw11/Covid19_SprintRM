@@ -149,7 +149,7 @@ exports.new_sensor = function (req, res) {
 
     console.log(jres);
     client_prd.index({
-        index: elkCfgFile.ELK_PRD['indexname'],
+        index: elkCfgFile.ELK_PRD.sensorsIdx,
         //id: nid,
         id: nid,
         type: 'sensor',
@@ -172,7 +172,7 @@ exports.new_patient = function (req, res) {
     console.log(jres);
     let nid = exports.get_id();
     client_prd.index({
-        index: elkCfgFile.ELK_PRD['indexname'],
+        index: elkCfgFile.ELK_PRD.patientsIdx,
         id: nid,
         type: 'patient',
         body: jres
