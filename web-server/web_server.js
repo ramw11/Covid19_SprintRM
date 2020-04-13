@@ -6,7 +6,7 @@ var express = require('express'),
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  app.use(express.static(`${__dirname}/covid19UI/`));
+  app.use(express.static(`./covid19UI/`));
   app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
   });
