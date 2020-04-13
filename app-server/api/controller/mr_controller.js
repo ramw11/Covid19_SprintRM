@@ -268,7 +268,7 @@ function getTimeAndDate() {
 }
 
 getAllSensors('institute_name','Wolfson');
-function getAllPatientsByVendor(key, val){
+function getAllSensors(key, val){
     client_prd.search({
         index: elkCfgFile.ELK_PRD.sensorsIdx,
         body:{
