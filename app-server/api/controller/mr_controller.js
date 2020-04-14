@@ -24,7 +24,7 @@ const options_PRD = {
     region: elkCfgFile.ELK_PRD['Region'],
     //credentials: awscredentials
 };
-/*
+
 // create production es client
 const client_prd = aeclient(options_PRD);
 let isEsAlive = isESClientAlive(client_prd);
@@ -38,7 +38,7 @@ createESIndex(elkCfgFile.ELK_PRD.sensorsIdx);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
-*/
+
 exports.printManual = function (req, res) {
     console.log('printing manual...');
     fs.readFile('./api/view/index.html', function (err, html) {
@@ -130,20 +130,20 @@ exports.archive_mr = function (req, res) {
     let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
-    // ES:
-    // client_prd.index({
-    //     index: elkCfgFile.ELK_PRD['indexname'],
-    //     id: nid,
-    //     type: 'measureresult',
-    //     body: jres
-    // }, function (err, resp, status) {
-    //     if (err) log(err);
-    //     else {
-    //         let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-    //         log(status);
-    //         log(str);
-    //     }
-    // });
+    ES:
+    client_prd.index({
+        index: elkCfgFile.ELK_PRD['indexname'],
+        id: nid,
+        type: 'measureresult',
+        body: jres
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+            log(status);
+            log(str);
+        }
+    });
 
     // kinesis:
     var sensor = jres.vendor + Math.floor(Math.random() * 100000);
@@ -155,14 +155,14 @@ exports.archive_mr = function (req, res) {
     StreamName : stream
     };
 
-    kinesis.putRecord(recordParams, function(err, data) {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        console.log('Successfully sent data to Kinesis.');
-    }
-    });
+    // kinesis.putRecord(recordParams, function(err, data) {
+    // if (err) {
+    //     console.log(err);
+    // }
+    // else {
+    //     console.log('Successfully sent data to Kinesis.');
+    // }
+    // });
 
     res.send({ status: 'SUCCESS' });
     res.end();
