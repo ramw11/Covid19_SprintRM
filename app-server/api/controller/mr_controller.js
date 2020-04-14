@@ -24,7 +24,7 @@ const options_PRD = {
     region: elkCfgFile.ELK_PRD['Region'],
     //credentials: awscredentials
 };
-/*
+
 // create production es client
 const client_prd = aeclient(options_PRD);
 let isEsAlive = isESClientAlive(client_prd);
@@ -38,7 +38,7 @@ createESIndex(elkCfgFile.ELK_PRD.sensorsIdx);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
-*/
+
 exports.printManual = function (req, res) {
     console.log('printing manual...');
     fs.readFile('./api/view/index.html', function (err, html) {
