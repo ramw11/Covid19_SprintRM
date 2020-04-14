@@ -211,7 +211,7 @@ exports.new_patient = function (req, res) {
     var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
-    jres.patient_Id=exports.get_id();
+    jres.patient_Id=uuidv1();
     console.log(jres);
     let nid = jres.patient_Id
     client_prd.index({
