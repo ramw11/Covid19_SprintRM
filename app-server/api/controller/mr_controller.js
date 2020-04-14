@@ -2,13 +2,13 @@
 const uuidv1 = require('uuid/v1');
 const fs = require('fs');
 const AWS = require('aws-sdk');
-const aeclient = require('aws-elasticsearch-client');
 const elkCfgFile = require("../../cfg/mr_config.json");
 const logger = elkCfgFile.logPath;
+const aeclient = require('aws-elasticsearch-client');
 
 // amazon - kinesis:
-var credentials = new AWS.SharedIniFileCredentials({profile: 'covid19'});
-AWS.config.credentials = credentials;
+// var credentials = new AWS.SharedIniFileCredentials({profile: 'covid19'});
+// AWS.config.credentials = credentials;
 var stream='COVID19SensorDelivery';
 var kinesis = new AWS.Kinesis({region : 'eu-west-1'});
 const firehose = new (require('aws-sdk/clients/firehose'))({ region: 'eu-west-1' })
@@ -24,7 +24,7 @@ const options_PRD = {
     region: elkCfgFile.ELK_PRD['Region'],
     //credentials: awscredentials
 };
-
+/*
 // create production es client
 const client_prd = aeclient(options_PRD);
 let isEsAlive = isESClientAlive(client_prd);
@@ -38,7 +38,7 @@ createESIndex(elkCfgFile.ELK_PRD.sensorsIdx);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(elkCfgFile.ELK_TEST['indexname']);
 
-
+*/
 exports.printManual = function (req, res) {
     console.log('printing manual...');
     fs.readFile('./api/view/index.html', function (err, html) {
@@ -130,30 +130,45 @@ exports.archive_mr = function (req, res) {
     let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
-    ES:
-    client_prd.index({
-        index: elkCfgFile.ELK_PRD['indexname'],
-        id: nid,
-        type: 'measureresult',
-        body: jres
-    }, function (err, resp, status) {
-        if (err) log(err);
-        else {
-            let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-            log(status);
-            log(str);
-        }
-    });
+    // ES:
+    // client_prd.index({
+    //     index: elkCfgFile.ELK_PRD['indexname'],
+    //     id: nid,
+    //     type: 'measureresult',
+    //     body: jres
+    // }, function (err, resp, status) {
+    //     if (err) log(err);
+    //     else {
+    //         let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+    //         log(status);
+    //         log(str);
+    //     }
+    // });
 
     // kinesis:
     var sensor = jres.vendor + Math.floor(Math.random() * 100000);
     // var reading = Math.floor(Math.random() * 1000000);
 
-    let recordParams = {
-    Data: JSON.stringify(jres),
-    PartitionKey : sensor,
-    StreamName : stream
-    };
+    // let recordParams = {
+    // Data: JSON.stringify(jres),
+    // PartitionKey : sensor,
+    // StreamName : stream
+    // };
+    var recordParams = {
+        Record: {
+            Data: JSON.stringify(jres)
+        },
+        DeliveryStreamName: stream
+    }
+
+    firehose.putRecord(recordParams,function (err, res) {
+        if (err) {
+            console.log(err)
+        }
+        else {
+            console.log(res)
+        }
+      });
 
     // kinesis.putRecord(recordParams, function(err, data) {
     // if (err) {
