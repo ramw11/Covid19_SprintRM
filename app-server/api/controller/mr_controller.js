@@ -2,41 +2,91 @@
 const uuidv1 = require('uuid/v1');
 const fs = require('fs');
 const AWS = require('aws-sdk');
-const elkCfgFile = require("../../cfg/mr_config.json");
-const logger = elkCfgFile.logPath;
+const cfgFile = require("../../cfg/mr_config.json");
+const logger = cfgFile.logPath;
 const aeclient = require('aws-elasticsearch-client');
 
 // amazon - kinesis:
 // var credentials = new AWS.SharedIniFileCredentials({profile: 'covid19'});
 // AWS.config.credentials = credentials;
-var stream='COVID19SensorDelivery';
-var kinesis = new AWS.Kinesis({region : 'eu-west-1'});
+var stream = 'COVID19SensorDelivery';
+var kinesis = new AWS.Kinesis({ region: 'eu-west-1' });
 const firehose = new (require('aws-sdk/clients/firehose'))({ region: 'eu-west-1' })
 
+let redis = require('redis'),
+clientRedis = redis.createClient({
+    port: 6379,               // replace with your port
+    host: 'cv19redis-001.d9jy7a.0001.euw1.cache.amazonaws.com'
+});
+
 // const options_TEST = {
-//     host: { host: elkCfgFile.ELK_TEST['Path'], auth : auth },
-//     region: elkCfgFile.ELK_TEST['Region'],
+//     host: { host: cfgFile.ELK_TEST['Path'], auth : auth },
+//     region: cfgFile.ELK_TEST['Region'],
 //     //credentials: awscredentials
 // };
 
 const options_PRD = {
-    host: elkCfgFile.ELK_PRD['Path'],
-    region: elkCfgFile.ELK_PRD['Region'],
+    host: cfgFile.ELK_PRD['Path'],
+    region: cfgFile.ELK_PRD['Region'],
     //credentials: awscredentials
 };
 
 // create production es client
 const client_prd = aeclient(options_PRD);
-let isEsAlive = isESClientAlive(client_prd);
-createESIndex(elkCfgFile.ELK_PRD.indexname);
-createESIndex(elkCfgFile.ELK_PRD.patientsIdx);
-createESIndex(elkCfgFile.ELK_PRD.sensorsIdx);
+//let isEsAlive = isESClientAlive(client_prd);
+createESIndex(cfgFile.ELK_PRD.indexname);
+createESIndex(cfgFile.ELK_PRD.patientsIdx);
+createESIndex(cfgFile.ELK_PRD.sensorsIdx);
+
+//const mr_docs = require("../../mr_docs.json");
+// var mr_docs = mr_v4_file.hits.map(function(item) {
+//     return item._source;
+// });
+
+// console.log(mr_docs);
+// var str1 = JSON.stringify(mr_docs);
+// //console.log(str1);
+// fs.writeFileSync('./mr_docs.json', str1);
+// fs.writeFile(
+
+//     './mr_docs.json',
+
+//     JSON.stringify(str1),
+
+//     function (err) {
+//         if (err) {
+//             console.error('Crap happens');
+//         }
+//     }
+// );
+
+// for (let doc of mr_docs.docs) {
+//     client_prd.index({
+//         index: cfgFile.ELK_PRD['indexname'],
+//         body: doc
+//     }, function (err, resp, status) {
+//         if (err){ 
+//             log(err);
+//             console.log(err);
+//         }
+//         else {
+//             let str = "add data to es for:" + doc.unitId + ":" + doc.vendor;
+//             console.log(str);
+//             log(status);
+//             log(str);
+//         }
+//     });
+
+// }
+
+// let rrr = 5;
+
 
 
 //create test es client
 //const client_tst = aeclient(options_TEST);
 //let isEsAlive = isESClientAlive(client_tst);
-//createESIndex(elkCfgFile.ELK_TEST['indexname']);
+//createESIndex(cfgFile.ELK_TEST['indexname']);
 
 
 exports.printManual = function (req, res) {
@@ -130,55 +180,57 @@ exports.archive_mr = function (req, res) {
     let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
+    if(!CfgFile.usekinesis){
     // ES:
-    // client_prd.index({
-    //     index: elkCfgFile.ELK_PRD['indexname'],
-    //     id: nid,
-    //     type: 'measureresult',
-    //     body: jres
-    // }, function (err, resp, status) {
-    //     if (err) log(err);
-    //     else {
-    //         let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-    //         log(status);
-    //         log(str);
-    //     }
-    // });
-
-    // kinesis:
-    var sensor = jres.vendor + Math.floor(Math.random() * 100000);
-    // var reading = Math.floor(Math.random() * 1000000);
-
-    // let recordParams = {
-    // Data: JSON.stringify(jres),
-    // PartitionKey : sensor,
-    // StreamName : stream
-    // };
-    var recordParams = {
-        Record: {
-            Data: JSON.stringify(jres)
-        },
-        DeliveryStreamName: stream
+        client_prd.index({
+            index: cfgFile.ELK_PRD['indexname'],
+            id: nid,
+            type: 'measureresult',
+            body: jres
+        }, function (err, resp, status) {
+            if (err) log(err);
+            else {
+                let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+                log(status);
+                log(str);
+            }
+        });
     }
+    else{
+        // kinesis:
+        var sensor = jres.vendor + Math.floor(Math.random() * 100000);
+        // var reading = Math.floor(Math.random() * 1000000);
 
-    firehose.putRecord(recordParams,function (err, res) {
-        if (err) {
-            console.log(err)
+        // let recordParams = {
+        // Data: JSON.stringify(jres),
+        // PartitionKey : sensor,
+        // StreamName : stream
+        // };
+        var recordParams = {
+            Record: {
+                Data: JSON.stringify(jres)
+            },
+            DeliveryStreamName: stream
         }
-        else {
-            console.log(res)
-        }
-      });
 
-    // kinesis.putRecord(recordParams, function(err, data) {
-    // if (err) {
-    //     console.log(err);
-    // }
-    // else {
-    //     console.log('Successfully sent data to Kinesis.');
-    // }
-    // });
+        firehose.putRecord(recordParams, function (err, res) {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                console.log(res)
+            }
+        });
 
+        // kinesis.putRecord(recordParams, function(err, data) {
+        // if (err) {
+        //     console.log(err);
+        // }
+        // else {
+        //     console.log('Successfully sent data to Kinesis.');
+        // }
+        // });
+    }
     res.send({ status: 'SUCCESS' });
     res.end();
 };
@@ -186,13 +238,13 @@ exports.archive_mr = function (req, res) {
 exports.new_sensor = function (req, res) {
     //let nid = exports.get_id();
     var jres = req.body;
-    let nid=jres.unit_id;
+    let nid = jres.unit_id;
     res.send({ status: 'SUCCESS', sensorId: nid });
     res.end();
 
     console.log(jres);
     client_prd.index({
-        index: elkCfgFile.ELK_PRD.sensorsIdx,
+        index: cfgFile.ELK_PRD.sensorsIdx,
         //id: nid,
         id: nid,
         type: 'sensor',
@@ -211,11 +263,11 @@ exports.new_patient = function (req, res) {
     var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
-    jres.patient_Id=uuidv1();
+    jres.patient_Id = uuidv1();
     console.log(jres);
     let nid = jres.patient_Id
     client_prd.index({
-        index: elkCfgFile.ELK_PRD.patientsIdx,
+        index: cfgFile.ELK_PRD.patientsIdx,
         id: nid,
         type: 'patient',
         body: jres
@@ -227,7 +279,28 @@ exports.new_patient = function (req, res) {
             log(str);
         }
     });
+
+    //update dictionary sensorId-PatientId is redis
+    sensors = jres.sensors_list;
+    for (let sensor of sensors) {
+        updateRedis4NewPatient(sensor.unit_Id,patient_Id);
+    }
 };
+
+function updateRedis4NewPatient(sensor_id,patient_Id) {
+    clientRedis.select(3, function (err, res) {
+        // you'll want to check that the select was successful here
+        // if(err) return err;
+        clientRedis.set(sensor_id, patient_Id); // this will be posted to database 3 rather than db 0
+        clientRedis.get(sensor_id, function (err, value) {
+            if (err) {
+                throw err;
+            } else {
+                console.log(value);
+            }
+        });
+    });
+}
 
 exports.archive_mr_tst = function (req, res) {
     var jres = req.body;
@@ -236,7 +309,7 @@ exports.archive_mr_tst = function (req, res) {
 
     // console.log(jres);  
     client_tst.index({
-        index: elkCfgFile.ELK_TEST['indexname'],
+        index: cfgFile.ELK_TEST['indexname'],
         id: jres.patientId,
         type: 'measureresult',
         body: jres
@@ -309,47 +382,3 @@ function getTimeAndDate() {
 
     return `${date}-${month}-${year} >>`;
 }
-
-//getAllSensors({institute_name:'Wolfson'});
-// function getAllSensors(body){
-//     // client_prd.search({
-//     //     index: elkCfgFile.ELK_PRD.sensorsIdx,
-//     //     body:{
-//     //         match:{
-//     //             key: val
-//     //         }
-//     //     }
-//     // }, (err, response, status)=>{
-//     //     if(err) console.log(`Error: ${err}`);
-//     //     else {
-//     //         console.log(response);
-//     //     }
-//     // });
-
-//     const { body } = await client_prd.search({
-//         index: elkCfgFile.ELK_PRD.sensorsIdx,
-//         body: {
-//           query: {
-//             match: {
-//                 institute_name: "Wolfson"
-//             }
-//           }
-//         }
-//       })
-    
-//       console.log(body.hits.hits)
-// }
-
-// function createLogger(msg){
-//     logger=__dirname+'/../logs/_logger.txt';
-//     fs.exists(logger, isExists=>{
-//         if(isExists==false){
-//             fs.writeFileSync(logger, "new logger created\n");
-//         }
-//     })
-
-//     log(msg);
-//     // ,null, ()=>{
-//     //     logger.log(msg);
-//     // });
-// }
