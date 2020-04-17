@@ -101,6 +101,8 @@ exports.getLastKnown= async function (req,res){
      });
 }
 
+
+
 exports.getLastUpdate= async function (req,res){
     clientRedis.hgetall("last_update", function (err, obj) {
         if(err){
@@ -287,9 +289,23 @@ exports.new_patient = function (req, res) {
     //update dictionary sensorId-PatientId is redis
     let sensors = jres.sensors_list;
     for (let sensor of sensors) {
-        updateRedis4NewPatient(sensor.unit_Id,jres.patient_Id);
+        updateRedis4NewPatient(Object.values(sensor)[0].unit_Id,jres.patient_Id);
     }
 };
+
+exports.attachSensor= function (req,res){
+    // let sensorId=req.body;
+    // client_prd.exists()
+    
+    // clientRedis.hgetall("LastKnown", function (err, obj) {
+    //     if(err){
+    //         console.log(err);
+    //     }else{
+    //         res.send(obj[Object.keys(obj)[0]]);
+    //         res.end();
+    //     }    
+    //  });
+}
 
 function updateRedis4NewPatient(sensor_id,patient_Id) {
     clientRedis.select(3, function (err, res) {
