@@ -19,6 +19,8 @@ clientRedis = redis.createClient({
     host: 'cv19redis-001.d9jy7a.0001.euw1.cache.amazonaws.com'
 });
 
+
+
 // const options_TEST = {
 //     host: { host: cfgFile.ELK_TEST['Path'], auth : auth },
 //     region: cfgFile.ELK_TEST['Region'],
@@ -88,6 +90,27 @@ createESIndex(cfgFile.ELK_PRD.sensorsIdx);
 //let isEsAlive = isESClientAlive(client_tst);
 //createESIndex(cfgFile.ELK_TEST['indexname']);
 
+exports.getLastKnown= async function (req,res){
+    clientRedis.hgetall("LastKnown", function (err, obj) {
+        if(err){
+            console.log(err);
+        }else{
+            res.send(obj[Object.keys(obj)[0]]);
+            res.end();
+        }    
+     });
+}
+
+exports.getLastUpdate= async function (req,res){
+    clientRedis.hgetall("last_update", function (err, obj) {
+        if(err){
+            console.log(err);
+        }else{
+            res.send(obj[Object.keys(obj)[0]]);
+            res.end();
+        }    
+     });
+}
 
 exports.printManual = function (req, res) {
     console.log('printing manual...');
@@ -180,7 +203,7 @@ exports.archive_mr = function (req, res) {
     let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
-    if(!CfgFile.usekinesis){
+    if(!cfgFile.usekinesis){
     // ES:
         client_prd.index({
             index: cfgFile.ELK_PRD['indexname'],
@@ -197,15 +220,6 @@ exports.archive_mr = function (req, res) {
         });
     }
     else{
-        // kinesis:
-        var sensor = jres.vendor + Math.floor(Math.random() * 100000);
-        // var reading = Math.floor(Math.random() * 1000000);
-
-        // let recordParams = {
-        // Data: JSON.stringify(jres),
-        // PartitionKey : sensor,
-        // StreamName : stream
-        // };
         var recordParams = {
             Record: {
                 Data: JSON.stringify(jres)
@@ -221,15 +235,6 @@ exports.archive_mr = function (req, res) {
                 console.log(res)
             }
         });
-
-        // kinesis.putRecord(recordParams, function(err, data) {
-        // if (err) {
-        //     console.log(err);
-        // }
-        // else {
-        //     console.log('Successfully sent data to Kinesis.');
-        // }
-        // });
     }
     res.send({ status: 'SUCCESS' });
     res.end();
@@ -260,9 +265,9 @@ exports.new_sensor = function (req, res) {
 };
 
 exports.new_patient = function (req, res) {
-    var jres = req.body;
     res.send({ status: 'SUCCESS' });
     res.end();
+    var jres = req.body;
     jres.patient_Id = uuidv1();
     console.log(jres);
     let nid = jres.patient_Id
@@ -279,11 +284,10 @@ exports.new_patient = function (req, res) {
             log(str);
         }
     });
-
     //update dictionary sensorId-PatientId is redis
-    sensors = jres.sensors_list;
+    let sensors = jres.sensors_list;
     for (let sensor of sensors) {
-        updateRedis4NewPatient(sensor.unit_Id,patient_Id);
+        updateRedis4NewPatient(sensor.unit_Id,jres.patient_Id);
     }
 };
 
@@ -291,14 +295,15 @@ function updateRedis4NewPatient(sensor_id,patient_Id) {
     clientRedis.select(3, function (err, res) {
         // you'll want to check that the select was successful here
         // if(err) return err;
-        clientRedis.set(sensor_id, patient_Id); // this will be posted to database 3 rather than db 0
-        clientRedis.get(sensor_id, function (err, value) {
-            if (err) {
-                throw err;
-            } else {
-                console.log(value);
-            }
-        });
+        clientRedis.set(sensor_id, patient_Id, ()=>{
+            clientRedis.get(sensor_id, function (err, value) {
+                if (err) {
+                    throw err;
+                } else {
+                    console.log(`pushed to redis: sensorId: ${sensor_id} patientId: ${value}`);
+                }
+            });
+        }); // this will be posted to database 3 rather than db 0
     });
 }
 

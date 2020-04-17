@@ -2,6 +2,11 @@
 module.exports = function(app) {
   var todoList = require('../controller/mr_controller');
 
+
+  app.route('/getLastKnown').get(todoList.getLastKnown);
+  app.route('/getLastUpdate').get(todoList.getLastUpdate);
+
+
   // manual
   /**
    * @swagger
