@@ -95,20 +95,20 @@ exports.getLastKnown= async function (req,res){
         if(err){
             console.log(err);
         }else{
-            res.send(obj[Object.keys(obj)[0]]);
+            //res.send(obj[Object.keys(obj)[0]]);
+            res.send(obj)
             res.end();
         }    
      });
 }
-
-
 
 exports.getLastUpdate= async function (req,res){
     clientRedis.hgetall("last_update", function (err, obj) {
         if(err){
             console.log(err);
         }else{
-            res.send(obj[Object.keys(obj)[0]]);
+            // res.send(obj[Object.keys(obj)[0]]);
+            res.send(obj)
             res.end();
         }    
      });
