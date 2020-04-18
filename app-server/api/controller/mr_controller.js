@@ -96,6 +96,8 @@ exports.getLastKnown= async function (req,res){
             console.log(err);
         }else{
             //res.send(obj[Object.keys(obj)[0]]);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send(obj)
             res.end();
         }    
@@ -108,6 +110,8 @@ exports.getLastUpdate= async function (req,res){
             console.log(err);
         }else{
             // res.send(obj[Object.keys(obj)[0]]);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send(obj)
             res.end();
         }    
@@ -267,6 +271,8 @@ exports.new_sensor = function (req, res) {
 };
 
 exports.new_patient = function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send({ status: 'SUCCESS' });
     res.end();
     var jres = req.body;
