@@ -408,6 +408,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patient-data/auxilary-data/auxilary-data.component.html":
+  /*!***********************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patient-data/auxilary-data/auxilary-data.component.html ***!
+    \***********************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppModulesPatientDataAuxilaryDataAuxilaryDataComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<iframe [src]=\"iframe_src\"></iframe>";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patient-data/patient-data.component.html":
   /*!********************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patient-data/patient-data.component.html ***!
@@ -423,7 +443,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-tab-group>\n    <mat-tab label=\"Patient Information\">\n        <!--<h1>{{name}}</h1>-->\n        <div style=\"width: 100%; display: flex; flex-flow: row wrap;\">\n            <app-patient-personal-data id=\"patient_personal_info\"></app-patient-personal-data>\n            <app-patient-monitor id=\"monitor\"></app-patient-monitor>\n        </div>\n        <app-patient-history></app-patient-history>\n    </mat-tab>\n    <mat-tab label=\"Settings\">\n        <app-patient-settings></app-patient-settings>\n    </mat-tab>\n</mat-tab-group>";
+    __webpack_exports__["default"] = "<mat-tab-group>\n    <mat-tab label=\"Patient Information\">\n        <!--<h1>{{name}}</h1>-->\n        <div style=\"width: 100%; display: flex; flex-flow: row wrap;\">\n            <app-patient-personal-data id=\"patient_personal_info\"></app-patient-personal-data>\n            <app-patient-monitor id=\"monitor\"></app-patient-monitor>\n            <app-auxilary-data></app-auxilary-data>\n        </div>\n        <app-patient-history></app-patient-history>\n    </mat-tab>\n    <mat-tab label=\"Settings\">\n        <app-patient-settings></app-patient-settings>\n    </mat-tab>\n</mat-tab-group>";
     /***/
   },
 
@@ -523,7 +543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"top\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: yellow;\n                     \"\n        >\nBrPm\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"BR\">{{currBr}}</label></b>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"top\">\n    <img [src]='warning' class=\"warning_visible\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: yellow;\n                     \"\n        >\nBrPm\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"BR\">{{currBr.br}}</label></b>\n</div>";
     /***/
   },
 
@@ -563,7 +583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"top\">\n    <img [src] = 'currPic' style=\"width: 20px; position: relative; left:0;\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: cadetblue;\n                     margin-top: 0px;\n                     \"\n        >\nBPM\n</label></b>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"HR\">{{heartRate}}</label></b>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"top\">\n    <img [src]='warning' class=\"warning_visible\">\n    <img [src] = 'currPic' style=\"width: 20px; position: relative; left:0;\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: cadetblue;\n                     margin-top: 0px;\n                     \"\n        >\nBPM\n</label></b>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"HR\">{{heartRate.hr}}</label></b>\n</div>";
     /***/
   },
 
@@ -603,7 +623,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"top\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: cornflowerblue;\n                     \"\n        >\nSpO2 %\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"SPO2\">{{SpO2}}</label></b>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"top\">\n    <img [src]='warning' class=\"warning_visible\">\n    <b><label style=\"font-size: xx-small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: cornflowerblue;\n                     \"\n        >\nSpO2 %\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"SPO2\">{{SpO2.spo2}}</label></b>\n</div>";
     /***/
   },
 
@@ -623,7 +643,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"top\">\n    <b><label style=\"font-size: small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: aqua;\n                     \"\n        >\n&#x2103;\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"TMP\">{{currTmp}}</label></b>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"top\">\n    <img [src]='warning' class=\"warning_visible\">\n    <b><label style=\"font-size: small; \n                     color: black;\n                     border:solid;\n                     vertical-align: 0%;\n                     background-color: aqua;\n                     \"\n        >\n&#x2103;\n</label></b>\n<br/>\n</div>\n<div class=\"square\">\n    <br/>\n    <b><label class=\"TMP\">{{currTmp.tmp}}</label></b>\n</div>";
     /***/
   },
 
@@ -723,7 +743,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!--<h1>Patients Info</h1>\n<br/>-->\n<br/>\n<br/>\n\n<div>\n  <!--<button mat-raised-button color='primary' (click) = 'newSensor()'>New sensor</button>-->\n  <img class=\"roundImg\" [src] = \"greenStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfMinorPatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"yellowStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfModeratePatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"orangeStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfMajorPatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"redStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfCriticalPatients}}</label>\n\n  <button mat-icon-button (click) = 'sortByScore()' style=\"position: absolute; right: 30px;\">\n    <mat-icon>sort</mat-icon>\n  </button>\n\n\n  <button mat-icon-button (click) = 'newPatient()' style=\"position: absolute; right: 0;\">\n    <mat-icon>add_circle</mat-icon>\n  </button>\n  <!--\n    \n  -->\n</div>\n\n<br/>\n\n<div>\n    <table #table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n      <!--Patient Col-->\n        <ng-container matColumnDef=\"patient_Id\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <div>\n                <img [src] = 'patient_icon' class = 'icon'>\n                <br/>\n                Patient \n            </div>\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.last4Digit}} </td>\n          </ng-container>\n\n          <!--Room Col-->\n          <ng-container matColumnDef=\"room\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'room_icon' class = 'icon'>\n              <br/>\n              Room\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.room_identifier}} </td>\n          </ng-container>\n\n          <!--Age Col-->\n          <ng-container matColumnDef=\"age\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'age_icon' class = 'icon'>\n              <br/>\n              Age\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.personal.Age}} </td>\n          </ng-container>\n\n          <!--HR Col-->\n          <ng-container matColumnDef=\"heartRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'hr_icon' class = 'icon'>\n              <br/>\n              HR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.heartRate}} </td>\n          </ng-container>\n\n          <!--BP Col-->\n          <ng-container matColumnDef=\"bloodPresure\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <img [src] = 'bp_icon' class = 'icon'>\n              <br/>\n              BP\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.bloodPresure}} </td>\n          </ng-container>\n\n          <!--SpO2 Col-->\n          <ng-container matColumnDef=\"spO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'spo2_icon' class = 'icon'>\n              <br/>\n              SpO2\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.spO2}} </td>\n          </ng-container>\n\n          <!--BR Col-->\n          <ng-container matColumnDef=\"breathingRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'br_icon' class = 'icon'>\n              <br/>\n              BR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.breathingRate}} </td>\n          </ng-container>\n\n          <!--Extra O2 Col-->\n          <ng-container matColumnDef=\"extraO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Extra <br/> O2 </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.extraO2}} </td>\n          </ng-container>\n\n          <!--Fever Col-->\n          <ng-container matColumnDef=\"fever\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'fever_icon' class = 'icon'>\n              <br/>\n              Fever\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.fever}} </td>\n          </ng-container>\n\n          <!--Breathing info-->\n          <ng-container matColumnDef=\"breathingInfo\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Breathing <br/> Info </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.breathingInfo}} </td>\n          </ng-container>\n\n          <!--Alerts Col-->\n          <ng-container matColumnDef=\"alerts\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'alerts_icon' class = 'icon'>\n              <br/>\n              Alerts\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.alerts}} </td>\n          </ng-container>\n\n          <!--Progress Col-->\n          <ng-container matColumnDef=\"progress\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'progress_icon' class = 'icon'>\n              <br/>\n              Progress\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.progress}} </td>\n          </ng-container>\n\n          <!--Score Col-->\n          <ng-container matColumnDef=\"score\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Score </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.score}} </td>\n          </ng-container>\n\n          <!--Data Col-->\n          <ng-container matColumnDef=\"data\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='patientData(element)'>\n                <mat-icon>assignment_ind</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <!--Release Col-->\n          <ng-container matColumnDef=\"release\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='releasePatient(element)'>\n                <mat-icon>highlight_off</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" \n          [ngClass]=\"{'make-red': row.score >= 7, \n                      'make-green': row.score <2, \n                      'make-yellow': row.score >= 2 && row.score<5,\n                      'make-orange': row.score >= 5 && row.score<7}\"></tr>\n          \n\n    </table>\n</div>\n\n<br/>";
+    __webpack_exports__["default"] = "<!--<h1>Patients Info</h1>\n<br/>-->\n<br/>\n<br/>\n\n<div>\n  <!--<button mat-raised-button color='primary' (click) = 'newSensor()'>New sensor</button>-->\n  <img class=\"roundImg\" [src] = \"greenStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfMinorPatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"yellowStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfModeratePatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"orangeStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfMajorPatients}}</label>\n\n  <label style=\"visibility: hidden;\">...</label>\n  <img class=\"roundImg\" [src] = \"redStatusPath\">\n  <label style=\"visibility: hidden;\">.</label>\n  <label style=\"font-size: larger;\">{{numOfCriticalPatients}}</label>\n\n  <button mat-icon-button (click) = 'sortByScore()' style=\"position: absolute; right: 110px;\">\n    <mat-icon>sort</mat-icon>\n  </button>\n\n\n  <button mat-icon-button (click) = 'newPatient()' style=\"position: absolute; right: 70px;\">\n    <mat-icon>add_circle</mat-icon>\n    Add patient\n  </button>\n  <!--\n    \n  -->\n</div>\n\n<br/>\n\n<div>\n    <table #table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n      <!--Patient Col-->\n        <ng-container matColumnDef=\"patient_Id\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <div>\n                <img [src] = 'patient_icon' class = 'icon'>\n                <br/>\n                Patient \n            </div>\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.last4Digit}} </td>\n          </ng-container>\n\n          <!--Room Col-->\n          <ng-container matColumnDef=\"room\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'room_icon' class = 'icon'>\n              <br/>\n              Room\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.room_identifier}} </td>\n          </ng-container>\n\n          <!--Age Col-->\n          <ng-container matColumnDef=\"age\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'age_icon' class = 'icon'>\n              <br/>\n              Age\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.personal.Age}} </td>\n          </ng-container>\n\n          <!--HR Col-->\n          <ng-container matColumnDef=\"heartRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'hr_icon' class = 'icon'>\n              <br/>\n              HR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.heartRate.val}} </td>\n          </ng-container>\n\n          <!--BP Col-->\n          <ng-container matColumnDef=\"bloodPresure\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> \n              <img [src] = 'bp_icon' class = 'icon'>\n              <br/>\n              BP\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.bloodPresure.val}} </td>\n          </ng-container>\n\n          <!--SpO2 Col-->\n          <ng-container matColumnDef=\"spO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'spo2_icon' class = 'icon'>\n              <br/>\n              SpO2\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.spO2.val}} </td>\n          </ng-container>\n\n          <!--BR Col-->\n          <ng-container matColumnDef=\"breathingRate\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'br_icon' class = 'icon'>\n              <br/>\n              BR\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.breathingRate.val}} </td>\n          </ng-container>\n\n          <!--Extra O2 Col-->\n          <ng-container matColumnDef=\"extraO2\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Extra <br/> O2 </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.extraO2.val}} </td>\n          </ng-container>\n\n          <!--Fever Col-->\n          <ng-container matColumnDef=\"fever\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'fever_icon' class = 'icon'>\n              <br/>\n              Fever\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.fever.val}} </td>\n          </ng-container>\n\n          <!--Breathing info-->\n          <ng-container matColumnDef=\"breathingInfo\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Breathing <br/> Info </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.measureResults.breathingInfo.val}} </td>\n          </ng-container>\n\n          <!--Alerts Col-->\n          <ng-container matColumnDef=\"alerts\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'alerts_icon' class = 'icon'>\n              <br/>\n              Alerts\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.alerts}} </td>\n          </ng-container>\n\n          <!--Progress Col-->\n          <ng-container matColumnDef=\"progress\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\">\n              <img [src] = 'progress_icon' class = 'icon'>\n              <br/>\n              Progress\n            </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.progress}} </td>\n          </ng-container>\n\n          <!--Score Col-->\n          <ng-container matColumnDef=\"score\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"> Score </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.score}} </td>\n          </ng-container>\n\n          <!--Data Col-->\n          <ng-container matColumnDef=\"data\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='patientData(element)'>\n                <mat-icon>assignment_ind</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <!--Release Col-->\n          <ng-container matColumnDef=\"release\">\n            <th mat-header-cell *matHeaderCellDef class=\"col_class\"></th>\n            <td mat-cell *matCellDef=\"let element\">\n              <button mat-icon-button (click)='releasePatient(element)'>\n                <mat-icon>highlight_off</mat-icon>\n            </button>\n            </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" \n          [ngClass]=\"{'make-red': row.score >= 7, \n                      'make-green': row.score <2, \n                      'make-yellow': row.score >= 2 && row.score<5,\n                      'make-orange': row.score >= 5 && row.score<7}\"></tr>\n          \n\n    </table>\n</div>\n\n<br/>";
     /***/
   },
 
@@ -1583,7 +1603,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             var client = new $.es.Client({
               // hosts: hosts
-              host: 'https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com/'
+              host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
             });
             resp = client.cluster.health({}); // alert(resp);
 
@@ -1733,13 +1753,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/interfaces/PersonData.ts ***!
     \******************************************/
 
-  /*! exports provided: PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
+  /*! exports provided: ELASTIC_HOST, PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
 
   /***/
   function srcAppInterfacesPersonDataTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function () {
+      return ELASTIC_HOST;
+    });
     /* harmony export (binding) */
 
 
@@ -1842,6 +1868,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var ELASTIC_HOST = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].elastic;
 
     var PersonalData = function PersonalData() {
       _classCallCheck(this, PersonalData);
@@ -2050,6 +2084,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     
     */
 
+    /*
+    async function esTimeQuery() {
+      var result = await client_prd.search({
+        index: 'measure_results_v5',
+        size: 100,
+        body: {
+          sort: [{ "timeTag": { "order": "desc" } }],
+          query: {
+            // CAUTION: dear Natali, do not query 'gte' for too long ago, it might not be efficient,
+            //          let's say that an hour is enough
+            "range": { "timeTag": { "gte": "2020-04-13T16:22:02.997", "lt": "now" } }
+          },
+        }
+      },
+        function (err, resp, status) {
+          if (resp) {
+            // do something
+            console.log(resp.hits.hits);
+          }
+          else {
+            console.log(err);
+          }
+        });
+    }
+    */
+
     /***/
   },
 
@@ -2069,7 +2129,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\nmat-drawer-container {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L2RlZmF1bHQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2xheW91dHMvZGVmYXVsdC9kZWZhdWx0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvbGF5b3V0cy9kZWZhdWx0L2RlZmF1bHQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG5tYXQtZHJhd2VyLWNvbnRhaW5lcntcclxuICAgIGhlaWdodDogMTAwJTtcclxufSIsIjpob3N0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5tYXQtZHJhd2VyLWNvbnRhaW5lciB7XG4gIGhlaWdodDogMTAwJTtcbn0iXX0= */";
+    __webpack_exports__["default"] = ":host {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n}\n\nmat-drawer-container {\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL2xheW91dHMvZGVmYXVsdC9kZWZhdWx0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9sYXlvdXRzL2RlZmF1bHQvZGVmYXVsdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLFlBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2xheW91dHMvZGVmYXVsdC9kZWZhdWx0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3R7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxubWF0LWRyYXdlci1jb250YWluZXJ7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn0iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGhlaWdodDogMTAwJTtcbn1cblxubWF0LWRyYXdlci1jb250YWluZXIge1xuICBoZWlnaHQ6IDEwMCU7XG59Il19 */";
     /***/
   },
 
@@ -2248,91 +2308,97 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _modules_patient_data_patient_personal_data_patient_personal_data_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _modules_patient_data_auxilary_data_auxilary_data_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ./../../modules/patient-data/auxilary-data/auxilary-data.component */
+    "./src/app/modules/patient-data/auxilary-data/auxilary-data.component.ts");
+    /* harmony import */
+
+
+    var _modules_patient_data_patient_personal_data_patient_personal_data_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./../../modules/patient-data/patient-personal-data/patient-personal-data.component */
     "./src/app/modules/patient-data/patient-personal-data/patient-personal-data.component.ts");
     /* harmony import */
 
 
-    var _modules_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    var _modules_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./../../modules/patient-data/patient-data.component */
     "./src/app/modules/patient-data/patient-data.component.ts");
     /* harmony import */
 
 
-    var _modules_new_patient_new_patient_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    var _modules_new_patient_new_patient_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./../../modules/new-patient/new-patient.component */
     "./src/app/modules/new-patient/new-patient.component.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var _modules_patients_patients_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    var _modules_patients_patients_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
     /*! ./../../modules/patients/patients.component */
     "./src/app/modules/patients/patients.component.ts");
     /* harmony import */
 
 
-    var _default_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    var _default_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! ./default.component */
     "./src/app/layouts/default/default.component.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
-    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
     /*! ../../shared/shared.module */
     "./src/app/shared/shared.module.ts");
     /* harmony import */
 
 
-    var _angular_material__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    var _angular_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/esm2015/button.js");
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
-    var ng2_charts__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+    var ng2_charts__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
     /*! ng2-charts */
     "./node_modules/ng2-charts/fesm2015/ng2-charts.js");
     /* harmony import */
 
 
-    var ng_apexcharts__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+    var ng_apexcharts__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
     /*! ng-apexcharts */
     "./node_modules/ng-apexcharts/fesm2015/ng-apexcharts.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
 
@@ -2340,9 +2406,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, DefaultModule);
     };
 
-    DefaultModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_22__["NgModule"])({
-      declarations: [_default_component__WEBPACK_IMPORTED_MODULE_21__["DefaultComponent"], _modules_patients_patients_component__WEBPACK_IMPORTED_MODULE_20__["PatientsComponent"], _modules_new_patient_new_patient_component__WEBPACK_IMPORTED_MODULE_18__["NewPatientComponent"], _modules_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_17__["PatientDataComponent"], _modules_patient_data_patient_personal_data_patient_personal_data_component__WEBPACK_IMPORTED_MODULE_16__["PatientPersonalDataComponent"], _modules_patient_data_patient_settings_patient_settings_component__WEBPACK_IMPORTED_MODULE_5__["PatientSettingsComponent"], _modules_patient_data_patient_monitor_patient_monitor_component__WEBPACK_IMPORTED_MODULE_15__["PatientMonitorComponent"], _modules_patient_data_patient_monitor_monitor_bp_monitor_bp_component__WEBPACK_IMPORTED_MODULE_6__["MonitorBpComponent"], _modules_patient_data_patient_monitor_monitor_sp_o2_graph_monitor_sp_o2_graph_component__WEBPACK_IMPORTED_MODULE_8__["MonitorSpO2GraphComponent"], _modules_patient_data_patient_monitor_monitor_br_graph_monitor_br_graph_component__WEBPACK_IMPORTED_MODULE_7__["MonitorBRGraphComponent"], _modules_patient_data_patient_monitor_monitor_ecg_monitor_ecg_component__WEBPACK_IMPORTED_MODULE_9__["MonitorECGComponent"], _modules_patient_data_patient_monitor_monitor_blood_pressure_monitor_blood_pressure_component__WEBPACK_IMPORTED_MODULE_10__["MonitorBloodPressureComponent"], _modules_patient_data_patient_monitor_monitor_heart_rate_monitor_heart_rate_component__WEBPACK_IMPORTED_MODULE_11__["MonitorHeartRateComponent"], _modules_patient_data_patient_monitor_monitor_spo2_monitor_spo2_component__WEBPACK_IMPORTED_MODULE_12__["MonitorSpo2Component"], _modules_patient_data_patient_monitor_monitor_breathing_rate_monitor_breathing_rate_component__WEBPACK_IMPORTED_MODULE_13__["MonitorBreathingRateComponent"], _modules_patient_data_patient_monitor_monitor_temperature_monitor_temperature_component__WEBPACK_IMPORTED_MODULE_14__["MonitorTemperatureComponent"], _modules_patient_data_patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_4__["PatientHistoryComponent"], _modules_patient_release_patient_release_component__WEBPACK_IMPORTED_MODULE_3__["PatientReleaseComponent"], _modules_new_sensor_new_sensor_component__WEBPACK_IMPORTED_MODULE_2__["NewSensorComponent"], _modules_set_default_hospital_set_default_hospital_component__WEBPACK_IMPORTED_MODULE_1__["SetDefaultHospitalComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_23__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_27__["FormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatSidenavModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_26__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatTabsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_25__["MatCardModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_28__["ChartsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_27__["ReactiveFormsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_29__["NgApexchartsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_30__["HttpClientModule"]]
+    DefaultModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_23__["NgModule"])({
+      declarations: [_default_component__WEBPACK_IMPORTED_MODULE_22__["DefaultComponent"], _modules_patients_patients_component__WEBPACK_IMPORTED_MODULE_21__["PatientsComponent"], _modules_new_patient_new_patient_component__WEBPACK_IMPORTED_MODULE_19__["NewPatientComponent"], _modules_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_18__["PatientDataComponent"], _modules_patient_data_patient_personal_data_patient_personal_data_component__WEBPACK_IMPORTED_MODULE_17__["PatientPersonalDataComponent"], _modules_patient_data_patient_settings_patient_settings_component__WEBPACK_IMPORTED_MODULE_5__["PatientSettingsComponent"], _modules_patient_data_auxilary_data_auxilary_data_component__WEBPACK_IMPORTED_MODULE_16__["AuxilaryDataComponent"], _modules_patient_data_patient_monitor_patient_monitor_component__WEBPACK_IMPORTED_MODULE_15__["PatientMonitorComponent"], _modules_patient_data_patient_monitor_monitor_bp_monitor_bp_component__WEBPACK_IMPORTED_MODULE_6__["MonitorBpComponent"], _modules_patient_data_patient_monitor_monitor_sp_o2_graph_monitor_sp_o2_graph_component__WEBPACK_IMPORTED_MODULE_8__["MonitorSpO2GraphComponent"], _modules_patient_data_patient_monitor_monitor_br_graph_monitor_br_graph_component__WEBPACK_IMPORTED_MODULE_7__["MonitorBRGraphComponent"], _modules_patient_data_patient_monitor_monitor_ecg_monitor_ecg_component__WEBPACK_IMPORTED_MODULE_9__["MonitorECGComponent"], _modules_patient_data_patient_monitor_monitor_blood_pressure_monitor_blood_pressure_component__WEBPACK_IMPORTED_MODULE_10__["MonitorBloodPressureComponent"], _modules_patient_data_patient_monitor_monitor_heart_rate_monitor_heart_rate_component__WEBPACK_IMPORTED_MODULE_11__["MonitorHeartRateComponent"], _modules_patient_data_patient_monitor_monitor_spo2_monitor_spo2_component__WEBPACK_IMPORTED_MODULE_12__["MonitorSpo2Component"], _modules_patient_data_patient_monitor_monitor_breathing_rate_monitor_breathing_rate_component__WEBPACK_IMPORTED_MODULE_13__["MonitorBreathingRateComponent"], _modules_patient_data_patient_monitor_monitor_temperature_monitor_temperature_component__WEBPACK_IMPORTED_MODULE_14__["MonitorTemperatureComponent"], _modules_patient_data_patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_4__["PatientHistoryComponent"], _modules_patient_release_patient_release_component__WEBPACK_IMPORTED_MODULE_3__["PatientReleaseComponent"], _modules_new_sensor_new_sensor_component__WEBPACK_IMPORTED_MODULE_2__["NewSensorComponent"], _modules_set_default_hospital_set_default_hospital_component__WEBPACK_IMPORTED_MODULE_1__["SetDefaultHospitalComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_24__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_28__["FormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_20__["RouterModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_25__["SharedModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatSidenavModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_27__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatTableModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatTabsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatRadioModule"], _angular_material__WEBPACK_IMPORTED_MODULE_26__["MatCardModule"], ng2_charts__WEBPACK_IMPORTED_MODULE_29__["ChartsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_28__["ReactiveFormsModule"], ng_apexcharts__WEBPACK_IMPORTED_MODULE_30__["NgApexchartsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_31__["HttpClientModule"]]
     })], DefaultModule);
     /***/
   },
@@ -2363,7 +2429,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n\n.mat-radio-button ~ .mat-radio-button {\n  margin-left: 16px;\n}\n\n#info_form {\n  display: inline-block;\n  margin-top: 10px;\n  margin-right: 100px;\n  width: 500px;\n}\n\n#remarks_form {\n  display: inline-block;\n  margin-top: 10px;\n  width: 500px;\n}\n\n/*label {\n    width: 100%;\n}*/\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9uZXctcGF0aWVudC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9uZXctcGF0aWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFFQSxXQUFBO0FDQUo7O0FER0E7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBRUEsV0FBQTtBQ0RKOztBREdBO0VBQ0EsV0FBQTtBQ0FBOztBREdBO0VBQ0ksaUJBQUE7QUNBSjs7QURHQTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7QUNBSjs7QURJQTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0FDREo7O0FES0E7O0VBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL25ldy1wYXRpZW50L25ldy1wYXRpZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpdl9jbGFzcyB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG59XHJcblxyXG4uZXhhbXBsZS1mb3JtIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gICAgLy93aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbi5leGFtcGxlLWZvcm0yIHtcclxuICAgIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDEwMDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxud2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5tYXQtcmFkaW8tYnV0dG9uIH4gLm1hdC1yYWRpby1idXR0b24ge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE2cHg7XHJcbiAgfVxyXG5cclxuI2luZm9fZm9ybSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTAwcHg7IFxyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbn1cclxuXHJcbiNyZW1hcmtzX2Zvcm0ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICB3aWR0aDogNTAwcHg7XHJcbiAgICAvLyBib3JkZXItc3R5bGU6IGRvdHRlZDtcclxufVxyXG5cclxuLypsYWJlbCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSovIiwiLmRpdl9jbGFzcyB7XG4gIHdpZHRoOiA1MCU7XG59XG5cbi5leGFtcGxlLWZvcm0ge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDUwMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmV4YW1wbGUtZm9ybTIge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDEwMDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm1hdC1yYWRpby1idXR0b24gfiAubWF0LXJhZGlvLWJ1dHRvbiB7XG4gIG1hcmdpbi1sZWZ0OiAxNnB4O1xufVxuXG4jaW5mb19mb3JtIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDEwMHB4O1xuICB3aWR0aDogNTAwcHg7XG59XG5cbiNyZW1hcmtzX2Zvcm0ge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIHdpZHRoOiA1MDBweDtcbn1cblxuLypsYWJlbCB7XG4gICAgd2lkdGg6IDEwMCU7XG59Ki8iXX0= */";
+    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n\n.mat-radio-button ~ .mat-radio-button {\n  margin-left: 16px;\n}\n\n#info_form {\n  display: inline-block;\n  margin-top: 10px;\n  margin-right: 100px;\n  width: 500px;\n}\n\n#remarks_form {\n  display: inline-block;\n  margin-top: 10px;\n  width: 500px;\n}\n\n/*label {\n    width: 100%;\n}*/\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvbmV3LXBhdGllbnQvbmV3LXBhdGllbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvbmV3LXBhdGllbnQvbmV3LXBhdGllbnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxVQUFBO0FDQ0o7O0FERUE7RUFDSSxnQkFBQTtFQUNBLGdCQUFBO0VBRUEsV0FBQTtBQ0FKOztBREdBO0VBQ0ksZ0JBQUE7RUFDQSxpQkFBQTtFQUVBLFdBQUE7QUNESjs7QURHQTtFQUNBLFdBQUE7QUNBQTs7QURHQTtFQUNJLGlCQUFBO0FDQUo7O0FER0E7RUFDSSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0FDQUo7O0FESUE7RUFDSSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtBQ0RKOztBREtBOztFQUFBIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9uZXctcGF0aWVudC9uZXctcGF0aWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kaXZfY2xhc3Mge1xyXG4gICAgd2lkdGg6IDUwJTtcclxufVxyXG5cclxuLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4uZXhhbXBsZS1mb3JtMiB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiAxMDAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbndpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4ubWF0LXJhZGlvLWJ1dHRvbiB+IC5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNnB4O1xyXG4gIH1cclxuXHJcbiNpbmZvX2Zvcm0ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwMHB4OyBcclxuICAgIHdpZHRoOiA1MDBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG59XHJcblxyXG4jcmVtYXJrc19mb3JtIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbn1cclxuXHJcbi8qbGFiZWwge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn0qLyIsIi5kaXZfY2xhc3Mge1xuICB3aWR0aDogNTAlO1xufVxuXG4uZXhhbXBsZS1mb3JtIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZvcm0yIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiAxMDAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5tYXQtcmFkaW8tYnV0dG9uIH4gLm1hdC1yYWRpby1idXR0b24ge1xuICBtYXJnaW4tbGVmdDogMTZweDtcbn1cblxuI2luZm9fZm9ybSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxMDBweDtcbiAgd2lkdGg6IDUwMHB4O1xufVxuXG4jcmVtYXJrc19mb3JtIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICB3aWR0aDogNTAwcHg7XG59XG5cbi8qbGFiZWwge1xuICAgIHdpZHRoOiAxMDAlO1xufSovIl19 */";
     /***/
   },
 
@@ -2771,7 +2837,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9uZXctc2Vuc29yL25ldy1zZW5zb3IuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvbmV3LXNlbnNvci9uZXctc2Vuc29yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBQTtBQ0NKOztBREVBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtFQUVBLFdBQUE7QUNBSjs7QURHQTtFQUNJLGdCQUFBO0VBQ0EsaUJBQUE7RUFFQSxXQUFBO0FDREo7O0FER0E7RUFDSSxXQUFBO0FDQUoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL25ldy1zZW5zb3IvbmV3LXNlbnNvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kaXZfY2xhc3Mge1xyXG4gICAgd2lkdGg6IDUwJTtcclxufVxyXG5cclxuLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4uZXhhbXBsZS1mb3JtMiB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiAxMDAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSIsIi5kaXZfY2xhc3Mge1xuICB3aWR0aDogNTAlO1xufVxuXG4uZXhhbXBsZS1mb3JtIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5leGFtcGxlLWZvcm0yIHtcbiAgbWluLXdpZHRoOiAxNTBweDtcbiAgbWF4LXdpZHRoOiAxMDAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */";
+    __webpack_exports__["default"] = ".div_class {\n  width: 50%;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-form2 {\n  min-width: 150px;\n  max-width: 1000px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvbmV3LXNlbnNvci9uZXctc2Vuc29yLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL25ldy1zZW5zb3IvbmV3LXNlbnNvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFFQSxXQUFBO0FDQUo7O0FER0E7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBRUEsV0FBQTtBQ0RKOztBREdBO0VBQ0ksV0FBQTtBQ0FKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9uZXctc2Vuc29yL25ldy1zZW5zb3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGl2X2NsYXNzIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbn1cclxuXHJcbi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZm9ybTIge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogMTAwMHB4O1xyXG4gICAgLy93aWR0aDogNTAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbi5leGFtcGxlLWZ1bGwtd2lkdGgge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn0iLCIuZGl2X2NsYXNzIHtcbiAgd2lkdGg6IDUwJTtcbn1cblxuLmV4YW1wbGUtZm9ybSB7XG4gIG1pbi13aWR0aDogMTUwcHg7XG4gIG1heC13aWR0aDogNTAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mb3JtMiB7XG4gIG1pbi13aWR0aDogMTUwcHg7XG4gIG1heC13aWR0aDogMTAwMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XG4gIHdpZHRoOiAxMDAlO1xufSJdfQ== */";
     /***/
   },
 
@@ -2905,6 +2971,169 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/modules/patient-data/auxilary-data/auxilary-data.component.scss":
+  /*!*********************************************************************************!*\
+    !*** ./src/app/modules/patient-data/auxilary-data/auxilary-data.component.scss ***!
+    \*********************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModulesPatientDataAuxilaryDataAuxilaryDataComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL2F1eGlsYXJ5LWRhdGEvYXV4aWxhcnktZGF0YS5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/modules/patient-data/auxilary-data/auxilary-data.component.ts":
+  /*!*******************************************************************************!*\
+    !*** ./src/app/modules/patient-data/auxilary-data/auxilary-data.component.ts ***!
+    \*******************************************************************************/
+
+  /*! exports provided: AuxilaryDataComponent */
+
+  /***/
+  function srcAppModulesPatientDataAuxilaryDataAuxilaryDataComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuxilaryDataComponent", function () {
+      return AuxilaryDataComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../../interfaces/PersonData */
+    "./src/app/interfaces/PersonData.ts");
+    /* harmony import */
+
+
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./../../../services/curr-person.service */
+    "./src/app/services/curr-person.service.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+
+    var PATIENT_AUXILARY_DATA = {
+      patient_id: '',
+      auxilary_data: undefined
+    };
+
+    var AuxilaryDataComponent = /*#__PURE__*/function () {
+      function AuxilaryDataComponent(currPersonService, s) {
+        _classCallCheck(this, AuxilaryDataComponent);
+
+        this.currPersonService = currPersonService;
+        this.s = s;
+        this.currPersonService.sharedMessage.subscribe(function (patient) {
+          PATIENT_AUXILARY_DATA.patient_id = patient.patient_Id;
+        });
+      }
+
+      _createClass(AuxilaryDataComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          //console.log('--------------------')
+          this.timer = setInterval(function () {
+            //this.getAuxilaryData();
+            if (PATIENT_AUXILARY_DATA.auxilary_data !== undefined) {
+              _this3.iframe_src = _this3.s.bypassSecurityTrustResourceUrl(PATIENT_AUXILARY_DATA.auxilary_data.study.link);
+            }
+          }, 1000 * 1);
+        }
+      }, {
+        key: "getAuxilaryData",
+        value: function getAuxilaryData() {
+          var client = new $.es.Client({
+            // hosts: hosts
+            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
+          });
+          var result = client.search({
+            index: 'measure_results_v5',
+            size: 1000,
+            body: {
+              query: {
+                match: {
+                  unitId: 'unit_id_test_2'
+                }
+              }
+            }
+          }, function (err, resp, status) {
+            if (resp) {
+              var exportData = resp.hits.hits;
+              console.log(exportData);
+              var patientMeasureRes = exportData[0]._source;
+
+              for (var i = 0; i < exportData.length; i++) {
+                /*if(exportData[i]._source.patientId === PATIENT_AUXILARY_DATA.patient_id){
+                  patientMeasureRes = exportData[i]._source;
+                  break;
+                }*/
+                if (exportData[i]._source.unitId === 'unit_id_test_2' && exportData[i]._source.auxilary_data != undefined) {
+                  patientMeasureRes = exportData[i]._source;
+                  break;
+                }
+              }
+
+              var aux_data = patientMeasureRes.auxilary_data;
+              PATIENT_AUXILARY_DATA.auxilary_data = aux_data; //console.log(PATIENT_AUXILARY_DATA);
+            } else {}
+          });
+        }
+      }]);
+
+      return AuxilaryDataComponent;
+    }();
+
+    AuxilaryDataComponent.ctorParameters = function () {
+      return [{
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
+      }, {
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]
+      }];
+    };
+
+    AuxilaryDataComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+      selector: 'app-auxilary-data',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./auxilary-data.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patient-data/auxilary-data/auxilary-data.component.html"))["default"],
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./auxilary-data.component.scss */
+      "./src/app/modules/patient-data/auxilary-data/auxilary-data.component.scss"))["default"]]
+    })], AuxilaryDataComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/modules/patient-data/patient-data.component.scss":
   /*!******************************************************************!*\
     !*** ./src/app/modules/patient-data/patient-data.component.scss ***!
@@ -2920,7 +3149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#patient_personal_info {\n  display: inline-block;\n  margin-right: 10px;\n  width: 360px;\n  margin-top: 10px;\n}\n\n#monitor {\n  display: inline-block;\n  width: 1000px;\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1kYXRhLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LWRhdGEuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0FDQ0o7O0FESUE7RUFDSSxxQkFBQTtFQUNBLGFBQUE7RUFFQSxnQkFBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1kYXRhLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhdGllbnRfcGVyc29uYWxfaW5mbyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4OyBcclxuICAgIHdpZHRoOiAzNjBweDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICAvL2JvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgLy9oZWlnaHQ6IDUwMHB4O1xyXG59XHJcblxyXG4jbW9uaXRvciB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgd2lkdGg6IDEwMDBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9oZWlnaHQ6IDMwMHB4O1xyXG59IiwiI3BhdGllbnRfcGVyc29uYWxfaW5mbyB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzYwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbiNtb25pdG9yIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogMTAwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = "#patient_personal_info {\n  display: inline-block;\n  margin-right: 10px;\n  width: 360px;\n  margin-top: 10px;\n}\n\n#monitor {\n  display: inline-block;\n  width: 540px;\n  margin-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtZGF0YS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1kYXRhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0NKOztBRElBO0VBQ0kscUJBQUE7RUFDQSxZQUFBO0VBRUEsZ0JBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtZGF0YS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwYXRpZW50X3BlcnNvbmFsX2luZm8ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDsgXHJcbiAgICB3aWR0aDogMzYwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIC8vaGVpZ2h0OiA1MDBweDtcclxufVxyXG5cclxuI21vbml0b3Ige1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiA1NDBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9oZWlnaHQ6IDMwMHB4O1xyXG59IiwiI3BhdGllbnRfcGVyc29uYWxfaW5mbyB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzYwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbiNtb25pdG9yIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogNTQwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59Il19 */";
     /***/
   },
 
@@ -2964,13 +3193,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var PatientDataComponent = /*#__PURE__*/function () {
       function PatientDataComponent(currPersonService) {
-        var _this3 = this;
+        var _this4 = this;
 
         _classCallCheck(this, PatientDataComponent);
 
         this.currPersonService = currPersonService;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          return _this3.name = person.personal.Name;
+          return _this4.name = person.personal.Name;
         });
       }
 
@@ -3016,7 +3245,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#alerts_history {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#scoring_graph {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n.header {\n  display: inline-block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFFQSxhQUFBO0FDQUo7O0FER0E7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFFQSxnQkFBQTtFQUNBLGFBQUE7QUNESjs7QURJQTtFQUNJLHFCQUFBO0FDREoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LWhpc3RvcnkvcGF0aWVudC1oaXN0b3J5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FsZXJ0c19oaXN0b3J5IHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7IFxyXG4gICAgd2lkdGg6IDMyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcblxyXG4jc2NvcmluZ19ncmFwaCB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcblxyXG4uaGVhZGVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufSIsIiNhbGVydHNfaGlzdG9yeSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICB3aWR0aDogMzIwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59XG5cbiNzY29yaW5nX2dyYXBoIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogNTAwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59XG5cbi5oZWFkZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59Il19 */";
+    __webpack_exports__["default"] = "#alerts_history {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#scoring_graph {\n  display: inline-block;\n  width: 500px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n.header {\n  display: inline-block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBRUEsYUFBQTtBQ0FKOztBREdBO0VBQ0kscUJBQUE7RUFDQSxZQUFBO0VBRUEsZ0JBQUE7RUFDQSxhQUFBO0FDREo7O0FESUE7RUFDSSxxQkFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhbGVydHNfaGlzdG9yeSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4OyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICAvL2JvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxufVxyXG5cclxuI3Njb3JpbmdfZ3JhcGgge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiA1MDBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgaGVpZ2h0OiAzMDBweDtcclxufVxyXG5cclxuLmhlYWRlciB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn0iLCIjYWxlcnRzX2hpc3Rvcnkge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgd2lkdGg6IDMyMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4jc2NvcmluZ19ncmFwaCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDUwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4uaGVhZGVyIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufSJdfQ== */";
     /***/
   },
 
@@ -3061,7 +3290,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var PatientHistoryComponent = /*#__PURE__*/function () {
       //
       function PatientHistoryComponent(currPersonService) {
-        var _this4 = this;
+        var _this5 = this;
 
         _classCallCheck(this, PatientHistoryComponent);
 
@@ -3077,16 +3306,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.lineChartPlugins = [];
         this.lineChartType = 'line';
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this4.alerts = person.history.alerts;
-          _this4.scoring = person.history.scoring;
-          _this4.lineChartData = [{
-            data: _this4.scoring,
+          _this5.alerts = person.history.alerts;
+          _this5.scoring = person.history.scoring;
+          _this5.lineChartData = [{
+            data: _this5.scoring,
             label: 'Patient Scoring'
           }];
-          _this4.lineChartLabels = [];
+          _this5.lineChartLabels = [];
 
-          for (var i = 0; i < _this4.scoring.length; i++) {
-            _this4.lineChartLabels.push('day ' + (i + 1));
+          for (var i = 0; i < _this5.scoring.length; i++) {
+            _this5.lineChartLabels.push('day ' + (i + 1));
           }
         });
       }
@@ -3233,22 +3462,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorBloodPressureComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.timer = setInterval(function () {
-            var fe = _this5.mydata.shift();
+            var fe = _this6.mydata.shift();
 
-            _this5.mydata.push(fe);
+            _this6.mydata.push(fe);
 
-            console.log(_this5.mydata); //this.chart.render();
+            console.log(_this6.mydata); //this.chart.render();
             //this.chartOptions.series[0].data = this.mydata;
 
-            console.log(_this5.chart); //this.chart.updateOptions()
+            console.log(_this6.chart); //this.chart.updateOptions()
             //this.chart.updateSeries
             //this.chart.responsive.shift();
 
-            _this5.chart.updateSeries([{
-              data: _this5.mydata
+            _this6.chart.updateSeries([{
+              data: _this6.mydata
             }]);
           }, 1000); // this.chart.updateSeries()
         }
@@ -3336,13 +3565,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorBpComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this7 = this;
 
           this.timer = setInterval(function () {
-            var bp_h_tmp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].Bp_h + '';
-            var bp_l_tmp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].Bp_l + '';
-            _this6.bp_h = bp_h_tmp.substring(0, Math.min(5, bp_h_tmp.length));
-            _this6.bp_l = bp_l_tmp.substring(0, Math.min(5, bp_l_tmp.length));
+            var bp_h_tmp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].Bp_h.val + '';
+            var bp_l_tmp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].Bp_l.val + '';
+            _this7.bp_h = bp_h_tmp.substring(0, Math.min(5, bp_h_tmp.length));
+            _this7.bp_l = bp_l_tmp.substring(0, Math.min(5, bp_l_tmp.length));
           }, 1000 * 0.5);
         }
       }]);
@@ -3486,12 +3715,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorBRGraphComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this7 = this;
+          var _this8 = this;
 
           this.timer = setInterval(function () {
-            var fe = _this7.mydata.shift();
+            var fe = _this8.mydata.shift();
 
-            _this7.mydata.push(_patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].BR); //console.log(this.mydata);
+            _this8.mydata.push(_patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].BR.val); //console.log(this.mydata);
             //this.chart.render();
             //this.chartOptions.series[0].data = this.mydata;
             //console.log(this.chart);
@@ -3500,8 +3729,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             //this.chart.responsive.shift();
 
 
-            _this7.chart.updateSeries([{
-              data: _this7.mydata
+            _this8.chart.updateSeries([{
+              data: _this8.mydata
             }]);
           }, 1000); // this.chart.updateSeries()
         }
@@ -3539,7 +3768,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: yellow;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: yellow;\n}\n\n.BR {\n  font-size: xx-large;\n  text-align: center;\n  color: yellow;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esb0JBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsYUFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItYnJlYXRoaW5nLXJhdGUvbW9uaXRvci1icmVhdGhpbmctcmF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAlO1xyXG59XHJcblxyXG4uc3F1YXJle1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICBib3JkZXItYm90dG9tOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1jb2xvcjogeWVsbG93O1xyXG59XHJcblxyXG4uQlJ7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiB5ZWxsb3c7XHJcbiAgICAvLyBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgLy8gZGlzcGxheTogdGFibGUtY2VsbDtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgcGFkZGluZy1ib3R0b206IDAlO1xufVxuXG4uc3F1YXJlIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNTVweDtcbiAgYm9yZGVyLWJvdHRvbTogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLWNvbG9yOiB5ZWxsb3c7XG59XG5cbi5CUiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IHllbGxvdztcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgd2lkdGg6IDgwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: yellow;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: yellow;\n}\n\n.BR {\n  font-size: xx-large;\n  text-align: center;\n  color: yellow;\n  vertical-align: middle;\n  width: 80px;\n}\n\n.warning_visible {\n  width: 20px;\n  position: relative;\n  left: 0;\n  top: 3px;\n  visibility: visible;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWJyZWF0aGluZy1yYXRlL21vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWJyZWF0aGluZy1yYXRlL21vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLGFBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsbUJBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWJyZWF0aGluZy1yYXRlL21vbml0b3ItYnJlYXRoaW5nLXJhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogeWVsbG93O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IHllbGxvdztcclxufVxyXG5cclxuLkJSe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogeWVsbG93O1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufVxyXG5cclxuLndhcm5pbmdfdmlzaWJsZSB7XHJcbiAgICB3aWR0aDogMjBweDsgXHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7IFxyXG4gICAgbGVmdDogMDsgXHJcbiAgICB0b3A6IDNweDtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbn0iLCIudG9wIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNXB4O1xuICBib3JkZXItdG9wOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBib3JkZXItY29sb3I6IHllbGxvdztcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBwYWRkaW5nLWJvdHRvbTogMCU7XG59XG5cbi5zcXVhcmUge1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1NXB4O1xuICBib3JkZXItYm90dG9tOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6IHllbGxvdztcbn1cblxuLkJSIHtcbiAgZm9udC1zaXplOiB4eC1sYXJnZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogeWVsbG93O1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICB3aWR0aDogODBweDtcbn1cblxuLndhcm5pbmdfdmlzaWJsZSB7XG4gIHdpZHRoOiAyMHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDA7XG4gIHRvcDogM3B4O1xuICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xufSJdfQ== */";
     /***/
   },
 
@@ -3587,17 +3816,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function MonitorBreathingRateComponent() {
         _classCallCheck(this, MonitorBreathingRateComponent);
 
-        this.currBr = '';
+        this.currBr = {
+          br: '',
+          "new": true
+        };
+        this.warning_icon = './../../../../../assets/icons/warning-icon-red.png';
+        this.black_icon = './../../../../../assets/icons/black-icon.png';
+        this.warning = '';
       }
 
       _createClass(MonitorBreathingRateComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this8 = this;
+          var _this9 = this;
 
           this.timer = setInterval(function () {
-            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].BR + '';
-            _this8.currBr = temp.substring(0, Math.min(4, temp.length)); //this.getPatientInfo();
+            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].BR.val + '';
+            _this9.currBr.br = temp.substring(0, Math.min(4, temp.length));
+            _this9.currBr["new"] = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].BR["new"];
+
+            if (_this9.currBr["new"]) {
+              _this9.warning = _this9.black_icon;
+            } else {
+              _this9.warning = _this9.warning_icon;
+            } //this.getPatientInfo();
+
           }, 1000 * 0.5);
         }
         /*async getPatientInfo(){
@@ -3633,7 +3876,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "randomBr",
         value: function randomBr() {
-          this.currBr = Math.floor(Math.random() * 10) + 10 + '';
+          this.currBr.br = Math.floor(Math.random() * 10) + 10 + '';
         }
       }]);
 
@@ -3769,12 +4012,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorECGComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this10 = this;
 
           this.timer = setInterval(function () {
-            var fe = _this9.mydata.shift();
+            var fe = _this10.mydata.shift();
 
-            _this9.mydata.push(fe); //console.log(this.mydata);
+            _this10.mydata.push(fe); //console.log(this.mydata);
             //this.chart.render();
             //this.chartOptions.series[0].data = this.mydata;
             //console.log(this.chart);
@@ -3783,8 +4026,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             //this.chart.responsive.shift();
 
 
-            _this9.chart.updateSeries([{
-              data: _this9.mydata
+            _this10.chart.updateSeries([{
+              data: _this10.mydata
             }]);
           }, 1000); // this.chart.updateSeries()
         }
@@ -3822,7 +4065,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cadetblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cadetblue;\n}\n\n.HR {\n  font-size: xx-large;\n  text-align: center;\n  color: cadetblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9tb25pdG9yLWhlYXJ0LXJhdGUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWhlYXJ0LXJhdGUvbW9uaXRvci1oZWFydC1yYXRlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7QUNDSjs7QURFQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFFQSxnQkFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItaGVhcnQtcmF0ZS9tb25pdG9yLWhlYXJ0LXJhdGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IGNhZGV0Ymx1ZTtcclxufVxyXG5cclxuLkhSe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogY2FkZXRibHVlO1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufSIsIi50b3Age1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogY2FkZXRibHVlO1xufVxuXG4uSFIge1xuICBmb250LXNpemU6IHh4LWxhcmdlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiBjYWRldGJsdWU7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cadetblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cadetblue;\n}\n\n.HR {\n  font-size: xx-large;\n  text-align: center;\n  color: cadetblue;\n  vertical-align: middle;\n  width: 80px;\n}\n\n.warning_visible {\n  width: 20px;\n  position: relative;\n  left: 0;\n  top: 3px;\n  visibility: visible;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWhlYXJ0LXJhdGUvbW9uaXRvci1oZWFydC1yYXRlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LW1vbml0b3IvbW9uaXRvci1oZWFydC1yYXRlL21vbml0b3ItaGVhcnQtcmF0ZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLHVCQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsZ0JBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsbUJBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLWhlYXJ0LXJhdGUvbW9uaXRvci1oZWFydC1yYXRlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRvcHtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1cHg7XHJcbiAgICBib3JkZXItdG9wOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBib3JkZXItY29sb3I6IGNhZGV0Ymx1ZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMCU7XHJcbn1cclxuXHJcbi5zcXVhcmV7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XHJcbn1cclxuXHJcbi5IUntcclxuICAgIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvL3dpZHRoOiA3MHB4O1xyXG4gICAgY29sb3I6IGNhZGV0Ymx1ZTtcclxuICAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICAvLyBkaXNwbGF5OiB0YWJsZS1jZWxsO1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbn1cclxuXHJcbi53YXJuaW5nX3Zpc2libGUge1xyXG4gICAgd2lkdGg6IDIwcHg7IFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlOyBcclxuICAgIGxlZnQ6IDA7IFxyXG4gICAgdG9wOiAzcHg7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgcGFkZGluZy1ib3R0b206IDAlO1xufVxuXG4uc3F1YXJlIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNTVweDtcbiAgYm9yZGVyLWJvdHRvbTogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYm9yZGVyLWNvbG9yOiBjYWRldGJsdWU7XG59XG5cbi5IUiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IGNhZGV0Ymx1ZTtcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgd2lkdGg6IDgwcHg7XG59XG5cbi53YXJuaW5nX3Zpc2libGUge1xuICB3aWR0aDogMjBweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBsZWZ0OiAwO1xuICB0b3A6IDNweDtcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcbn0iXX0= */";
     /***/
   },
 
@@ -3875,20 +4118,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.blackPicPath = '../../../../../assets/monitor_pics/black.jpg';
         this.hearts = [this.heartPicPath, this.blackPicPath];
         this.currPicIdx = 0;
-        this.heartRate = '';
+        this.heartRate = {
+          hr: '',
+          "new": true
+        };
+        this.warning_icon = './../../../../../assets/icons/warning-icon-red.png';
+        this.black_icon = './../../../../../assets/icons/black-icon.png';
+        this.warning = '';
       }
 
       _createClass(MonitorHeartRateComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.timer = setInterval(function () {
-            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].HR + '';
-            _this10.heartRate = temp.substring(0, Math.min(5, temp.length));
+            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].HR.val + '';
+            _this11.heartRate.hr = temp.substring(0, Math.min(5, temp.length));
+            _this11.heartRate["new"] = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].HR["new"];
+
+            if (_this11.heartRate["new"]) {
+              _this11.warning = _this11.black_icon;
+            } else {
+              _this11.warning = _this11.warning_icon;
+            }
           }, 1000 * 0.5);
           this.timer2 = setInterval(function () {
-            _this10.heartPic();
+            _this11.heartPic();
           }, 1000 * 1);
         }
         /*async getPatientInfo(){
@@ -3923,7 +4179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "randomHr",
         value: function randomHr() {
-          this.heartRate = Math.floor(Math.random() * 30) + 51 + '';
+          this.heartRate.hr = Math.floor(Math.random() * 30) + 51 + '';
         }
       }, {
         key: "heartPic",
@@ -4072,12 +4328,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MonitorSpO2GraphComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.timer = setInterval(function () {
-            var fe = _this11.mydata.shift();
+            var fe = _this12.mydata.shift();
 
-            _this11.mydata.push(Math.floor(_patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].SpO2)); //console.log(this.mydata);
+            _this12.mydata.push(Math.floor(_patient_monitor_component__WEBPACK_IMPORTED_MODULE_1__["MONITOR_PATIENT"].SpO2.val)); //console.log(this.mydata);
             //this.chart.render();
             //this.chartOptions.series[0].data = this.mydata;
             //console.log(this.chart);
@@ -4086,8 +4342,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             //this.chart.responsive.shift();
 
 
-            _this11.chart.updateSeries([{
-              data: _this11.mydata
+            _this12.chart.updateSeries([{
+              data: _this12.mydata
             }]);
           }, 1000); // this.chart.updateSeries()
         }
@@ -4125,7 +4381,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cornflowerblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cornflowerblue;\n}\n\n.SPO2 {\n  font-size: xx-large;\n  text-align: center;\n  color: cornflowerblue;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9tb25pdG9yLXNwbzIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXNwbzIvbW9uaXRvci1zcG8yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSw0QkFBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGtCQUFBO0VBQ0EsNEJBQUE7QUNDSjs7QURFQTtFQUNJLG1CQUFBO0VBQ0Esa0JBQUE7RUFFQSxxQkFBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3Itc3BvMi9tb25pdG9yLXNwbzIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAlO1xyXG59XHJcblxyXG4uc3F1YXJle1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICBib3JkZXItYm90dG9tOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbn1cclxuXHJcbi5TUE8ye1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbiAgICAvLyBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG4gICAgLy8gZGlzcGxheTogdGFibGUtY2VsbDtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBwYWRkaW5nLWJvdHRvbTogMCU7XG59XG5cbi5zcXVhcmUge1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1NXB4O1xuICBib3JkZXItYm90dG9tOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xufVxuXG4uU1BPMiB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IGNvcm5mbG93ZXJibHVlO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICB3aWR0aDogODBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: cornflowerblue;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: cornflowerblue;\n}\n\n.SPO2 {\n  font-size: xx-large;\n  text-align: center;\n  color: cornflowerblue;\n  vertical-align: middle;\n  width: 80px;\n}\n\n.warning_visible {\n  width: 20px;\n  position: relative;\n  left: 0;\n  top: 3px;\n  visibility: visible;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXNwbzIvbW9uaXRvci1zcG8yLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LW1vbml0b3IvbW9uaXRvci1zcG8yL21vbml0b3Itc3BvMi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLDRCQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEscUJBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsbUJBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXNwbzIvbW9uaXRvci1zcG8yLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRvcHtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1cHg7XHJcbiAgICBib3JkZXItdG9wOiBzb2xpZDtcclxuICAgIGJvcmRlci1sZWZ0OiBzb2xpZDtcclxuICAgIGJvcmRlci1yaWdodDogc29saWQ7XHJcbiAgICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xyXG59XHJcblxyXG4uU1BPMntcclxuICAgIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAvL3dpZHRoOiA3MHB4O1xyXG4gICAgY29sb3I6IGNvcm5mbG93ZXJibHVlO1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufVxyXG5cclxuLndhcm5pbmdfdmlzaWJsZSB7XHJcbiAgICB3aWR0aDogMjBweDsgXHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7IFxyXG4gICAgbGVmdDogMDsgXHJcbiAgICB0b3A6IDNweDtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbn0iLCIudG9wIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogNXB4O1xuICBib3JkZXItdG9wOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBib3JkZXItY29sb3I6IGNvcm5mbG93ZXJibHVlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogY29ybmZsb3dlcmJsdWU7XG59XG5cbi5TUE8yIHtcbiAgZm9udC1zaXplOiB4eC1sYXJnZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogY29ybmZsb3dlcmJsdWU7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufVxuXG4ud2FybmluZ192aXNpYmxlIHtcbiAgd2lkdGg6IDIwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAzcHg7XG4gIHZpc2liaWxpdHk6IHZpc2libGU7XG59Il19 */";
     /***/
   },
 
@@ -4170,21 +4426,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var MonitorSpo2Component = /*#__PURE__*/function () {
-      //patientID;
       function MonitorSpo2Component() {
         _classCallCheck(this, MonitorSpo2Component);
 
-        this.SpO2 = '';
+        this.SpO2 = {
+          spo2: '',
+          "new": true
+        }; //patientID;
+
+        this.warning_icon = './../../../../../assets/icons/warning-icon-red.png';
+        this.black_icon = './../../../../../assets/icons/black-icon.png';
+        this.warning = '';
       }
 
       _createClass(MonitorSpo2Component, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.timer = setInterval(function () {
-            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].SpO2 + '';
-            _this12.SpO2 = temp.substring(0, Math.min(5, temp.length)); //this.getPatientInfo()
+            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].SpO2.val + '';
+            _this13.SpO2.spo2 = temp.substring(0, Math.min(5, temp.length));
+            _this13.SpO2["new"] = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].SpO2["new"];
+
+            if (_this13.SpO2["new"]) {
+              _this13.warning = _this13.black_icon;
+            } else {
+              _this13.warning = _this13.warning_icon;
+            } //this.getPatientInfo()
+
           }, 1000 * 0.5); //this.getPatientInfo();
         }
         /*async getPatientInfo(){
@@ -4217,7 +4487,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "randomSpO2",
         value: function randomSpO2() {
-          this.SpO2 = Math.floor(Math.random() * 10) + 90 + '';
+          this.SpO2.spo2 = Math.floor(Math.random() * 10) + 90 + '';
         }
       }]);
 
@@ -4252,7 +4522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: aqua;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: aqua;\n}\n\n.TMP {\n  font-size: xx-large;\n  text-align: center;\n  color: aqua;\n  vertical-align: middle;\n  width: 80px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSx1QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsV0FBQTtFQUVBLHNCQUFBO0VBRUEsV0FBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL21vbml0b3ItdGVtcGVyYXR1cmUvbW9uaXRvci10ZW1wZXJhdHVyZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b3B7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNXB4O1xyXG4gICAgYm9yZGVyLXRvcDogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBhcXVhO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwJTtcclxufVxyXG5cclxuLnNxdWFyZXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgYm9yZGVyLWJvdHRvbTogc29saWQ7XHJcbiAgICBib3JkZXItbGVmdDogc29saWQ7XHJcbiAgICBib3JkZXItcmlnaHQ6IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItY29sb3I6IGFxdWE7XHJcbn1cclxuXHJcbi5UTVB7XHJcbiAgICBmb250LXNpemU6IHh4LWxhcmdlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgLy93aWR0aDogNzBweDtcclxuICAgIGNvbG9yOiBhcXVhO1xyXG4gICAgLy8gZGlzcGxheTogaW5saW5lO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuICAgIC8vIGRpc3BsYXk6IHRhYmxlLWNlbGw7XHJcbiAgICB3aWR0aDogODBweDtcclxufSIsIi50b3Age1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogYXF1YTtcbiAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBwYWRkaW5nLWJvdHRvbTogMCU7XG59XG5cbi5zcXVhcmUge1xuICB3aWR0aDogODBweDtcbiAgaGVpZ2h0OiA1NXB4O1xuICBib3JkZXItYm90dG9tOiBzb2xpZDtcbiAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6IGFxdWE7XG59XG5cbi5UTVAge1xuICBmb250LXNpemU6IHh4LWxhcmdlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiBhcXVhO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICB3aWR0aDogODBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".top {\n  width: 80px;\n  height: 5px;\n  border-top: solid;\n  border-left: solid;\n  border-right: solid;\n  border-color: aqua;\n  background-color: black;\n  text-align: right;\n  padding-bottom: 0%;\n}\n\n.square {\n  width: 80px;\n  height: 55px;\n  border-bottom: solid;\n  border-left: solid;\n  border-right: solid;\n  background-color: black;\n  text-align: center;\n  border-color: aqua;\n}\n\n.TMP {\n  font-size: xx-large;\n  text-align: center;\n  color: aqua;\n  vertical-align: middle;\n  width: 80px;\n}\n\n.warning_visible {\n  width: 20px;\n  position: relative;\n  left: 0;\n  top: 3px;\n  visibility: visible;\n}\n\n.warning_hidden {\n  width: 20px;\n  position: relative;\n  left: 0;\n  top: 3px;\n  visibility: visible;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXRlbXBlcmF0dXJlL21vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXRlbXBlcmF0dXJlL21vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtFQUVBLFdBQUE7RUFFQSxzQkFBQTtFQUVBLFdBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsbUJBQUE7QUNGSjs7QURLQTtFQUNJLFdBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsbUJBQUE7QUNGSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9tb25pdG9yLXRlbXBlcmF0dXJlL21vbml0b3ItdGVtcGVyYXR1cmUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9we1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDVweDtcclxuICAgIGJvcmRlci10b3A6IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJvcmRlci1jb2xvcjogYXF1YTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMCU7XHJcbn1cclxuXHJcbi5zcXVhcmV7XHJcbiAgICB3aWR0aDogODBweDtcclxuICAgIGhlaWdodDogNTVweDtcclxuICAgIGJvcmRlci1ib3R0b206IHNvbGlkO1xyXG4gICAgYm9yZGVyLWxlZnQ6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLWNvbG9yOiBhcXVhO1xyXG59XHJcblxyXG4uVE1Qe1xyXG4gICAgZm9udC1zaXplOiB4eC1sYXJnZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIC8vd2lkdGg6IDcwcHg7XHJcbiAgICBjb2xvcjogYXF1YTtcclxuICAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICAvLyBkaXNwbGF5OiB0YWJsZS1jZWxsO1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbn1cclxuXHJcbi53YXJuaW5nX3Zpc2libGUge1xyXG4gICAgd2lkdGg6IDIwcHg7IFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlOyBcclxuICAgIGxlZnQ6IDA7IFxyXG4gICAgdG9wOiAzcHg7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG59XHJcblxyXG4ud2FybmluZ19oaWRkZW4ge1xyXG4gICAgd2lkdGg6IDIwcHg7IFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlOyBcclxuICAgIGxlZnQ6IDA7IFxyXG4gICAgdG9wOiAzcHg7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG59IiwiLnRvcCB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDVweDtcbiAgYm9yZGVyLXRvcDogc29saWQ7XG4gIGJvcmRlci1sZWZ0OiBzb2xpZDtcbiAgYm9yZGVyLXJpZ2h0OiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiBhcXVhO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctYm90dG9tOiAwJTtcbn1cblxuLnNxdWFyZSB7XG4gIHdpZHRoOiA4MHB4O1xuICBoZWlnaHQ6IDU1cHg7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1yaWdodDogc29saWQ7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1jb2xvcjogYXF1YTtcbn1cblxuLlRNUCB7XG4gIGZvbnQtc2l6ZTogeHgtbGFyZ2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IGFxdWE7XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIHdpZHRoOiA4MHB4O1xufVxuXG4ud2FybmluZ192aXNpYmxlIHtcbiAgd2lkdGg6IDIwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAzcHg7XG4gIHZpc2liaWxpdHk6IHZpc2libGU7XG59XG5cbi53YXJuaW5nX2hpZGRlbiB7XG4gIHdpZHRoOiAyMHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDA7XG4gIHRvcDogM3B4O1xuICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xufSJdfQ== */";
     /***/
   },
 
@@ -4297,21 +4567,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var MonitorTemperatureComponent = /*#__PURE__*/function () {
-      //patientID;
       function MonitorTemperatureComponent() {
         _classCallCheck(this, MonitorTemperatureComponent);
 
-        this.currTmp = '';
+        this.currTmp = {
+          tmp: '',
+          "new": true
+        };
+        this.warning_icon = './../../../../../assets/icons/warning-icon-red.png';
+        this.black_icon = './../../../../../assets/icons/black-icon.png';
+        this.warning = '';
       }
 
       _createClass(MonitorTemperatureComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this13 = this;
+          var _this14 = this;
 
           this.timer = setInterval(function () {
-            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].TMP + '';
-            _this13.currTmp = temp.substring(0, Math.min(4, temp.length)); //this.getPatientInfo();
+            var temp = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].TMP.val + '';
+            _this14.currTmp.tmp = temp.substring(0, Math.min(4, temp.length));
+            _this14.currTmp["new"] = _patient_monitor_component__WEBPACK_IMPORTED_MODULE_2__["MONITOR_PATIENT"].TMP["new"];
+
+            if (_this14.currTmp["new"]) {
+              _this14.warning = _this14.black_icon;
+            } else {
+              _this14.warning = _this14.warning_icon;
+            }
           }, 1000 * 0.5);
         }
         /*async getPatientInfo(){
@@ -4346,7 +4628,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "randomTmp",
         value: function randomTmp() {
-          this.currTmp = Math.floor(Math.random() * 8) + 35 + '';
+          this.currTmp.tmp = Math.floor(Math.random() * 8) + 35 + '';
         }
       }]);
 
@@ -4381,7 +4663,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#graphical_data {\n  display: inline-block;\n  width: 420px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#numerical_data {\n  display: inline-block;\n  width: 80px;\n  margin-top: 10px;\n  height: 300px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL3BhdGllbnQtbW9uaXRvci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL3BhdGllbnQtbW9uaXRvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBRUEsWUFBQTtFQUNBLGdCQUFBO0VBRUEsYUFBQTtBQ0RKOztBRElBO0VBQ0kscUJBQUE7RUFDQSxXQUFBO0VBRUEsZ0JBQUE7RUFDQSxhQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LW1vbml0b3IvcGF0aWVudC1tb25pdG9yLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2dyYXBoaWNhbF9kYXRhIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICAvL21hcmdpbi1yaWdodDogMTBweDsgXHJcbiAgICB3aWR0aDogNDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIGhlaWdodDogMzAwcHg7XHJcbn1cclxuXHJcbiNudW1lcmljYWxfZGF0YSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICAvL2JvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGhlaWdodDogMzAwcHg7XHJcbn0iLCIjZ3JhcGhpY2FsX2RhdGEge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiA0MjBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgaGVpZ2h0OiAzMDBweDtcbn1cblxuI251bWVyaWNhbF9kYXRhIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogODBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgaGVpZ2h0OiAzMDBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = "#graphical_data {\n  display: inline-block;\n  width: 420px;\n  margin-top: 10px;\n  height: 300px;\n}\n\n#numerical_data {\n  display: inline-block;\n  width: 80px;\n  margin-top: 10px;\n  height: 300px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9wYXRpZW50LW1vbml0b3IuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtbW9uaXRvci9wYXRpZW50LW1vbml0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUVBLFlBQUE7RUFDQSxnQkFBQTtFQUVBLGFBQUE7QUNESjs7QURJQTtFQUNJLHFCQUFBO0VBQ0EsV0FBQTtFQUVBLGdCQUFBO0VBQ0EsYUFBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1tb25pdG9yL3BhdGllbnQtbW9uaXRvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNncmFwaGljYWxfZGF0YSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgLy9tYXJnaW4tcmlnaHQ6IDEwcHg7IFxyXG4gICAgd2lkdGg6IDQyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIC8vYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59XHJcblxyXG4jbnVtZXJpY2FsX2RhdGEge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgLy9ib3JkZXItc3R5bGU6IGRvdHRlZDtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBoZWlnaHQ6IDMwMHB4O1xyXG59IiwiI2dyYXBoaWNhbF9kYXRhIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogNDIwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59XG5cbiNudW1lcmljYWxfZGF0YSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDgwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIGhlaWdodDogMzAwcHg7XG59Il19 */";
     /***/
   },
 
@@ -4419,33 +4701,69 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../../interfaces/PersonData */
+    "./src/app/interfaces/PersonData.ts");
+    /* harmony import */
+
+
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./../../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_last_known_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../../services/last-known.service */
+    "./src/app/services/last-known.service.ts");
 
     var MONITOR_PATIENT = {
       patientID: '',
-      HR: '',
-      SpO2: 0,
-      BR: 0,
-      TMP: '',
-      Bp_h: 0,
-      Bp_l: 0,
-      ECG: {}
+      HR: {
+        val: '',
+        "new": true
+      },
+      SpO2: {
+        val: 0,
+        "new": true
+      },
+      BR: {
+        val: 0,
+        "new": true
+      },
+      TMP: {
+        val: '',
+        "new": true
+      },
+      Bp_h: {
+        val: 0,
+        "new": true
+      },
+      Bp_l: {
+        val: 0,
+        "new": true
+      },
+      ECG: {
+        val: {},
+        "new": true
+      }
     };
 
     var PatientMonitorComponent = /*#__PURE__*/function () {
-      function PatientMonitorComponent(currPersonService) {
+      function PatientMonitorComponent(currPersonService, lastKnownService) {
         _classCallCheck(this, PatientMonitorComponent);
 
         this.currPersonService = currPersonService;
+        this.lastKnownService = lastKnownService;
         this.currPersonService.sharedMessage.subscribe(function (person) {
+          //MONITOR_PATIENT.patientID = person.patient_Id;
+          // MONITOR_PATIENT.patientID = 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb' //todo - change to patient id!!!
           MONITOR_PATIENT.patientID = person.patient_Id;
         });
       }
@@ -4453,19 +4771,188 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PatientMonitorComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this14 = this;
+          var _this15 = this;
 
           this.timer = setInterval(function () {
-            _this14.getPatientInfo();
+            //this.getPatientInfo();
+            _this15.getLatestPatientInfo();
           }, 1000 * 0.5);
-        }
+        } // not in use
+
       }, {
         key: "getPatientInfo1",
         value: function getPatientInfo1() {
-          MONITOR_PATIENT.HR = Math.floor(Math.random() * 30) + 51 + '';
-          MONITOR_PATIENT.SpO2 = Math.floor(Math.random() * 10) + 90;
-          MONITOR_PATIENT.BR = Math.floor(Math.random() * 10) + 10;
-          MONITOR_PATIENT.TMP = Math.floor(Math.random() * 5) + 35 + '';
+          MONITOR_PATIENT.HR.val = Math.floor(Math.random() * 30) + 51 + '';
+          MONITOR_PATIENT.SpO2.val = Math.floor(Math.random() * 10) + 90;
+          MONITOR_PATIENT.BR.val = Math.floor(Math.random() * 10) + 10;
+          MONITOR_PATIENT.TMP.val = Math.floor(Math.random() * 5) + 35 + '';
+        }
+      }, {
+        key: "getLastKnown",
+        value: function getLastKnown() {
+          var _this16 = this;
+
+          this.lastKnownService.getLastKnown().subscribe(function (lists) {
+            _this16.lastKnownLst = lists[0];
+            _this16.lastUpdateLst = lists[1];
+          });
+        }
+      }, {
+        key: "getLatestPatientInfo",
+        value: function getLatestPatientInfo() {
+          this.getLastKnown(); //this.getLastUpdate();
+          // temporary lists!!
+
+          /*this.lastKnownLst = [
+            {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
+             age: 8,
+             primery_priority:
+              {pulse: 53.9782048096756,
+              fev1: 60.6551240000595,
+              fvc: 70.8259074684175,
+              tlc: 5.299691954218364,
+              rv: 1.5,
+              erv: 0.7774951726718935,
+              frc: 2.2774951726718937,
+              breath_rate: 10,
+              wheezing: false,
+              cough_presence_rate: 3},
+             secondery_priority:
+             {fever: 37,
+             bpm: 45.77962601286034,
+             rpmf: 69,
+             saturation: 98.5497189686849,
+             blood_pressure_h: 115.53040926622532,
+             blood_pressure_l: 78.56628638318611,
+             ecg: '{ key : val }'},
+             Id: 'dc91c0ce-eea6-4111-9730-1b64188c6d37',
+             timeTag: '2020-04-13T07:50:39.268428'}
+          ]
+               this.lastUpdateLst = [
+            {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
+            updates:
+            {pulse: '1587048591757',
+            fev1: '1587048591757',
+            fvc: '1587048591757',
+            tlc: '1587048591757',
+            rv: '1587048591757',
+            erv: '1587048591757',
+            frc: '1587048591757',
+            breath_rate: '1587048591757',
+            wheezing: '1587048591757',
+            cough_presence_rate: '1587048591757',
+            fever: '1587048591757',
+            bpm: '1587048591757',
+            rpmf: '1587048591757',
+            saturation: '1587048591757',
+            blood_pressure_h: '1587048591757',
+            blood_pressure_l: '1587048591757',
+            ecg: '1587048591757'}}
+          ]*/
+
+          var ret = this.getPatientUIMeasureResultsFromRedis(MONITOR_PATIENT.patientID);
+
+          if (ret === undefined) {
+            return;
+          }
+
+          MONITOR_PATIENT.HR = ret.heartRate;
+          MONITOR_PATIENT.SpO2.val = +ret.spO2.val;
+          MONITOR_PATIENT.SpO2["new"] = ret.spO2["new"];
+          MONITOR_PATIENT.BR.val = +ret.breathingRate.val;
+          MONITOR_PATIENT.BR["new"] = ret.breathingRate["new"];
+          MONITOR_PATIENT.TMP = ret.fever;
+          var bp = ret.bloodPresure.val;
+          MONITOR_PATIENT.Bp_h.val = +bp.substring(0, bp.indexOf('/'));
+          MONITOR_PATIENT.Bp_l.val = +bp.substring(bp.indexOf('/') + 1, bp.length); //MONITOR_PATIENT.ECG = patientMeasureRes.secondery_priority.ecg;
+        }
+      }, {
+        key: "getPatientUIMeasureResultsFromRedis",
+        value: function getPatientUIMeasureResultsFromRedis(patientId) {
+          var found = false;
+          var PatientMeasureResults = {
+            heartRate: {
+              val: '-',
+              "new": true
+            },
+            bloodPresure: {
+              val: '-',
+              "new": true
+            },
+            spO2: {
+              val: '-',
+              "new": true
+            },
+            breathingRate: {
+              val: '-',
+              "new": true
+            },
+            extraO2: {
+              val: '',
+              "new": true
+            },
+            fever: {
+              val: '-',
+              "new": true
+            },
+            breathingInfo: {
+              val: '-',
+              "new": true
+            }
+          };
+          if (this.lastKnownLst === undefined) return undefined;
+
+          for (var i = 0; i < this.lastKnownLst.length; i++) {
+            if (this.lastKnownLst[i].patientId === patientId) {
+              found = true;
+              var hr = this.lastKnownLst[i].secondery_priority.bpm + '';
+              var bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h + '';
+              var bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l + '';
+              var p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) + '/' + bp_l.substring(0, Math.min(bp_l.length, 5));
+              var spO2 = this.lastKnownLst[i].secondery_priority.saturation + '';
+              var fever = this.lastKnownLst[i].secondery_priority.fever + '';
+              var p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
+
+              if (this.lastKnownLst[i].primery_priority.wheezing) {
+                p_breathing_info = 'Wheezing, ' + p_breathing_info;
+              }
+
+              PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+              PatientMeasureResults.bloodPresure.val = p_bp;
+              PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+              PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
+              PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
+              PatientMeasureResults.breathingInfo.val = p_breathing_info;
+              break;
+            }
+          }
+
+          if (!found) {
+            return PatientMeasureResults;
+          }
+
+          for (var _i = 0; _i < this.lastUpdateLst.length; _i++) {
+            if (this.lastUpdateLst[_i].patientId === patientId) {
+              PatientMeasureResults.heartRate["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.bmp, 10);
+              PatientMeasureResults.bloodPresure["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.blood_pressure_h, 10) && this.isNewInformation(this.lastUpdateLst[_i].updates.blood_pressure_l, 10);
+              PatientMeasureResults.spO2["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.saturation, 10);
+              PatientMeasureResults.breathingRate["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.breath_rate, 10);
+              PatientMeasureResults.fever["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.fever, 10);
+              PatientMeasureResults.breathingInfo["new"] = this.isNewInformation(this.lastUpdateLst[_i].updates.cough_presence_rate, 10) && this.isNewInformation(this.lastUpdateLst[_i].updates.wheezing, 10);
+              break;
+            }
+          }
+
+          return PatientMeasureResults;
+        }
+      }, {
+        key: "isNewInformation",
+        value: function isNewInformation(originalTime, maxDelay) {
+          var now = new Date(new Date().toUTCString());
+          var time = new Date(new Date(originalTime).toUTCString());
+          var diffMs = Math.abs(now.getTime() - time.getTime());
+          var diffMins = Math.round(diffMs % 86400000 % 3600000 / 60000);
+          return diffMins < maxDelay ? true : false;
         }
       }, {
         key: "getPatientInfo",
@@ -4478,11 +4965,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     client = new $.es.Client({
                       // hosts: hosts
-                      host: 'https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com/'
+                      host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
                     });
                     result = client.search({
-                      index: 'measure_results_v4',
-                      size: 1000
+                      index: 'measure_results_v5',
+                      size: 1000,
+                      body: {
+                        query: {
+                          match: {
+                            patientId: MONITOR_PATIENT.patientID
+                          }
+                        }
+                      }
                     }, function (err, resp, status) {
                       if (resp) {
                         var exportData = resp.hits.hits;
@@ -4495,13 +4989,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                           }
                         }
 
-                        MONITOR_PATIENT.HR = patientMeasureRes.secondery_priority.bpm;
-                        MONITOR_PATIENT.SpO2 = patientMeasureRes.secondery_priority.saturation;
-                        MONITOR_PATIENT.BR = patientMeasureRes.primery_priority.breath_rate;
-                        MONITOR_PATIENT.TMP = patientMeasureRes.secondery_priority.fever;
-                        MONITOR_PATIENT.Bp_h = patientMeasureRes.secondery_priority.blood_pressure_h;
-                        MONITOR_PATIENT.Bp_l = patientMeasureRes.secondery_priority.blood_pressure_l;
-                        MONITOR_PATIENT.ECG = patientMeasureRes.secondery_priority.ecg;
+                        MONITOR_PATIENT.HR.val = patientMeasureRes.secondery_priority.bpm;
+                        MONITOR_PATIENT.SpO2.val = patientMeasureRes.secondery_priority.saturation;
+                        MONITOR_PATIENT.BR.val = patientMeasureRes.primery_priority.breath_rate;
+                        MONITOR_PATIENT.TMP.val = patientMeasureRes.secondery_priority.fever;
+                        MONITOR_PATIENT.Bp_h.val = patientMeasureRes.secondery_priority.blood_pressure_h;
+                        MONITOR_PATIENT.Bp_l.val = patientMeasureRes.secondery_priority.blood_pressure_l;
+                        MONITOR_PATIENT.ECG.val = patientMeasureRes.secondery_priority.ecg;
                       } else {}
                     });
 
@@ -4520,11 +5014,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientMonitorComponent.ctorParameters = function () {
       return [{
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_1__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
+      }, {
+        type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_4__["LastKnownService"]
       }];
     };
 
-    PatientMonitorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+    PatientMonitorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
       selector: 'app-patient-monitor',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patient-monitor.component.html */
@@ -4552,7 +5048,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".roundImg {\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm91bmRJbWd7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICB3aWR0aDogMjBweDtcclxuICAgIGhlaWdodDogMjBweDtcclxufSIsIi5yb3VuZEltZyB7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgd2lkdGg6IDIwcHg7XG4gIGhlaWdodDogMjBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".roundImg {\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtcGVyc29uYWwtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LXBlcnNvbmFsLWRhdGEvcGF0aWVudC1wZXJzb25hbC1kYXRhLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJvdW5kSW1ne1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgd2lkdGg6IDIwcHg7XHJcbiAgICBoZWlnaHQ6IDIwcHg7XHJcbn0iLCIucm91bmRJbWcge1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIHdpZHRoOiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG59Il19 */";
     /***/
   },
 
@@ -4596,7 +5092,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var PatientPersonalDataComponent = /*#__PURE__*/function () {
       function PatientPersonalDataComponent(currPersonService) {
-        var _this15 = this;
+        var _this17 = this;
 
         _classCallCheck(this, PatientPersonalDataComponent);
 
@@ -4609,26 +5105,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.criticalScore = [this.redStatusPath, this.yellowStatusPath];
         this.criticalCurrColor = 0;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this15.selectedPerson = person;
-          _this15.patientName = person.first_name;
-          _this15.hospital = person.institute_name;
-          _this15.department = person.department_name;
-          _this15.roomNumber = person.room_identifier;
-          _this15.bedNumber = person.bed_identifier;
-          _this15.bedLocation = person.bed_location;
-          _this15.inRisk = person.personal.HighRiskGroup;
-          _this15.statusPath = _this15.setColor(person.score);
-          person.measureResults.extraO2 === 'NO' ? _this15.extraO2 = false : _this15.extraO2 = true;
+          _this17.selectedPerson = person;
+          _this17.patientName = person.first_name;
+          _this17.hospital = person.institute_name;
+          _this17.department = person.department_name;
+          _this17.roomNumber = person.room_identifier;
+          _this17.bedNumber = person.bed_identifier;
+          _this17.bedLocation = person.bed_location;
+          _this17.inRisk = person.personal.HighRiskGroup;
+          _this17.statusPath = _this17.setColor(person.score);
+          person.measureResults.extraO2 === 'NO' ? _this17.extraO2 = false : _this17.extraO2 = true;
         });
       }
 
       _createClass(PatientPersonalDataComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this16 = this;
+          var _this18 = this;
 
           this.timer = setInterval(function () {
-            _this16.randomScore();
+            _this18.randomScore();
           }, 1000 * 0.5);
         }
       }, {
@@ -4693,7 +5189,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9wYXRpZW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtZGF0YS9wYXRpZW50LXNldHRpbmdzL3BhdGllbnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtFQUNBLGdCQUFBO0VBRUEsV0FBQTtBQ0FKOztBREdBO0VBQ0ksV0FBQTtBQ0FKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9wYXRpZW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtZm9ybSB7XHJcbiAgICBtaW4td2lkdGg6IDE1MHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxuICAgIC8vd2lkdGg6IDUwMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG4gIFxyXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59IiwiLmV4YW1wbGUtZm9ybSB7XG4gIG1pbi13aWR0aDogMTUwcHg7XG4gIG1heC13aWR0aDogNTAwcHg7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uZXhhbXBsZS1mdWxsLXdpZHRoIHtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */";
+    __webpack_exports__["default"] = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtc2V0dGluZ3MvcGF0aWVudC1zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvcGF0aWVudC1zZXR0aW5ncy9wYXRpZW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxnQkFBQTtFQUVBLFdBQUE7QUNBSjs7QURHQTtFQUNJLFdBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL3BhdGllbnQtc2V0dGluZ3MvcGF0aWVudC1zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWZvcm0ge1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIG1heC13aWR0aDogNTAwcHg7XHJcbiAgICAvL3dpZHRoOiA1MDBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufSIsIi5leGFtcGxlLWZvcm0ge1xuICBtaW4td2lkdGg6IDE1MHB4O1xuICBtYXgtd2lkdGg6IDUwMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmV4YW1wbGUtZnVsbC13aWR0aCB7XG4gIHdpZHRoOiAxMDAlO1xufSJdfQ== */";
     /***/
   },
 
@@ -4750,7 +5246,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var PatientSettingsComponent = /*#__PURE__*/function () {
       function PatientSettingsComponent(router, // private patientsListService: PatientsListService,
       currPersonService) {
-        var _this17 = this;
+        var _this19 = this;
 
         _classCallCheck(this, PatientSettingsComponent);
 
@@ -4781,14 +5277,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //console.log(SENSORS);
           //console.log(person.id);
           //console.log(person.settings.sensors)
-          _this17.selectedPerson = person;
-          _this17.department = person.department_name;
-          _this17.roomNumber = person.room_identifier;
-          _this17.bedNumber = person.bed_identifier;
-          _this17.bedLocation = person.bed_location;
-          _this17.sensorsDataSource = person.sensors_list;
+          _this19.selectedPerson = person;
+          _this19.department = person.department_name;
+          _this19.roomNumber = person.room_identifier;
+          _this19.bedNumber = person.bed_identifier;
+          _this19.bedLocation = person.bed_location;
+          _this19.sensorsDataSource = person.sensors_list;
 
-          _this17.setSensors();
+          _this19.setSensors();
         });
       }
 
@@ -4798,17 +5294,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setSensors",
         value: function setSensors() {
-          var _this18 = this;
+          var _this20 = this;
 
           this.sensors = [];
 
           _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["SENSORS"].forEach(function (s) {
-            if (s.unit_id !== 'None' && _this18.checkIfSensorInList(s)) {
+            if (s.unit_id !== 'None' && _this20.checkIfSensorInList(s)) {
               s.currently_in_use = 'true';
             }
 
             if (s.currently_in_use === 'false') {
-              _this18.sensors.push(s);
+              _this20.sensors.push(s);
             }
           });
         }
@@ -4934,7 +5430,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#patient_summary {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  height: 110px;\n}\n\n#remarks {\n  display: inline-block;\n  width: 320px;\n  height: 110px;\n}\n\n.input_class {\n  height: 66px;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvcGF0aWVudC1yZWxlYXNlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtcmVsZWFzZS9wYXRpZW50LXJlbGVhc2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUVBLGFBQUE7QUNBSjs7QURHQTtFQUNJLHFCQUFBO0VBQ0EsWUFBQTtFQUVBLGFBQUE7QUNESjs7QURJQTtFQUNJLFlBQUE7RUFDQSxZQUFBO0FDREoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnQtcmVsZWFzZS9wYXRpZW50LXJlbGVhc2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcGF0aWVudF9zdW1tYXJ5IHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsgXHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7IFxyXG4gICAgd2lkdGg6IDMyMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBoZWlnaHQ6IDExMHB4O1xyXG59XHJcblxyXG4jcmVtYXJrcyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgd2lkdGg6IDMyMHB4O1xyXG4gICAgLy8gYm9yZGVyLXN0eWxlOiBkb3R0ZWQ7XHJcbiAgICBoZWlnaHQ6IDExMHB4O1xyXG59XHJcblxyXG4uaW5wdXRfY2xhc3Mge1xyXG4gICAgaGVpZ2h0OiA2NnB4O1xyXG4gICAgd2lkdGg6IDI1MHB4O1xyXG59XHJcbiIsIiNwYXRpZW50X3N1bW1hcnkge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgd2lkdGg6IDMyMHB4O1xuICBoZWlnaHQ6IDExMHB4O1xufVxuXG4jcmVtYXJrcyB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDMyMHB4O1xuICBoZWlnaHQ6IDExMHB4O1xufVxuXG4uaW5wdXRfY2xhc3Mge1xuICBoZWlnaHQ6IDY2cHg7XG4gIHdpZHRoOiAyNTBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = "#patient_summary {\n  display: inline-block;\n  margin-right: 10px;\n  width: 320px;\n  height: 110px;\n}\n\n#remarks {\n  display: inline-block;\n  width: 320px;\n  height: 110px;\n}\n\n.input_class {\n  height: 66px;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1yZWxlYXNlL3BhdGllbnQtcmVsZWFzZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvcGF0aWVudC1yZWxlYXNlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFFQSxhQUFBO0FDQUo7O0FER0E7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFFQSxhQUFBO0FDREo7O0FESUE7RUFDSSxZQUFBO0VBQ0EsWUFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LXJlbGVhc2UvcGF0aWVudC1yZWxlYXNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhdGllbnRfc3VtbWFyeSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IFxyXG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4OyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAxMTBweDtcclxufVxyXG5cclxuI3JlbWFya3Mge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrOyBcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICAgIC8vIGJvcmRlci1zdHlsZTogZG90dGVkO1xyXG4gICAgaGVpZ2h0OiAxMTBweDtcclxufVxyXG5cclxuLmlucHV0X2NsYXNzIHtcclxuICAgIGhlaWdodDogNjZweDtcclxuICAgIHdpZHRoOiAyNTBweDtcclxufVxyXG4iLCIjcGF0aWVudF9zdW1tYXJ5IHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIHdpZHRoOiAzMjBweDtcbiAgaGVpZ2h0OiAxMTBweDtcbn1cblxuI3JlbWFya3Mge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiAzMjBweDtcbiAgaGVpZ2h0OiAxMTBweDtcbn1cblxuLmlucHV0X2NsYXNzIHtcbiAgaGVpZ2h0OiA2NnB4O1xuICB3aWR0aDogMjUwcHg7XG59Il19 */";
     /***/
   },
 
@@ -4991,16 +5487,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var PatientReleaseComponent = /*#__PURE__*/function () {
       function PatientReleaseComponent(router, // private patientsListService: PatientsListService,
       currPersonService) {
-        var _this19 = this;
+        var _this21 = this;
 
         _classCallCheck(this, PatientReleaseComponent);
 
         this.router = router;
         this.currPersonService = currPersonService;
         this.currPersonService.sharedMessage.subscribe(function (person) {
-          _this19.firstName = person.personal.Name;
-          _this19.age = person.personal.Age;
-          _this19.selectedPerson = person;
+          _this21.firstName = person.personal.Name;
+          _this21.age = person.personal.Age;
+          _this21.selectedPerson = person;
         });
       }
 
@@ -5063,7 +5559,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.icon {\n  width: 20px;\n  height: 20px;\n  margin-left: unset;\n  margin-right: unset;\n}\n\n.col_class {\n  width: 50px;\n}\n\n.roundImg {\n  border-radius: 50%;\n  width: 15px;\n  height: 15px;\n}\n\n.make-red {\n  background-color: red;\n}\n\n.make-orange {\n  background-color: orange;\n}\n\n.make-yellow {\n  background-color: yellow;\n}\n\n.make-green {\n  background-color: greenyellow;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9wYXRpZW50cy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50cy9wYXRpZW50cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0kscUJBQUE7QUNDSjs7QURFQTtFQUNJLHdCQUFBO0FDQ0o7O0FERUE7RUFDSSx3QkFBQTtBQ0NKOztBREVBO0VBQ0ksNkJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudHMvcGF0aWVudHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZXtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uaWNvbiB7XHJcbiAgICB3aWR0aDogMjBweDtcclxuICAgIGhlaWdodDogMjBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiB1bnNldDtcclxuICAgIG1hcmdpbi1yaWdodDogdW5zZXQ7XHJcbn1cclxuXHJcbi5jb2xfY2xhc3Mge1xyXG4gICAgd2lkdGg6IDUwcHg7XHJcbn1cclxuXHJcbi5yb3VuZEltZ3tcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIHdpZHRoOiAxNXB4O1xyXG4gICAgaGVpZ2h0OiAxNXB4O1xyXG59XHJcblxyXG4ubWFrZS1yZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG59XHJcblxyXG4ubWFrZS1vcmFuZ2Uge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogb3JhbmdlO1xyXG59XHJcblxyXG4ubWFrZS15ZWxsb3cge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xyXG59XHJcblxyXG4ubWFrZS1ncmVlbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbnllbGxvdztcclxufSIsInRhYmxlIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5pY29uIHtcbiAgd2lkdGg6IDIwcHg7XG4gIGhlaWdodDogMjBweDtcbiAgbWFyZ2luLWxlZnQ6IHVuc2V0O1xuICBtYXJnaW4tcmlnaHQ6IHVuc2V0O1xufVxuXG4uY29sX2NsYXNzIHtcbiAgd2lkdGg6IDUwcHg7XG59XG5cbi5yb3VuZEltZyB7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgd2lkdGg6IDE1cHg7XG4gIGhlaWdodDogMTVweDtcbn1cblxuLm1ha2UtcmVkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xufVxuXG4ubWFrZS1vcmFuZ2Uge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2U7XG59XG5cbi5tYWtlLXllbGxvdyB7XG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcbn1cblxuLm1ha2UtZ3JlZW4ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbnllbGxvdztcbn0iXX0= */";
+    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.icon {\n  width: 20px;\n  height: 20px;\n  margin-left: unset;\n  margin-right: unset;\n}\n\n.col_class {\n  width: 50px;\n}\n\n.roundImg {\n  border-radius: 50%;\n  width: 15px;\n  height: 15px;\n}\n\n.make-red {\n  background-color: red;\n}\n\n.make-orange {\n  background-color: orange;\n}\n\n.make-yellow {\n  background-color: yellow;\n}\n\n.make-green {\n  background-color: greenyellow;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudHMvcGF0aWVudHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcGF0aWVudHMvcGF0aWVudHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7QUNDSjs7QURFQTtFQUNJLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDSjs7QURFQTtFQUNJLHFCQUFBO0FDQ0o7O0FERUE7RUFDSSx3QkFBQTtBQ0NKOztBREVBO0VBQ0ksd0JBQUE7QUNDSjs7QURFQTtFQUNJLDZCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3BhdGllbnRzL3BhdGllbnRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGV7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLmljb24ge1xyXG4gICAgd2lkdGg6IDIwcHg7XHJcbiAgICBoZWlnaHQ6IDIwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogdW5zZXQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IHVuc2V0O1xyXG59XHJcblxyXG4uY29sX2NsYXNzIHtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG59XHJcblxyXG4ucm91bmRJbWd7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICB3aWR0aDogMTVweDtcclxuICAgIGhlaWdodDogMTVweDtcclxufVxyXG5cclxuLm1ha2UtcmVkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxufVxyXG5cclxuLm1ha2Utb3JhbmdlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcclxufVxyXG5cclxuLm1ha2UteWVsbG93IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcclxufVxyXG5cclxuLm1ha2UtZ3JlZW4ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW55ZWxsb3c7XHJcbn0iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaWNvbiB7XG4gIHdpZHRoOiAyMHB4O1xuICBoZWlnaHQ6IDIwcHg7XG4gIG1hcmdpbi1sZWZ0OiB1bnNldDtcbiAgbWFyZ2luLXJpZ2h0OiB1bnNldDtcbn1cblxuLmNvbF9jbGFzcyB7XG4gIHdpZHRoOiA1MHB4O1xufVxuXG4ucm91bmRJbWcge1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIHdpZHRoOiAxNXB4O1xuICBoZWlnaHQ6IDE1cHg7XG59XG5cbi5tYWtlLXJlZCB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJlZDtcbn1cblxuLm1ha2Utb3JhbmdlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogb3JhbmdlO1xufVxuXG4ubWFrZS15ZWxsb3cge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB5ZWxsb3c7XG59XG5cbi5tYWtlLWdyZWVuIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW55ZWxsb3c7XG59Il19 */";
     /***/
   },
 
@@ -5095,42 +5591,56 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../../environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./../../services/last-known.service */
+    "./src/app/services/last-known.service.ts");
+    /* harmony import */
+
+
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
     /* harmony import */
 
 
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
 
     var PatientsComponent = /*#__PURE__*/function () {
-      function PatientsComponent(router, currPersonService) {
-        var _this20 = this;
+      // TODO: implement!
+      function PatientsComponent(router, currPersonService, lastKnownService) {
+        var _this22 = this;
 
         _classCallCheck(this, PatientsComponent);
 
         this.router = router;
-        this.currPersonService = currPersonService; // icons
+        this.currPersonService = currPersonService;
+        this.lastKnownService = lastKnownService; // icons
 
         this.patient_icon = '../../../assets/icons/Patient.JPG';
         this.room_icon = '../../../assets/icons/Room.JPG';
@@ -5145,120 +5655,85 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.removeUser_icon = '../../../assets/icons/remove-user.jpg';
         this.displayedColumns = ['patient_Id', 'room', 'age', 'heartRate', 'bloodPresure', 'spO2', 'breathingRate', 'extraO2', 'fever', 'breathingInfo', 'alerts', 'progress', 'score', 'data', 'release']; // dataSource: PersonHealthData[];
 
-        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENTS"];
+        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"];
         this.greenStatusPath = '../../../assets/colors/green.jpg';
         this.yellowStatusPath = '../../../assets/colors/yellow.jpg';
         this.orangeStatusPath = '../../../assets/colors/orange.jpg';
-        this.redStatusPath = '../../../assets/colors/red.jpg'; //console.log(PATIENTS);
+        this.redStatusPath = '../../../assets/colors/red.jpg';
+        this.redis_flag = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redis_flag; //console.log(PATIENTS);
         //console.log(SENSORS);
         //console.log(PATIENT_STATUS_LIST);
-        //console.log(MEASURMENT_RESULTS);
 
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["timer"])(1000).subscribe(function () {
-          _this20.setUIPatients();
+        console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"]);
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["timer"])(1000).subscribe(function () {
+          _this22.setUIPatients();
 
-          _this20.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"];
+          _this22.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"];
         });
       }
 
       _createClass(PatientsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this21 = this;
+          var _this23 = this;
 
           this.mytimer = setInterval(function () {
-            _this21.updateMeasureResults();
+            _this23.updateMeasureResults(); //this.setPatientUIListMeasureResults();
 
-            _this21.setPatientUIListMeasureResults();
 
-            _this21.calculatePatientsByScore();
+            _this23.calculatePatientsByScore();
+
+            _this23.getLatestPatientInfo();
           }, 1000 * 0.5);
         }
       }, {
         key: "calculatePatientsByScore",
         value: function calculatePatientsByScore() {
-          var _this22 = this;
+          var _this24 = this;
 
           this.numOfCriticalPatients = 0;
           this.numOfMajorPatients = 0;
           this.numOfModeratePatients = 0;
           this.numOfMinorPatients = 0;
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].forEach(function (patient) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (patient) {
             if (patient.score < 2) {
-              _this22.numOfMinorPatients++;
+              _this24.numOfMinorPatients++;
             }
 
             if (patient.score >= 2 && patient.score < 5) {
-              _this22.numOfModeratePatients++;
+              _this24.numOfModeratePatients++;
             }
 
             if (patient.score >= 5 && patient.score < 7) {
-              _this22.numOfMajorPatients++;
+              _this24.numOfMajorPatients++;
             }
 
             if (patient.score >= 7) {
-              _this22.numOfCriticalPatients++;
+              _this24.numOfCriticalPatients++;
             }
           });
-        }
-      }, {
-        key: "newSensor",
-        value: function newSensor() {
-          this.router.navigate(['/new-sensor']);
-        }
-      }, {
-        key: "newPatient",
-        value: function newPatient() {
-          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PersonHealthData"]();
-          newPerson.patient_Id = this.getNextID();
-          this.currPersonService.nextMessage(newPerson);
-          this.router.navigate(['/new-patient']);
-        }
-      }, {
-        key: "getNextID",
-        value: function getNextID() {
-          var nextID = -1;
+        } // set Patients List
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].forEach(function (element) {
-            console.log(element.patient_Id);
-            if (element.patient_Id >= nextID) nextID = element.patient_Id + 1;
-          });
-
-          console.log(nextID);
-          return nextID;
-        }
-      }, {
-        key: "patientData",
-        value: function patientData(element) {
-          this.currPersonService.nextMessage(element);
-          this.router.navigate(['/patient-data']);
-        }
-      }, {
-        key: "releasePatient",
-        value: function releasePatient(element) {
-          this.currPersonService.nextMessage(element);
-          this.router.navigate(['/release-document']);
-        }
       }, {
         key: "setUIPatients",
         value: function setUIPatients() {
-          var _this23 = this;
+          var _this25 = this;
 
           //console.log('-----------------')
           //console.log(PATIENTS);
           //console.log('length: ' + PATIENTS.length);
           //console.log(PATIENTS[0]);
-          if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].length !== 0) {
+          if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].length !== 0) {
             return;
           }
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENTS"].forEach(function (patient) {
-            var curr_age = _this23.getAge(patient.date_of_birth);
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"].forEach(function (patient) {
+            var curr_age = _this25.getAge(patient.date_of_birth);
 
             var riskgroup = true;
 
-            var p_sensorsList = _this23.getPatientSensors(patient);
+            var p_sensorsList = _this25.getPatientSensors(patient);
 
             if (patient.risk_group === 'None') {
               riskgroup = false;
@@ -5285,13 +5760,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               },
               hospitalization: null,
               measureResults: {
-                heartRate: 0,
-                bloodPresure: '',
-                spO2: 0,
-                breathingRate: 0,
-                extraO2: '',
-                fever: 0,
-                breathingInfo: ''
+                heartRate: {
+                  val: 0,
+                  "new": true
+                },
+                bloodPresure: {
+                  val: '',
+                  "new": true
+                },
+                spO2: {
+                  val: 0,
+                  "new": true
+                },
+                breathingRate: {
+                  val: 0,
+                  "new": true
+                },
+                extraO2: {
+                  val: '',
+                  "new": true
+                },
+                fever: {
+                  val: 0,
+                  "new": true
+                },
+                breathingInfo: {
+                  val: '',
+                  "new": true
+                }
               },
               alerts: '',
               progress: '',
@@ -5303,11 +5799,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 ],
                 scoring: []
               },
-              settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["DEFAULT_PERSON_SETTINGS"],
+              settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"],
               sensors_list: p_sensorsList
             }; //console.log(patientUI);
 
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].push(patientUI);
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].push(patientUI);
           });
         }
       }, {
@@ -5343,65 +5839,108 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
           });
           return newList;
-        }
+        } // end of set Patients List
+
       }, {
         key: "setPatientUIListMeasureResults",
         value: function setPatientUIListMeasureResults() {
-          var _this24 = this;
+          var _this26 = this;
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].forEach(function (p_ui) {
-            p_ui.measureResults = _this24.getPatientUIMeasureResults(p_ui.patient_Id);
-            p_ui.score = _this24.getPatientScore(p_ui.patient_Id);
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (p_ui) {
+            p_ui.measureResults = _this26.getPatientUIMeasureResults(p_ui.patient_Id);
+            p_ui.score = _this26.getPatientScore(p_ui.patient_Id);
           });
         }
       }, {
         key: "getPatientUIMeasureResults",
         value: function getPatientUIMeasureResults(p_id) {
-          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"].length; i++) {
+          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
             //todo - change back to p_id instead of '800d4470-7d45-11ea-ac59-2fbe9b8b5360'!!!!!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].patientId === p_id) {
-              var hr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].secondery_priority.bpm + '';
-              var bp_h = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_h + '';
-              var bp_l = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_l + '';
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].patientId === p_id) {
+              var hr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.bpm + '';
+              var bp_h = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_h + '';
+              var bp_l = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_l + '';
               var p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) + '/' + bp_l.substring(0, Math.min(bp_l.length, 5));
-              var spO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].secondery_priority.saturation + '';
-              var fever = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].secondery_priority.fever + '';
-              var p_breathing_info = 'cough %: ' + _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].primery_priority.cough_presence_rate;
+              var spO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.saturation + '';
+              var fever = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.fever + '';
+              var p_breathing_info = 'cough %: ' + _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.cough_presence_rate;
 
-              if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].primery_priority.wheezing) {
+              if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.wheezing) {
                 p_breathing_info = 'Wheezing, ' + p_breathing_info;
               }
 
               return {
-                heartRate: hr.substring(0, Math.min(5, hr.length)),
-                bloodPresure: p_bp,
-                spO2: spO2.substring(0, Math.min(spO2.length, 5)),
-                breathingRate: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"][i].primery_priority.breath_rate,
-                extraO2: '',
-                fever: fever.substring(0, Math.min(fever.length, 4)),
-                breathingInfo: p_breathing_info
+                heartRate: {
+                  val: hr.substring(0, Math.min(5, hr.length)),
+                  "new": true
+                },
+                bloodPresure: {
+                  val: p_bp,
+                  "new": true
+                },
+                spO2: {
+                  val: spO2.substring(0, Math.min(spO2.length, 5)),
+                  "new": true
+                },
+                breathingRate: {
+                  val: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.breath_rate,
+                  "new": true
+                },
+                extraO2: {
+                  val: '',
+                  "new": true
+                },
+                fever: {
+                  val: fever.substring(0, Math.min(fever.length, 4)),
+                  "new": true
+                },
+                breathingInfo: {
+                  val: p_breathing_info,
+                  "new": true
+                }
               };
             }
           }
 
           return {
-            heartRate: '-',
-            bloodPresure: '-',
-            spO2: '-',
-            breathingRate: '-',
-            extraO2: '',
-            fever: '-',
-            breathingInfo: '-'
+            heartRate: {
+              val: '-',
+              "new": true
+            },
+            bloodPresure: {
+              val: '-',
+              "new": true
+            },
+            spO2: {
+              val: '-',
+              "new": true
+            },
+            breathingRate: {
+              val: '-',
+              "new": true
+            },
+            extraO2: {
+              val: '',
+              "new": true
+            },
+            fever: {
+              val: '-',
+              "new": true
+            },
+            breathingInfo: {
+              val: '-',
+              "new": true
+            }
           };
         }
       }, {
         key: "getPatientScore",
         value: function getPatientScore(p_id) {
-          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"].length; i++) {
+          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
             //todo - change back to p_id instead of '15720b10-778c-11ea-99b7-1f57529dde94'!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
-              console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"][i]);
-              return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"][i].Score.Total; //return Math.floor(Math.random()*9); //check if table is dynamic
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
+              console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i]);
+              return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].Score.Total; //return Math.floor(Math.random()*9); //check if table is dynamic
             }
           }
 
@@ -5412,25 +5951,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function updateMeasureResults() {
           var client = new $.es.Client({
             // hosts: hosts
-            host: 'https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com/'
+            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["ELASTIC_HOST"]
           });
           var result = client.search({
-            index: 'measure_results_v4',
+            index: 'measure_results_v5',
             size: 1000
           }, function (err, resp, status) {
             if (resp) {
               //debugger;
               var exportData = resp.hits.hits; //console.log(exportData);
 
-              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"].length; i++) {
-                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"].pop();
+              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
+                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].pop();
               }
 
               exportData.forEach(function (result) {
                 //console.log('------')
                 //console.log(sensor._source.unit_id)
                 if (result._source.patientId !== undefined) {
-                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["MEASURMENT_RESULTS"].push(result._source);
+                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].push(result._source);
                 }
               });
             } else {}
@@ -5443,33 +5982,231 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               //debugger;
               var exportData = resp.hits.hits;
 
-              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"].length; i++) {
-                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"].pop();
+              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
+                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].pop();
               }
 
               exportData.forEach(function (status) {
                 //console.log('------')
                 //console.log(sensor._source.unit_id)
                 if (status._source.Id !== undefined) {
-                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["PATIENT_STATUS_LIST"].push(status._source);
+                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].push(status._source);
                 }
               });
             } else {}
           });
-        }
+        } // Buttons
+
       }, {
         key: "sortByScore",
         value: function sortByScore() {
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["HEALTH_DATA"].sort(function (p1, p2) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].sort(function (p1, p2) {
             return p1.score < p2.score ? 1 : -1;
           });
 
           this.table.renderRows();
         }
       }, {
+        key: "newSensor",
+        value: function newSensor() {
+          this.router.navigate(['/new-sensor']);
+        }
+      }, {
+        key: "newPatient",
+        value: function newPatient() {
+          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PersonHealthData"]();
+          newPerson.patient_Id = this.getNextID();
+          this.currPersonService.nextMessage(newPerson);
+          this.router.navigate(['/new-patient']);
+        }
+      }, {
+        key: "getNextID",
+        value: function getNextID() {
+          var nextID = -1;
+
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (element) {
+            console.log(element.patient_Id);
+            if (element.patient_Id >= nextID) nextID = element.patient_Id + 1;
+          }); // console.log(nextID);
+
+
+          return nextID;
+        }
+      }, {
+        key: "patientData",
+        value: function patientData(element) {
+          this.currPersonService.nextMessage(element);
+          this.router.navigate(['/patient-data']);
+        }
+      }, {
+        key: "releasePatient",
+        value: function releasePatient(element) {
+          this.currPersonService.nextMessage(element);
+          this.router.navigate(['/release-document']);
+        } //end of buttons
+
+      }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {// console.log('---')
           // this.subscription.unsubscribe();
+        }
+      }, {
+        key: "getLastKnown",
+        value: function getLastKnown() {
+          var _this27 = this;
+
+          this.lastKnownService.getLastKnown().subscribe(function (lists) {
+            _this27.lastKnownLst = lists[0];
+            _this27.lastUpdateLst = lists[1];
+          });
+        }
+      }, {
+        key: "getLatestPatientInfo",
+        value: function getLatestPatientInfo() {
+          var _this28 = this;
+
+          this.getLastKnown(); // temporary lists!!
+
+          /*this.lastKnownLst = [
+            {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
+             age: 8,
+             primery_priority:
+              {pulse: 53.9782048096756,
+              fev1: 60.6551240000595,
+              fvc: 70.8259074684175,
+              tlc: 5.299691954218364,
+              rv: 1.5,
+              erv: 0.7774951726718935,
+              frc: 2.2774951726718937,
+              breath_rate: 10,
+              wheezing: false,
+              cough_presence_rate: 3},
+             secondery_priority:
+             {fever: 37,
+             bpm: 45.77962601286034,
+             rpmf: 69,
+             saturation: 98.5497189686849,
+             blood_pressure_h: 115.53040926622532,
+             blood_pressure_l: 78.56628638318611,
+             ecg: '{ key : val }'},
+             Id: 'dc91c0ce-eea6-4111-9730-1b64188c6d37',
+             timeTag: '2020-04-13T07:50:39.268428'}
+          ]
+               this.lastUpdateLst = [
+            {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
+            updates:
+            {pulse: '1587048591757',
+            fev1: '1587048591757',
+            fvc: '1587048591757',
+            tlc: '1587048591757',
+            rv: '1587048591757',
+            erv: '1587048591757',
+            frc: '1587048591757',
+            breath_rate: '1587048591757',
+            wheezing: '1587048591757',
+            cough_presence_rate: '1587048591757',
+            fever: '1587048591757',
+            bpm: '1587048591757',
+            rpmf: '1587048591757',
+            saturation: '1587048591757',
+            blood_pressure_h: '1587048591757',
+            blood_pressure_l: '1587048591757',
+            ecg: '1587048591757'}}
+          ]*/
+
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (p_ui) {
+            p_ui.measureResults = _this28.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id); //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb');
+
+            p_ui.score = _this28.getPatientScore(p_ui.patient_Id);
+          });
+        }
+      }, {
+        key: "getPatientUIMeasureResultsFromRedis",
+        value: function getPatientUIMeasureResultsFromRedis(patientId) {
+          var found = false;
+          var PatientMeasureResults = {
+            heartRate: {
+              val: '-',
+              "new": true
+            },
+            bloodPresure: {
+              val: '-',
+              "new": true
+            },
+            spO2: {
+              val: '-',
+              "new": true
+            },
+            breathingRate: {
+              val: '-',
+              "new": true
+            },
+            extraO2: {
+              val: '',
+              "new": true
+            },
+            fever: {
+              val: '-',
+              "new": true
+            },
+            breathingInfo: {
+              val: '-',
+              "new": true
+            }
+          };
+          if (this.lastKnownLst === undefined) return PatientMeasureResults;
+
+          for (var i = 0; i < this.lastKnownLst.length; i++) {
+            if (this.lastKnownLst[i].patientId === patientId) {
+              found = true;
+              var hr = this.lastKnownLst[i].secondery_priority.bpm + '';
+              var bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h + '';
+              var bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l + '';
+              var p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) + '/' + bp_l.substring(0, Math.min(bp_l.length, 5));
+              var spO2 = this.lastKnownLst[i].secondery_priority.saturation + '';
+              var fever = this.lastKnownLst[i].secondery_priority.fever + '';
+              var p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
+
+              if (this.lastKnownLst[i].primery_priority.wheezing) {
+                p_breathing_info = 'Wheezing, ' + p_breathing_info;
+              }
+
+              PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+              PatientMeasureResults.bloodPresure.val = p_bp;
+              PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+              PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
+              PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
+              PatientMeasureResults.breathingInfo.val = p_breathing_info;
+              break;
+            }
+          }
+
+          if (!found) {
+            return PatientMeasureResults;
+          }
+
+          for (var _i2 = 0; _i2 < this.lastUpdateLst.length; _i2++) {
+            if (this.lastUpdateLst[_i2].patientId === patientId) {
+              PatientMeasureResults.heartRate["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.bmp, 10);
+              PatientMeasureResults.bloodPresure["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.blood_pressure_h, 10) && this.isNewInformation(this.lastUpdateLst[_i2].updates.blood_pressure_l, 10);
+              PatientMeasureResults.spO2["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.saturation, 10);
+              PatientMeasureResults.breathingRate["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.breath_rate, 10);
+              PatientMeasureResults.fever["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.fever, 10);
+              PatientMeasureResults.breathingInfo["new"] = this.isNewInformation(this.lastUpdateLst[_i2].updates.cough_presence_rate, 10) && this.isNewInformation(this.lastUpdateLst[_i2].updates.wheezing, 10);
+              break;
+            }
+          }
+
+          return PatientMeasureResults;
+        }
+      }, {
+        key: "isNewInformation",
+        value: function isNewInformation(originalTime, maxDelay) {
+          var now = new Date(new Date().toUTCString());
+          var time = new Date(new Date(originalTime).toUTCString());
+          var diffMs = Math.abs(now.getTime() - time.getTime());
+          var diffMins = Math.round(diffMs % 86400000 % 3600000 / 60000);
+          return diffMins < maxDelay ? true : false;
         }
       }]);
 
@@ -5478,14 +6215,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientsComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__["CurrPersonService"]
+      }, {
+        type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__["LastKnownService"]
       }];
     };
 
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])('table', null)], PatientsComponent.prototype, "table", void 0);
-    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"])('table', null)], PatientsComponent.prototype, "table", void 0);
+    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
       selector: 'app-patients',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patients.component.html */
@@ -5681,6 +6420,89 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/services/last-known.service.ts":
+  /*!************************************************!*\
+    !*** ./src/app/services/last-known.service.ts ***!
+    \************************************************/
+
+  /*! exports provided: LastKnownService */
+
+  /***/
+  function srcAppServicesLastKnownServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LastKnownService", function () {
+      return LastKnownService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+
+    var url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl;
+
+    var LastKnownService = /*#__PURE__*/function () {
+      function LastKnownService(http) {
+        _classCallCheck(this, LastKnownService);
+
+        this.http = http;
+      }
+
+      _createClass(LastKnownService, [{
+        key: "getLastKnown",
+        value: function getLastKnown() {
+          var lastKnownVal = this.http.get(url + 'getLastKnown');
+          var latUpdate = this.http.get(url + 'getLastUpdate');
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])([lastKnownVal, latUpdate]);
+        }
+      }]);
+
+      return LastKnownService;
+    }();
+
+    LastKnownService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }];
+    };
+
+    LastKnownService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: 'root'
+    })], LastKnownService);
+    /***/
+  },
+
+  /***/
   "./src/app/services/patients.service.ts":
   /*!**********************************************!*\
     !*** ./src/app/services/patients.service.ts ***!
@@ -5717,8 +6539,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
 
-    var post_url = 'http://52.16.82.127:4000/new_patient';
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newPatientUrl;
 
     var PatientsService = /*#__PURE__*/function () {
       function PatientsService(http) {
@@ -5791,8 +6619,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
 
-    var post_url = 'http://52.16.82.127:4000/new_sensor';
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newSensorUrl;
 
     var SensorsService = /*#__PURE__*/function () {
       function SensorsService(http) {
@@ -5845,7 +6679,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "footer {\n  padding: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvY292aWQxOVVJL3NyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJmb290ZXIge1xyXG4gICAgcGFkZGluZzogMjBweDtcclxufSIsImZvb3RlciB7XG4gIHBhZGRpbmc6IDIwcHg7XG59Il19 */";
+    __webpack_exports__["default"] = "footer {\n  padding: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZm9vdGVyIHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iLCJmb290ZXIge1xuICBwYWRkaW5nOiAyMHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -5965,11 +6799,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/@angular/core/fesm2015/core.js");
 
     var HeaderComponent = /*#__PURE__*/function () {
+      //logo_path = './../../../../assets/logo/covidlogo.png';
       function HeaderComponent(router) {
         _classCallCheck(this, HeaderComponent);
 
         this.router = router;
-        this.logo_path = './../../../../assets/logo/covidlogo.png';
+        this.logo_path = './../../../../assets/logo/jpegLogo.jpg';
       }
 
       _createClass(HeaderComponent, [{
@@ -6113,7 +6948,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var environment = {
-      production: false
+      production: false,
+      baseUrl: 'http://52.16.82.127:4000/',
+      newSensorUrl: 'http://52.16.82.127:4000/new_sensor',
+      newPatientUrl: 'http://52.16.82.127:4000/new_patient',
+      elastic: 'https://search-covid198-es-2-x6zr2th7oiq7sjzp653cs3k3xm.eu-west-1.es.amazonaws.com/',
+      //'https://search-covid19-es-xpwsq3s2uyodkz7tqizo5oxcty.eu-west-1.es.amazonaws.com/',
+      redis_flag: true
     };
     /*
      * For easier debugging in development mode, you can import the following file
@@ -6202,7 +7043,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! /Users/liadpasker/Desktop/Covid19_SprintMR/Covid19_SprintMR/web-server/covid19UI/src/main.ts */
+    /*! /Users/liadpasker/Desktop/Covid19_SprintMR/Covid19_SprintMR/web-server/SRC-covid19UI/src/main.ts */
     "./src/main.ts");
     /***/
   }
