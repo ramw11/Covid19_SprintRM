@@ -322,6 +322,7 @@ function updateRedis4NewPatient(sensor_id,patient_Id) {
                 if (err) {
                     throw err;
                 } else {
+                    log(`pushed to redis: sensorId: ${sensor_id} patientId: ${value}`);
                     console.log(`pushed to redis: sensorId: ${sensor_id} patientId: ${value}`);
                 }
             });
