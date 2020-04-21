@@ -4,6 +4,8 @@
     "type": "object",
     "title": "The Root Schema",
     "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
     "required": [
         "patient_Id",
         "time_tag",
@@ -16,6 +18,8 @@
         "bed_location",
         "date_of_birth",
         "risk_group",
+        "weight",
+        "gender",
         "normal_range_list",
         "sensors_list"
     ],
@@ -24,8 +28,8 @@
             "$id": "#/properties/patient_Id",
             "type": "string",
             "title": "The Patient_id Schema",
-            "description": "Unique ID of the patient, Unknown indicates invalid data",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "a64ce230-73db-11ea-9ca9-e56bb32f5931"
             ]
@@ -33,9 +37,8 @@
         "time_tag": {
             "$id": "#/properties/time_tag",
             "type": "string",
-            "format": "date-time",
             "title": "The Time_tag Schema",
-            "description": "The time tag of which the patient was registered in iso format(utc time), Unknown indicates invalid data",
+            "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
                 "2020-04-13T07:50:39.268428"
@@ -44,9 +47,9 @@
         "first_name": {
             "$id": "#/properties/first_name",
             "type": "string",
-            "title": "The First_name Schema, Unknown indicates invalid data",
-            "description": "First name of the patient.",
-            "default": "Unknown",
+            "title": "The First_name Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "Israel"
             ]
@@ -55,8 +58,8 @@
             "$id": "#/properties/last4Digit",
             "type": "string",
             "title": "The Last4digit Schema",
-            "description": "Last 4 digits of the patient ID, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "1234"
             ]
@@ -65,8 +68,8 @@
             "$id": "#/properties/institute_name",
             "type": "string",
             "title": "The Institute_name Schema",
-            "description": "The institute in which the patient was hospitalized, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "Assuta Ashdod"
             ]
@@ -75,18 +78,18 @@
             "$id": "#/properties/department_name",
             "type": "string",
             "title": "The Department_name Schema",
-            "description": "The department in which the patient is staying, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
-                "Korona-1A"
+                "Corona"
             ]
         },
         "room_identifier": {
             "$id": "#/properties/room_identifier",
             "type": "string",
             "title": "The Room_identifier Schema",
-            "description": "The room identifier (i.e. room number) in which the patient is staying, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "43-7"
             ]
@@ -95,8 +98,8 @@
             "$id": "#/properties/bed_identifier",
             "type": "string",
             "title": "The Bed_identifier Schema",
-            "description": "The bed in which the patient is lying, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "12"
             ]
@@ -105,8 +108,8 @@
             "$id": "#/properties/bed_location",
             "type": "string",
             "title": "The Bed_location Schema",
-            "description": "Description of bed position inside the room, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
                 "Window"
             ]
@@ -114,31 +117,28 @@
         "date_of_birth": {
             "$id": "#/properties/date_of_birth",
             "type": "string",
-            "format": "date",
             "title": "The Date_of_birth Schema",
-            "description": "Patient date of birth, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
-                "1993-03-14"
+                "2000-01-01"
             ]
         },
         "risk_group": {
             "$id": "#/properties/risk_group",
             "type": "string",
             "title": "The Risk_group Schema",
-            "description": "An indicator that the patient is included in some risk group, including age, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
-                "Unknown",
-                "True",
-                "False"
+                "None"
             ]
         },
         "weight": {
             "$id": "#/properties/weight",
             "type": "number",
             "title": "The Weight Schema",
-            "description": "The patient weight, use 0 to indicate invalid data, 0 indicates invalid data.",
+            "description": "An explanation about the purpose of this instance.",
             "default": 0,
             "examples": [
                 79.9
@@ -148,25 +148,46 @@
             "$id": "#/properties/gender",
             "type": "string",
             "title": "The Gender Schema",
-            "description": "The patient gender, Unknown indicates invalid data.",
-            "default": "Unknown",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
             "examples": [
-                "Unknown",
-                "Male",
-                "Female"
+                "Male"
             ]
         },
         "normal_range_list": {
             "$id": "#/properties/normal_range_list",
             "type": "array",
             "title": "The Normal_range_list Schema",
-            "description": "List of our patient normal measurements ranges (defined by measurement abbreviation, minimal and maximal values).",
+            "description": "An explanation about the purpose of this instance.",
             "default": [],
+            "examples": [
+                [
+                    {
+                        "HR": {
+                            "min": 51.0,
+                            "max": 90.0
+                        }
+                    },
+                    {
+                        "SpO2": {
+                            "min": 96.0,
+                            "max": 100.0
+                        }
+                    },
+                    {
+                        "RR": {
+                            "min": 12.0,
+                            "max": 20.0
+                        }
+                    }
+                ]
+            ],
+            "additionalItems": true,
             "items": {
                 "$id": "#/properties/normal_range_list/items",
                 "type": "object",
                 "title": "The Items Schema",
-                "description": "Measurement abbreviation/name, minimal and maximal values.",
+                "description": "An explanation about the purpose of this instance.",
                 "default": {},
                 "examples": [
                     {
@@ -183,27 +204,29 @@
                     },
                     {
                         "RR": {
-                            "max": 20.0,
-                            "min": 12.0
+                            "min": 12.0,
+                            "max": 20.0
                         }
                     }
                 ],
+                "additionalProperties": true,
                 "required": [
-                    "MR"
+                    "HR"
                 ],
                 "properties": {
-                    "measurement_range_item": {
+                    "HR": {
                         "$id": "#/properties/normal_range_list/items/properties/HR",
                         "type": "object",
-                        "title": "The measurement range Schema",
-                        "description": "minimal and maximal values.",
+                        "title": "The Hr Schema",
+                        "description": "An explanation about the purpose of this instance.",
                         "default": {},
                         "examples": [
                             {
-                                "max": 100.0,
-                                "min": 0.0
+                                "max": 90.0,
+                                "min": 51.0
                             }
                         ],
+                        "additionalProperties": true,
                         "required": [
                             "min",
                             "max"
@@ -213,20 +236,20 @@
                                 "$id": "#/properties/normal_range_list/items/properties/HR/properties/min",
                                 "type": "integer",
                                 "title": "The Min Schema",
-                                "description": "measurement minimal value.",
+                                "description": "An explanation about the purpose of this instance.",
                                 "default": 0,
                                 "examples": [
-                                    51
+                                    51.0
                                 ]
                             },
                             "max": {
                                 "$id": "#/properties/normal_range_list/items/properties/HR/properties/max",
                                 "type": "integer",
                                 "title": "The Max Schema",
-                                "description": "measurement minimal value, must be above minimal value.",
+                                "description": "An explanation about the purpose of this instance.",
                                 "default": 0,
                                 "examples": [
-                                    90
+                                    90.0
                                 ]
                             }
                         }
@@ -238,98 +261,80 @@
             "$id": "#/properties/sensors_list",
             "type": "array",
             "title": "The Sensors_list Schema",
-            "description": "List of sensors attached to the patient.",
+            "description": "An explanation about the purpose of this instance.",
             "default": [],
+            "examples": [
+                [
+                    {
+                        "unit_Id": "beecardia_10",
+                        "description": "Stethoscope",
+                        "sensor_name": "Stethoscope",
+                        "vendor_name": "Beecardia"
+                    }
+                ]
+            ],
+            "additionalItems": true,
             "items": {
                 "$id": "#/properties/sensors_list/items",
                 "type": "object",
                 "title": "The Items Schema",
-                "description": "Sensor details.",
+                "description": "An explanation about the purpose of this instance.",
                 "default": {},
                 "examples": [
                     {
-                        "Early Sense": {
-                            "description": "very good sensor",
-                            "sensor_name": "Early Sense",
-                            "vendor_name": "Early Sense",
-                            "unit_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5932"
-                        }
-                    },
-                    {
-                        "NanoVation": {
-                            "description": "CONTINUOUS REMOTE RESPIRATORY MONITORING",
-                            "sensor_name": "SenseGuard",
-                            "vendor_name": " NanoVation ",
-                            "unit_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5933"
-                        }
+                        "sensor_name": "Stethoscope",
+                        "vendor_name": "Beecardia",
+                        "unit_Id": "beecardia_10",
+                        "description": "Stethoscope"
                     }
                 ],
+                "additionalProperties": true,
                 "required": [
-                    "Early Sense"
+                    "unit_Id",
+                    "sensor_name",
+                    "vendor_name",
+                    "description"
                 ],
                 "properties": {
-                    "sensor_item": {
-                        "$id": "#/properties/sensors_list/items/properties/Early Sense",
-                        "type": "object",
-                        "title": "The sensor item Schema",
-                        "description": "Details of each sensor.",
-                        "default": {},
+                    "unit_Id": {
+                        "$id": "#/properties/sensors_list/items/properties/unit_Id",
+                        "type": "string",
+                        "title": "The Unit_id Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
                         "examples": [
-                            {
-                                "unit_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5932",
-                                "description": "very good sensor",
-                                "sensor_name": "Early Sense",
-                                "vendor_name": "Early Sense"
-                            }
-                        ],
-                        "required": [
-                            "unit_Id",
-                            "sensor_name",
-                            "vendor_name",
-                            "description"
-                        ],
-                        "properties": {
-                            "unit_Id": {
-                                "$id": "#/properties/sensors_list/items/properties/Early Sense/properties/unit_Id",
-                                "type": "string",
-                                "title": "The Unit_id Schema",
-                                "description": "Sensor unique identifier.",
-                                "default": "",
-                                "examples": [
-                                    "a64ce230-73db-11ea-9ca9-e56bb32f5932"
-                                ]
-                            },
-                            "sensor_name": {
-                                "$id": "#/properties/sensors_list/items/properties/Early Sense/properties/sensor_name",
-                                "type": "string",
-                                "title": "The Sensor_name Schema",
-                                "description": "Early sense chair sensor.",
-                                "default": "",
-                                "examples": [
-                                    "Early Sense"
-                                ]
-                            },
-                            "vendor_name": {
-                                "$id": "#/properties/sensors_list/items/properties/Early Sense/properties/vendor_name",
-                                "type": "string",
-                                "title": "The Vendor_name Schema",
-                                "description": "Sensor vendor name.",
-                                "default": "",
-                                "examples": [
-                                    "Early Sense"
-                                ]
-                            },
-                            "description": {
-                                "$id": "#/properties/sensors_list/items/properties/Early Sense/properties/description",
-                                "type": "string",
-                                "title": "The Description Schema",
-                                "description": "Sensor description.",
-                                "default": "",
-                                "examples": [
-                                    "The memory foam-cushioned chair sensor captures a patient’s vital signs and movement while seated in a chair."
-                                ]
-                            }
-                        }
+                            "beecardia_10"
+                        ]
+                    },
+                    "sensor_name": {
+                        "$id": "#/properties/sensors_list/items/properties/sensor_name",
+                        "type": "string",
+                        "title": "The Sensor_name Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Stethoscope"
+                        ]
+                    },
+                    "vendor_name": {
+                        "$id": "#/properties/sensors_list/items/properties/vendor_name",
+                        "type": "string",
+                        "title": "The Vendor_name Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Beecardia"
+                        ]
+                    },
+                    "description": {
+                        "$id": "#/properties/sensors_list/items/properties/description",
+                        "type": "string",
+                        "title": "The Description Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Stethoscope"
+                        ]
                     }
                 }
             }
