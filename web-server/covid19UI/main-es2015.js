@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<iframe [src]=\"iframe_src\"></iframe>");
+/* harmony default export */ __webpack_exports__["default"] = ("<label>{{type}}</label>\r\n<br>\r\n<iframe [src]=\"iframe_src\"\r\n        [ngClass]=\"{'hidden': visibility>0, 'visible': visibility<0}\"></iframe>\r\n");
 
 /***/ }),
 
@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group>\n    <mat-tab label=\"Patient Information\">\n        <!--<h1>{{name}}</h1>-->\n        <div style=\"width: 100%; display: flex; flex-flow: row wrap;\">\n            <app-patient-personal-data id=\"patient_personal_info\"></app-patient-personal-data>\n            <app-patient-monitor id=\"monitor\"></app-patient-monitor>\n            <app-auxilary-data></app-auxilary-data>\n        </div>\n        <app-patient-history></app-patient-history>\n    </mat-tab>\n    <mat-tab label=\"Settings\">\n        <app-patient-settings></app-patient-settings>\n    </mat-tab>\n</mat-tab-group>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group>\n    <mat-tab label=\"Patient Information\">\n        <!--<h1>{{name}}</h1>-->\n        <div style=\"width: 100%; display: flex; flex-flow: row wrap;\">\n            <app-patient-personal-data id=\"patient_personal_info\"></app-patient-personal-data>\n            <app-patient-monitor id=\"monitor\"></app-patient-monitor>\n            <app-auxilary-data style=\"width: 350px;\"></app-auxilary-data>\n        </div>\n        <app-patient-history></app-patient-history>\n    </mat-tab>\n    <mat-tab label=\"Settings\">\n        <app-patient-settings></app-patient-settings>\n    </mat-tab>\n</mat-tab-group>");
 
 /***/ }),
 
@@ -617,7 +617,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color='primary'>\n    <mat-toolbar-row>\n        <a routerLink=\"\">\n            <div>\n                <span (click)='OnClick()'>\n                    <img [src]='logo_path' height='50px'/>\n                </span>\n            </div>\n        </a>\n\n        <!--<label style=\"visibility: hidden;\">\n            ................................................................\n        </label>-->\n\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\" style=\"position: absolute; right: 40px;\">\n            <mat-icon>settings</mat-icon>\n        </button>\n        \n            <mat-menu #menu=\"matMenu\">\n                <button mat-menu-item (click)='newSensor()'>New sensor</button>\n                <button mat-menu-item (click)='setHospital()'>Set hospital</button>\n            </mat-menu>\n\n            <button mat-icon-button (click)='OnClick()' style=\"position: absolute; right: 0;\">\n                <mat-icon>home</mat-icon>\n            </button>\n\n    </mat-toolbar-row>\n</mat-toolbar>\n\n<!--\n    <mat-toolbar color=\"primary\">\n    <mat-toolbar-row>\n        <button mat-icon-button (click)=\"toggleSideBar()\">\n            <mat-icon>menu</mat-icon>\n        </button>\n\n        <span> APP LOGO </span>\n\n        <div fxFlex fxLayout=\"row\" fxLayoutAlign=\"flex-end\">\n            <ul fxLayout=\"row\" fxLayoutGap=\"20px\">\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>settings</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>help_outline</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-button [matMenuTriggerFor]=\"menu\">\n                        <mat-icon>person_outline</mat-icon>\n                    </button>\n                    <mat-menu #menu=\"matMenu\">\n                        <button mat-menu-item>\n                            <mat-icon>exit_to_app</mat-icon>\n                            Sign out\n                        </button>\n                    </mat-menu>\n\n                </li>\n            </ul>\n        </div>\n    </mat-toolbar-row>\n</mat-toolbar>\n-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-toolbar color='primary'>\n    <mat-toolbar-row>\n        <a routerLink=\"\">\n            <div>\n                <span (click)='OnClick()'>\n                    <img [src]='logo_path' height='170px' style=\"position: relative; left: -30px; top:5px\"/>\n                </span>\n            </div>\n        </a>\n\n        <!--<label style=\"visibility: hidden;\">\n            ................................................................\n        </label>-->\n\n        <button mat-icon-button [matMenuTriggerFor]=\"menu\" style=\"position: absolute; right: 40px;\">\n            <mat-icon>settings</mat-icon>\n        </button>\n        \n            <mat-menu #menu=\"matMenu\">\n                <button mat-menu-item (click)='newSensor()'>New sensor</button>\n                <button mat-menu-item (click)='setHospital()'>Set hospital</button>\n            </mat-menu>\n\n            <button mat-icon-button (click)='OnClick()' style=\"position: absolute; right: 0;\">\n                <mat-icon>home</mat-icon>\n            </button>\n\n    </mat-toolbar-row>\n</mat-toolbar>\n\n<!--\n    <mat-toolbar color=\"primary\">\n    <mat-toolbar-row>\n        <button mat-icon-button (click)=\"toggleSideBar()\">\n            <mat-icon>menu</mat-icon>\n        </button>\n\n        <span> APP LOGO </span>\n\n        <div fxFlex fxLayout=\"row\" fxLayoutAlign=\"flex-end\">\n            <ul fxLayout=\"row\" fxLayoutGap=\"20px\">\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>settings</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-icon-button>\n                        <mat-icon>help_outline</mat-icon>\n                    </button>\n                </li>\n                <li>\n                    <button mat-button [matMenuTriggerFor]=\"menu\">\n                        <mat-icon>person_outline</mat-icon>\n                    </button>\n                    <mat-menu #menu=\"matMenu\">\n                        <button mat-menu-item>\n                            <mat-icon>exit_to_app</mat-icon>\n                            Sign out\n                        </button>\n                    </mat-menu>\n\n                </li>\n            </ul>\n        </div>\n    </mat-toolbar-row>\n</mat-toolbar>\n-->");
 
 /***/ }),
 
@@ -1024,7 +1024,7 @@ let AppComponent = class AppComponent {
                 size: 1000,
             }, function (err, resp, status) {
                 if (resp) {
-                    debugger;
+                    //debugger;
                     var exportData = resp.hits.hits;
                     //console.log(exportData);
                     exportData.forEach(sensor => {
@@ -1108,12 +1108,13 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!******************************************!*\
   !*** ./src/app/interfaces/PersonData.ts ***!
   \******************************************/
-/*! exports provided: ELASTIC_HOST, PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
+/*! exports provided: ELASTIC_HOST, REDISFLAG, PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function() { return ELASTIC_HOST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REDISFLAG", function() { return REDISFLAG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalData", function() { return PersonalData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HospitalizationInfo", function() { return HospitalizationInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonSettings", function() { return PersonSettings; });
@@ -1135,6 +1136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ELASTIC_HOST = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].elastic;
+const REDISFLAG = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redis_flag;
 class PersonalData {
 }
 class HospitalizationInfo {
@@ -1165,162 +1167,10 @@ const DEFAULT_PERSON_HISTORY = {
     scoring: []
 };
 const HEALTH_DATA = [];
-/*export const HEALTH_DATA: PersonHealthData[] = [
-  {patient_Id:1,
-    time_tag: '2020-04-13T19:30:08.514Z',
-    first_name: 'Ron',
-    last4Digit: '2357',
-    institute_name: DEFAULT_HOSPITAL.name,
-    department_name: 'B',
-    room_identifier: '12',
-    bed_identifier: '10',
-    bed_location: '',
-    date_of_birth: '2005-03-13',
-    weight: 60,
-    gender: 'Male',
-    personal:{Name: 'Ron', Age: 15, Gender: 'male', HighRiskGroup: false},
-    hospitalization: null,
-    measureResults:{
-    heartRate: 68, bloodPresure: '120/80', spO2: 99,
-    breathingRate:12, extraO2: 'NO', fever:37, breathingInfo: '',},
-    alerts: '', progress: '', score: 0,
-    history: DEFAULT_PERSON_HISTORY ,settings: DEFAULT_PERSON_SETTINGS,
-    sensors_list:[]},
-
-  {patient_Id:2,
-    time_tag: '2020-04-13T19:30:08.514Z',
-    first_name: 'Dor',
-    last4Digit: '8963',
-    institute_name: DEFAULT_HOSPITAL.name,
-    department_name: 'B',
-    room_identifier: '15',
-    bed_identifier: '11',
-    bed_location: '',
-    date_of_birth: '1985-02-09',
-    weight: 70,
-    gender: 'Male',
-    personal:{Name: 'Dor', Age: 35, Gender: 'male', HighRiskGroup: true},
-    hospitalization: null,
-    measureResults:
-    {heartRate: 68, bloodPresure: '120/80', spO2: 99,
-    breathingRate:12, extraO2: 'YES', fever:37, breathingInfo: '',},
-    alerts: '', progress: '', score: 7,
-    history: {alerts: [{name:'no pulse', time: new Date()},
-             {name:'no breath', time: new Date()}], scoring: [1,5,5,4,3,2,2,0]} ,
-             settings: DEFAULT_PERSON_SETTINGS,
-             sensors_list:[]}
-]*/
 const SENSORS = [];
 const PATIENTS = [];
 const PATIENT_STATUS_LIST = [];
 const MEASURMENT_RESULTS = [];
-/*export const SENSORS = [{unit_id: 'None',
-                        name_tag:'None',
-                        time_tag: "2020-04-13T09:10:19.698Z",
-                        sensor_name: '',
-                        vendor_name: 'EarlySense',
-                        description: '',
-                        institute_name: '',
-                        department_name: '',
-                        currently_in_use: 'NO'
-                        },
-                        {unit_id: '1',
-                         name_tag:'Sensor1',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO'
-                         },
-                        {unit_id: '2',
-                         name_tag:'Sensor2',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO'
-                        },
-                        {unit_id: '3',
-                         name_tag:'Sensor3',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO'
-                         },
-                        {unit_id: '4',
-                         name_tag:'Sensor4',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO'
-                         },
-                        {unit_id: '5',
-                         name_tag:'Sensor5',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO'
-                         },
-                        {unit_id: '6',
-                         name_tag:'Sensor6',
-                         time_tag: "2020-04-13T09:10:19.698Z",
-                         sensor_name: '',
-                         vendor_name: 'EarlySense',
-                         description: '',
-                         institute_name: '',
-                         department_name: '',
-                         currently_in_use: 'NO' },]*/
-/*
-
-{
-  "patient_Id": "string",
-  "time_tag": "2020-04-13T19:30:08.514Z",
-  "first_name": "string",
-  "last4Digit": "string",
-  "institute_name": "string",
-  "department_name": "string",
-  "room_identifier": "string",
-  "bed_identifier": "string",
-  "bed_location": "string",
-  "date_of_birth": "2020-04-13",
-  "risk_group": "string",
-  "weight": 0,
-  "gender": "string",
-  "normal_range_list": [
-    {
-      "measurement_range_item": {
-        "min": 0,
-        "max": 0
-      }
-    }
-  ],
-  "sensors_list": [
-    {
-      "sensor_item": {
-        "unit_Id": "string",
-        "sensor_name": "string",
-        "vendor_name": "string",
-        "description": "string"
-      }
-    }
-  ]
-}
-
-
-*/
 /*
 async function esTimeQuery() {
   var result = await client_prd.search({
@@ -1907,7 +1757,7 @@ NewSensorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL2F1eGlsYXJ5LWRhdGEvYXV4aWxhcnktZGF0YS5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".visible {\n  visibility: visible;\n  height: 290px;\n  width: 350px;\n}\n\n.hidden {\n  visibility: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9saWFkcGFza2VyL0Rlc2t0b3AvQ292aWQxOV9TcHJpbnRNUi9Db3ZpZDE5X1NwcmludE1SL3dlYi1zZXJ2ZXIvU1JDLWNvdmlkMTlVSS9zcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL2F1eGlsYXJ5LWRhdGEvYXV4aWxhcnktZGF0YS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wYXRpZW50LWRhdGEvYXV4aWxhcnktZGF0YS9hdXhpbGFyeS1kYXRhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGF0aWVudC1kYXRhL2F1eGlsYXJ5LWRhdGEvYXV4aWxhcnktZGF0YS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi52aXNpYmxlIHtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICBoZWlnaHQ6IDI5MHB4OyBcclxuICAgIHdpZHRoOiAzNTBweDtcclxufVxyXG5cclxuLmhpZGRlbntcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxufSIsIi52aXNpYmxlIHtcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcbiAgaGVpZ2h0OiAyOTBweDtcbiAgd2lkdGg6IDM1MHB4O1xufVxuXG4uaGlkZGVuIHtcbiAgdmlzaWJpbGl0eTogaGlkZGVuO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1933,57 +1783,73 @@ __webpack_require__.r(__webpack_exports__);
 
 const PATIENT_AUXILARY_DATA = { patient_id: '', auxilary_data: undefined };
 let AuxilaryDataComponent = class AuxilaryDataComponent {
+    //the study can be a spirometer, a stethoscope or an ECG study.
     constructor(currPersonService, s) {
         this.currPersonService = currPersonService;
         this.s = s;
+        this.type = '';
+        this.iframe_src = this.s.bypassSecurityTrustResourceUrl('');
+        this.iframe_is_set = false;
+        this.visibility = 1;
         this.currPersonService.sharedMessage.subscribe(patient => {
             PATIENT_AUXILARY_DATA.patient_id = patient.patient_Id;
         });
     }
+    ;
     ngOnInit() {
         //console.log('--------------------')
         this.timer = setInterval(() => {
-            //this.getAuxilaryData();
-            if (PATIENT_AUXILARY_DATA.auxilary_data !== undefined) {
+            this.getAuxilaryData();
+            if (PATIENT_AUXILARY_DATA.auxilary_data !== undefined && !this.iframe_is_set) {
+                this.visibility = -1;
+                //console.log(PATIENT_AUXILARY_DATA.auxilary_data)
+                PATIENT_AUXILARY_DATA.auxilary_data.study.data.forEach(t => {
+                    this.type = this.type + t.type + '|';
+                });
+                this.type = this.type.substring(0, this.type.length - 1);
+                this.type = PATIENT_AUXILARY_DATA.auxilary_data.study.data[0].type;
+                //console.log(this.type)
                 this.iframe_src = this.s.bypassSecurityTrustResourceUrl(PATIENT_AUXILARY_DATA.auxilary_data.study.link);
+                this.iframe_is_set = true;
+                //console.log(PATIENT_AUXILARY_DATA.auxilary_data.study.link)
             }
         }, 1000 * 1);
     }
     getAuxilaryData() {
-        var client = new $.es.Client({
-            // hosts: hosts
-            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
-        });
-        var result = client.search({
-            index: 'measure_results_v5',
-            size: 1000,
-            body: {
-                query: {
-                    match: { unitId: 'unit_id_test_2' }
-                }
-            }
-        }, function (err, resp, status) {
-            if (resp) {
-                var exportData = resp.hits.hits;
-                console.log(exportData);
-                var patientMeasureRes = exportData[0]._source;
-                for (let i = 0; i < exportData.length; i++) {
-                    /*if(exportData[i]._source.patientId === PATIENT_AUXILARY_DATA.patient_id){
-                      patientMeasureRes = exportData[i]._source;
-                      break;
-                    }*/
-                    if (exportData[i]._source.unitId === 'unit_id_test_2' &&
-                        exportData[i]._source.auxilary_data != undefined) {
-                        patientMeasureRes = exportData[i]._source;
-                        break;
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            var client = new $.es.Client({
+                // hosts: hosts
+                host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
+            });
+            var result = client.search({
+                index: 'measure_results_v5',
+                size: 1000,
+                body: {
+                    sort: [{ "timeTag": { "order": "desc" } }],
+                    query: {
+                        match: { patientId: PATIENT_AUXILARY_DATA.patient_id }
                     }
                 }
-                var aux_data = patientMeasureRes.auxilary_data;
-                PATIENT_AUXILARY_DATA.auxilary_data = aux_data;
-                //console.log(PATIENT_AUXILARY_DATA);
-            }
-            else {
-            }
+            }, function (err, resp, status) {
+                if (resp) {
+                    var exportData = resp.hits.hits;
+                    //console.log('-------------')
+                    //console.log(exportData);
+                    var patientMeasureRes = undefined;
+                    for (let i = 0; i < exportData.length; i++) {
+                        if (exportData[i]._source.auxilary_data != undefined) {
+                            patientMeasureRes = exportData[i]._source;
+                            break;
+                        }
+                    }
+                    var aux_data = patientMeasureRes.auxilary_data;
+                    //console.log(patientMeasureRes);
+                    PATIENT_AUXILARY_DATA.auxilary_data = aux_data;
+                    //console.log(PATIENT_AUXILARY_DATA);
+                }
+                else {
+                }
+            });
         });
     }
 };
@@ -3105,6 +2971,7 @@ const MONITOR_PATIENT = { patientID: '',
     Bp_l: { val: 0, new: true },
     ECG: { val: {}, new: true },
 };
+const P_MEASURE_RESULTS = [];
 let PatientMonitorComponent = class PatientMonitorComponent {
     constructor(currPersonService, lastKnownService) {
         this.currPersonService = currPersonService;
@@ -3114,12 +2981,19 @@ let PatientMonitorComponent = class PatientMonitorComponent {
             //MONITOR_PATIENT.patientID = person.patient_Id;
             // MONITOR_PATIENT.patientID = 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb' //todo - change to patient id!!!
             MONITOR_PATIENT.patientID = person.patient_Id;
+            this.selectedPerson = person;
         });
     }
     ngOnInit() {
         this.timer = setInterval(() => {
-            //this.getPatientInfo();
-            this.getLatestPatientInfo();
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
+                this.getLatestPatientInfo();
+                //this.getPatientInfo1()
+            }
+            else {
+                this.getPatientInfo();
+                this.getPatientUIMeasureResults();
+            }
         }, 1000 * 0.5);
     }
     // not in use
@@ -3128,11 +3002,14 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         MONITOR_PATIENT.SpO2.val = (Math.floor(Math.random() * 10) + 90);
         MONITOR_PATIENT.BR.val = (Math.floor(Math.random() * 10) + 10);
         MONITOR_PATIENT.TMP.val = (Math.floor(Math.random() * 5) + 35) + '';
+        MONITOR_PATIENT.Bp_h.val = 122;
+        MONITOR_PATIENT.Bp_l.val = 68;
     }
     getLastKnown() {
         this.lastKnownService.getLastKnown().subscribe(lists => {
             this.lastKnownLst = lists[0];
             this.lastUpdateLst = lists[1];
+            //let ret = this.getPatientUIMeasureResultsFromRedis('a64ce230-73db-11ea-9ca9-e56bb32f5931');
             let ret = this.getPatientUIMeasureResultsFromRedis(MONITOR_PATIENT.patientID);
             if (ret === undefined) {
                 return;
@@ -3168,13 +3045,33 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         let p_lastKnown = JSON.parse(this.lastKnownLst[patientId]);
         let p_lastUpdate = JSON.parse(this.lastUpdateLst[patientId]);
         let hr = p_lastKnown.secondery_priority.bpm + '';
+        if (hr === undefined) {
+            hr = '-';
+        }
         let bp_h = p_lastKnown.secondery_priority.blood_pressure_h + '';
+        if (bp_h === undefined) {
+            bp_h = '-';
+        }
         let bp_l = p_lastKnown.secondery_priority.blood_pressure_l + '';
+        if (bp_l === undefined) {
+            bp_l = '-';
+        }
         let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
             '/' +
             bp_l.substring(0, Math.min(bp_l.length, 5));
         let spO2 = p_lastKnown.secondery_priority.saturation + '';
+        if (spO2 === undefined) {
+            spO2 = '0';
+        }
+        let br = p_lastKnown.primery_priority.breath_rate;
+        if (br === undefined) {
+            br = '0';
+        }
         let fever = p_lastKnown.secondery_priority.fever + '';
+        if (fever === undefined) {
+            fever = '-';
+        }
+        ;
         let p_breathing_info = 'cough %: ' + p_lastKnown.primery_priority.cough_presence_rate;
         if (p_lastKnown.primery_priority.wheezing) {
             p_breathing_info = 'Wheezing, ' + p_breathing_info;
@@ -3182,7 +3079,7 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
         PatientMeasureResults.bloodPresure.val = p_bp;
         PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
-        PatientMeasureResults.breathingRate.val = p_lastKnown.primery_priority.breath_rate;
+        PatientMeasureResults.breathingRate.val = br;
         PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
         PatientMeasureResults.breathingInfo.val = p_breathing_info;
         PatientMeasureResults.heartRate.new = this.isNewInformation(p_lastUpdate.updates.bmp, 10);
@@ -3204,6 +3101,83 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         let diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
         return diffMins < maxDelay ? true : false;
     }
+    getPatientUIMeasureResults() {
+        let p_id = this.selectedPerson.patient_Id;
+        let isUpdated = {
+            heartRate: false,
+            bloodPresure: false,
+            spO2: false,
+            breathingRate: false,
+            extraO2: false,
+            fever: false,
+            breathingInfo: false,
+        };
+        let return_Value = {
+            heartRate: { val: '-', new: true },
+            bloodPresure: { val: '-', new: true },
+            spO2: { val: '0', new: true },
+            breathingRate: { val: '0', new: true },
+            extraO2: { val: '', new: true },
+            fever: { val: '-', new: true },
+            breathingInfo: { val: '-', new: true },
+        };
+        for (let i = 0; i < P_MEASURE_RESULTS.length; i++) {
+            if (isUpdated.heartRate && isUpdated.bloodPresure && isUpdated.spO2 && isUpdated.breathingRate
+                && isUpdated.fever && isUpdated.breathingInfo) {
+                break;
+            }
+            let curr_mr = P_MEASURE_RESULTS[i];
+            if (!isUpdated.heartRate && curr_mr.secondery_priority.bpm !== undefined
+                && curr_mr.secondery_priority.bpm !== 0) {
+                let hr = curr_mr.secondery_priority.bpm + '';
+                return_Value.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+                isUpdated.heartRate = true;
+            }
+            if (!isUpdated.bloodPresure && curr_mr.secondery_priority.blood_pressure_h !== undefined
+                && curr_mr.secondery_priority.blood_pressure_h !== 0) {
+                let bp_h = curr_mr.secondery_priority.blood_pressure_h + '';
+                let bp_l = curr_mr.secondery_priority.blood_pressure_l + '';
+                let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
+                    '/' +
+                    bp_l.substring(0, Math.min(bp_l.length, 5));
+                return_Value.bloodPresure.val = p_bp;
+                isUpdated.bloodPresure = true;
+            }
+            if (!isUpdated.spO2 && curr_mr.secondery_priority.saturation !== undefined
+                && curr_mr.secondery_priority.saturation !== 0) {
+                let spO2 = curr_mr.secondery_priority.saturation + '';
+                return_Value.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+                isUpdated.spO2 = true;
+            }
+            if (!isUpdated.breathingRate && curr_mr.primery_priority.breath_rate !== undefined
+                && curr_mr.primery_priority.breath_rate !== 0) {
+                return_Value.breathingRate.val = curr_mr.primery_priority.breath_rate;
+                isUpdated.breathingRate = true;
+            }
+            if (!isUpdated.fever && curr_mr.secondery_priority.fever !== undefined
+                && curr_mr.secondery_priority.fever !== 0) {
+                return_Value.fever.val = curr_mr.secondery_priority.fever;
+                isUpdated.fever = true;
+            }
+            if (!isUpdated.breathingInfo && curr_mr.primery_priority.cough_presence_rate !== undefined
+                && curr_mr.primery_priority.cough_presence_rate !== 0) {
+                let p_breathing_info = 'cough %: ' + curr_mr.primery_priority.cough_presence_rate;
+                if (curr_mr.primery_priority.wheezing) {
+                    p_breathing_info = 'Wheezing, ' + p_breathing_info;
+                }
+                return_Value.breathingInfo.val = p_breathing_info;
+            }
+        }
+        MONITOR_PATIENT.HR = return_Value.heartRate;
+        MONITOR_PATIENT.SpO2.val = +return_Value.spO2.val;
+        MONITOR_PATIENT.SpO2.new = return_Value.spO2.new;
+        MONITOR_PATIENT.BR.val = +return_Value.breathingRate.val;
+        MONITOR_PATIENT.BR.new = return_Value.breathingRate.new;
+        MONITOR_PATIENT.TMP = return_Value.fever;
+        let bp = return_Value.bloodPresure.val;
+        MONITOR_PATIENT.Bp_h.val = +bp.substring(0, bp.indexOf('/'));
+        MONITOR_PATIENT.Bp_l.val = +bp.substring(bp.indexOf('/') + 1, bp.length);
+    }
     getPatientInfo() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             var client = new $.es.Client({
@@ -3221,20 +3195,14 @@ let PatientMonitorComponent = class PatientMonitorComponent {
             }, function (err, resp, status) {
                 if (resp) {
                     var exportData = resp.hits.hits;
-                    var patientMeasureRes = exportData[0]._source;
-                    for (let i = 0; i < exportData.length; i++) {
-                        if (exportData[i]._source.patientId === MONITOR_PATIENT.patientID) {
-                            patientMeasureRes = exportData[i]._source;
-                            break;
-                        }
+                    for (let i = 0; i < P_MEASURE_RESULTS.length; i++) {
+                        P_MEASURE_RESULTS.pop();
                     }
-                    MONITOR_PATIENT.HR.val = patientMeasureRes.secondery_priority.bpm;
-                    MONITOR_PATIENT.SpO2.val = patientMeasureRes.secondery_priority.saturation;
-                    MONITOR_PATIENT.BR.val = patientMeasureRes.primery_priority.breath_rate;
-                    MONITOR_PATIENT.TMP.val = patientMeasureRes.secondery_priority.fever;
-                    MONITOR_PATIENT.Bp_h.val = patientMeasureRes.secondery_priority.blood_pressure_h;
-                    MONITOR_PATIENT.Bp_l.val = patientMeasureRes.secondery_priority.blood_pressure_l;
-                    MONITOR_PATIENT.ECG.val = patientMeasureRes.secondery_priority.ecg;
+                    exportData.forEach(result => {
+                        if (result._source.patientId !== undefined) {
+                            P_MEASURE_RESULTS.push(result._source);
+                        }
+                    });
                 }
                 else {
                 }
@@ -3626,13 +3594,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientsComponent", function() { return PatientsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/last-known.service */ "./src/app/services/last-known.service.ts");
-/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
-/* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/last-known.service */ "./src/app/services/last-known.service.ts");
+/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
+/* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
@@ -3640,9 +3607,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
+let TIMETAG = "2019-04-13T16:22:02.997";
 let PatientsComponent = class PatientsComponent {
+    //redis_flag = environment.redis_flag;
     // TODO: implement!
     constructor(router, currPersonService, lastKnownService) {
         this.router = router;
@@ -3664,30 +3631,34 @@ let PatientsComponent = class PatientsComponent {
             'breathingRate', 'extraO2', 'fever', 'breathingInfo', 'alerts',
             'progress', 'score', 'data', 'release'];
         // dataSource: PersonHealthData[];
-        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"];
+        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"];
         this.greenStatusPath = '../../../assets/colors/green.jpg';
         this.yellowStatusPath = '../../../assets/colors/yellow.jpg';
         this.orangeStatusPath = '../../../assets/colors/orange.jpg';
         this.redStatusPath = '../../../assets/colors/red.jpg';
-        this.redis_flag = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redis_flag;
         //console.log(PATIENTS);
         //console.log(SENSORS);
         //console.log(PATIENT_STATUS_LIST);
         //console.log(MEASURMENT_RESULTS);
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["timer"])(1000).subscribe(() => {
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["timer"])(1000).subscribe(() => {
             this.setUIPatients();
-            this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"];
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(element => {
+            this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"];
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(element => {
                 console.log(element.patient_Id);
             });
         });
     }
     ngOnInit() {
         this.mytimer = setInterval(() => {
+            TIMETAG = this.getDateInElasticFormat();
             this.updateMeasureResults();
-            //this.setPatientUIListMeasureResults();
             this.calculatePatientsByScore();
-            this.getLatestPatientInfo();
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
+                this.getLatestPatientInfo();
+            }
+            else {
+                this.setPatientUIListMeasureResults();
+            }
         }, 1000 * 0.5);
     }
     calculatePatientsByScore() {
@@ -3695,7 +3666,7 @@ let PatientsComponent = class PatientsComponent {
         this.numOfMajorPatients = 0;
         this.numOfModeratePatients = 0;
         this.numOfMinorPatients = 0;
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(patient => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(patient => {
             if (patient.score < 2) {
                 this.numOfMinorPatients++;
             }
@@ -3711,15 +3682,16 @@ let PatientsComponent = class PatientsComponent {
         });
     }
     // set Patients List
+    // todo devide score and measure results
     setUIPatients() {
         //console.log('-----------------')
         //console.log(PATIENTS);
         //console.log('length: ' + PATIENTS.length);
         //console.log(PATIENTS[0]);
-        if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].length !== 0) {
+        if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].length !== 0) {
             return;
         }
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"].forEach(patient => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"].forEach(patient => {
             let curr_age = this.getAge(patient.date_of_birth);
             let riskgroup = true;
             let p_sensorsList = this.getPatientSensors(patient);
@@ -3745,13 +3717,13 @@ let PatientsComponent = class PatientsComponent {
                     HighRiskGroup: riskgroup },
                 hospitalization: null,
                 measureResults: {
-                    heartRate: { val: 0, new: true },
-                    bloodPresure: { val: '', new: true },
-                    spO2: { val: 0, new: true },
-                    breathingRate: { val: 0, new: true },
+                    heartRate: { val: '-', new: true },
+                    bloodPresure: { val: '-', new: true },
+                    spO2: { val: '-', new: true },
+                    breathingRate: { val: '-', new: true },
                     extraO2: { val: '', new: true },
-                    fever: { val: 0, new: true },
-                    breathingInfo: { val: '', new: true }
+                    fever: { val: '-', new: true },
+                    breathingInfo: { val: '-', new: true },
                 },
                 alerts: '',
                 progress: '',
@@ -3759,14 +3731,17 @@ let PatientsComponent = class PatientsComponent {
                 history: { alerts: [ /*{name:'no pulse', time: new Date()},
                   {name:'no breath', time: new Date()}*/],
                     scoring: [] },
-                settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"],
+                settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_PERSON_SETTINGS"],
                 sensors_list: p_sensorsList
             };
             //console.log(patientUI);
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].push(patientUI);
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].push(patientUI);
         });
     }
     getAge(elastic_b_day) {
+        if (elastic_b_day === undefined) {
+            return 0;
+        }
         //2020-04-13
         let y = +elastic_b_day.substring(0, 4);
         let m = +elastic_b_day.substring(5, 7);
@@ -3780,6 +3755,9 @@ let PatientsComponent = class PatientsComponent {
         return age;
     }
     getPatientSensors(patient) {
+        if (patient.sensors_list === undefined) {
+            return [];
+        }
         let newList = [];
         patient.sensors_list.forEach(s => {
             newList.push({
@@ -3798,54 +3776,89 @@ let PatientsComponent = class PatientsComponent {
     }
     // end of set Patients List
     setPatientUIListMeasureResults() {
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
-            p_ui.measureResults = this.getPatientUIMeasureResults(p_ui.patient_Id);
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(p_ui => {
+            p_ui.measureResults = this.getPatientUIMeasureResults(p_ui);
             p_ui.score = this.getPatientScore(p_ui.patient_Id);
         });
     }
-    getPatientUIMeasureResults(p_id) {
-        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
+    getPatientUIMeasureResults(patient) {
+        let p_id = patient.patient_Id;
+        let isUpdated = {
+            heartRate: false,
+            bloodPresure: false,
+            spO2: false,
+            breathingRate: false,
+            extraO2: false,
+            fever: false,
+            breathingInfo: false,
+        };
+        let return_Value = {
+            heartRate: patient.measureResults.heartRate,
+            bloodPresure: patient.measureResults.bloodPresure,
+            spO2: patient.measureResults.spO2,
+            breathingRate: patient.measureResults.breathingRate,
+            extraO2: patient.measureResults.extraO2,
+            fever: patient.measureResults.fever,
+            breathingInfo: patient.measureResults.breathingInfo
+        };
+        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
+            if (isUpdated.heartRate && isUpdated.bloodPresure && isUpdated.spO2 && isUpdated.breathingRate
+                && isUpdated.fever && isUpdated.breathingInfo) {
+                break;
+            }
             //todo - change back to p_id instead of '800d4470-7d45-11ea-ac59-2fbe9b8b5360'!!!!!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].patientId === p_id) {
-                let hr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.bpm + '';
-                let bp_h = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_h + '';
-                let bp_l = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.blood_pressure_l + '';
-                let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
-                    '/' +
-                    bp_l.substring(0, Math.min(bp_l.length, 5));
-                let spO2 = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.saturation + '';
-                let fever = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].secondery_priority.fever + '';
-                let p_breathing_info = 'cough %: ' + _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.cough_presence_rate;
-                if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.wheezing) {
-                    p_breathing_info = 'Wheezing, ' + p_breathing_info;
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i].patientId === p_id) {
+                let curr_mr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i];
+                if (!isUpdated.heartRate && curr_mr.secondery_priority.bpm !== undefined
+                    && curr_mr.secondery_priority.bpm !== 0) {
+                    let hr = curr_mr.secondery_priority.bpm + '';
+                    return_Value.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+                    isUpdated.heartRate = true;
                 }
-                return {
-                    heartRate: { val: hr.substring(0, Math.min(5, hr.length)), new: true },
-                    bloodPresure: { val: p_bp, new: true },
-                    spO2: { val: spO2.substring(0, Math.min(spO2.length, 5)), new: true },
-                    breathingRate: { val: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].primery_priority.breath_rate, new: true },
-                    extraO2: { val: '', new: true },
-                    fever: { val: fever.substring(0, Math.min(fever.length, 4)), new: true },
-                    breathingInfo: { val: p_breathing_info, new: true },
-                };
+                if (!isUpdated.bloodPresure && curr_mr.secondery_priority.blood_pressure_h !== undefined
+                    && curr_mr.secondery_priority.blood_pressure_h !== 0) {
+                    let bp_h = curr_mr.secondery_priority.blood_pressure_h + '';
+                    let bp_l = curr_mr.secondery_priority.blood_pressure_l + '';
+                    let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
+                        '/' +
+                        bp_l.substring(0, Math.min(bp_l.length, 5));
+                    return_Value.bloodPresure.val = p_bp;
+                    isUpdated.bloodPresure = true;
+                }
+                if (!isUpdated.spO2 && curr_mr.secondery_priority.saturation !== undefined
+                    && curr_mr.secondery_priority.saturation !== 0) {
+                    let spO2 = curr_mr.secondery_priority.saturation + '';
+                    return_Value.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+                    isUpdated.spO2 = true;
+                }
+                if (!isUpdated.breathingRate && curr_mr.primery_priority.breath_rate !== undefined
+                    && curr_mr.primery_priority.breath_rate !== 0) {
+                    return_Value.breathingRate.val = curr_mr.primery_priority.breath_rate;
+                    isUpdated.breathingRate = true;
+                }
+                if (!isUpdated.fever && curr_mr.secondery_priority.fever !== undefined
+                    && curr_mr.secondery_priority.fever !== 0) {
+                    return_Value.fever.val = curr_mr.secondery_priority.fever;
+                    isUpdated.fever = true;
+                }
+                if (!isUpdated.breathingInfo && curr_mr.primery_priority.cough_presence_rate !== undefined
+                    && curr_mr.primery_priority.cough_presence_rate !== 0) {
+                    let p_breathing_info = 'cough %: ' + curr_mr.primery_priority.cough_presence_rate;
+                    if (curr_mr.primery_priority.wheezing) {
+                        p_breathing_info = 'Wheezing, ' + p_breathing_info;
+                    }
+                    return_Value.breathingInfo.val = p_breathing_info;
+                }
             }
         }
-        return {
-            heartRate: { val: '-', new: true },
-            bloodPresure: { val: '-', new: true },
-            spO2: { val: '-', new: true },
-            breathingRate: { val: '-', new: true },
-            extraO2: { val: '', new: true },
-            fever: { val: '-', new: true },
-            breathingInfo: { val: '-', new: true },
-        };
+        return return_Value;
     }
     getPatientScore(p_id) {
-        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
+        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
             //todo - change back to p_id instead of '15720b10-778c-11ea-99b7-1f57529dde94'!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
-                console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i]);
-                return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].Score.Total;
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
+                console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i]);
+                return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].Score.Total;
                 //return Math.floor(Math.random()*9); //check if table is dynamic
             }
         }
@@ -3854,26 +3867,35 @@ let PatientsComponent = class PatientsComponent {
     updateMeasureResults() {
         var client = new $.es.Client({
             // hosts: hosts
-            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["ELASTIC_HOST"],
+            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["ELASTIC_HOST"],
         });
         var result = client.search({
             index: 'measure_results_v5',
-            size: 1000,
+            size: 100,
+            body: {
+                sort: [{ "timeTag": { "order": "desc" } }],
+                query: {
+                    // CAUTION: dear Natali, do not query 'gte' for too long ago, it might not be efficient,
+                    //          let's say that an hour is enough
+                    "range": { "timeTag": { "gte": TIMETAG, "lt": "now" } }
+                },
+            }
+            //match: {}
         }, function (err, resp, status) {
             if (resp) {
                 //debugger;
                 var exportData = resp.hits.hits;
                 //console.log(exportData);
-                for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
-                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].pop();
-                }
-                exportData.forEach(result => {
-                    //console.log('------')
-                    //console.log(sensor._source.unit_id)
-                    if (result._source.patientId !== undefined) {
-                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].push(result._source);
+                if (!_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
+                    for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
+                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].pop();
                     }
-                });
+                    exportData.forEach(result => {
+                        if (result._source.patientId !== undefined) {
+                            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].push(result._source);
+                        }
+                    });
+                }
             }
             else {
             }
@@ -3885,14 +3907,14 @@ let PatientsComponent = class PatientsComponent {
             if (resp) {
                 //debugger;
                 var exportData = resp.hits.hits;
-                for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
-                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].pop();
+                for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
+                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].pop();
                 }
                 exportData.forEach(status => {
                     //console.log('------')
                     //console.log(sensor._source.unit_id)
                     if (status._source.Id !== undefined) {
-                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].push(status._source);
+                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].push(status._source);
                     }
                 });
             }
@@ -3900,23 +3922,48 @@ let PatientsComponent = class PatientsComponent {
             }
         });
     }
+    getDateInElasticFormat() {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours() - 1;
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let milliseconds = date.getMilliseconds();
+        return year + '-' + this.getNumStr(month, 2) + '-' + this.getNumStr(day, 2) + 'T' +
+            this.getNumStr(hour, 2) + ':' + this.getNumStr(minutes, 2) + ':' + this.getNumStr(seconds, 2) +
+            '.' + this.getNumStr(milliseconds, 3);
+    }
+    getNumStr(num, len) {
+        if (len === 2) {
+            if (num > 9)
+                return num + '';
+            return '0' + num;
+        }
+        if (num < 9)
+            return '00' + num;
+        if (num < 100)
+            return '0' + num;
+        return num;
+    }
     // Buttons
     sortByScore() {
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].sort((p1, p2) => (p1.score < p2.score) ? 1 : -1);
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].sort((p1, p2) => (p1.score < p2.score) ? 1 : -1);
         this.table.renderRows();
     }
     newSensor() {
         this.router.navigate(['/new-sensor']);
     }
     newPatient() {
-        let newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PersonHealthData"]();
+        let newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PersonHealthData"]();
         newPerson.patient_Id = this.getNextID();
         this.currPersonService.nextMessage(newPerson);
         this.router.navigate(['/new-patient']);
     }
     getNextID() {
         let nextID = -1;
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(element => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(element => {
             console.log(element.patient_Id);
             if (element.patient_Id >= nextID)
                 nextID = element.patient_Id + 1;
@@ -3933,18 +3980,14 @@ let PatientsComponent = class PatientsComponent {
         this.router.navigate(['/release-document']);
     }
     //end of buttons
-    ngOnDestroy() {
-        // console.log('---')
-        // this.subscription.unsubscribe();
-    }
     getLastKnown() {
         this.lastKnownService.getLastKnown().subscribe(lists => {
             this.lastKnownLst = lists[0];
             this.lastUpdateLst = lists[1];
             //console.log(this.lastKnownLst['a64ce230-73db-11ea-9ca9-e56bb32f5931'])
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(p_ui => {
                 p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id);
-                //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb');
+                //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('a64ce230-73db-11ea-9ca9-e56bb32f5931');
                 p_ui.score = this.getPatientScore(p_ui.patient_Id);
             });
         });
@@ -3970,13 +4013,33 @@ let PatientsComponent = class PatientsComponent {
         let p_lastKnown = JSON.parse(this.lastKnownLst[patientId]);
         let p_lastUpdate = JSON.parse(this.lastUpdateLst[patientId]);
         let hr = p_lastKnown.secondery_priority.bpm + '';
+        if (hr === undefined) {
+            hr = '-';
+        }
         let bp_h = p_lastKnown.secondery_priority.blood_pressure_h + '';
+        if (bp_h === undefined) {
+            bp_h = '-';
+        }
         let bp_l = p_lastKnown.secondery_priority.blood_pressure_l + '';
+        if (bp_l === undefined) {
+            bp_l = '-';
+        }
         let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
             '/' +
             bp_l.substring(0, Math.min(bp_l.length, 5));
         let spO2 = p_lastKnown.secondery_priority.saturation + '';
+        if (spO2 === undefined) {
+            spO2 = '0';
+        }
+        let br = p_lastKnown.primery_priority.breath_rate;
+        if (br === undefined) {
+            br = '0';
+        }
         let fever = p_lastKnown.secondery_priority.fever + '';
+        if (fever === undefined) {
+            fever = '-';
+        }
+        ;
         let p_breathing_info = 'cough %: ' + p_lastKnown.primery_priority.cough_presence_rate;
         if (p_lastKnown.primery_priority.wheezing) {
             p_breathing_info = 'Wheezing, ' + p_breathing_info;
@@ -3984,7 +4047,7 @@ let PatientsComponent = class PatientsComponent {
         PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
         PatientMeasureResults.bloodPresure.val = p_bp;
         PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
-        PatientMeasureResults.breathingRate.val = p_lastKnown.primery_priority.breath_rate;
+        PatientMeasureResults.breathingRate.val = br;
         PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
         PatientMeasureResults.breathingInfo.val = p_breathing_info;
         PatientMeasureResults.heartRate.new = this.isNewInformation(p_lastUpdate.updates.bmp, 10);
@@ -3998,69 +4061,6 @@ let PatientsComponent = class PatientsComponent {
             this.isNewInformation(p_lastUpdate.updates.cough_presence_rate, 10) &&
                 this.isNewInformation(p_lastUpdate.updates.wheezing, 10);
         return PatientMeasureResults;
-        /*let found = false;
-        let PatientMeasureResults = {
-          heartRate: {val: '-', new: true},
-          bloodPresure: {val: '-', new: true},
-          spO2: {val: '-', new: true},
-          breathingRate: {val: '-', new: true},
-          extraO2: {val: '', new: true},
-          fever: {val: '-', new: true},
-          breathingInfo: {val: '-', new: true},
-        }
-    
-        if(this.lastKnownLst === undefined)
-          return PatientMeasureResults;
-    
-        for(let i=0; i<this.lastKnownLst.length; i++){
-          if(this.lastKnownLst[i].patientId === patientId){
-            found = true;
-            let hr = this.lastKnownLst[i].secondery_priority.bpm+'';
-            let bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h+'';
-            let bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l+'';
-            let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
-                   '/' +
-                   bp_l.substring(0, Math.min(bp_l.length, 5));
-            let spO2 = this.lastKnownLst[i].secondery_priority.saturation+'';
-            let fever = this.lastKnownLst[i].secondery_priority.fever+'';
-            let p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
-            if(this.lastKnownLst[i].primery_priority.wheezing){
-              p_breathing_info = 'Wheezing, ' + p_breathing_info;
-            }
-    
-            PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
-            PatientMeasureResults.bloodPresure.val = p_bp;
-            PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
-            PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
-            PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
-            PatientMeasureResults.breathingInfo.val = p_breathing_info;
-    
-            break;
-          }
-        }
-        if(!found){
-          return PatientMeasureResults;
-        }
-    
-        for(let i=0; i<this.lastUpdateLst.length; i++){
-          if(this.lastUpdateLst[i].patientId === patientId){
-            PatientMeasureResults.heartRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.bmp, 10);
-            PatientMeasureResults.bloodPresure.new =
-                this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_h, 10) &&
-                this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_l, 10);
-            PatientMeasureResults.spO2.new = this.isNewInformation(this.lastUpdateLst[i].updates.saturation, 10);
-            PatientMeasureResults.breathingRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.breath_rate, 10);
-            PatientMeasureResults.fever.new = this.isNewInformation(this.lastUpdateLst[i].updates.fever, 10);
-            PatientMeasureResults.breathingInfo.new =
-                this.isNewInformation(this.lastUpdateLst[i].updates.cough_presence_rate, 10) &&
-                this.isNewInformation(this.lastUpdateLst[i].updates.wheezing, 10);
-    
-            break;
-          }
-    
-        }
-    
-        return PatientMeasureResults;*/
     }
     isNewInformation(originalTime, maxDelay) {
         let now = new Date((new Date()).toUTCString());
@@ -4071,15 +4071,15 @@ let PatientsComponent = class PatientsComponent {
     }
 };
 PatientsComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
-    { type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__["CurrPersonService"] },
-    { type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__["LastKnownService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__["CurrPersonService"] },
+    { type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__["LastKnownService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"])('table', null)
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('table', null)
 ], PatientsComponent.prototype, "table", void 0);
 PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
         selector: 'app-patients',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./patients.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patients/patients.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./patients.component.scss */ "./src/app/modules/patients/patients.component.scss")).default]
@@ -4405,7 +4405,7 @@ let HeaderComponent = class HeaderComponent {
     //logo_path = './../../../../assets/logo/covidlogo.png';
     constructor(router) {
         this.router = router;
-        this.logo_path = './../../../../assets/logo/jpegLogo.jpg';
+        this.logo_path = './../../../../assets/logo/medic.png';
     }
     ngOnInit() {
     }
@@ -4503,7 +4503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    baseUrl: 'http://52.16.82.127:4000/',
+    baseUrl: 'http://52.16.82.127:3000/',
     newSensorUrl: 'http://52.16.82.127:4000/new_sensor',
     newPatientUrl: 'http://52.16.82.127:4000/new_patient',
     elastic: 'https://search-covid198-es-2-x6zr2th7oiq7sjzp653cs3k3xm.eu-west-1.es.amazonaws.com/',
