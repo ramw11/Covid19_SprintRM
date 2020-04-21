@@ -1,3 +1,9 @@
+let redis = require('redis'),
+clientRedis = redis.createClient({
+    port: 6379,               // replace with your port
+    host: 'cv19redis-001.d9jy7a.0001.euw1.cache.amazonaws.com'
+});
+
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
@@ -18,7 +24,7 @@ var express = require('express'),
   console.log(`GUI's available on port ${port}`);
 
 
-  exports.getLastKnown= async function (req,res){
+  function getLastKnown(req,res){
     clientRedis.hgetall("LastKnown", function (err, obj) {
         if(err){
             console.log(err);
@@ -32,7 +38,7 @@ var express = require('express'),
      });
 }
 
-exports.getLastUpdate= async function (req,res){
+function getLastUpdate(req,res){
     clientRedis.hgetall("last_update", function (err, obj) {
         if(err){
             console.log(err);
