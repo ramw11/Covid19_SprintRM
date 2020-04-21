@@ -1763,6 +1763,7 @@ let NewPatientComponent = class NewPatientComponent {
         });
         let newPatientDB = {
             patient_Id: newPatient.patient_Id,
+            //patient_Id: 'a64ce230-73db-11ea-9ca9-e56bb32f5931',
             time_tag: newPatient.time_tag,
             first_name: newPatient.first_name,
             last4Digit: newPatient.last4Digit,
@@ -3132,129 +3133,68 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         this.lastKnownService.getLastKnown().subscribe(lists => {
             this.lastKnownLst = lists[0];
             this.lastUpdateLst = lists[1];
+            let ret = this.getPatientUIMeasureResultsFromRedis(MONITOR_PATIENT.patientID);
+            if (ret === undefined) {
+                return;
+            }
+            MONITOR_PATIENT.HR = ret.heartRate;
+            MONITOR_PATIENT.SpO2.val = +ret.spO2.val;
+            MONITOR_PATIENT.SpO2.new = ret.spO2.new;
+            MONITOR_PATIENT.BR.val = +ret.breathingRate.val;
+            MONITOR_PATIENT.BR.new = ret.breathingRate.new;
+            MONITOR_PATIENT.TMP = ret.fever;
+            let bp = ret.bloodPresure.val;
+            MONITOR_PATIENT.Bp_h.val = +bp.substring(0, bp.indexOf('/'));
+            MONITOR_PATIENT.Bp_l.val = +bp.substring(bp.indexOf('/') + 1, bp.length);
+            //MONITOR_PATIENT.ECG = patientMeasureRes.secondery_priority.ecg;
         });
     }
     getLatestPatientInfo() {
         this.getLastKnown();
-        //this.getLastUpdate();
-        // temporary lists!!
-        /*this.lastKnownLst = [
-          {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
-           age: 8,
-           primery_priority:
-            {pulse: 53.9782048096756,
-            fev1: 60.6551240000595,
-            fvc: 70.8259074684175,
-            tlc: 5.299691954218364,
-            rv: 1.5,
-            erv: 0.7774951726718935,
-            frc: 2.2774951726718937,
-            breath_rate: 10,
-            wheezing: false,
-            cough_presence_rate: 3},
-           secondery_priority:
-           {fever: 37,
-           bpm: 45.77962601286034,
-           rpmf: 69,
-           saturation: 98.5497189686849,
-           blood_pressure_h: 115.53040926622532,
-           blood_pressure_l: 78.56628638318611,
-           ecg: '{ key : val }'},
-           Id: 'dc91c0ce-eea6-4111-9730-1b64188c6d37',
-           timeTag: '2020-04-13T07:50:39.268428'}
-        ]
-    
-        this.lastUpdateLst = [
-          {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
-          updates:
-          {pulse: '1587048591757',
-          fev1: '1587048591757',
-          fvc: '1587048591757',
-          tlc: '1587048591757',
-          rv: '1587048591757',
-          erv: '1587048591757',
-          frc: '1587048591757',
-          breath_rate: '1587048591757',
-          wheezing: '1587048591757',
-          cough_presence_rate: '1587048591757',
-          fever: '1587048591757',
-          bpm: '1587048591757',
-          rpmf: '1587048591757',
-          saturation: '1587048591757',
-          blood_pressure_h: '1587048591757',
-          blood_pressure_l: '1587048591757',
-          ecg: '1587048591757'}}
-        ]*/
-        let ret = this.getPatientUIMeasureResultsFromRedis(MONITOR_PATIENT.patientID);
-        if (ret === undefined) {
-            return;
-        }
-        MONITOR_PATIENT.HR = ret.heartRate;
-        MONITOR_PATIENT.SpO2.val = +ret.spO2.val;
-        MONITOR_PATIENT.SpO2.new = ret.spO2.new;
-        MONITOR_PATIENT.BR.val = +ret.breathingRate.val;
-        MONITOR_PATIENT.BR.new = ret.breathingRate.new;
-        MONITOR_PATIENT.TMP = ret.fever;
-        let bp = ret.bloodPresure.val;
-        MONITOR_PATIENT.Bp_h.val = +bp.substring(0, bp.indexOf('/'));
-        MONITOR_PATIENT.Bp_l.val = +bp.substring(bp.indexOf('/') + 1, bp.length);
-        //MONITOR_PATIENT.ECG = patientMeasureRes.secondery_priority.ecg;
     }
     getPatientUIMeasureResultsFromRedis(patientId) {
-        let found = false;
         let PatientMeasureResults = {
             heartRate: { val: '-', new: true },
             bloodPresure: { val: '-', new: true },
-            spO2: { val: '-', new: true },
-            breathingRate: { val: '-', new: true },
+            spO2: { val: '0', new: true },
+            breathingRate: { val: '0', new: true },
             extraO2: { val: '', new: true },
             fever: { val: '-', new: true },
             breathingInfo: { val: '-', new: true },
         };
-        if (this.lastKnownLst === undefined)
-            return undefined;
-        for (let i = 0; i < this.lastKnownLst.length; i++) {
-            if (this.lastKnownLst[i].patientId === patientId) {
-                found = true;
-                let hr = this.lastKnownLst[i].secondery_priority.bpm + '';
-                let bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h + '';
-                let bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l + '';
-                let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
-                    '/' +
-                    bp_l.substring(0, Math.min(bp_l.length, 5));
-                let spO2 = this.lastKnownLst[i].secondery_priority.saturation + '';
-                let fever = this.lastKnownLst[i].secondery_priority.fever + '';
-                let p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
-                if (this.lastKnownLst[i].primery_priority.wheezing) {
-                    p_breathing_info = 'Wheezing, ' + p_breathing_info;
-                }
-                PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
-                PatientMeasureResults.bloodPresure.val = p_bp;
-                PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
-                PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
-                PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
-                PatientMeasureResults.breathingInfo.val = p_breathing_info;
-                break;
-            }
-        }
-        if (!found) {
+        if (this.lastKnownLst[patientId] === undefined) {
             return PatientMeasureResults;
         }
-        for (let i = 0; i < this.lastUpdateLst.length; i++) {
-            if (this.lastUpdateLst[i].patientId === patientId) {
-                PatientMeasureResults.heartRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.bmp, 10);
-                PatientMeasureResults.bloodPresure.new =
-                    this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_h, 10) &&
-                        this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_l, 10);
-                PatientMeasureResults.spO2.new = this.isNewInformation(this.lastUpdateLst[i].updates.saturation, 10);
-                PatientMeasureResults.breathingRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.breath_rate, 10);
-                PatientMeasureResults.fever.new = this.isNewInformation(this.lastUpdateLst[i].updates.fever, 10);
-                PatientMeasureResults.breathingInfo.new =
-                    this.isNewInformation(this.lastUpdateLst[i].updates.cough_presence_rate, 10) &&
-                        this.isNewInformation(this.lastUpdateLst[i].updates.wheezing, 10);
-                break;
-            }
+        let p_lastKnown = JSON.parse(this.lastKnownLst[patientId]);
+        let p_lastUpdate = JSON.parse(this.lastUpdateLst[patientId]);
+        let hr = p_lastKnown.secondery_priority.bpm + '';
+        let bp_h = p_lastKnown.secondery_priority.blood_pressure_h + '';
+        let bp_l = p_lastKnown.secondery_priority.blood_pressure_l + '';
+        let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
+            '/' +
+            bp_l.substring(0, Math.min(bp_l.length, 5));
+        let spO2 = p_lastKnown.secondery_priority.saturation + '';
+        let fever = p_lastKnown.secondery_priority.fever + '';
+        let p_breathing_info = 'cough %: ' + p_lastKnown.primery_priority.cough_presence_rate;
+        if (p_lastKnown.primery_priority.wheezing) {
+            p_breathing_info = 'Wheezing, ' + p_breathing_info;
         }
+        PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+        PatientMeasureResults.bloodPresure.val = p_bp;
+        PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+        PatientMeasureResults.breathingRate.val = p_lastKnown.primery_priority.breath_rate;
+        PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
+        PatientMeasureResults.breathingInfo.val = p_breathing_info;
+        PatientMeasureResults.heartRate.new = this.isNewInformation(p_lastUpdate.updates.bmp, 10);
+        PatientMeasureResults.bloodPresure.new =
+            this.isNewInformation(p_lastUpdate.updates.blood_pressure_h, 10) &&
+                this.isNewInformation(p_lastUpdate.updates.blood_pressure_l, 10);
+        PatientMeasureResults.spO2.new = this.isNewInformation(p_lastUpdate.updates.saturation, 10);
+        PatientMeasureResults.breathingRate.new = this.isNewInformation(p_lastUpdate.updates.breath_rate, 10);
+        PatientMeasureResults.fever.new = this.isNewInformation(p_lastUpdate.updates.fever, 10);
+        PatientMeasureResults.breathingInfo.new =
+            this.isNewInformation(p_lastUpdate.updates.cough_presence_rate, 10) &&
+                this.isNewInformation(p_lastUpdate.updates.wheezing, 10);
         return PatientMeasureResults;
     }
     isNewInformation(originalTime, maxDelay) {
@@ -3733,10 +3673,13 @@ let PatientsComponent = class PatientsComponent {
         //console.log(PATIENTS);
         //console.log(SENSORS);
         //console.log(PATIENT_STATUS_LIST);
-        console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"]);
+        //console.log(MEASURMENT_RESULTS);
         Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["timer"])(1000).subscribe(() => {
             this.setUIPatients();
             this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"];
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(element => {
+                console.log(element.patient_Id);
+            });
         });
     }
     ngOnInit() {
@@ -3998,66 +3941,20 @@ let PatientsComponent = class PatientsComponent {
         this.lastKnownService.getLastKnown().subscribe(lists => {
             this.lastKnownLst = lists[0];
             this.lastUpdateLst = lists[1];
+            //console.log(this.lastKnownLst['a64ce230-73db-11ea-9ca9-e56bb32f5931'])
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
+                p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id);
+                //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb');
+                p_ui.score = this.getPatientScore(p_ui.patient_Id);
+            });
         });
     }
     getLatestPatientInfo() {
         this.getLastKnown();
-        // temporary lists!!
-        /*this.lastKnownLst = [
-          {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
-           age: 8,
-           primery_priority:
-            {pulse: 53.9782048096756,
-            fev1: 60.6551240000595,
-            fvc: 70.8259074684175,
-            tlc: 5.299691954218364,
-            rv: 1.5,
-            erv: 0.7774951726718935,
-            frc: 2.2774951726718937,
-            breath_rate: 10,
-            wheezing: false,
-            cough_presence_rate: 3},
-           secondery_priority:
-           {fever: 37,
-           bpm: 45.77962601286034,
-           rpmf: 69,
-           saturation: 98.5497189686849,
-           blood_pressure_h: 115.53040926622532,
-           blood_pressure_l: 78.56628638318611,
-           ecg: '{ key : val }'},
-           Id: 'dc91c0ce-eea6-4111-9730-1b64188c6d37',
-           timeTag: '2020-04-13T07:50:39.268428'}
-        ]
-    
-        this.lastUpdateLst = [
-          {patientId: 'nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb',
-          updates:
-          {pulse: '1587048591757',
-          fev1: '1587048591757',
-          fvc: '1587048591757',
-          tlc: '1587048591757',
-          rv: '1587048591757',
-          erv: '1587048591757',
-          frc: '1587048591757',
-          breath_rate: '1587048591757',
-          wheezing: '1587048591757',
-          cough_presence_rate: '1587048591757',
-          fever: '1587048591757',
-          bpm: '1587048591757',
-          rpmf: '1587048591757',
-          saturation: '1587048591757',
-          blood_pressure_h: '1587048591757',
-          blood_pressure_l: '1587048591757',
-          ecg: '1587048591757'}}
-        ]*/
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
-            p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id);
-            //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('nbnbnbnb-778c-11ea-99b7-nbnbnbnbnbnb');
-            p_ui.score = this.getPatientScore(p_ui.patient_Id);
-        });
     }
     getPatientUIMeasureResultsFromRedis(patientId) {
-        let found = false;
+        //console.log('In Function!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        //console.log(this.lastKnownLst)
         let PatientMeasureResults = {
             heartRate: { val: '-', new: true },
             bloodPresure: { val: '-', new: true },
@@ -4067,51 +3964,103 @@ let PatientsComponent = class PatientsComponent {
             fever: { val: '-', new: true },
             breathingInfo: { val: '-', new: true },
         };
-        if (this.lastKnownLst === undefined)
-            return PatientMeasureResults;
-        for (let i = 0; i < this.lastKnownLst.length; i++) {
-            if (this.lastKnownLst[i].patientId === patientId) {
-                found = true;
-                let hr = this.lastKnownLst[i].secondery_priority.bpm + '';
-                let bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h + '';
-                let bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l + '';
-                let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
-                    '/' +
-                    bp_l.substring(0, Math.min(bp_l.length, 5));
-                let spO2 = this.lastKnownLst[i].secondery_priority.saturation + '';
-                let fever = this.lastKnownLst[i].secondery_priority.fever + '';
-                let p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
-                if (this.lastKnownLst[i].primery_priority.wheezing) {
-                    p_breathing_info = 'Wheezing, ' + p_breathing_info;
-                }
-                PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
-                PatientMeasureResults.bloodPresure.val = p_bp;
-                PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
-                PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
-                PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
-                PatientMeasureResults.breathingInfo.val = p_breathing_info;
-                break;
-            }
-        }
-        if (!found) {
+        if (this.lastKnownLst[patientId] === undefined) {
             return PatientMeasureResults;
         }
-        for (let i = 0; i < this.lastUpdateLst.length; i++) {
-            if (this.lastUpdateLst[i].patientId === patientId) {
-                PatientMeasureResults.heartRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.bmp, 10);
-                PatientMeasureResults.bloodPresure.new =
-                    this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_h, 10) &&
-                        this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_l, 10);
-                PatientMeasureResults.spO2.new = this.isNewInformation(this.lastUpdateLst[i].updates.saturation, 10);
-                PatientMeasureResults.breathingRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.breath_rate, 10);
-                PatientMeasureResults.fever.new = this.isNewInformation(this.lastUpdateLst[i].updates.fever, 10);
-                PatientMeasureResults.breathingInfo.new =
-                    this.isNewInformation(this.lastUpdateLst[i].updates.cough_presence_rate, 10) &&
-                        this.isNewInformation(this.lastUpdateLst[i].updates.wheezing, 10);
-                break;
-            }
+        let p_lastKnown = JSON.parse(this.lastKnownLst[patientId]);
+        let p_lastUpdate = JSON.parse(this.lastUpdateLst[patientId]);
+        let hr = p_lastKnown.secondery_priority.bpm + '';
+        let bp_h = p_lastKnown.secondery_priority.blood_pressure_h + '';
+        let bp_l = p_lastKnown.secondery_priority.blood_pressure_l + '';
+        let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
+            '/' +
+            bp_l.substring(0, Math.min(bp_l.length, 5));
+        let spO2 = p_lastKnown.secondery_priority.saturation + '';
+        let fever = p_lastKnown.secondery_priority.fever + '';
+        let p_breathing_info = 'cough %: ' + p_lastKnown.primery_priority.cough_presence_rate;
+        if (p_lastKnown.primery_priority.wheezing) {
+            p_breathing_info = 'Wheezing, ' + p_breathing_info;
         }
+        PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+        PatientMeasureResults.bloodPresure.val = p_bp;
+        PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+        PatientMeasureResults.breathingRate.val = p_lastKnown.primery_priority.breath_rate;
+        PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
+        PatientMeasureResults.breathingInfo.val = p_breathing_info;
+        PatientMeasureResults.heartRate.new = this.isNewInformation(p_lastUpdate.updates.bmp, 10);
+        PatientMeasureResults.bloodPresure.new =
+            this.isNewInformation(p_lastUpdate.updates.blood_pressure_h, 10) &&
+                this.isNewInformation(p_lastUpdate.updates.blood_pressure_l, 10);
+        PatientMeasureResults.spO2.new = this.isNewInformation(p_lastUpdate.updates.saturation, 10);
+        PatientMeasureResults.breathingRate.new = this.isNewInformation(p_lastUpdate.updates.breath_rate, 10);
+        PatientMeasureResults.fever.new = this.isNewInformation(p_lastUpdate.updates.fever, 10);
+        PatientMeasureResults.breathingInfo.new =
+            this.isNewInformation(p_lastUpdate.updates.cough_presence_rate, 10) &&
+                this.isNewInformation(p_lastUpdate.updates.wheezing, 10);
         return PatientMeasureResults;
+        /*let found = false;
+        let PatientMeasureResults = {
+          heartRate: {val: '-', new: true},
+          bloodPresure: {val: '-', new: true},
+          spO2: {val: '-', new: true},
+          breathingRate: {val: '-', new: true},
+          extraO2: {val: '', new: true},
+          fever: {val: '-', new: true},
+          breathingInfo: {val: '-', new: true},
+        }
+    
+        if(this.lastKnownLst === undefined)
+          return PatientMeasureResults;
+    
+        for(let i=0; i<this.lastKnownLst.length; i++){
+          if(this.lastKnownLst[i].patientId === patientId){
+            found = true;
+            let hr = this.lastKnownLst[i].secondery_priority.bpm+'';
+            let bp_h = this.lastKnownLst[i].secondery_priority.blood_pressure_h+'';
+            let bp_l = this.lastKnownLst[i].secondery_priority.blood_pressure_l+'';
+            let p_bp = bp_h.substring(0, Math.min(bp_h.length, 5)) +
+                   '/' +
+                   bp_l.substring(0, Math.min(bp_l.length, 5));
+            let spO2 = this.lastKnownLst[i].secondery_priority.saturation+'';
+            let fever = this.lastKnownLst[i].secondery_priority.fever+'';
+            let p_breathing_info = 'cough %: ' + this.lastKnownLst[i].primery_priority.cough_presence_rate;
+            if(this.lastKnownLst[i].primery_priority.wheezing){
+              p_breathing_info = 'Wheezing, ' + p_breathing_info;
+            }
+    
+            PatientMeasureResults.heartRate.val = hr.substring(0, Math.min(5, hr.length));
+            PatientMeasureResults.bloodPresure.val = p_bp;
+            PatientMeasureResults.spO2.val = spO2.substring(0, Math.min(spO2.length, 5));
+            PatientMeasureResults.breathingRate.val = this.lastKnownLst[i].primery_priority.breath_rate;
+            PatientMeasureResults.fever.val = fever.substring(0, Math.min(fever.length, 4));
+            PatientMeasureResults.breathingInfo.val = p_breathing_info;
+    
+            break;
+          }
+        }
+        if(!found){
+          return PatientMeasureResults;
+        }
+    
+        for(let i=0; i<this.lastUpdateLst.length; i++){
+          if(this.lastUpdateLst[i].patientId === patientId){
+            PatientMeasureResults.heartRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.bmp, 10);
+            PatientMeasureResults.bloodPresure.new =
+                this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_h, 10) &&
+                this.isNewInformation(this.lastUpdateLst[i].updates.blood_pressure_l, 10);
+            PatientMeasureResults.spO2.new = this.isNewInformation(this.lastUpdateLst[i].updates.saturation, 10);
+            PatientMeasureResults.breathingRate.new = this.isNewInformation(this.lastUpdateLst[i].updates.breath_rate, 10);
+            PatientMeasureResults.fever.new = this.isNewInformation(this.lastUpdateLst[i].updates.fever, 10);
+            PatientMeasureResults.breathingInfo.new =
+                this.isNewInformation(this.lastUpdateLst[i].updates.cough_presence_rate, 10) &&
+                this.isNewInformation(this.lastUpdateLst[i].updates.wheezing, 10);
+    
+            break;
+          }
+    
+        }
+    
+        return PatientMeasureResults;*/
     }
     isNewInformation(originalTime, maxDelay) {
         let now = new Date((new Date()).toUTCString());
