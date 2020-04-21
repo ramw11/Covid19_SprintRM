@@ -5,13 +5,13 @@
     "ELK_PRD" : { 
         "Path" : "https://search-covid198-es-2-x6zr2th7oiq7sjzp653cs3k3xm.eu-west-1.es.amazonaws.com",
         "Region" : "eu-west-1",
-        "indexname" : "measure_results_v5",
+        "mrIdx" : "measure_results_v5",
         "patientsIdx": "patients_v1",
         "sensorsIdx": "sensors_v1"
      },
     "ELK_TEST" : {
         "Path" : "https://1ef7bcb100ab4a95b850383f561c435f.us-east-1.aws.found.io:9243/",
         "Region" : "us-east-1",
-        "indexname" : "measure_results_v4"
+        "mrIdx" : "measure_results_v4"
     }
 }

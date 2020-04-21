@@ -3,11 +3,11 @@ module.exports = function(app) {
   var todoList = require('../controller/mr_controller');
 
 //TODO: add swagger api:
-  app.route('/getLastKnown').get(todoList.getLastKnown);
-  app.route('/getLastUpdate').get(todoList.getLastUpdate);
+  // app.route('/getLastKnown').get(todoList.getLastKnown);
+  // app.route('/getLastUpdate').get(todoList.getLastUpdate);
   app.route('/attachSensor').post(todoList.attachSensor); // not finished
+  app.route('/get_patient_id:id').get(todoList.get_patient_id); // not finished
 
-  
 
   // manual
   /**

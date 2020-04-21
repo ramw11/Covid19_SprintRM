@@ -1,53 +1,44 @@
 {
-    "patient_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5931",
-    "time_tag": "2020-04-13T07:50:39.268428",
-    "first_name": "Israel",
-    "last4Digit": "1234",
-    "institute_name": "Assuta Ashdod",
-    "department_name": "Korona-1A",
-    "room_identifier": "43-7",
-    "bed_identifier": "12",
-    "bed_location": "Window",
-    "date_of_birth": "2000-01-01",
-    "risk_group": "None",
-    "weight": 79.9,
-    "gender": "Male",
-    "normal_range_list": [
-      {
-        "HR": {
-           "min": 51,
-           "max": 90
-        }
-      },
-      {
-        "SpO2": {
-           "min": 96,
-           "max": 100
-		}
-      },
-      {
-        "RR": {
-           "min": 12,
-           "max": 20
-		}
-      }
-    ],
-  "sensors_list": [
+  "patient_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5931",
+  "time_tag": "2020-04-13T07:50:39.268428",
+  "first_name": "Israel",
+  "last4Digit": "1234",
+  "institute_name": "Assuta Ashdod",
+  "department_name": "Corona",
+  "room_identifier": "43-7",
+  "bed_identifier": "12",
+  "bed_location": "Window",
+  "date_of_birth": "2000-01-01",
+  "risk_group": "None",
+  "weight": 79.9,
+  "gender": "Male",
+  "normal_range_list": [
     {
-      "Early Sense": {
-			"unit_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5932",
-			"sensor_name": "Early Sense",
-			"vendor_name": "Early Sense",
-			"description": "very good sensor"
-		}
+      "HR": {
+         "min": 51,
+         "max": 90
+      }
     },
     {
-      "NanoVation": {
-			"unit_Id": "a64ce230-73db-11ea-9ca9-e56bb32f5933",
-			"sensor_name": "SenseGuard",
-			"vendor_name": " NanoVation ",
-			"description": "CONTINUOUS REMOTE RESPIRATORY MONITORING"
-		}
+      "SpO2": {
+         "min": 96,
+         "max": 100
+  }
+    },
+    {
+      "RR": {
+         "min": 12,
+         "max": 20
+  }
     }
-    ]
+  ],
+"sensors_list": [
+  {
+  "unit_Id": "beecardia_10",
+  "sensor_name": "Stethoscope",
+  "vendor_name": "Beecardia",
+  "description": "Stethoscope"
+  
+  }
+  ]
 }
