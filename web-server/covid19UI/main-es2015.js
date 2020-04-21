@@ -952,21 +952,32 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
   \**********************************/
-/*! exports provided: AppComponent */
+/*! exports provided: ELASTIC_HOST, REDISFLAG, AppComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function() { return ELASTIC_HOST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REDISFLAG", function() { return REDISFLAG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/app-config.service */ "./src/app/services/app-config.service.ts");
 
 
 
+
+var ELASTIC_HOST;
+var REDISFLAG;
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(config) {
+        this.config = config;
         this.title = 'covid19UI';
+        //console.log('--------------')
+        //console.log(this.config)
+        ELASTIC_HOST = this.config.getElastic();
+        REDISFLAG = this.config.getRedisFlag();
     }
     ngOnInit() {
         $(document).ready(function () {
@@ -991,7 +1002,7 @@ let AppComponent = class AppComponent {
             // debugger;
             var client = new $.es.Client({
                 // hosts: hosts
-                host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
+                host: ELASTIC_HOST,
             });
             resp = client.cluster.health({});
             // alert(resp);
@@ -1041,6 +1052,9 @@ let AppComponent = class AppComponent {
         });
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _services_app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'app-root',
@@ -1064,13 +1078,15 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layouts/default/default.module */ "./src/app/layouts/default/default.module.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layouts/default/default.module */ "./src/app/layouts/default/default.module.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _services_app_config_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/app-config.service */ "./src/app/services/app-config.service.ts");
 
 
 
@@ -1079,24 +1095,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// const config: SocketIoConfig = {url: 'http://localhost:4444', options:{} }
+
+
+const initializerConfigFn = (appConfig) => {
+    return () => {
+        return appConfig.loadAppConfig();
+    };
+};
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
-            _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__["DefaultModule"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
+            _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_2__["DefaultModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"]
+            // SocketIoModule.forRoot(config)
         ],
-        providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+        providers: [
+            {
+                provide: _angular_core__WEBPACK_IMPORTED_MODULE_4__["APP_INITIALIZER"],
+                useFactory: initializerConfigFn,
+                multi: true,
+                deps: [_services_app_config_service__WEBPACK_IMPORTED_MODULE_9__["AppConfigService"]],
+            },
+        ],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
 
@@ -1108,13 +1139,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!******************************************!*\
   !*** ./src/app/interfaces/PersonData.ts ***!
   \******************************************/
-/*! exports provided: ELASTIC_HOST, REDISFLAG, PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
+/*! exports provided: PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function() { return ELASTIC_HOST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REDISFLAG", function() { return REDISFLAG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalData", function() { return PersonalData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HospitalizationInfo", function() { return HospitalizationInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonSettings", function() { return PersonSettings; });
@@ -1132,11 +1161,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATIENT_STATUS_LIST", function() { return PATIENT_STATUS_LIST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MEASURMENT_RESULTS", function() { return MEASURMENT_RESULTS; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../environments/environment */ "./src/environments/environment.ts");
 
-
-const ELASTIC_HOST = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].elastic;
-const REDISFLAG = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redis_flag;
 class PersonalData {
 }
 class HospitalizationInfo {
@@ -1772,7 +1797,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuxilaryDataComponent", function() { return AuxilaryDataComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
@@ -1819,7 +1844,7 @@ let AuxilaryDataComponent = class AuxilaryDataComponent {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             var client = new $.es.Client({
                 // hosts: hosts
-                host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
+                host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
             });
             var result = client.search({
                 index: 'measure_results_v5',
@@ -2953,7 +2978,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MONITOR_PATIENT", function() { return MONITOR_PATIENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientMonitorComponent", function() { return PatientMonitorComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_last_known_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/last-known.service */ "./src/app/services/last-known.service.ts");
@@ -2986,7 +3011,7 @@ let PatientMonitorComponent = class PatientMonitorComponent {
     }
     ngOnInit() {
         this.timer = setInterval(() => {
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
+            if (_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
                 this.getLatestPatientInfo();
                 //this.getPatientInfo1()
             }
@@ -3182,7 +3207,7 @@ let PatientMonitorComponent = class PatientMonitorComponent {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             var client = new $.es.Client({
                 // hosts: hosts
-                host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
+                host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
             });
             var result = client.search({
                 index: 'measure_results_v5',
@@ -3594,12 +3619,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientsComponent", function() { return PatientsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/last-known.service */ "./src/app/services/last-known.service.ts");
-/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
-/* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/last-known.service */ "./src/app/services/last-known.service.ts");
+/* harmony import */ var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../interfaces/PersonData */ "./src/app/interfaces/PersonData.ts");
+/* harmony import */ var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/curr-person.service */ "./src/app/services/curr-person.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
@@ -3609,8 +3636,6 @@ __webpack_require__.r(__webpack_exports__);
 
 let TIMETAG = "2019-04-13T16:22:02.997";
 let PatientsComponent = class PatientsComponent {
-    //redis_flag = environment.redis_flag;
-    // TODO: implement!
     constructor(router, currPersonService, lastKnownService) {
         this.router = router;
         this.currPersonService = currPersonService;
@@ -3631,7 +3656,7 @@ let PatientsComponent = class PatientsComponent {
             'breathingRate', 'extraO2', 'fever', 'breathingInfo', 'alerts',
             'progress', 'score', 'data', 'release'];
         // dataSource: PersonHealthData[];
-        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"];
+        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"];
         this.greenStatusPath = '../../../assets/colors/green.jpg';
         this.yellowStatusPath = '../../../assets/colors/yellow.jpg';
         this.orangeStatusPath = '../../../assets/colors/orange.jpg';
@@ -3640,10 +3665,10 @@ let PatientsComponent = class PatientsComponent {
         //console.log(SENSORS);
         //console.log(PATIENT_STATUS_LIST);
         //console.log(MEASURMENT_RESULTS);
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["timer"])(1000).subscribe(() => {
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["timer"])(1000).subscribe(() => {
             this.setUIPatients();
-            this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"];
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(element => {
+            this.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"];
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(element => {
                 console.log(element.patient_Id);
             });
         });
@@ -3653,7 +3678,7 @@ let PatientsComponent = class PatientsComponent {
             TIMETAG = this.getDateInElasticFormat();
             this.updateMeasureResults();
             this.calculatePatientsByScore();
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
+            if (_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
                 this.getLatestPatientInfo();
             }
             else {
@@ -3666,7 +3691,7 @@ let PatientsComponent = class PatientsComponent {
         this.numOfMajorPatients = 0;
         this.numOfModeratePatients = 0;
         this.numOfMinorPatients = 0;
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(patient => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(patient => {
             if (patient.score < 2) {
                 this.numOfMinorPatients++;
             }
@@ -3688,10 +3713,10 @@ let PatientsComponent = class PatientsComponent {
         //console.log(PATIENTS);
         //console.log('length: ' + PATIENTS.length);
         //console.log(PATIENTS[0]);
-        if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].length !== 0) {
+        if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].length !== 0) {
             return;
         }
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"].forEach(patient => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"].forEach(patient => {
             let curr_age = this.getAge(patient.date_of_birth);
             let riskgroup = true;
             let p_sensorsList = this.getPatientSensors(patient);
@@ -3731,11 +3756,11 @@ let PatientsComponent = class PatientsComponent {
                 history: { alerts: [ /*{name:'no pulse', time: new Date()},
                   {name:'no breath', time: new Date()}*/],
                     scoring: [] },
-                settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_PERSON_SETTINGS"],
+                settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"],
                 sensors_list: p_sensorsList
             };
             //console.log(patientUI);
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].push(patientUI);
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].push(patientUI);
         });
     }
     getAge(elastic_b_day) {
@@ -3776,7 +3801,7 @@ let PatientsComponent = class PatientsComponent {
     }
     // end of set Patients List
     setPatientUIListMeasureResults() {
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(p_ui => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
             p_ui.measureResults = this.getPatientUIMeasureResults(p_ui);
             p_ui.score = this.getPatientScore(p_ui.patient_Id);
         });
@@ -3801,14 +3826,14 @@ let PatientsComponent = class PatientsComponent {
             fever: patient.measureResults.fever,
             breathingInfo: patient.measureResults.breathingInfo
         };
-        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
+        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
             if (isUpdated.heartRate && isUpdated.bloodPresure && isUpdated.spO2 && isUpdated.breathingRate
                 && isUpdated.fever && isUpdated.breathingInfo) {
                 break;
             }
             //todo - change back to p_id instead of '800d4470-7d45-11ea-ac59-2fbe9b8b5360'!!!!!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i].patientId === p_id) {
-                let curr_mr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i];
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].patientId === p_id) {
+                let curr_mr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i];
                 if (!isUpdated.heartRate && curr_mr.secondery_priority.bpm !== undefined
                     && curr_mr.secondery_priority.bpm !== 0) {
                     let hr = curr_mr.secondery_priority.bpm + '';
@@ -3854,11 +3879,11 @@ let PatientsComponent = class PatientsComponent {
         return return_Value;
     }
     getPatientScore(p_id) {
-        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
+        for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
             //todo - change back to p_id instead of '15720b10-778c-11ea-99b7-1f57529dde94'!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
-                console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i]);
-                return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].Score.Total;
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
+                console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i]);
+                return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].Score.Total;
                 //return Math.floor(Math.random()*9); //check if table is dynamic
             }
         }
@@ -3867,7 +3892,7 @@ let PatientsComponent = class PatientsComponent {
     updateMeasureResults() {
         var client = new $.es.Client({
             // hosts: hosts
-            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["ELASTIC_HOST"],
+            host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"],
         });
         var result = client.search({
             index: 'measure_results_v5',
@@ -3886,13 +3911,13 @@ let PatientsComponent = class PatientsComponent {
                 //debugger;
                 var exportData = resp.hits.hits;
                 //console.log(exportData);
-                if (!_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
-                    for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
-                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].pop();
+                if (!_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
+                    for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
+                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].pop();
                     }
                     exportData.forEach(result => {
                         if (result._source.patientId !== undefined) {
-                            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].push(result._source);
+                            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].push(result._source);
                         }
                     });
                 }
@@ -3907,14 +3932,14 @@ let PatientsComponent = class PatientsComponent {
             if (resp) {
                 //debugger;
                 var exportData = resp.hits.hits;
-                for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
-                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].pop();
+                for (let i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
+                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].pop();
                 }
                 exportData.forEach(status => {
                     //console.log('------')
                     //console.log(sensor._source.unit_id)
                     if (status._source.Id !== undefined) {
-                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].push(status._source);
+                        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].push(status._source);
                     }
                 });
             }
@@ -3949,21 +3974,21 @@ let PatientsComponent = class PatientsComponent {
     }
     // Buttons
     sortByScore() {
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].sort((p1, p2) => (p1.score < p2.score) ? 1 : -1);
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].sort((p1, p2) => (p1.score < p2.score) ? 1 : -1);
         this.table.renderRows();
     }
     newSensor() {
         this.router.navigate(['/new-sensor']);
     }
     newPatient() {
-        let newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PersonHealthData"]();
+        let newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PersonHealthData"]();
         newPerson.patient_Id = this.getNextID();
         this.currPersonService.nextMessage(newPerson);
         this.router.navigate(['/new-patient']);
     }
     getNextID() {
         let nextID = -1;
-        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(element => {
+        _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(element => {
             console.log(element.patient_Id);
             if (element.patient_Id >= nextID)
                 nextID = element.patient_Id + 1;
@@ -3984,8 +4009,8 @@ let PatientsComponent = class PatientsComponent {
         this.lastKnownService.getLastKnown().subscribe(lists => {
             this.lastKnownLst = lists[0];
             this.lastUpdateLst = lists[1];
-            //console.log(this.lastKnownLst['a64ce230-73db-11ea-9ca9-e56bb32f5931'])
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(p_ui => {
+            //console.log(this.lastKnownLst)
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(p_ui => {
                 p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id);
                 //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('a64ce230-73db-11ea-9ca9-e56bb32f5931');
                 p_ui.score = this.getPatientScore(p_ui.patient_Id);
@@ -4071,15 +4096,15 @@ let PatientsComponent = class PatientsComponent {
     }
 };
 PatientsComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__["CurrPersonService"] },
-    { type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__["LastKnownService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
+    { type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__["CurrPersonService"] },
+    { type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__["LastKnownService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('table', null)
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"])('table', null)
 ], PatientsComponent.prototype, "table", void 0);
 PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
         selector: 'app-patients',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./patients.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/patients/patients.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./patients.component.scss */ "./src/app/modules/patients/patients.component.scss")).default]
@@ -4156,6 +4181,63 @@ SetDefaultHospitalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/services/app-config.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/app-config.service.ts ***!
+  \************************************************/
+/*! exports provided: AppConfigService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppConfigService", function() { return AppConfigService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let AppConfigService = class AppConfigService {
+    constructor(http) {
+        this.http = http;
+    }
+    loadAppConfig() {
+        return this.http
+            .get('./../../assets/config/app-cinfig.json')
+            .toPromise()
+            .then(data => {
+            this.appConfig = data;
+        });
+    }
+    getBaseUrl() {
+        return this.appConfig.baseUrl;
+    }
+    getNewSensorUrl() {
+        return this.appConfig.newSensorUrl;
+    }
+    getNewPatientUrl() {
+        return this.appConfig.newPatientUrl;
+    }
+    getElastic() {
+        return this.appConfig.elastic;
+    }
+    getRedisFlag() {
+        return this.appConfig.redis_flag;
+    }
+};
+AppConfigService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+AppConfigService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AppConfigService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/curr-person.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/curr-person.service.ts ***!
@@ -4206,26 +4288,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _app_config_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-config.service */ "./src/app/services/app-config.service.ts");
 
 
 
 
 
-const url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl;
 let LastKnownService = class LastKnownService {
-    constructor(http) {
+    constructor(http, config) {
         this.http = http;
+        this.config = config;
+        this.url = this.config.getBaseUrl();
     }
     getLastKnown() {
-        const lastKnownVal = this.http.get(url + 'getLastKnown');
-        const latUpdate = this.http.get(url + 'getLastUpdate');
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])([lastKnownVal, latUpdate]);
+        const lastKnownVal = this.http.get(this.url + 'getLastKnown');
+        const latUpdate = this.http.get(this.url + 'getLastUpdate');
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["forkJoin"])([lastKnownVal, latUpdate]);
     }
 };
 LastKnownService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"] }
 ];
 LastKnownService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
@@ -4250,27 +4334,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-config.service */ "./src/app/services/app-config.service.ts");
 
 
 
 
-const post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newPatientUrl;
 let PatientsService = class PatientsService {
-    constructor(http) {
+    constructor(http, config) {
         this.http = http;
+        this.config = config;
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 'Content-Type': 'application/json',
             })
         };
+        this.post_url = this.config.getNewPatientUrl();
     }
     addPatient(new_patient) {
-        return this.http.post(post_url, JSON.stringify(new_patient), this.httpOptions).pipe();
+        return this.http.post(this.post_url, JSON.stringify(new_patient), this.httpOptions).pipe();
     }
 };
 PatientsService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"] }
 ];
 PatientsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
@@ -4295,28 +4381,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-config.service */ "./src/app/services/app-config.service.ts");
 
 
 
 
-const post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newSensorUrl;
 let SensorsService = class SensorsService {
-    constructor(http) {
+    constructor(http, config) {
         this.http = http;
+        this.config = config;
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 'Content-Type': 'application/json',
             })
         };
+        this.post_url = this.config.getNewSensorUrl();
     }
     addSensor(new_sensor) {
         console.log(JSON.stringify(new_sensor));
-        return this.http.post(post_url, JSON.stringify(new_sensor), this.httpOptions).pipe();
+        return this.http.post(this.post_url, JSON.stringify(new_sensor), this.httpOptions).pipe();
     }
 };
 SensorsService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"] }
 ];
 SensorsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({

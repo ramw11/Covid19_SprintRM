@@ -1541,13 +1541,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/app.component.ts ***!
     \**********************************/
 
-  /*! exports provided: AppComponent */
+  /*! exports provided: ELASTIC_HOST, REDISFLAG, AppComponent */
 
   /***/
   function srcAppAppComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function () {
+      return ELASTIC_HOST;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "REDISFLAG", function () {
+      return REDISFLAG;
+    });
     /* harmony export (binding) */
 
 
@@ -1572,12 +1584,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./services/app-config.service */
+    "./src/app/services/app-config.service.ts");
+
+    var ELASTIC_HOST;
+    var REDISFLAG;
 
     var AppComponent = /*#__PURE__*/function () {
-      function AppComponent() {
+      function AppComponent(config) {
         _classCallCheck(this, AppComponent);
 
-        this.title = 'covid19UI';
+        this.config = config;
+        this.title = 'covid19UI'; //console.log('--------------')
+        //console.log(this.config)
+
+        ELASTIC_HOST = this.config.getElastic();
+        REDISFLAG = this.config.getRedisFlag();
       }
 
       _createClass(AppComponent, [{
@@ -1603,7 +1629,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             var client = new $.es.Client({
               // hosts: hosts
-              host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
+              host: ELASTIC_HOST
             });
             resp = client.cluster.health({}); // alert(resp);
 
@@ -1653,6 +1679,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return AppComponent;
     }();
 
+    AppComponent.ctorParameters = function () {
+      return [{
+        type: _services_app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"]
+      }];
+    };
+
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
       selector: 'app-root',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1693,56 +1725,79 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./layouts/default/default.module */
     "./src/app/layouts/default/default.module.ts");
     /* harmony import */
 
 
-    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/platform-browser */
     "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/platform-browser/animations */
     "./node_modules/@angular/platform-browser/fesm2015/animations.js");
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/fesm2015/forms.js"); // const config: SocketIoConfig = {url: 'http://localhost:4444', options:{} }
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
 
+
+    var _services_app_config_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./services/app-config.service */
+    "./src/app/services/app-config.service.ts");
+
+    var initializerConfigFn = function initializerConfigFn(appConfig) {
+      return function () {
+        return appConfig.loadAppConfig();
+      };
+    };
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
-    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_1__["DefaultModule"]],
-      providers: [],
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"], _layouts_default_default_module__WEBPACK_IMPORTED_MODULE_2__["DefaultModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"] // SocketIoModule.forRoot(config)
+      ],
+      providers: [{
+        provide: _angular_core__WEBPACK_IMPORTED_MODULE_4__["APP_INITIALIZER"],
+        useFactory: initializerConfigFn,
+        multi: true,
+        deps: [_services_app_config_service__WEBPACK_IMPORTED_MODULE_9__["AppConfigService"]]
+      }],
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })], AppModule);
     /***/
   },
@@ -1753,25 +1808,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/interfaces/PersonData.ts ***!
     \******************************************/
 
-  /*! exports provided: ELASTIC_HOST, REDISFLAG, PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
+  /*! exports provided: PersonalData, HospitalizationInfo, PersonSettings, AlertData, PersonHistory, DBPatient, MeasureResultsUI, PersonHealthData, DEFAULT_HOSPITAL, DEFAULT_PERSON_SETTINGS, DEFAULT_PERSON_HISTORY, HEALTH_DATA, SENSORS, PATIENTS, PATIENT_STATUS_LIST, MEASURMENT_RESULTS */
 
   /***/
   function srcAppInterfacesPersonDataTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ELASTIC_HOST", function () {
-      return ELASTIC_HOST;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "REDISFLAG", function () {
-      return REDISFLAG;
-    });
     /* harmony export (binding) */
 
 
@@ -1874,15 +1917,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../environments/environment */
-    "./src/environments/environment.ts");
-
-    var ELASTIC_HOST = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].elastic;
-    var REDISFLAG = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].redis_flag;
 
     var PersonalData = function PersonalData() {
       _classCallCheck(this, PersonalData);
@@ -2871,9 +2905,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../../interfaces/PersonData */
-    "./src/app/interfaces/PersonData.ts");
+    var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../../app.component */
+    "./src/app/app.component.ts");
     /* harmony import */
 
 
@@ -2948,7 +2982,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     client = new $.es.Client({
                       // hosts: hosts
-                      host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
+                      host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
                     });
                     result = client.search({
                       index: 'measure_results_v5',
@@ -4586,9 +4620,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../../interfaces/PersonData */
-    "./src/app/interfaces/PersonData.ts");
+    var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../../app.component */
+    "./src/app/app.component.ts");
     /* harmony import */
 
 
@@ -4663,7 +4697,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this16 = this;
 
           this.timer = setInterval(function () {
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
+            if (_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
               _this16.getLatestPatientInfo(); //this.getPatientInfo1()
 
             } else {
@@ -4935,7 +4969,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     client = new $.es.Client({
                       // hosts: hosts
-                      host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
+                      host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
                     });
                     result = client.search({
                       index: 'measure_results_v5',
@@ -5555,45 +5589,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app.component */
+    "./src/app/app.component.ts");
+    /* harmony import */
+
+
+    var _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./../../services/last-known.service */
     "./src/app/services/last-known.service.ts");
     /* harmony import */
 
 
-    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./../../interfaces/PersonData */
     "./src/app/interfaces/PersonData.ts");
     /* harmony import */
 
 
-    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./../../services/curr-person.service */
     "./src/app/services/curr-person.service.ts");
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
 
     var TIMETAG = "2019-04-13T16:22:02.997";
 
     var PatientsComponent = /*#__PURE__*/function () {
-      //redis_flag = environment.redis_flag;
-      // TODO: implement!
       function PatientsComponent(router, currPersonService, lastKnownService) {
         var _this23 = this;
 
@@ -5616,7 +5654,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.removeUser_icon = '../../../assets/icons/remove-user.jpg';
         this.displayedColumns = ['patient_Id', 'room', 'age', 'heartRate', 'bloodPresure', 'spO2', 'breathingRate', 'extraO2', 'fever', 'breathingInfo', 'alerts', 'progress', 'score', 'data', 'release']; // dataSource: PersonHealthData[];
 
-        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"];
+        this.dsPatients = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"];
         this.greenStatusPath = '../../../assets/colors/green.jpg';
         this.yellowStatusPath = '../../../assets/colors/yellow.jpg';
         this.orangeStatusPath = '../../../assets/colors/orange.jpg';
@@ -5625,12 +5663,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         //console.log(PATIENT_STATUS_LIST);
         //console.log(MEASURMENT_RESULTS);
 
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["timer"])(1000).subscribe(function () {
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["timer"])(1000).subscribe(function () {
           _this23.setUIPatients();
 
-          _this23.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"];
+          _this23.dataSource = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"];
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(function (element) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (element) {
             console.log(element.patient_Id);
           });
         });
@@ -5648,7 +5686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this24.calculatePatientsByScore();
 
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
+            if (_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
               _this24.getLatestPatientInfo();
             } else {
               _this24.setPatientUIListMeasureResults();
@@ -5665,7 +5703,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.numOfModeratePatients = 0;
           this.numOfMinorPatients = 0;
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(function (patient) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (patient) {
             if (patient.score < 2) {
               _this25.numOfMinorPatients++;
             }
@@ -5694,11 +5732,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //console.log(PATIENTS);
           //console.log('length: ' + PATIENTS.length);
           //console.log(PATIENTS[0]);
-          if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].length !== 0) {
+          if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].length !== 0) {
             return;
           }
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENTS"].forEach(function (patient) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENTS"].forEach(function (patient) {
             var curr_age = _this26.getAge(patient.date_of_birth);
 
             var riskgroup = true;
@@ -5769,11 +5807,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 ],
                 scoring: []
               },
-              settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_PERSON_SETTINGS"],
+              settings: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PERSON_SETTINGS"],
               sensors_list: p_sensorsList
             }; //console.log(patientUI);
 
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].push(patientUI);
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].push(patientUI);
           });
         }
       }, {
@@ -5824,7 +5862,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function setPatientUIListMeasureResults() {
           var _this27 = this;
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(function (p_ui) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (p_ui) {
             p_ui.measureResults = _this27.getPatientUIMeasureResults(p_ui);
             p_ui.score = _this27.getPatientScore(p_ui.patient_Id);
           });
@@ -5852,14 +5890,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             breathingInfo: patient.measureResults.breathingInfo
           };
 
-          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
+          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
             if (isUpdated.heartRate && isUpdated.bloodPresure && isUpdated.spO2 && isUpdated.breathingRate && isUpdated.fever && isUpdated.breathingInfo) {
               break;
             } //todo - change back to p_id instead of '800d4470-7d45-11ea-ac59-2fbe9b8b5360'!!!!!!!
 
 
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i].patientId === p_id) {
-              var curr_mr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"][i];
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i].patientId === p_id) {
+              var curr_mr = _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"][i];
 
               if (!isUpdated.heartRate && curr_mr.secondery_priority.bpm !== undefined && curr_mr.secondery_priority.bpm !== 0) {
                 var hr = curr_mr.secondery_priority.bpm + '';
@@ -5908,11 +5946,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPatientScore",
         value: function getPatientScore(p_id) {
-          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
+          for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
             //todo - change back to p_id instead of '15720b10-778c-11ea-99b7-1f57529dde94'!!!
-            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
-              console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i]);
-              return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"][i].Score.Total; //return Math.floor(Math.random()*9); //check if table is dynamic
+            if (_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].PatientID === p_id) {
+              console.log(_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i]);
+              return _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"][i].Score.Total; //return Math.floor(Math.random()*9); //check if table is dynamic
             }
           }
 
@@ -5923,7 +5961,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function updateMeasureResults() {
           var client = new $.es.Client({
             // hosts: hosts
-            host: _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["ELASTIC_HOST"]
+            host: _app_component__WEBPACK_IMPORTED_MODULE_1__["ELASTIC_HOST"]
           });
           var result = client.search({
             index: 'measure_results_v5',
@@ -5951,14 +5989,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               //debugger;
               var exportData = resp.hits.hits; //console.log(exportData);
 
-              if (!_interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["REDISFLAG"]) {
-                for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].length; i++) {
-                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].pop();
+              if (!_app_component__WEBPACK_IMPORTED_MODULE_1__["REDISFLAG"]) {
+                for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].length; i++) {
+                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].pop();
                 }
 
                 exportData.forEach(function (result) {
                   if (result._source.patientId !== undefined) {
-                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["MEASURMENT_RESULTS"].push(result._source);
+                    _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["MEASURMENT_RESULTS"].push(result._source);
                   }
                 });
               }
@@ -5972,15 +6010,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               //debugger;
               var exportData = resp.hits.hits;
 
-              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].length; i++) {
-                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].pop();
+              for (var i = 0; i < _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].length; i++) {
+                _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].pop();
               }
 
               exportData.forEach(function (status) {
                 //console.log('------')
                 //console.log(sensor._source.unit_id)
                 if (status._source.Id !== undefined) {
-                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PATIENT_STATUS_LIST"].push(status._source);
+                  _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PATIENT_STATUS_LIST"].push(status._source);
                 }
               });
             } else {}
@@ -6015,7 +6053,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "sortByScore",
         value: function sortByScore() {
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].sort(function (p1, p2) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].sort(function (p1, p2) {
             return p1.score < p2.score ? 1 : -1;
           });
 
@@ -6029,7 +6067,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "newPatient",
         value: function newPatient() {
-          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["PersonHealthData"]();
+          var newPerson = new _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["PersonHealthData"]();
           newPerson.patient_Id = this.getNextID();
           this.currPersonService.nextMessage(newPerson);
           this.router.navigate(['/new-patient']);
@@ -6039,7 +6077,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getNextID() {
           var nextID = -1;
 
-          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(function (element) {
+          _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (element) {
             console.log(element.patient_Id);
             if (element.patient_Id >= nextID) nextID = element.patient_Id + 1;
           }); // console.log(nextID);
@@ -6067,9 +6105,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.lastKnownService.getLastKnown().subscribe(function (lists) {
             _this28.lastKnownLst = lists[0];
-            _this28.lastUpdateLst = lists[1]; //console.log(this.lastKnownLst['a64ce230-73db-11ea-9ca9-e56bb32f5931'])
+            _this28.lastUpdateLst = lists[1]; //console.log(this.lastKnownLst)
 
-            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_2__["HEALTH_DATA"].forEach(function (p_ui) {
+            _interfaces_PersonData__WEBPACK_IMPORTED_MODULE_3__["HEALTH_DATA"].forEach(function (p_ui) {
               p_ui.measureResults = _this28.getPatientUIMeasureResultsFromRedis(p_ui.patient_Id); //p_ui.measureResults = this.getPatientUIMeasureResultsFromRedis('a64ce230-73db-11ea-9ca9-e56bb32f5931');
 
               p_ui.score = _this28.getPatientScore(p_ui.patient_Id);
@@ -6197,16 +6235,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PatientsComponent.ctorParameters = function () {
       return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]
       }, {
-        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_3__["CurrPersonService"]
+        type: _services_curr_person_service__WEBPACK_IMPORTED_MODULE_4__["CurrPersonService"]
       }, {
-        type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_1__["LastKnownService"]
+        type: _services_last_known_service__WEBPACK_IMPORTED_MODULE_2__["LastKnownService"]
       }];
     };
 
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('table', null)], PatientsComponent.prototype, "table", void 0);
-    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"])('table', null)], PatientsComponent.prototype, "table", void 0);
+    PatientsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
       selector: 'app-patients',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./patients.component.html */
@@ -6334,6 +6372,102 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/services/app-config.service.ts":
+  /*!************************************************!*\
+    !*** ./src/app/services/app-config.service.ts ***!
+    \************************************************/
+
+  /*! exports provided: AppConfigService */
+
+  /***/
+  function srcAppServicesAppConfigServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppConfigService", function () {
+      return AppConfigService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+
+    var AppConfigService = /*#__PURE__*/function () {
+      function AppConfigService(http) {
+        _classCallCheck(this, AppConfigService);
+
+        this.http = http;
+      }
+
+      _createClass(AppConfigService, [{
+        key: "loadAppConfig",
+        value: function loadAppConfig() {
+          var _this29 = this;
+
+          return this.http.get('./../../assets/config/app-cinfig.json').toPromise().then(function (data) {
+            _this29.appConfig = data;
+          });
+        }
+      }, {
+        key: "getBaseUrl",
+        value: function getBaseUrl() {
+          return this.appConfig.baseUrl;
+        }
+      }, {
+        key: "getNewSensorUrl",
+        value: function getNewSensorUrl() {
+          return this.appConfig.newSensorUrl;
+        }
+      }, {
+        key: "getNewPatientUrl",
+        value: function getNewPatientUrl() {
+          return this.appConfig.newPatientUrl;
+        }
+      }, {
+        key: "getElastic",
+        value: function getElastic() {
+          return this.appConfig.elastic;
+        }
+      }, {
+        key: "getRedisFlag",
+        value: function getRedisFlag() {
+          return this.appConfig.redis_flag;
+        }
+      }]);
+
+      return AppConfigService;
+    }();
+
+    AppConfigService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
+    AppConfigService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], AppConfigService);
+    /***/
+  },
+
+  /***/
   "./src/app/services/curr-person.service.ts":
   /*!*************************************************!*\
     !*** ./src/app/services/curr-person.service.ts ***!
@@ -6441,31 +6575,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../../environments/environment */
-    "./src/environments/environment.ts");
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
-
-    var url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl;
+    var _app_config_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./app-config.service */
+    "./src/app/services/app-config.service.ts");
 
     var LastKnownService = /*#__PURE__*/function () {
-      function LastKnownService(http) {
+      function LastKnownService(http, config) {
         _classCallCheck(this, LastKnownService);
 
         this.http = http;
+        this.config = config;
+        this.url = this.config.getBaseUrl();
       }
 
       _createClass(LastKnownService, [{
         key: "getLastKnown",
         value: function getLastKnown() {
-          var lastKnownVal = this.http.get(url + 'getLastKnown');
-          var latUpdate = this.http.get(url + 'getLastUpdate');
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])([lastKnownVal, latUpdate]);
+          var lastKnownVal = this.http.get(this.url + 'getLastKnown');
+          var latUpdate = this.http.get(this.url + 'getLastUpdate');
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["forkJoin"])([lastKnownVal, latUpdate]);
         }
       }]);
 
@@ -6475,6 +6609,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     LastKnownService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }, {
+        type: _app_config_service__WEBPACK_IMPORTED_MODULE_4__["AppConfigService"]
       }];
     };
 
@@ -6524,28 +6660,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../../environments/environment */
-    "./src/environments/environment.ts");
-
-    var post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newPatientUrl;
+    var _app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./app-config.service */
+    "./src/app/services/app-config.service.ts");
 
     var PatientsService = /*#__PURE__*/function () {
-      function PatientsService(http) {
+      function PatientsService(http, config) {
         _classCallCheck(this, PatientsService);
 
         this.http = http;
+        this.config = config;
         this.httpOptions = {
           headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
             'Content-Type': 'application/json'
           })
         };
+        this.post_url = this.config.getNewPatientUrl();
       }
 
       _createClass(PatientsService, [{
         key: "addPatient",
         value: function addPatient(new_patient) {
-          return this.http.post(post_url, JSON.stringify(new_patient), this.httpOptions).pipe();
+          return this.http.post(this.post_url, JSON.stringify(new_patient), this.httpOptions).pipe();
         }
       }]);
 
@@ -6555,6 +6691,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     PatientsService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }, {
+        type: _app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"]
       }];
     };
 
@@ -6604,29 +6742,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../../environments/environment */
-    "./src/environments/environment.ts");
-
-    var post_url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].newSensorUrl;
+    var _app_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./app-config.service */
+    "./src/app/services/app-config.service.ts");
 
     var SensorsService = /*#__PURE__*/function () {
-      function SensorsService(http) {
+      function SensorsService(http, config) {
         _classCallCheck(this, SensorsService);
 
         this.http = http;
+        this.config = config;
         this.httpOptions = {
           headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
             'Content-Type': 'application/json'
           })
         };
+        this.post_url = this.config.getNewSensorUrl();
       }
 
       _createClass(SensorsService, [{
         key: "addSensor",
         value: function addSensor(new_sensor) {
           console.log(JSON.stringify(new_sensor));
-          return this.http.post(post_url, JSON.stringify(new_sensor), this.httpOptions).pipe();
+          return this.http.post(this.post_url, JSON.stringify(new_sensor), this.httpOptions).pipe();
         }
       }]);
 
@@ -6636,6 +6774,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     SensorsService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }, {
+        type: _app_config_service__WEBPACK_IMPORTED_MODULE_3__["AppConfigService"]
       }];
     };
 
