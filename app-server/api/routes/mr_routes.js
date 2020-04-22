@@ -6,7 +6,7 @@ module.exports = function(app) {
   // app.route('/getLastKnown').get(todoList.getLastKnown);
   // app.route('/getLastUpdate').get(todoList.getLastUpdate);
   app.route('/attachSensor').post(todoList.attachSensor); // not finished
-  app.route('/get_patient_id:id').get(todoList.get_patient_id); // not finished
+  app.route('/get_patient_id/:id').get(todoList.get_patient_id); // not finished
 
 
   // manual
@@ -172,6 +172,4 @@ module.exports = function(app) {
  */
   app.route('/mr').post(todoList.archive_mr);
 
-
-  app.route('/mr_tst').post(todoList.archive_mr_tst);
 };

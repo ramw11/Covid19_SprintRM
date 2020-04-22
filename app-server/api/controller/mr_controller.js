@@ -19,14 +19,6 @@ const firehose = new (require('aws-sdk/clients/firehose'))({ region: 'eu-west-1'
 //     host: 'cv19redis-001.d9jy7a.0001.euw1.cache.amazonaws.com'
 // });
 
-
-
-// const options_TEST = {
-//     host: { host: cfgFile.ELK_TEST['Path'], auth : auth },
-//     region: cfgFile.ELK_TEST['Region'],
-//     //credentials: awscredentials
-// };
-
 const options_PRD = {
     host: cfgFile.ELK_PRD['Path'],
     region: cfgFile.ELK_PRD['Region'],
@@ -84,13 +76,6 @@ let sensor_patient_dict = []; // create an empty array
 // }
 
 // let rrr = 5;
-
-
-
-//create test es client
-//const client_tst = aeclient(options_TEST);
-//let isEsAlive = isESClientAlive(client_tst);
-//createESIndex(cfgFile.ELK_TEST['mrIdx']);
 
 // exports.getLastKnown= async function (req,res){
 //     clientRedis.hgetall("LastKnown", function (err, obj) {
@@ -211,49 +196,70 @@ exports.archive_mr = function (req, res) {
     let nid = uuidv1();
     let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
     log(strB);
-    if(!cfgFile.usekinesis){
-    // ES:
-        client_prd.index({
-            index: cfgFile.ELK_PRD['mrIdx'],
-            id: nid,
-            type: 'measureresult',
-            body: jres
-        }, function (err, resp, status) {
-            if (err) log(err);
-            else {
-                let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-                log(status);
-                log(str);
-            }
-        });
-    }
-    else{
-        var recordParams = {
-            Record: {
-                Data: JSON.stringify(jres)
-            },
-            DeliveryStreamName: stream
-        }
 
-        firehose.putRecord(recordParams, function (err, res) {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                console.log(res)
-            }
-        });
+    // ES:
+    send_mr_to_es(nid, jres);
+    client_prd.index({
+        index: cfgFile.ELK_PRD['mrIdx'],
+        id: nid,
+        type: 'measureresult',
+        body: jres
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
+            log(status);
+            log(str);
+        }
+    });
+
+    // KINESIS
+    if (cfgFile.usekinesis) {
+        send_mr_to_kinesis(jres);
     }
+
     res.send({ status: 'SUCCESS' });
     res.end();
 };
+
+function send_mr_to_es(nid, data) {
+    client_prd.index({
+        index: cfgFile.ELK_PRD['mrIdx'],
+        id: nid,
+        type: 'measureresult',
+        body: data
+    }, function (err, resp, status) {
+        if (err) log(err);
+        else {
+            let str = "add data to es for sensor:" + data.unitId + ":" + data.vendor;
+            log(status);
+            log(str);
+        }
+    });
+}
+
+function send_mr_to_kinesis(data) {
+    var recordParams = {
+        Record: {
+            Data: JSON.stringify(data)
+        },
+        DeliveryStreamName: stream
+    }
+
+    firehose.putRecord(recordParams, function (err, res) {
+        if (err) {
+            console.log(err)
+        }
+        else {
+            console.log(res)
+        }
+    });
+}
 
 exports.new_sensor = function (req, res) {
     //let nid = exports.get_id();
     var jres = req.body;
     let nid = jres.unit_id;
-    res.send({ status: 'SUCCESS', sensorId: nid });
-    res.end();
 
     console.log(jres);
     client_prd.index({
@@ -269,6 +275,8 @@ exports.new_sensor = function (req, res) {
             log(str);
         }
     });
+    res.send({ status: 'SUCCESS', sensorId: nid });
+    res.end();
 };
 
 exports.new_patient = function (req, res) {
@@ -300,10 +308,10 @@ exports.new_patient = function (req, res) {
     // }
 };
 
-exports.attachSensor= function (req,res){
+exports.attachSensor = function (req, res) {
     // let sensorId=req.body;
     // client_prd.exists()
-    
+
     // clientRedis.hgetall("LastKnown", function (err, obj) {
     //     if(err){
     //         console.log(err);
@@ -314,26 +322,25 @@ exports.attachSensor= function (req,res){
     //  });
 }
 
-exports.get_patient_id = function (req,res){
+exports.get_patient_id = function (req, res) {
     let id = req.params.id;
+    //let id2 = req.query.id;
     let idx = cfgFile.ELK_PRD.patientsIdx;
     let query = {
         "query": {
-          "match_all": {}
+            "match_all": {}
         }
-      };
-    let patients = esQuery(idx,'patient',query,buildTblCB);
+    };
+    let patients = esQuery(idx, 'patient', query, buildTblCB);
 }
 
-function buildTblCB(patients)
-{
+function buildTblCB(patients) {
     for (let patient of patients) {
-      for (let sensor of patient._source.sensors_list) {
+        for (let sensor of patient._source.sensors_list) {
             //updateRedis4NewPatient(sensor.unit_Id,patient._source.patient_Id);
         }
     }
 }
-
 
 // function updateRedis4NewPatient(sensor_id,patient_Id) {
 //     clientRedis.select(3, function (err, res) {
@@ -352,23 +359,6 @@ function buildTblCB(patients)
 //     });
 // }
 
-exports.archive_mr_tst = function (req, res) {
-    var jres = req.body;
-    res.send({ status: 'SUCCESS' });
-    res.end();
-
-    // console.log(jres);  
-    client_tst.index({
-        index: cfgFile.ELK_TEST['mrIdx'],
-        id: jres.patientId,
-        type: 'measureresult',
-        body: jres
-    }, function (err, resp, status) {
-        console.log(resp);
-    }
-    );
-};
-
 async function esTimeQuery() {
     var result = await client_prd.search({
         index: cfgFile.mrIdx,
@@ -382,29 +372,29 @@ async function esTimeQuery() {
             },
         }
     },
-    function (err, resp, status) {
-        if (resp) {
-            // do something
-            console.log(resp.hits.hits);
-        }
-        else {
-            console.log(err);
-        }
-    });
+        function (err, resp, status) {
+            if (resp) {
+                // do something
+                console.log(resp.hits.hits);
+            }
+            else {
+                console.log(err);
+            }
+        });
 }
 
-async function esQuery(idx,req_type,query,cb) {
+async function esQuery(idx, req_type, query, cb) {
     client_prd.search({
-            index: idx,
-            type: req_type,
-            size: 1000,
-            body: { 
-                query: {
-                   "match_all": {}
-                }
+        index: idx,
+        type: req_type,
+        size: 1000,
+        body: {
+            query: {
+                "match_all": {}
             }
-        },
-        function(err, resp, status) {
+        }
+    },
+        function (err, resp, status) {
             if (resp) {
                 // do something
                 console.log(resp.hits.hits);
