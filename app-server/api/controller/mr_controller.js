@@ -194,24 +194,11 @@ exports.archive_mr = function (req, res) {
     var jres = req.body;
 
     let nid = uuidv1();
-    let strB = `(Before add docId ${nid} data to es for: ${jres.patientId} : ${jres.vendor})`;
+    let strB = `(post mr docId ${nid} data of: ${jres.unitId} : ${jres.vendor})`;
     log(strB);
 
     // ES:
     send_mr_to_es(nid, jres);
-    client_prd.index({
-        index: cfgFile.ELK_PRD['mrIdx'],
-        id: nid,
-        type: 'measureresult',
-        body: jres
-    }, function (err, resp, status) {
-        if (err) log(err);
-        else {
-            let str = "add data to es for:" + jres.patientId + ":" + jres.vendor;
-            log(status);
-            log(str);
-        }
-    });
 
     // KINESIS
     if (cfgFile.usekinesis) {
@@ -359,30 +346,6 @@ function buildTblCB(patients) {
 //     });
 // }
 
-async function esTimeQuery() {
-    var result = await client_prd.search({
-        index: cfgFile.mrIdx,
-        size: 100,
-        body: {
-            sort: [{ "timeTag": { "order": "desc" } }],
-            query: {
-                // CAUTION: dear Natali, do not query 'gte' for too long ago, it might not be efficient,
-                //          let's say that an hour is enough
-                "range": { "timeTag": { "gte": "2020-04-13T16:22:02.997", "lt": "now" } }
-            },
-        }
-    },
-        function (err, resp, status) {
-            if (resp) {
-                // do something
-                console.log(resp.hits.hits);
-            }
-            else {
-                console.log(err);
-            }
-        });
-}
-
 async function esQuery(idx, req_type, query, cb) {
     client_prd.search({
         index: idx,
@@ -457,16 +420,19 @@ function log(msg) {
     });
 }
 
+const moment = require('moment');
 function getTimeAndDate() {
-    let timeStamp = Date.now();
-    let fullDate = new Date(timeStamp);
-    let date = fullDate.getDate();
-    let month = fullDate.getMonth();
-    let year = fullDate.getFullYear();
-    let res = `${date}-${month}-${year}`;
+    // let timeStamp = Date.now();
+    // let fullDate = new Date(timeStamp);
+    // let date = fullDate.getDate();
+    // let month = fullDate.getMonth();
+    // let year = fullDate.getFullYear();
+    // let res = `${date}-${month}-${year}`;
 
-    let offset = new Date().getTimezoneOffset();
+    // let offset = new Date().getTimezoneOffset();
     //let time= offset>0? "+":"-"+parseInt(offset/60)+":"+offset%60;
 
-    return `${date}-${month}-${year} >>`;
+    // return `${date}-${month}-${year} >>`;
+
+    return `${moment().format('MMMM Do YYYY, h:mm:ss a')}`
 }
